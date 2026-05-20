@@ -1,10 +1,11 @@
-#include "Principal.hpp"
- 
-int main() {
-    Principal principal;
+#include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Jogo.hpp"
 
-    principal.executar();
- 
+int main() {
+
+    Jogo jogo;
+
     return 0;
+
 }
- 

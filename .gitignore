@@ -8,3 +8,4 @@
 *.log
 CMakeCache.txt
 CMakeFiles/
+/SFML-2.6.1

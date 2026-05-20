@@ -1,61 +1,7 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
 #include "Personagem.hpp"
 
-sf::Texture carregarTextura(const char* pathToTexture) {
-    sf::Texture textura;
-
-    if(pathToTexture == nullptr) {
-        if(textura.loadFromFile("../assets/placeholder.png")) {
-            std::cout << "Substituindo por placeholder..." << std::endl;
-            return textura;
-        }
-        else
-            std::cerr << "Falha ao carregar a textura placeholder!" << std::endl;
-    }
-
-    if (!textura.loadFromFile(pathToTexture)) {
-        std::cerr << "Falha ao carregar a textura para o caminho " << pathToTexture << std::endl;
-        if(textura.loadFromFile("../assets/placeholder.png"))
-            std::cout << ", substituindo por placeholder..." << std::endl;
-        else
-            std::cerr << "Falha ao carregar a textura placeholder!" << std::endl;
-    }
-
-    std::cout << "Tamanho da textura: " << textura.getSize().x << "x" << textura.getSize().y << std::endl;
-
-    return textura;
-} 
-// Func. auxiliar para carregar a textura.
-
-Personagem::Personagem(float xInicial, float yInicial, const char* pathToTexture): textura(carregarTextura(pathToTexture)), sprite(textura) {
-
-    posicao = sf::Vector2f(xInicial, yInicial);
-
-    sprite.setTextureRect(sf::IntRect({0, 0}, {(int)textura.getSize().x, (int)textura.getSize().y}));
-
-    sprite.setScale({0.1f, 0.1f});
-    sprite.setPosition(posicao);
-}
+Personagem::Personagem(float Xinicial, float inicialY, int hp) : Entidade(Xinicial, inicialY), Hp(hp) {}
 
 Personagem::~Personagem() {}
 
-void Personagem::atualizar() { 
-    posicao.x += 0.001; 
-    posicao.y += 0.001; 
-    sprite.setPosition(posicao);
-}
-
-void Personagem::desenhar(sf::RenderWindow* janela) {
-    janela->draw(sprite);
-}
-
-void Personagem::moverX(float dx) {
-    posicao.x += dx;
-    sprite.setPosition(posicao);
-}
-
-void Personagem::moverY(float dy) {
-    posicao.y += dy;
-    sprite.setPosition(posicao);
-}
+void Personagem::salvarDataBuffer() {}

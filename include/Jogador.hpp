@@ -1,13 +1,24 @@
-#pragma once
+#ifndef JOGADOR_HPP
+#define JOGADOR_HPP
 
-#include <SFML/Graphics.hpp>
 #include "Personagem.hpp"
+#include "Ente.hpp"
 
-class Jogador : public Personagem {
-    private:
+class Jogador: public Ente, public Personagem {
+    protected:
+        int pontos;
+        float velocidade;
     public:
-        Jogador(float xInicial = 0.0f, float yInicial = 0.0f, const char* pathToTexture = nullptr);
+        Jogador(float Xinicial, float inicialY, int hp = 3, int pontos = 0, float velocidade = 1.0f);
         ~Jogador();
-        virtual void atualizar();
+
+        void executar();
+        void salvar();
+        void morrer();
+
+        void moverX(bool direcao); // 0 esquerda, 1 direita
+        void moverY(bool direcao);
 
 };
+
+#endif

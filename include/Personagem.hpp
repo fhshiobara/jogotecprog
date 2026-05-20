@@ -1,16 +1,21 @@
-#include <SFML/Graphics.hpp>
+#ifndef Personagem_hpp
+#define Personagem_hpp
 
-class Personagem {
-    private:
-        sf::Vector2f posicao;
-        sf::Texture textura;
-        sf::Sprite sprite;
+#include "Entidade.hpp"
+
+class Personagem: public Entidades::Entidade {
+    protected:
+        int Hp;
     public:
-        Personagem(float xInicial = 0.0f, float yInicial = 0.0f, const char* pathToTexture = nullptr);
+        Personagem(float Xinicial, float inicialY, int hp = 1);
         ~Personagem();
-        void desenhar(sf::RenderWindow* janela);
-        void moverX(float dx);
-        void moverY(float dy);
 
-        virtual void atualizar();
+        void salvarDataBuffer();
+
+        virtual void executar() = 0;
+        virtual void salvar() = 0;
+        virtual void mover() = 0;
+        virtual void morrer() = 0;
 };
+
+#endif
