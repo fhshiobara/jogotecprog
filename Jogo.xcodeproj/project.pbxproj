@@ -1,0 +1,799 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		061C4FD85067BE66ECF47B4D /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D5E268FF950240A39B79752C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				8F6D04B801BFFBE04FCE16B5 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				C13C573607344E8D8EC6BD8D /* PBXTargetDependency */,
+				5DD4B47B3D8B4A5BBE9C725B /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		ECB1F21FDC4021EE059B027E /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9F8B416BB39C4827A0562D84 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				6861ED00C90E16902FCB721C /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0F9526050C2A44B48B126183 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Entidade.cpp */ = {isa = PBXBuildFile; fileRef = 35ED806754E840F1B1D77D68 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Entidade.cpp */; };
+		12BD08D3F98040B5B54EDEDF /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogo.hpp */ = {isa = PBXBuildFile; fileRef = A527916AB3E74D51A5C7DB91 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogo.hpp */; };
+		5E58F41C28494E708977D9B0 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Ente.hpp */ = {isa = PBXBuildFile; fileRef = 0066078CF7B4454EBCF5A12E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Ente.hpp */; };
+		5EECB4DF46154A2D861EED2F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Entidade.hpp */ = {isa = PBXBuildFile; fileRef = 2E7E151AB08C4FB09C38AEB9 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Entidade.hpp */; };
+		5F2FE9EBBD5F4487A2AD7511 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Ente.cpp */ = {isa = PBXBuildFile; fileRef = 60A48810D66843CAAAE9F052 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Ente.cpp */; };
+		6A32153CA6374A90BBFAB626 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogador.cpp */ = {isa = PBXBuildFile; fileRef = 557CF9295E8F48AA86D3E77A /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogador.cpp */; };
+		865ABA92709A43679909DB0B /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogador.hpp */ = {isa = PBXBuildFile; fileRef = B1445F436ED14E6A93028A70 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogador.hpp */; };
+		A8720ECFCEB340C496756237 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 988B956F6C014587814A96B5 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/CMakeLists.txt */; };
+		C356AA7FB9654E429426441F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/main.cpp */ = {isa = PBXBuildFile; fileRef = 72F78F3632C14644808FD28E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/main.cpp */; };
+		DBD651E4B92944B081CD82A0 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/GerenciadorGrafico.hpp */ = {isa = PBXBuildFile; fileRef = 67BA4351D2CB46A78C27F34F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/GerenciadorGrafico.hpp */; };
+		DFA48FCA89724D37BAE8F87E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogo.cpp */ = {isa = PBXBuildFile; fileRef = 9BB3A3E3564445589F0C50BC /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogo.cpp */; };
+		E43C93506A144C2897B4DD9F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/GerenciadorGrafico.cpp */ = {isa = PBXBuildFile; fileRef = A4F11194AAEF4DA0A8A39EE1 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/GerenciadorGrafico.cpp */; };
+		EB8D70BF354A48CF97214B45 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Personagem.hpp */ = {isa = PBXBuildFile; fileRef = 1F25C103086B4861A4C502B0 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Personagem.hpp */; };
+		ED261ACA78BB47C39DA1323B /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Personagem.cpp */ = {isa = PBXBuildFile; fileRef = FAFB9A48AE5B4059A327DEA9 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Personagem.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		4AD2AABA4F454404B5CB17C9 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		651C4489FBA84A44AF84FB39 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		786CA2C62F9743DD832EA95F /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		ADC964939BFB46E688458401 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		8EA91CEFFCB2474B9224E84E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1448FFDB6D3E4CE0B6E37909 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECB1F21FDC4021EE059B027E;
+			remoteInfo = ZERO_CHECK;
+		};
+		ABFFF04F36FC47F7A44204E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1448FFDB6D3E4CE0B6E37909 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECB1F21FDC4021EE059B027E;
+			remoteInfo = ZERO_CHECK;
+		};
+		FDF975FF83FE4252A8065FC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1448FFDB6D3E4CE0B6E37909 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09180B84A58F0F386124BCEE;
+			remoteInfo = main;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0066078CF7B4454EBCF5A12E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Ente.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Ente.hpp; path = include/Ente.hpp; sourceTree = SOURCE_ROOT; };
+		1F25C103086B4861A4C502B0 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Personagem.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Personagem.hpp; path = include/Personagem.hpp; sourceTree = SOURCE_ROOT; };
+		2E7E151AB08C4FB09C38AEB9 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Entidade.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Entidade.hpp; path = include/Entidade.hpp; sourceTree = SOURCE_ROOT; };
+		35ED806754E840F1B1D77D68 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Entidade.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Entidade.cpp; path = src/Entidade.cpp; sourceTree = SOURCE_ROOT; };
+		557CF9295E8F48AA86D3E77A /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogador.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Jogador.cpp; path = src/Jogador.cpp; sourceTree = SOURCE_ROOT; };
+		60A48810D66843CAAAE9F052 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Ente.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Ente.cpp; path = src/Ente.cpp; sourceTree = SOURCE_ROOT; };
+		67BA4351D2CB46A78C27F34F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/GerenciadorGrafico.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = GerenciadorGrafico.hpp; path = include/GerenciadorGrafico.hpp; sourceTree = SOURCE_ROOT; };
+		72F78F3632C14644808FD28E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		988B956F6C014587814A96B5 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9BB3A3E3564445589F0C50BC /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Jogo.cpp; path = src/Jogo.cpp; sourceTree = SOURCE_ROOT; };
+		A4F11194AAEF4DA0A8A39EE1 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/GerenciadorGrafico.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GerenciadorGrafico.cpp; path = src/GerenciadorGrafico.cpp; sourceTree = SOURCE_ROOT; };
+		A527916AB3E74D51A5C7DB91 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Jogo.hpp; path = include/Jogo.hpp; sourceTree = SOURCE_ROOT; };
+		AF5D0C2B1469437A85E60903 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B1445F436ED14E6A93028A70 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogador.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Jogador.hpp; path = include/Jogador.hpp; sourceTree = SOURCE_ROOT; };
+		C77768D5F1F54B7D92F2ABEF /* main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = main; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFB9A48AE5B4059A327DEA9 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Personagem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Personagem.cpp; path = src/Personagem.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB9C7342E2DB425F9D48D393 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10EC757821914A59BF70D294 = {
+			isa = PBXGroup;
+			children = (
+				21186894BB124E27AC1CE7C3 /* ALL_BUILD */,
+				56BFF4EE8D5C41029FC85BB8 /* main */,
+				B1EF0ADE5DDE4FB58CFE358D /* Products */,
+				A1868370E23F4B39972C9557 /* Frameworks */,
+				191DB36C63AD4E558D72982D /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		10FC815C633C484B869F9823 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				0066078CF7B4454EBCF5A12E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Ente.hpp */,
+				2E7E151AB08C4FB09C38AEB9 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Entidade.hpp */,
+				67BA4351D2CB46A78C27F34F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/GerenciadorGrafico.hpp */,
+				B1445F436ED14E6A93028A70 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogador.hpp */,
+				A527916AB3E74D51A5C7DB91 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Jogo.hpp */,
+				1F25C103086B4861A4C502B0 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include/Personagem.hpp */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		191DB36C63AD4E558D72982D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		21186894BB124E27AC1CE7C3 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				367760AD72254D339EE8E24E /* CMake Rules */,
+				AF5D0C2B1469437A85E60903 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		367760AD72254D339EE8E24E /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		56BFF4EE8D5C41029FC85BB8 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				10FC815C633C484B869F9823 /* Header Files */,
+				66B0B4A8976B4A3DBA1EFEC5 /* Source Files */,
+				988B956F6C014587814A96B5 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/CMakeLists.txt */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		66B0B4A8976B4A3DBA1EFEC5 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				60A48810D66843CAAAE9F052 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Ente.cpp */,
+				35ED806754E840F1B1D77D68 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Entidade.cpp */,
+				A4F11194AAEF4DA0A8A39EE1 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/GerenciadorGrafico.cpp */,
+				557CF9295E8F48AA86D3E77A /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogador.cpp */,
+				9BB3A3E3564445589F0C50BC /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogo.cpp */,
+				FAFB9A48AE5B4059A327DEA9 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Personagem.cpp */,
+				72F78F3632C14644808FD28E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		A1868370E23F4B39972C9557 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1EF0ADE5DDE4FB58CFE358D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C77768D5F1F54B7D92F2ABEF /* main */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09180B84A58F0F386124BCEE /* main */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACE7BDFBABC948228DFD2AA9 /* Build configuration list for PBXNativeTarget "main" */;
+			buildPhases = (
+				4A8C6B40CF90427EA7218C44 /* Sources */,
+				DB9C7342E2DB425F9D48D393 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD1F34E03D69476C9A1D860E /* PBXTargetDependency */,
+			);
+			name = main;
+			productName = main;
+			productReference = C77768D5F1F54B7D92F2ABEF /* main */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1448FFDB6D3E4CE0B6E37909 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2650;
+			};
+			buildConfigurationList = 4DB9DEBA3B0C4B559B4912A5 /* Build configuration list for PBXProject "Jogo" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				786CA2C62F9743DD832EA95F /* Debug */,
+				651C4489FBA84A44AF84FB39 /* Release */,
+				4AD2AABA4F454404B5CB17C9 /* MinSizeRel */,
+				ADC964939BFB46E688458401 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 10EC757821914A59BF70D294;
+			projectDirPath = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg";
+			projectRoot = "";
+			targets = (
+				061C4FD85067BE66ECF47B4D /* ALL_BUILD */,
+				09180B84A58F0F386124BCEE /* main */,
+				ECB1F21FDC4021EE059B027E /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		6861ED00C90E16902FCB721C /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  make -f /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  make -f /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  make -f /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  make -f /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		8F6D04B801BFFBE04FCE16B5 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A8C6B40CF90427EA7218C44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F2FE9EBBD5F4487A2AD7511 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Ente.cpp */,
+				0F9526050C2A44B48B126183 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Entidade.cpp */,
+				E43C93506A144C2897B4DD9F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/GerenciadorGrafico.cpp */,
+				6A32153CA6374A90BBFAB626 /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogador.cpp */,
+				DFA48FCA89724D37BAE8F87E /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Jogo.cpp */,
+				ED261ACA78BB47C39DA1323B /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/Personagem.cpp */,
+				C356AA7FB9654E429426441F /* /Users/shiobara/faculdade/Tecprog/Jogo-TecProg/src/main.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DD4B47B3D8B4A5BBE9C725B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECB1F21FDC4021EE059B027E /* ZERO_CHECK */;
+			targetProxy = ABFFF04F36FC47F7A44204E6 /* PBXContainerItemProxy */;
+		};
+		AD1F34E03D69476C9A1D860E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECB1F21FDC4021EE059B027E /* ZERO_CHECK */;
+			targetProxy = 8EA91CEFFCB2474B9224E84E /* PBXContainerItemProxy */;
+		};
+		C13C573607344E8D8EC6BD8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09180B84A58F0F386124BCEE /* main */;
+			targetProxy = FDF975FF83FE4252A8065FC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C6BED475A8447CD94C0987B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include","$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/SFML-2.6.1/lib","$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		233272AC561F439889A24621 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3E3CE2F25E444FB6A8694496 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4BB8B8FD6C454ADC82F8D5F6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build";
+			};
+			name = MinSizeRel;
+		};
+		53A07D24E0194728ACF6919C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		5EE41EF4027444A5976E6C4E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		6A01A21FD8E0424A9F355C14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		6F67BA9262E54E9EBA01AD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		7AA3C0C80A4C446290FB7591 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include","$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/SFML-2.6.1/lib","$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		92D67DDA08A44C5386C85121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		990A448BF27E42F49A4D2CDF /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build";
+			};
+			name = RelWithDebInfo;
+		};
+		BFD9BDCCBF824D959B085A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build";
+			};
+			name = Release;
+		};
+		C6B368A330354002A86E637F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include","$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/SFML-2.6.1/lib","$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		E337C04227B24743847C767A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/include","$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = ("/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/SFML-2.6.1/lib","$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		E57FBB8EF41A4724A93BA55B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				SDKROOT = "";
+				SYMROOT = "/Users/shiobara/faculdade/Tecprog/Jogo-TecProg/build/build";
+			};
+			name = Debug;
+		};
+		EB54312D76CC4D6A8168BBE8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DB9DEBA3B0C4B559B4912A5 /* Build configuration list for PBXProject "Jogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E57FBB8EF41A4724A93BA55B /* Debug */,
+				BFD9BDCCBF824D959B085A46 /* Release */,
+				4BB8B8FD6C454ADC82F8D5F6 /* MinSizeRel */,
+				990A448BF27E42F49A4D2CDF /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9F8B416BB39C4827A0562D84 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53A07D24E0194728ACF6919C /* Debug */,
+				92D67DDA08A44C5386C85121 /* Release */,
+				EB54312D76CC4D6A8168BBE8 /* MinSizeRel */,
+				233272AC561F439889A24621 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		ACE7BDFBABC948228DFD2AA9 /* Build configuration list for PBXNativeTarget "main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6B368A330354002A86E637F /* Debug */,
+				1C6BED475A8447CD94C0987B /* Release */,
+				E337C04227B24743847C767A /* MinSizeRel */,
+				7AA3C0C80A4C446290FB7591 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D5E268FF950240A39B79752C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A01A21FD8E0424A9F355C14 /* Debug */,
+				6F67BA9262E54E9EBA01AD2A /* Release */,
+				3E3CE2F25E444FB6A8694496 /* MinSizeRel */,
+				5EE41EF4027444A5976E6C4E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1448FFDB6D3E4CE0B6E37909 /* Project object */;
+}
