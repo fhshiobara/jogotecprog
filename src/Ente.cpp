@@ -6,11 +6,11 @@ int Ente::idCounter = 0;
 Ente::Ente(const char* pathToTexture): id(idCounter++) {
 
     this->setGG(Gerenciadores::GerenciadorGrafico::getInstance());
-    texture = pGG->loadTexture(pathToTexture);
-
+    sf::Texture* textura = nullptr;
+    
     if (pathToTexture != nullptr) {
-        text.loadFromFile(pathToTexture);
-            setSprite(text);
+            textura = pGG->loadTexture(pathToTexture);
+            setSprite(*textura);
     } else {
             
         std::cerr << "Aviso: Entidade " << id << " criada sem textura." << std::endl;
@@ -28,8 +28,8 @@ Ente::Ente(const char* pathToTexture): id(idCounter++) {
             } 
         }
         // Imagem do placeholder criada pelo Chatgpt. Funciona mesmo sem a pasta assets
-            textura.loadFromImage(img);
-            sprite.setTexture(textura);
+            textura->loadFromImage(img);
+            sprite.setTexture(*textura);
         } 
     }
 
