@@ -14,8 +14,9 @@ class Personagem: public Entidades::Entidade {
 
         virtual void executar() = 0;
         virtual void salvar() = 0;
-        virtual void mover() = 0;
-        virtual void morrer() = 0;
+
+        virtual void moverY(bool direcao) = 0;
+        virtual void moverX(bool direcao) = 0;
 };
 
 #endif

@@ -4,11 +4,16 @@
 #include "Personagem.hpp"
 #include "Ente.hpp"
 
-class Jogador: public Ente, public Personagem {
+
+
+class Jogador: public Personagem, public Ente {
+
     protected:
         int pontos;
         float velocidade;
+
     public:
+
         Jogador(float Xinicial, float inicialY, int hp = 3, int pontos = 0, float velocidade = 1.0f);
         ~Jogador();
 
@@ -20,5 +25,6 @@ class Jogador: public Ente, public Personagem {
         void moverY(bool direcao);
 
 };
+
 
 #endif

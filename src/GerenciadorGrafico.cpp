@@ -19,7 +19,7 @@ namespace Gerenciadores{
 
     GerenciadorGrafico::GerenciadorGrafico() {
         
-            window = new sf::RenderWindow(sf::VideoMode(800, 600), "Gerenciador Grafico");
+            window = new sf::RenderWindow(sf::VideoMode(800, 600), "Jogo");
             window->setFramerateLimit(100);
         }
 
@@ -29,6 +29,10 @@ namespace Gerenciadores{
             delete par.second;
         }
         texturesMap.clear();
+    }
+
+    void GerenciadorGrafico::render(sf::Sprite* sprite){
+        window->draw(*sprite);
     }
 
     void GerenciadorGrafico::render(sf::RectangleShape* hitbox){

@@ -23,9 +23,9 @@ namespace Gerenciadores{
             ~GerenciadorGrafico();
             
             static GerenciadorGrafico* getInstance();
-            
+
+            void render(sf::Sprite* sprite);
             void render(sf::RectangleShape* hitbox);
-            
             void render(sf::Text* txt);
             
             bool windowopen()const;
