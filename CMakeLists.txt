@@ -8,10 +8,13 @@ set(SFML_DIR "SFML-2.6.1/lib/cmake/SFML") # path do SFML (2.6.1)
 
 include_directories(include)
 
+file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
+
 find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
 
 add_executable(main
 
+    src/Inimigo.cpp
     src/main.cpp
     src/Jogo.cpp
     src/GerenciadorGrafico.cpp
@@ -19,6 +22,8 @@ add_executable(main
     src/Ente.cpp
     src/Entidade.cpp
     src/Jogador.cpp
+    src/Animation.cpp
+    src/SingleFrameAnimation.cpp
 )
 
 target_link_libraries(main

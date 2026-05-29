@@ -2,7 +2,7 @@
 
 using namespace Entidades;
 
-Entidade::Entidade(float Xinicial, float inicialY) : pos(Xinicial, inicialY) {}
+Entidade::Entidade(CoordF position) : pos(position){ }
 
 Entidade::~Entidade() {}
 

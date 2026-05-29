@@ -1,19 +1,22 @@
+#pragma once
 #ifndef ENTIDADE_HPP
 #define ENTIDADE_HPP
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Ente.hpp"
+
 
 namespace Entidades {
 
-    class Entidade {
+    class Entidade:public Ente{
         protected:
-            sf::Vector2f pos;
+            CoordF pos;
             // std::ostream buffer; TODO
 
             void salvarDataBuffer(); // TODO
         public:
-            Entidade(float Xinicial, float inicialY);
+            Entidade(CoordF position);
             virtual ~Entidade();
             virtual void executar() = 0;
             virtual void salvar() = 0;
