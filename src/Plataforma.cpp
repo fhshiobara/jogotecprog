@@ -1,7 +1,7 @@
 #include "Plataforma.hpp"
 
 Plataforma::Plataforma(CoordF position, float largura, float altura)
-    : Entidade(position), largura(largura), altura(altura)
+    : Obstaculo(position, false), largura(largura), altura(altura)
 {
     hitbox.setSize(sf::Vector2f(largura, altura));
     hitbox.setPosition(sf::Vector2f(position.x, position.y));

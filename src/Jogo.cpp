@@ -1,6 +1,8 @@
 #include "Jogo.hpp"
 #include "Inimigo.hpp"
 #include "Plataforma.hpp"
+
+using namespace Obstaculos;
  
 Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()) { executar(); }
  
@@ -17,12 +19,13 @@ void Jogo::executar() {
  
     Plataforma* chao = new Plataforma(CoordF(0.f, 500.f), 800.f, 20.f);
  
+    // Física e colisão
+ 
     const float alturaJogador = 64.f;
     bool olhandoEsquerda = false;
     Animation_ID animacao = Animation_ID::idle;
  
     while (pGerenciadorGrafico->windowopen()) {
-
         float dt = relogio.restart().asSeconds();
  
         // Eventos
@@ -30,11 +33,9 @@ void Jogo::executar() {
         while (pGerenciadorGrafico->getWindow()->pollEvent(evento)) {
             if (evento.type == sf::Event::Closed)
                 pGerenciadorGrafico->closeWindow();
-
             if (evento.type == sf::Event::KeyPressed &&
-                evento.key.code == sf::Keyboard::Space) {
+                evento.key.code == sf::Keyboard::Space)
                 jogador->pular();
-            }
         }
  
         // Input
@@ -50,14 +51,13 @@ void Jogo::executar() {
             animacao = Animation_ID::walk;
         }
  
-        // Física e colisão, Futuro gerenciador de col.
-            if (!jogador->noChao())
-        animacao = Animation_ID::jump;
-
+        // Animação de jump tem prioridade quando no ar
+        if (!jogador->noChao())
+            animacao = Animation_ID::jump;
         jogador->gravidade(dt);
         CoordF pos  = jogador->getPos();
         CoordF vel  = jogador->getVel();
-        bool chaoF = jogador->noChao();
+        bool   chaoF = jogador->noChao();
  
         chao->obstruir(pos, vel.y, chaoF, alturaJogador);
         jogador->setPos(pos);

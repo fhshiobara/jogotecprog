@@ -1,13 +1,12 @@
 #ifndef PLATAFORMA_HPP
 #define PLATAFORMA_HPP
 
-#include "Entidade.hpp"
+#include "Obstaculo.hpp"
 
 class Jogador;
 
-class Plataforma : public Entidades::Entidade {
+class Plataforma : public Obstaculos::Obstaculo {
     private:
-
         float largura;
         float altura;
 

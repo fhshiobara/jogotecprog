@@ -14,6 +14,7 @@ find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
 
 add_executable(main
 
+    src/Obstaculo.cpp
     src/Plataforma.cpp
     src/Inimigo.cpp
     src/main.cpp
