@@ -4,16 +4,15 @@
 //adaptado de Burda Canal do vídeo 2
 template<typename TL>
 class Coord{
-public:
-    TL x;
-    TL y;
+    public:
+        TL x;
+        TL y;
 
-    Coord(TL x, TL y);
-    Coord();
-    ~Coord(){ }
-    
-    
-    
+        Coord(TL x, TL y);
+        Coord();
+        ~Coord(){ }
+        
+
 };
 
 typedef Coord<double> CoordD;

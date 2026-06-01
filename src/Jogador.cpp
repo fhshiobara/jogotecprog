@@ -1,103 +1,56 @@
 #include "Jogador.hpp"
-
-static const float GRAVIDADE     = 800.f;  // px/s²
-
-Jogador::Jogador(CoordF position, int hp, int pontos, float velocidade)
-
-    : Personagem(position, hp), pontos(pontos), velocidade(velocidade),
-
-      velocidadeY(0.f), dt_local(0.f), encostadochao(false)
-
+ 
+static const float GRAVIDADE  = 800.f;   
+ 
+Jogador::Jogador(CoordF position, int hp, int pontos, float speed)
+    : Personagem(position, hp), pontos(pontos), speed(speed),
+      vel(0.f, 0.f), dt_local(0.f), encostadochao(false)
 {
-
     this->pos = position;
-
 }
-
+ 
 Jogador::~Jogador() {}
-
-
-
+ 
 void Jogador::executar() {}
-
-
-
+void Jogador::mover()    {}
+void Jogador::salvar()   {}
+void Jogador::morrer()   {}
+ 
 void Jogador::moverX(bool direcao, float dt) {
-
-    if (direcao) {
-        this->pos.x += velocidade * dt;
-    } else {
-        this->pos.x -= velocidade * dt;
-    }
-
+    // Move direto na posição — vel.x não acumula (controle direto)
+    if (direcao)
+        pos.x += speed * dt;
+    else
+        pos.x -= speed * dt;
 }
-
-
-
-void Jogador::mover() {
-}
-
-
-
-void Jogador::moverY(bool direcao) {
-    if (direcao) {
-        this->pos.y += velocidade*dt_local;
-    } else {
-        this->pos.y -= velocidade*dt_local;
-    }
-}
-
-void Jogador::salvar() {}
-void Jogador::morrer() {}
-
+ 
 void Jogador::pular() {
-
     if (encostadochao) {
-
-        velocidadeY = -420.f;  // impulso para cima
-
+        vel.y = speed * -2.0f; // Definindo com speed, talvez mudar. Multiplicado por -9 para um pulo mais alto, já que o speed é relativamente baixo.
         encostadochao = false;
-
     }
-
 }
-
-
-
+ 
 void Jogador::gravidade(float dt) {
-
-    velocidadeY += 800.f * dt;  // aceleração da gravidade
-
-    pos.y       += velocidadeY * dt;
-
-    encostadochao = false;      // resetado aqui; plataforma reativa se houver colisão
-
+    vel.y += GRAVIDADE * dt;   // acumula gravidade em Y
+    pos.y += vel.y * dt;       
+    encostadochao = false;     
 }
-
-
-void Jogador::atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt){
-
+ 
+void Jogador::atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt) {
     this->dt_local = dt;
-    this->sprite.update(id,olhandoEsquerda,this->pos,dt);
-
+    this->sprite.update(id, olhandoEsquerda, this->pos, dt);
 }
-
-void Jogador::desenhar(){
-
+ 
+void Jogador::desenhar() {
     this->sprite.render();
-
 }
-
+ 
 void Jogador::setDt(float dt) { this->dt_local = dt; }
+ 
 void Jogador::initialize() {
-
-    this->sprite.addNewAnimation(Animation_ID::idle,"../assets/Knight/IDLE.png",7);
-
-    this->sprite.addNewAnimation(Animation_ID::walk,"../assets/Knight/WALK.png",8);
-
-    this->sprite.addNewAnimation(Animation_ID::attack,"../assets/Knight/ATTACK 1.png",6);
-
+    this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Knight/IDLE.png", 7);
+    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Knight/WALK.png", 8);
+    this->sprite.addNewAnimation(Animation_ID::attack,"../assets/Knight/ATTACK 1.png", 6);
+    this->sprite.addNewAnimation(Animation_ID::jump, "../assets/Knight/JUMP.png", 5);
 }
-
-
-
