@@ -1,7 +1,8 @@
 #include "Jogo.hpp"
 #include "Inimigo.hpp"
 #include "Plataforma.hpp"
-
+#include "GerenciadorColisoes.hpp"
+ 
 using namespace Obstaculos;
  
 Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()) { executar(); }
@@ -19,9 +20,10 @@ void Jogo::executar() {
  
     Plataforma* chao = new Plataforma(CoordF(0.f, 500.f), 800.f, 20.f);
  
-    // Física e colisão
+    pColisM->setJogador(jogador);
+    pColisM->incluirObstaculo(chao);
+    pColisM->incluirInimigo(inimigo);
  
-    const float alturaJogador = 64.f;
     bool olhandoEsquerda = false;
     Animation_ID animacao = Animation_ID::idle;
  
@@ -30,6 +32,7 @@ void Jogo::executar() {
  
         // Eventos
         sf::Event evento;
+
         while (pGerenciadorGrafico->getWindow()->pollEvent(evento)) {
             if (evento.type == sf::Event::Closed)
                 pGerenciadorGrafico->closeWindow();
@@ -40,6 +43,7 @@ void Jogo::executar() {
  
         // Input
         animacao = Animation_ID::idle;
+
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             jogador->moverX(true, dt);
             olhandoEsquerda = false;
@@ -50,19 +54,12 @@ void Jogo::executar() {
             olhandoEsquerda = true;
             animacao = Animation_ID::walk;
         }
- 
-        // Animação de jump tem prioridade quando no ar
         if (!jogador->noChao())
             animacao = Animation_ID::jump;
-        jogador->gravidade(dt);
-        CoordF pos  = jogador->getPos();
-        CoordF vel  = jogador->getVel();
-        bool   chaoF = jogador->noChao();
  
-        chao->obstruir(pos, vel.y, chaoF, alturaJogador);
-        jogador->setPos(pos);
-        jogador->setVel(vel);
-        jogador->setChao(chaoF);
+        // Física e Colisões
+        jogador->gravidade(dt);
+        pColisM->executar();
  
         // Render
         pGerenciadorGrafico->clear();
@@ -74,7 +71,7 @@ void Jogo::executar() {
         inimigo->desenhar();
         pGerenciadorGrafico->getWindow()->display();
     }
- 
+
     delete jogador;
     delete inimigo;
     delete chao;

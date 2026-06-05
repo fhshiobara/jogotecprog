@@ -14,7 +14,7 @@ Jogador::~Jogador() {}
 void Jogador::executar() {}
 void Jogador::mover()    {}
 void Jogador::salvar()   {}
-void Jogador::morrer()   {}
+void Jogador::morrer()   { std::cout << "Morreu! " << std::endl; }
  
 void Jogador::moverX(bool direcao, float dt) {
     // Move direto na posição — vel.x não acumula (controle direto)

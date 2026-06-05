@@ -1,23 +1,18 @@
-//
-//  ListaEntidades.hpp
-//  Jogo
-//
-//  Created by Edison Shiobara on 02/06/26.
-//
-
+#ifndef LISTAENTIDADES_HPP
+#define LISTAENTIDADES_HPP
+ 
 #include "Entidade.hpp"
-#include "List.hpp"
+#include <list>
 #include <iostream>
-
-class ListaEntidades{
-private:
-    Lista<Entidade> LEs;
-public:
-    ListaEntidades();
-    ~ListaEntidades();
-    void incluir(Entidade* pE);
-    void percorrer();
-    //classes da uml base
-    
+ 
+class ListaEntidades {
+    private:
+        std::list<Entidades::Entidade*> LEs;
+    public:
+        ListaEntidades();
+        ~ListaEntidades();
+        void incluir(Entidades::Entidade* pE);
+        void percorrer();
 };
-
+ 
+#endif

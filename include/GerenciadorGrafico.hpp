@@ -41,7 +41,9 @@ namespace Gerenciadores{
             sf::Texture* loadTexture(const char* path);
             
     };
-#define pGraphicM Gerenciadores::GerenciadorGrafico::getInstance()
+
+    #define pGraphicM Gerenciadores::GerenciadorGrafico::getInstance()
+
 }
 
 #endif

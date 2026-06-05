@@ -27,6 +27,8 @@ class Inimigo : public Personagem {
  
         bool estaVivo() const;
         bool estaOlhandoEsquerda() const { return olhandoEsquerda; }
+
+        CoordF getPos() const { return pos; }
 };
  
 #endif
