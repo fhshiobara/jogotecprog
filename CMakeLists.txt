@@ -14,6 +14,7 @@ find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
 
 add_executable(main
 
+    src/Obst_Medio.cpp
     src/GerenciadorColisoes.cpp
     src/ListaEntidades.cpp
     src/Obstaculo.cpp
