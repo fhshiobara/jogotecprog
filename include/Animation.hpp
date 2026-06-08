@@ -49,7 +49,7 @@ private:
                 if(totalTime>=switchTime){
                     totalTime-=switchTime;
                     currentImage++;
-                    if(currentImage>=imageCount){currentImage =0;}
+                    if(currentImage>=imageCount){currentImage = 0;}
                 }
                 
                 int larguraFrame = texture->getSize().x/imageCount;
