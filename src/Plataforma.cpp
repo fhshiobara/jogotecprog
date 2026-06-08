@@ -21,7 +21,7 @@ void Plataforma::salvar()   {}
 bool Plataforma::obstruir(CoordF& posJogador, float& velocidadeY,
                            bool& noChao, float alturaJogador) const {
 
-    float metade = alturaJogador / 1.1f; // Dividido para compensar a escala... Resolver depois
+    float metade = alturaJogador / 1.6f; // Dividido para compensar a escala... Resolver depois
 
     // Limites horizontais — usa metade da altura como aproximação da meia largura
     bool dentroX = posJogador.x + metade > getEsquerda() &&

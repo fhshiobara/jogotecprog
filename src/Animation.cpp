@@ -10,8 +10,7 @@
 const float Animation::SingleAnimation::switchTime = 0.2; // tempo entre frames
 
 Animation::Animation() : body(), animationMap(), currentID(Animation_ID::walk) {
-    // Definimos a escala do retângulo para ficar visível (3x maior)
-    body.setScale(sf::Vector2f(3, 3));
+    body.setScale(sf::Vector2f(2.0, 2.0));
 }
 
 Animation::~Animation() {
@@ -35,7 +34,6 @@ void Animation::addNewAnimation(Animation_ID id, const char* path, unsigned int 
     
     sf::IntRect rectSize = tmp->getSize();
     
-    // Configura o tamanho inicial baseado no tamanho REAL de UM frame (e não da spritesheet inteira)
     body.setSize(sf::Vector2f(abs(rectSize.width), abs(rectSize.height)));
     body.setOrigin(sf::Vector2f(abs(rectSize.width), abs(rectSize.height)) / 2.0f);
 }

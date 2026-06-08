@@ -12,6 +12,12 @@ Jogo::~Jogo() {}
  
 void Jogo::executar() {
     sf::Clock relogio;
+    
+    bool andDir = false;
+    bool andEsq = false;
+    
+    andDir = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
+    andEsq = sf::Keyboard::isKeyPressed(sf::Keyboard::A);
  
     Jogador* jogador = new Jogador(CoordF(200.0f, 200.0f), 3, 0, 200.0f);
     jogador->initialize();
@@ -39,24 +45,36 @@ void Jogo::executar() {
         while (pGerenciadorGrafico->getWindow()->pollEvent(evento)) {
             if (evento.type == sf::Event::Closed)
                 pGerenciadorGrafico->closeWindow();
-            if (evento.type == sf::Event::KeyPressed &&
-                evento.key.code == sf::Keyboard::Space)
-                jogador->pular();
+            if (evento.type == sf::Event::KeyPressed){
+                if(evento.key.code == sf::Keyboard::Space){jogador->pular();}
+                //pode ser feito aqui pois pular é uma acao e nao algo continuo
+                
+                if(evento.key.code==sf::Keyboard::D){andDir = true;}
+                
+                if(evento.key.code == sf::Keyboard::A){andEsq = true;}
+            }
+            if(evento.type == sf::Event::KeyReleased){
+                if(evento.key.code == sf::Keyboard::D){andDir = false;}
+                if(evento.key.code == sf::Keyboard::A){andEsq = false;}
+            }
         }
- 
-        // Input
+        
+        
         animacao = Animation_ID::idle;
- 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            jogador->moverX(true, dt);
+        
+        if(andDir){
+            
+            jogador->moverX(true,dt);
             olhandoEsquerda = false;
             animacao = Animation_ID::walk;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            jogador->moverX(false, dt);
+        
+        if(andEsq){
+            jogador->moverX(false,dt);
             olhandoEsquerda = true;
             animacao = Animation_ID::walk;
         }
+
         if (!jogador->noChao())
             animacao = Animation_ID::jump;
  

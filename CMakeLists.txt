@@ -4,16 +4,32 @@ project(Jogo)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# Organiza os arquivos em pastas (Groups) dentro do Xcode
+set(CMAKE_FOLDER "Jogo")
+
 set(SFML_DIR "SFML-2.6.1/lib/cmake/SFML") # path do SFML (2.6.1)
 
 include_directories(include)
 
+# Copia a pasta de assets para o diretório de build
 file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
 
 find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
 
-add_executable(main
+# Mapeia todos os arquivos de cabeçalho da pasta include
+file(GLOB_RECURSE INCLUDE_FILES "include/*.hpp" "include/*.h")
 
+# Mapeia os arquivos de assets para que apareçam no Xcode
+file(GLOB_RECURSE ASSET_FILES "assets/*.*")
+
+# Cria os grupos (pastas virtuais) no Xcode para organizar a lateral
+source_group("Headers" FILES ${INCLUDE_FILES})
+source_group("Assets" FILES ${ASSET_FILES})
+source_group("Sources" REGULAR_EXPRESSION "src/.*")
+
+add_executable(main
+    ${INCLUDE_FILES}
+    ${ASSET_FILES}
     src/Obst_Medio.cpp
     src/GerenciadorColisoes.cpp
     src/ListaEntidades.cpp
@@ -29,10 +45,10 @@ add_executable(main
     src/Jogador.cpp
     src/Animation.cpp
     src/SingleFrameAnimation.cpp
+    src/Fase.cpp
 )
 
 target_link_libraries(main
-
     sfml-graphics
     sfml-window
     sfml-system
