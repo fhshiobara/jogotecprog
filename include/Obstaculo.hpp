@@ -19,8 +19,7 @@ namespace Obstaculos {
 
             virtual void executar() = 0;
             virtual void salvar()   = 0;
-            virtual bool obstruir(CoordF& posJogador, float& velocidadeY,
-                                  bool& noChao, float alturaJogador) const = 0;
+            virtual bool obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY,bool& noChao, float alturaJogador) const = 0;
             virtual void desenhar() = 0;
     };
 

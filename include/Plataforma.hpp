@@ -18,7 +18,7 @@ class Plataforma : public Obstaculos::Obstaculo {
         void salvar();
 
         // True se o player pisar na plataforma
-        bool obstruir(CoordF& posJogador, float& velocidadeY, bool& noChao, float alturaJogador) const;
+        bool obstruir(CoordF& posJogador, float& velocidadeY,float& velocidadeX, bool& noChao, float alturaJogador) const;
 
         void desenhar();
 

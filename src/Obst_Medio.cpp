@@ -4,7 +4,7 @@
 namespace Obstaculos {
  
     Obst_Medio::Obst_Medio(CoordF position, float altura, float largura, float viscosidade)
-        : Obstaculo(position, false), altura(altura), largura(largura), viscosidade(viscosidade)
+        : Obstaculo(position, true), altura(altura), largura(largura), viscosidade(viscosidade)
     {
         hitbox.setSize(sf::Vector2f(largura, altura));
         hitbox.setPosition(sf::Vector2f(position.x, position.y));
@@ -19,18 +19,17 @@ namespace Obstaculos {
  
     void Obst_Medio::salvar() {}
  
-    bool Obst_Medio::obstruir(CoordF& posJogador, float& velocidadeY,
+bool Obst_Medio::obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY,
                                bool& noChao, float alturaJogador) const
     {
         float metLargObj = largura / 2.f;
-        float metLargJog = 32.f;
+        float metLargJog = 9.f;
  
         bool colisaoX = std::abs(posJogador.x - this->pos.x) < (metLargObj + metLargJog);
         bool colisaoY = std::abs(posJogador.y - this->pos.y) < (alturaJogador / 2.f + altura / 2.f);
  
         if (colisaoX && colisaoY) {
-            float dir = posJogador.x - this->pos.x;
-            posJogador.x -= dir * (1.f - viscosidade) * 0.1f;
+            std::cout<<"Jogador levou dano do obstaculo medio"<<std::endl;
             return true;
         }
  

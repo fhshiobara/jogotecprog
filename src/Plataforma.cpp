@@ -18,7 +18,7 @@ Plataforma::~Plataforma() {}
 void Plataforma::executar() {}
 void Plataforma::salvar()   {}
 
-bool Plataforma::obstruir(CoordF& posJogador, float& velocidadeY,
+bool Plataforma::obstruir(CoordF& posJogador, float& velocidadeY,float& velocidadeX,
                            bool& noChao, float alturaJogador) const {
 
     float metade = alturaJogador / 1.6f; // Dividido para compensar a escala... Resolver depois

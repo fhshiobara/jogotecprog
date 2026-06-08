@@ -21,7 +21,7 @@ namespace Obstaculos {
         ~Obst_Medio();
         void executar();
         void salvar();
-        bool obstruir(CoordF& posJogador, float& velocidadeY, bool& noChao, float alturaJogador) const;
+        bool obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY, bool& noChao, float alturaJogador) const;
         void desenhar();
     };
 }

@@ -45,7 +45,7 @@ namespace Gerenciadores {
 
         for (iteradorObs = ListaObstaculos.begin(); iteradorObs != ListaObstaculos.end(); ++iteradorObs) {
 
-            bool colidiu = (*iteradorObs)->obstruir(pos, vel.y, chao, alturaJogador);
+            bool colidiu = (*iteradorObs)->obstruir(pos, vel.y,vel.x, chao, alturaJogador);
 
             if (colidiu && (*iteradorObs)->isDanoso())
                 pJog->morrer();
