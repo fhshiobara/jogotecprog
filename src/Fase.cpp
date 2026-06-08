@@ -4,16 +4,12 @@
 //
 //  Created by Edison Shiobara on 08/06/26.
 //
-#pragma once
 #include "Fase.hpp"
 #include "SingleFrameAnimation.hpp"
 #include "Plataforma.hpp"
 #define MAX 3
 
-
-
 namespace Fases{
-
 
 Fase::Fase():pGG(Gerenciadores::GerenciadorColisoes::getInstance()){}
 
@@ -42,17 +38,7 @@ void Fase::criarPlataformas(){
             std::cerr<<"ERRO: Alocacao falha de plataforma em Fase::criarPlataformas"<<std::endl;
         }
         
-        
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
+    }   
 }
 
 void Fase::criarCenario(){
@@ -76,10 +62,6 @@ void Fase::criarInimigosMedios(){
     
 
 }
-
-
-
-
 }
 
 

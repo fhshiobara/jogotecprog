@@ -10,13 +10,16 @@ namespace Gerenciadores{
     class GerenciadorGrafico{
         private:
             sf::RenderWindow* window;
+
             sf::View view;
             std::map<const char*,sf::Texture*> texturesMap;
+
             sf::Font* font;
             sf::Clock clock;
             static float dt;
             
             static Gerenciadores::GerenciadorGrafico* instance;
+
             GerenciadorGrafico();
 
         public:

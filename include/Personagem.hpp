@@ -6,9 +6,13 @@
 class Personagem: public Entidades::Entidade {
     protected:
         int Hp;
-    CoordF pos;
+        float velocidade;
+        bool olhandoEsquerda;
+        bool encostadochao;
+        bool vivo;
+        
     public:
-        Personagem(CoordF position, int hp = 1);
+        Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true);
         ~Personagem();
 
         void salvarDataBuffer();

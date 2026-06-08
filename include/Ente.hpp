@@ -10,12 +10,12 @@
 class Ente {
     protected:
         int id;
-        static Gerenciadores::GerenciadorGrafico *pGG;
-        //sf::Sprite sprite;
-        Animation sprite;
-
         static int cont_id;
+
+        static Gerenciadores::GerenciadorGrafico *pGG;
+
         sf::RectangleShape hitbox;
+        Animation sprite;
     public:
         static void setGG(Gerenciadores::GerenciadorGrafico *p) { pGG = p; }
 
@@ -23,6 +23,7 @@ class Ente {
         virtual ~Ente();
         virtual void executar() = 0;
         void desenhar();
+        int getId() const { return id; }
 
 };
 

@@ -2,7 +2,7 @@
 
 using namespace Entidades;
 
-Entidade::Entidade(CoordF position) : pos(position){ }
+Entidade::Entidade(CoordF position, CoordF velocidade): pos(position), vel(velocidade) {}
 
 Entidade::~Entidade() {}
 

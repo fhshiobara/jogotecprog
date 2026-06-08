@@ -1,75 +1,72 @@
 //
-//  List.hpp
+//  ListTL.hpp
 //  Jogo
 //
 //  Created by Edison Shiobara on 02/06/26.
 //
+#ifndef LISTTL_HPP
+#define LISTTL_HPP
+ 
+#include <iostream>
+ 
 template<class TL>
-class Lista{
+class Lista {
 public:
-    template<class TE>
-    class Elemento{
+    class Elemento {
     private:
-        Elemento<TE>* pInfo;
-        TE* pProx;
+        TL*        pInfo;  // ponteiro para o DADO
+        Elemento*  pProx;  // ponteiro para o PRÓXIMO elemento
     public:
-        Elemento():pProx(NULL),info(NULL){}
-        
-        ~Elemento(){}
-        
-        void setProx(Elemento<TE>* prox){pProx = prox;}
-        
-        Elemento<TE>* getProximo()const {return this->pProx;}
-        
-        void incluir(TE* p){pInfo = p;}
-        
-        TE* getInfo(){return this-pInfo;}
+        Elemento() : pInfo(NULL), pProx(NULL) {}
+        ~Elemento() {}
+ 
+        void setProx(Elemento* prox) { pProx = prox; }
+        Elemento* getProximo() const      { return pProx; }
+ 
+        void incluir(TL* p) { pInfo = p; }
+        TL* getInfo()      { return pInfo; }
     };
+ 
 private:
-    Elemento <TL>* pPrim;
-    Elemento <TL>* pUltimo;
+    Elemento* pPrim;
+    Elemento* pUltimo;
+ 
 public:
-    Lista(): pPrim(NULL),pUltimo(NULL){}
-    ~Lista(){limpa();}
-    
-    void incluir(TL* p){
-        if(p==NULL){
-            std::cerr<<"Erro, lista::incluir, ponteiro invalido"
-            reteurn(1);
+    Lista() : pPrim(NULL), pUltimo(NULL) {}
+    ~Lista() { limpar(); }
+ 
+    void incluir(TL* p) {
+        if (p == NULL) {
+            std::cerr << "Erro, Lista::incluir, ponteiro invalido" << std::endl;
+            return;
         }
-        Elemento<TL>* novoElemento = new Elemento<TL>();
-        
+ 
+        Elemento* novoElemento = new Elemento();
         novoElemento->incluir(p);
-        
-        if(pPrim ==NULL){//1caso fila vazia
-            pPrim = novoElemento;
+ 
+        if (pPrim == NULL) {
+            pPrim   = novoElemento;
+            pUltimo = novoElemento;
+        } else {
+            pUltimo->setProx(novoElemento);
             pUltimo = novoElemento;
         }
-        else{
-            pUltimo->setProx(novoElemento);
-            pUltimo = novoElemento;    //atualiza o novo para ser o ultimo
-        }
-        
     }
-    
-    void limpar(){
-        Elemento<TL>* atual = pPrim;
-        Elemento<TL>* prox = NULL;
-        while(atual!=pUltimo){
-            prox = atual->pProx;
+ 
+    void limpar() {
+        Elemento* atual = pPrim;
+        Elemento* prox  = NULL;
+        while (atual != NULL) {       // era != pUltimo — perdia o último
+            prox = atual->getProximo();
             delete atual;
             atual = prox;
         }
-        pPrim = NULL;
+        pPrim   = NULL;
         pUltimo = NULL;
-        
     }
-    
-    Elemento<TL>* getPrim(){return pPrim;}
-    
-    Elemento<TL>* getUltimo(){return pUltimo;}
-    //é para estar completo
-    
-
-    
+ 
+    Elemento* getPrim()   { return pPrim; }
+    Elemento* getUltimo() { return pUltimo; }
 };
+ 
+#endif

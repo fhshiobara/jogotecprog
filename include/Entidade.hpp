@@ -1,4 +1,3 @@
-#pragma once
 #ifndef ENTIDADE_HPP
 #define ENTIDADE_HPP
 
@@ -9,14 +8,15 @@
 
 namespace Entidades {
 
-    class Entidade:public Ente{
+    class Entidade: public Ente {
         protected:
             CoordF pos;
+            CoordF vel;
             // std::ostream buffer; TODO
 
             void salvarDataBuffer(); // TODO
         public:
-            Entidade(CoordF position);
+            Entidade(CoordF position, CoordF velocidade);
             virtual ~Entidade();
             virtual void executar() = 0;
             virtual void salvar() = 0;

@@ -8,14 +8,8 @@ class Jogador: public Personagem {
  
     protected:
         int pontos;
-        float speed;      // Velocidade. Define tanto Y como X
-
-        CoordF vel;       // vetor de velocidade I.E. velocidade atual do jogador
-        CoordF pos;
-
         float dt_local;
-
-        bool encostadochao;
+        float speed;
  
     public:
         Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);

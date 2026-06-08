@@ -6,10 +6,7 @@
  
 class Inimigo : public Personagem {
     protected:
-        float velocidade;
         float dt_local;
-        bool olhandoEsquerda;
-        bool vivo;
  
     public:
         Inimigo(CoordF position, int hp = 2, float velocidade = 80.0f);
