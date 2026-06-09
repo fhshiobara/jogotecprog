@@ -1,19 +1,15 @@
 #include "ListaEntidades.hpp"
- 
-ListaEntidades::ListaEntidades() {}
- 
-ListaEntidades::~ListaEntidades() {}
- 
-void ListaEntidades::incluir(Entidades::Entidade* pE) {
-    if (pE != NULL) {
-        LEs.push_back(pE);
-    } else {
-        std::cerr << "Erro: ListaEntidades::incluir, ponteiro nulo" << std::endl;
-    }
+
+ListaEntidades:: ListaEntidades(){}
+
+ListaEntidades:: ~ListaEntidades(){}
+
+void ListaEntidades::incluir(Entidades::Entidade* pE){
+    
+    LEs.incluir(pE);
 }
- 
-void ListaEntidades::percorrer() {
-    for (auto* e : LEs) {
-        e->executar();
-    }
+
+void ListaEntidades::percorrer(){
+    LEs.percorrer();
+    
 }
