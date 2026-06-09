@@ -1,4 +1,5 @@
 #include "GerenciadorColisoes.hpp"
+#include "Limites.hpp"
 #include <iostream>
 
 namespace Gerenciadores {
@@ -22,7 +23,8 @@ namespace Gerenciadores {
     }
 
     void GerenciadorColisoes::setLimite(float largura, float altura) {
-        limites->setTela(largura, altura);
+        Obstaculos::Limites* limiteMapa = new Obstaculos::Limites(largura, altura);
+        limites = limiteMapa;
     }
 
 

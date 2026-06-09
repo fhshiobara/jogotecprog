@@ -26,11 +26,11 @@ void Jogo::executar() {
     Inimigo* inimigo = new Inimigo(CoordF(400.0f, 200.0f), 2, 100.0f);
     inimigo->initialize();
  
-    Plataforma* chao = new Plataforma(CoordF(0.f, 500.f), 800.f, 20.f);
+    // Plataforma* chao = new Plataforma(CoordF(0.f, 500.f), 800.f, 20.f);
     Obst_Medio* obs_medio = new Obst_Medio(CoordF(300.f, 450.f), 70.f, 100.f, 0.85f);
  
     pColisM->setJogador(jogador);
-    pColisM->incluirObstaculo(chao);
+    // pColisM->incluirObstaculo(chao);
     pColisM->incluirObstaculo(obs_medio);
     pColisM->setLimite(800.f, 600.f);
     pColisM->incluirInimigo(inimigo);
@@ -97,6 +97,6 @@ void Jogo::executar() {
  
     delete jogador;
     delete inimigo;
-    delete chao;
+    // delete chao;
     delete obs_medio;
 }

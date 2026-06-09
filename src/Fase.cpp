@@ -18,8 +18,6 @@ Fase::~Fase(){}
 
 void Fase::criarInimigosFaceis(){
     //TODO
-    
-    
 }
 
 void Fase::criarPlataformas(){
@@ -34,7 +32,7 @@ void Fase::criarPlataformas(){
             
         }
         else{
-            std::cerr<<"ERRO: Alocacao falha de plataforma em Fase::criarPlataformas"<<std::endl;
+            std::cerr << "ERRO: Alocacao falha de plataforma em Fase::criarPlataformas" << std::endl;
         }
         
     }   

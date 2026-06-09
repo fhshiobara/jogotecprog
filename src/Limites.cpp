@@ -34,10 +34,12 @@ namespace Obstaculos {
             pos.y = metade;
             vel.y = 0.f;
         }
-        // Caiu fora da tela — respawna no topo
-        if (pos.y - metade > alturaTela) {
-            pos.y = metade;
+        // Borda inferior
+        if (pos.y + metade > alturaTela) {
+            pos.y = alturaTela - metade;
             vel.y = 0.f;
+
+            pJog->setChao(true);
         }
  
         pJog->setPos(pos);
