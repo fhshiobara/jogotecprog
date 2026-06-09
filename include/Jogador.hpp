@@ -9,7 +9,6 @@ class Jogador: public Personagem {
     protected:
         int pontos;
         float dt_local;
-        float speed;
  
     public:
         Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);

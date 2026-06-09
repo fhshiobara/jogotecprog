@@ -21,6 +21,11 @@ namespace Gerenciadores {
         pJog = pJogador;
     }
 
+    void GerenciadorColisoes::setLimite(float largura, float altura) {
+        limites->setTela(largura, altura);
+    }
+
+
     void GerenciadorColisoes::incluirInimigo(Inimigo* pInimigo) {
         if (pInimigo != NULL)
             ListaInimigos.push_back(pInimigo);
@@ -84,9 +89,15 @@ namespace Gerenciadores {
         }
     }
 
+    void GerenciadorColisoes::tratarLimites() {
+        limites->aplicar(pJog);
+    }
+
+
     void GerenciadorColisoes::executar() {
         tratarColisoesObstaculos();
         TratarColisoesSeres();
+        tratarLimites();
     }
 
 }

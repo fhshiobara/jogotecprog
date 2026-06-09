@@ -4,6 +4,7 @@
 #include <vector>
 #include <list>
 #include <cmath>
+#include "Limites.hpp"
 #include "Jogador.hpp"
 #include "Inimigo.hpp"
 #include "Obstaculo.hpp"
@@ -16,6 +17,7 @@ namespace Gerenciadores {
             std::vector<Inimigo*> ListaInimigos;
             std::list<Obstaculos::Obstaculo*> ListaObstaculos;
             Jogador* pJog;
+            Obstaculos::Limites* limites;
 
             static const float alturaJogador; // Mudar
 
@@ -28,11 +30,14 @@ namespace Gerenciadores {
             static GerenciadorColisoes* getInstance();
 
             void setJogador(Jogador* pJogador);
+            void setLimite(float largura, float altura);
+
             void incluirInimigo(Inimigo* pInimigo);
             void incluirObstaculo(Obstaculos::Obstaculo* pObstaculo);
 
             void tratarColisoesObstaculos();
             void TratarColisoesSeres();
+            void tratarLimites();
 
             void executar();
     };

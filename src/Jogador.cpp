@@ -3,8 +3,8 @@
 static const float GRAVIDADE = 800.f;
  
 Jogador::Jogador(CoordF position, int hp, int pontos, float speed)
-    : Personagem(position, CoordF(0.f, 0.f), hp, 0.f, false, true, true),
-      pontos(pontos), dt_local(0.0f), speed(speed) {}
+    : Personagem(position, CoordF(0.f, 0.f), hp, 0.f, speed, false, true, true),
+      pontos(pontos), dt_local(0.0f) {}
  
 Jogador::~Jogador() {}
  

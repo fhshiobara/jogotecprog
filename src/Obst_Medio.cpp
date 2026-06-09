@@ -8,6 +8,7 @@ namespace Obstaculos {
     {
         hitbox.setSize(sf::Vector2f(largura, altura));
         hitbox.setPosition(sf::Vector2f(position.x, position.y));
+        
         hitbox.setFillColor(sf::Color(80, 120, 60));  // verde escuro (R, G, B)
         hitbox.setOutlineColor(sf::Color(40, 80, 20));
         hitbox.setOutlineThickness(2.f);

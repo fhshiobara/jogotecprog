@@ -6,13 +6,16 @@
 class Personagem: public Entidades::Entidade {
     protected:
         int Hp;
-        float velocidade;
+
+        float velocidade; // Velocidade atual
+        float speed; // Velocidade "max"
+
         bool olhandoEsquerda;
         bool encostadochao;
         bool vivo;
         
     public:
-        Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true);
+        Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, float speed = 1.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true);
         ~Personagem();
 
         void salvarDataBuffer();

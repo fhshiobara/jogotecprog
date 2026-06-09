@@ -32,7 +32,6 @@ void Fase::criarPlataformas(){
             list_ents.incluir(pPlat);
             pPlat->desenhar();
             
-            
         }
         else{
             std::cerr<<"ERRO: Alocacao falha de plataforma em Fase::criarPlataformas"<<std::endl;

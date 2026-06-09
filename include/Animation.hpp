@@ -4,7 +4,6 @@
 //
 //  Created by Edison Shiobara on 25/05/26.
 //
-#pragma once
 #ifndef Animation_hpp
 #define Animation_hpp
 
@@ -84,7 +83,6 @@ private:
             void update(Animation_ID id, bool facingLeft, CoordF position,float dt);
             void render();
 };
-
 
 
 #endif /* Animation_hpp */
