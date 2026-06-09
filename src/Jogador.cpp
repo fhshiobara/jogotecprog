@@ -1,6 +1,5 @@
 #include "Jogador.hpp"
- 
-static const float GRAVIDADE = 800.f;
+
  
 Jogador::Jogador(CoordF position, int hp, int pontos, float speed)
     : Personagem(position, CoordF(0.f, 0.f), hp, 0.f, speed, false, true, true),
@@ -11,7 +10,7 @@ Jogador::~Jogador() {}
 void Jogador::executar() {}
 void Jogador::mover()    {}
 void Jogador::salvar()   {}
-void Jogador::morrer()   { std::cout << "Morreu!" << std::endl; }
+void Jogador::morrer()   { std::cout << "Jogador morreu!" << std::endl; }
  
 void Jogador::moverX(bool direcao, float dt) {
     if (direcao)
@@ -27,8 +26,8 @@ void Jogador::pular() {
     }
 }
  
-void Jogador::gravidade(float dt) {
-    vel.y += GRAVIDADE * dt;
+void Jogador::gravidade(float dt, float gravidade) {
+    vel.y += gravidade * dt;
     pos.y += vel.y * dt;
     encostadochao = false;
 }
@@ -41,9 +40,7 @@ void Jogador::atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt)
 void Jogador::desenhar() {
     this->sprite.render();
 }
- 
-void Jogador::setDt(float dt) { this->dt_local = dt; }
- 
+  
 void Jogador::initialize() {
     this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight/IDLE.png",     7);
     this->sprite.addNewAnimation(Animation_ID::walk,   "../assets/Knight/WALK.png",     8);

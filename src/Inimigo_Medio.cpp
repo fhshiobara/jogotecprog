@@ -35,3 +35,7 @@ void Demonio::morrer() {
     vivo = false;
     std::cout << "Demonio morreu!" << std::endl;
 }
+
+void Demonio::gravidade(float dt, float gravidade) {
+    // Demonio voa, então não sofre gravidade.
+}

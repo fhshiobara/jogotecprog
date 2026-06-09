@@ -14,23 +14,14 @@ class Jogador: public Personagem {
         Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);
         ~Jogador();
  
-        CoordF getPos() const { return pos; }
-        void   setPos(const CoordF& newPos) { pos = newPos; }
- 
-        CoordF getVel() const { return vel; }
-        void   setVel(const CoordF& v) { vel = v; }
- 
-        bool noChao() const { return encostadochao; }
-        void setChao(bool val) { encostadochao = val; }
- 
         void executar();
         void salvar();
         void morrer();
         void initialize();
         void mover();
         void pular();
-        void gravidade(float dt);
-        void setDt(float dt);
+        
+        void gravidade(float dt, float gravidade);
  
         void atualizarAnimacao(Animation_ID, bool olhandoEsquerda, float dt);
         void desenhar();

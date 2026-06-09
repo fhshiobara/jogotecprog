@@ -52,10 +52,11 @@ namespace Gerenciadores {
 
         for (iteradorObs = ListaObstaculos.begin(); iteradorObs != ListaObstaculos.end(); ++iteradorObs) {
 
-            bool colidiu = (*iteradorObs)->obstruir(pos, vel.y,vel.x, chao, alturaJogador);
+            bool colidiu = (*iteradorObs)->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
 
             if (colidiu && (*iteradorObs)->isDanoso())
                 pJog->morrer();
+
         }
 
         pJog->setPos(pos);
@@ -63,7 +64,7 @@ namespace Gerenciadores {
         pJog->setChao(chao);
     }
 
-    void GerenciadorColisoes::TratarColisoesSeres() {
+    void GerenciadorColisoes::TratarColisoesJogador() {
 
         CoordF posJog = pJog->getPos();
 
@@ -87,19 +88,53 @@ namespace Gerenciadores {
 
         if (colidindoX && colidindoY)
             pJog->morrer(); // Aqui, perder vida ao inves de morrer.
+        }
+    }
 
+    void GerenciadorColisoes::tratarColisoesObstaculosArvores() {
+
+    for (Inimigo* inimigo : ListaInimigos) {
+        Arvore* arvore = dynamic_cast<Arvore*>(inimigo);
+
+        if (arvore == nullptr || !arvore->estaVivo())
+            continue;
+
+        CoordF pos = arvore->getPos();
+        CoordF vel = arvore->getVel();
+        bool chao  = arvore->noChao();
+
+        for (Obstaculos::Obstaculo* obs : ListaObstaculos)
+            obs->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
+
+        arvore->setPos(pos);
+        arvore->setVel(vel);
+        arvore->setChao(chao);
+    }
+    }
+
+    void GerenciadorColisoes::gravitar(float dt) {
+
+        float gravidade = 800.f; // Define gravidade geral
+
+        pJog->gravidade(dt, gravidade);
+
+        for (Inimigo* inimigo : ListaInimigos) {
+        if (inimigo->estaVivo() && dynamic_cast<Arvore*>(inimigo)) // Dynamic_cast feito pelo claude. Somente gravita inimigos ARVORE
+            inimigo->gravidade(dt, gravidade);
         }
     }
 
     void GerenciadorColisoes::tratarLimites() {
         limites->aplicarLimites(pJog);
     }
-
-
-    void GerenciadorColisoes::executar() {
+ 
+    void GerenciadorColisoes::executar(float dt) {
+        gravitar(dt);
+        tratarColisoesObstaculosArvores();
         tratarColisoesObstaculos();
-        TratarColisoesSeres();
+        TratarColisoesJogador();
         tratarLimites();
     }
+
 
 }

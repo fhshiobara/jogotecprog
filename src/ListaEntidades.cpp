@@ -10,7 +10,7 @@ void ListaEntidades::incluir(Entidades::Entidade* pE){
 }
 
 void ListaEntidades::percorrer(){
-    LEs.percorrer();
+    // LEs.percorrer();
 }
 
 

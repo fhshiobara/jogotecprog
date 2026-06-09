@@ -25,7 +25,7 @@ void Jogo::executar() {
     Jogador* jogador = new Jogador(CoordF(200.0f, 200.0f), 3, 0, 200.0f);
     jogador->initialize();
  
-    Goblin* inimigo = new Goblin(CoordF(400.0f, 200.0f));
+    Arvore* inimigo = new Arvore(CoordF(400.0f, 200.0f), 100, 100.0f, 200.0f);
     inimigo->initialize();
  
      Plataforma* chao = new Plataforma(CoordF(200.f, 500.f), 800.f, 20.f);
@@ -94,8 +94,7 @@ void Jogo::executar() {
             animacao = Animation_ID::jump;
  
         // Física e Colisões
-        jogador->gravidade(dt);
-        pColisM->executar();
+        pColisM->executar(dt);
  
         // Render
         pGerenciadorGrafico->clear();

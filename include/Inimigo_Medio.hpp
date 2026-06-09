@@ -12,4 +12,5 @@ class Demonio : public Inimigo {
         void initialize();
 
         void perseguir(CoordF posJogador, float dt);
+        void gravidade(float dt, float gravidade);
 };

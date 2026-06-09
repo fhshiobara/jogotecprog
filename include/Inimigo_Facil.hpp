@@ -1,18 +1,25 @@
+#ifndef INIMIGO_FACIL_HPP
+#define INIMIGO_FACIL_HPP
+ 
 #include "Inimigo.hpp"
-
-class Goblin : public Inimigo {
+#include "Obstaculo.hpp"
+#include <list>
+ 
+class Arvore : public Inimigo {
     private:
-        float percepcao; // Distância de detecção do jogador
+        float percepcao;
     public:
-        Goblin(CoordF position, int hp = 1, float velocidade = 120.0f, float percepcao = 10000.0f);
-        ~Goblin();
-
+        Arvore(CoordF position, int hp = 1, float velocidade = 120.0f, float percepcao = 5000.0f);
+        ~Arvore();
+ 
         void executar();
         void salvar();
         void mover();
         void morrer();
-
         void initialize();
-
-        void perseguir(CoordF posJogador, float dt); 
+ 
+        void perseguir(CoordF posJogador, float dt);
+        void gravidade(float dt, float gravidade);
 };
+ 
+#endif

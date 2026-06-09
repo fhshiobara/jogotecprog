@@ -18,24 +18,24 @@ Plataforma::~Plataforma() {}
 void Plataforma::executar() {}
 void Plataforma::salvar()   {}
 
-bool Plataforma::obstruir(CoordF& posJogador, float& velocidadeY,float& velocidadeX,
-                           bool& noChao, float alturaJogador) const {
+bool Plataforma::obstruir(CoordF& pos, float& velocidadeY,float& velocidadeX,
+                           bool& noChao, float altura) const {
 
-    float metade = alturaJogador / 1.6f; // Dividido para compensar a escala... Resolver depois
+    float metade = altura / 1.6f; // Dividido para compensar a escala... Resolver depois
 
     // Limites horizontais — usa metade da altura como aproximação da meia largura
-    bool dentroX = posJogador.x + metade > getEsquerda() &&
-                   posJogador.x - metade < getDireita();
+    bool dentroX = pos.x + metade > getEsquerda() &&
+                   pos.x - metade < getDireita();
 
     if (!dentroX) return false;
 
     float topo = getTopo();
 
     // Pé do jogador está metade abaixo do centro (origin = centro)
-    float peJogador = posJogador.y + metade;
+    float peJogador = pos.y + metade;
 
     if (peJogador >= topo && peJogador <= topo + altura && velocidadeY >= 0.f) {
-        posJogador.y = topo - metade;  // encosta o pé no topo
+        pos.y = topo - metade;  // encosta o pé no topo
         velocidadeY = 0.f;
 
         noChao = true;

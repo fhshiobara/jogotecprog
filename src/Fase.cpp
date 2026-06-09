@@ -61,5 +61,3 @@ void Fase::criarDemonios(){  // mudar para inimigos faceis
 
 }
 }
-
-

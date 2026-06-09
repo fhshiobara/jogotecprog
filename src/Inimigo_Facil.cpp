@@ -7,8 +7,8 @@ Arvore::Arvore(CoordF position, int hp, float velocidade, float percepcao)
 Arvore::~Arvore() {}
  
 void Arvore::executar() {}
-void Arvore::salvar()   {}
-void Arvore::mover()    {}
+void Arvore::salvar() {}
+void Arvore::mover() {}
  
 void Arvore::morrer() {
     vivo = false;
@@ -32,9 +32,14 @@ void Arvore::perseguir(CoordF posJogador, float dt) {
         olhandoEsquerda = (dx > 0);
     }
 }
+
+void Arvore::gravidade(float dt, float gravidade) {
+    vel.y += gravidade * dt;
+    pos.y += vel.y * dt;
+    encostadochao = false;
+}
  
 void Arvore::initialize() {
-    this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Arvore/IDLE.png", 3);
-    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Arvore/WALK.png", 6);
-    this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Arvore/HURT.png", 8);
+    this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Arvore/IDLE.png", 4);
+    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Arvore/WALK.png", 8);
 }
