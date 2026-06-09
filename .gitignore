@@ -6,6 +6,7 @@
 *.a
 *.so
 *.log
+.vscode/
 CMakeCache.txt
 CMakeFiles/
 /SFML-2.6.1

@@ -1,10 +1,11 @@
 #include "Jogo.hpp"
 #include "Inimigo_Medio.hpp"
+#include "Inimigo_Facil.hpp"
 #include "Plataforma.hpp"
 #include "GerenciadorColisoes.hpp"
 #include "Obst_Medio.hpp" 
 #include "Limites.hpp"
- 
+
 using namespace Obstaculos;
  
 Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()) { executar(); }
@@ -23,7 +24,7 @@ void Jogo::executar() {
     Jogador* jogador = new Jogador(CoordF(200.0f, 200.0f), 3, 0, 200.0f);
     jogador->initialize();
  
-    Demonio* inimigo = new Demonio(CoordF(400.0f, 200.0f));
+    Goblin* inimigo = new Goblin(CoordF(400.0f, 200.0f));
     inimigo->initialize();
  
     // Plataforma* chao = new Plataforma(CoordF(0.f, 500.f), 800.f, 20.f);
