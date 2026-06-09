@@ -69,8 +69,7 @@ public:
         Elemento* atual = pPrim;
         while(atual!= NULL){
             //caso queira adicionar o metodo de desenhar/criar/executar sera aqui provavelmente
-            pPrim = pPrim->getProximo();
-
+            atual = atual->getProximo();
         }
     }
  
