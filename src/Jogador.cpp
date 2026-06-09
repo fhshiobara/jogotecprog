@@ -45,8 +45,9 @@ void Jogador::desenhar() {
 void Jogador::setDt(float dt) { this->dt_local = dt; }
  
 void Jogador::initialize() {
-    this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight/IDLE.png",     7);
-    this->sprite.addNewAnimation(Animation_ID::walk,   "../assets/Knight/WALK.png",     8);
-    this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight/ATTACK 1.png", 6);
-    this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight/JUMP.png",     5);
+    this->sprite.addNewAnimation(Animation_ID::idle,   "assets/Knight/IDLE.png",     7);
+    this->sprite.addNewAnimation(Animation_ID::walk,   "assets/Knight/WALK.png",     8);
+    this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight/ATTACK 1.png", 6);
+    this->sprite.addNewAnimation(Animation_ID::jump,   "assets/Knight/JUMP.png",     5);
+    // Verificar path se der erro! Deve-se mudar o path em relacao a onde o jogo esta sendo built.
 }

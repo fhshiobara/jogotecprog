@@ -12,7 +12,7 @@ namespace Obstaculos {
         alturaTela = altura;
     }
  
-    void Limites::aplicar(Jogador* pJog) const {
+    void Limites::aplicarLimites(Jogador* pJog) const {
         if (pJog == NULL) return;
  
         CoordF pos = pJog->getPos();

@@ -43,7 +43,8 @@ void Inimigo::desenhar() {
 }
  
 void Inimigo::initialize() {
-    this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Enemy/IDLE.png",   4);
-    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Enemy/FLYING.png", 4);
-    this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Enemy/HURT.png",   4);
+    this->sprite.addNewAnimation(Animation_ID::idle, "assets/Enemy/IDLE.png",   4);
+    this->sprite.addNewAnimation(Animation_ID::walk, "assets/Enemy/FLYING.png", 4);
+    this->sprite.addNewAnimation(Animation_ID::hurt, "assets/Enemy/HURT.png",   4);
+    // Mudar path caso falha ao encontrar.
 }

@@ -11,7 +11,7 @@ Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstanc
  
 Jogo::~Jogo() {}
  
-void Jogo::executar() {
+void Jogo::executar() { 
     sf::Clock relogio;
     
     bool andDir = false;
@@ -32,7 +32,7 @@ void Jogo::executar() {
     pColisM->setJogador(jogador);
     pColisM->incluirObstaculo(chao);
     pColisM->incluirObstaculo(obs_medio);
-    // pColisM->setLimites(800.f, 600.f);
+    pColisM->setLimite(800.f, 600.f);
     pColisM->incluirInimigo(inimigo);
  
     bool olhandoEsquerda = false;
@@ -85,7 +85,7 @@ void Jogo::executar() {
  
         // Render
         pGerenciadorGrafico->clear();
-        chao->desenhar();
+        // chao->desenhar();
         obs_medio->desenhar();
         jogador->atualizarAnimacao(animacao, olhandoEsquerda, dt);
         jogador->desenhar();

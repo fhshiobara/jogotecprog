@@ -42,7 +42,7 @@ void Fase::criarPlataformas(){
 
 void Fase::criarCenario(){
     Gerenciadores::SingleFrameAnimation* imagemFundo = NULL;
-    imagemFundo = new Gerenciadores::SingleFrameAnimation("../assets/background.png",CoordF(0.0f,0.0f),CoordF(800.0f,600.0f),0.79);
+    imagemFundo = new Gerenciadores::SingleFrameAnimation("assets/background.png",CoordF(0.0f,0.0f),CoordF(800.0f,600.0f),0.79);
     
     imagemFundo->render();
     

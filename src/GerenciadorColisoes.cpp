@@ -90,7 +90,7 @@ namespace Gerenciadores {
     }
 
     void GerenciadorColisoes::tratarLimites() {
-        limites->aplicar(pJog);
+        limites->aplicarLimites(pJog);
     }
 
 

@@ -8,13 +8,12 @@
 #ifndef Fase_hpp
 #define Fase_hpp
 
-#pragma once
 #include "Ente.hpp"
 #include "ListaEntidades.hpp"
 #include "GerenciadorColisoes.hpp"
+
 namespace Fases{
 class Fase:public Ente{
-    
 protected:
     ListaEntidades list_ents;
     Gerenciadores::GerenciadorColisoes* pGG;
@@ -37,8 +36,7 @@ protected:
     
     
 };
-
-
-
-#endif /* Fase_hpp */
 }
+
+
+#endif

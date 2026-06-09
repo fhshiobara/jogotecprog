@@ -15,7 +15,7 @@ namespace Obstaculos {
         Limites(float larguraTela = 800.f, float alturaTela = 600.f, float alturaJogador = 64.f);
         ~Limites();
  
-        void aplicar(Jogador* pJog) const;
+        void aplicarLimites(Jogador* pJog) const;
  
         void setTela(float largura, float altura);
     };
