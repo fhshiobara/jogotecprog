@@ -7,6 +7,7 @@
 #include "Fase.hpp"
 #include "SingleFrameAnimation.hpp"
 #include "Plataforma.hpp"
+#include "Inimigo_Medio.hpp"
 #define MAX 3
 
 namespace Fases{
@@ -46,15 +47,15 @@ void Fase::criarCenario(){
     
 }
 
-void Fase::criarInimigosMedios(){
+void Fase::criarDemonios(){
     
     for(int i=0; i< MAX;i++){ //quantidade padrao é 3
-        Inimigo* pInim = NULL;
-        pInim = new Inimigo(CoordF(0.0f,0.0f),2,1.0f); //os parametros podem ser mudados aqui para alterar a dificuldade
+        Demonio* pInim = NULL;
+        pInim = new Demonio(CoordF(0.0f,0.0f)); //os parametros podem ser mudados aqui para alterar a dificuldade
         if(pInim !=NULL){
             list_ents.incluir(pInim);
         }
-        else{std::cerr<<"ERRO: falha na criacao do inimigo medio"<<std::endl;}
+        else{std::cerr << "ERRO: falha na criacao do inimigo medio" << std::endl;}
     }
     
 

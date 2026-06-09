@@ -9,7 +9,7 @@ class Inimigo : public Personagem {
         float dt_local;
  
     public:
-        Inimigo(CoordF position, int hp = 2, float velocidade = 80.0f);
+        Inimigo(CoordF position, int hp, float velocidade);
         ~Inimigo();
  
         void executar();
@@ -17,12 +17,7 @@ class Inimigo : public Personagem {
         void mover();
         void morrer();
         void initialize();
- 
-        void perseguir(CoordF posJogador, float dt);
-        void atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt);
-        void desenhar();
- 
-        bool estaVivo() const;
+        
         bool estaOlhandoEsquerda() const { return olhandoEsquerda; }
 
         CoordF getPos() const { return pos; }

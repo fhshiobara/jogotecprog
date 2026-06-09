@@ -20,10 +20,15 @@ class Personagem: public Entidades::Entidade {
 
         void salvarDataBuffer();
 
+        bool estaVivo() const { return vivo; }
+
         virtual void executar() = 0;
         virtual void salvar() = 0;
         virtual void mover() = 0;
         virtual void morrer() = 0;
+
+        void desenhar();
+        void atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt);
 };
 
 #endif

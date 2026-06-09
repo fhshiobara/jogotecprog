@@ -9,3 +9,11 @@ Personagem::Personagem(CoordF position, CoordF velocidade, int hp,
 Personagem::~Personagem() {}
  
 void Personagem::salvarDataBuffer() {}
+
+void Personagem::atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt) {
+  this->sprite.update(id, olhandoEsquerda, this->pos, dt);
+}
+ 
+void Personagem::desenhar() {
+  this->sprite.render();
+}

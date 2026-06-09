@@ -38,7 +38,7 @@ namespace Gerenciadores {
             void tratarColisoesObstaculos();
             void TratarColisoesSeres();
             void tratarLimites();
-
+            
             void executar();
     };
 
