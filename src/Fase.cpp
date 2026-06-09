@@ -47,7 +47,7 @@ void Fase::criarCenario(){
     
 }
 
-void Fase::criarDemonios(){
+void Fase::criarDemonios(){  // mudar para inimigos faceis 
     
     for(int i=0; i< MAX;i++){ //quantidade padrao é 3
         Demonio* pInim = NULL;
