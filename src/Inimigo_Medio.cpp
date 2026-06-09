@@ -27,3 +27,11 @@ void Demonio::initialize() {
     this->sprite.addNewAnimation(Animation_ID::hurt, "assets/Demonio/HURT.png", 4);
     // Mudar path caso falha ao encontrar.
 }
+
+void Demonio::executar() {}
+void Demonio::salvar() {}
+void Demonio::mover() {}
+void Demonio::morrer() {
+    vivo = false;
+    std::cout << "Demonio morreu!" << std::endl;
+}

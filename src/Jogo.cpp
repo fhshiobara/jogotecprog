@@ -1,5 +1,5 @@
 #include "Jogo.hpp"
-#include "Inimigo.hpp"
+#include "Inimigo_Medio.hpp"
 #include "Plataforma.hpp"
 #include "GerenciadorColisoes.hpp"
 #include "Obst_Medio.hpp" 
@@ -23,7 +23,7 @@ void Jogo::executar() {
     Jogador* jogador = new Jogador(CoordF(200.0f, 200.0f), 3, 0, 200.0f);
     jogador->initialize();
  
-    Inimigo* inimigo = new Inimigo(CoordF(400.0f, 200.0f), 2, 100.0f);
+    Demonio* inimigo = new Demonio(CoordF(400.0f, 200.0f));
     inimigo->initialize();
  
     // Plataforma* chao = new Plataforma(CoordF(0.f, 500.f), 800.f, 20.f);

@@ -17,6 +17,7 @@ namespace Gerenciadores {
             std::vector<Inimigo*> ListaInimigos;
             std::list<Obstaculos::Obstaculo*> ListaObstaculos;
             Jogador* pJog;
+            
             Obstaculos::Limites* limites;
 
             static const float alturaJogador; // Mudar
@@ -38,7 +39,7 @@ namespace Gerenciadores {
             void tratarColisoesObstaculos();
             void TratarColisoesSeres();
             void tratarLimites();
-            
+
             void executar();
     };
 
