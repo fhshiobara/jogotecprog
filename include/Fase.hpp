@@ -22,6 +22,7 @@ public:
     ~Fase();
     
     virtual void executar() =0;
+
     
 protected:
     void criarInimigosFaceis();

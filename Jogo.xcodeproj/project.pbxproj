@@ -1,0 +1,914 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 927A4E634E244A82BD1B6A5A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				F8FED941F7682D2526D3075E /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		4744A32384E4218747EEFD39 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0997D614365D43AA8A252308 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				AD6E3E9877489E068D5BBBD3 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				30A03B65C3CE4BB7BD01262A /* PBXTargetDependency */,
+				EEA6C9813FB943D8837BA6DF /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		02A5E9C6F7744351BD7FDDF0 /* SingleFrameAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6A0D8E7856544E1943632A2 /* SingleFrameAnimation.cpp */; };
+		1ECE2EA116994A0CB51BC7CE /* Obstaculo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 665B8E6A8FC9497B982AD7FC /* Obstaculo.cpp */; };
+		3F0AE0CA5D244E5E8A9437D8 /* GerenciadorGrafico.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1B8870B7A4E7FA482823C /* GerenciadorGrafico.cpp */; };
+		4A225DBFEEF24032BAF3BF3B /* Jogador.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7043BCC372324C67966148A3 /* Jogador.cpp */; };
+		56196FC6FD7D4616A3D92C9B /* Plataforma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF089EC435388809935 /* Plataforma.cpp */; };
+		665327D506E344828A473448 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B0367638F514A3F8C6E2B19 /* main.cpp */; };
+		701E3D40757840BD9172F472 /* Jogo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86BB6E72418643939785F73C /* Jogo.cpp */; };
+		706E9D8274C44CF09E446A0F /* Inimigo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64DC353B0C764BA7BB1FF957 /* Inimigo.cpp */; };
+		718EBC06F5F74B92B381F561 /* Obst_Medio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10ADF1E61E1D47788BEC0CCA /* Obst_Medio.cpp */; };
+		7692E65EE69A4EB18926BB40 /* Ente.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEAEAED702434FFEA1AE4BA8 /* Ente.cpp */; };
+		818467622FD85C0A00E0BD07 /* FasePrimeira.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 818467612FD85C0A00E0BD07 /* FasePrimeira.cpp */; };
+		98AFDF3F9B0844E79A6563EC /* Limites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBF85C0870DF403FA006A943 /* Limites.cpp */; };
+		B8D67F223612498A83A2C0E4 /* Fase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F6752DFCA804C7A95189D83 /* Fase.cpp */; };
+		C2D36EC0DB4741CEB9DE53D7 /* Personagem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0699E15DEE946A78F345DEF /* Personagem.cpp */; };
+		E2BA374B01744599BE270117 /* Inimigo_Medio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 619C973BFC6D4B82BF0BE207 /* Inimigo_Medio.cpp */; };
+		E986E5146E244512BAE7D0E8 /* GerenciadorColisoes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E542AC003149C6BC1AE33B /* GerenciadorColisoes.cpp */; };
+		F4749E5FB11946C896D96453 /* ListaEntidades.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B04D1299E8D24FDB8A32D1D4 /* ListaEntidades.cpp */; };
+		F4D4333F81794D119E01AA63 /* Entidade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E1C8590D9145DFAF6E10DB /* Entidade.cpp */; };
+		F7FF9E5F581547288F46A8E5 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1875B3BBDC634D7EA9AC0CB8 /* Animation.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9A8D399D1694A908061D2D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14F337C637445EAA12669C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09180B84A58F0F386124BCEE;
+			remoteInfo = main;
+		};
+		B903E1C8A06F46C49F502FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14F337C637445EAA12669C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42BC39BDE240DFF12C5A56DE;
+			remoteInfo = ZERO_CHECK;
+		};
+		FF318B95A4BD4769924653F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14F337C637445EAA12669C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42BC39BDE240DFF12C5A56DE;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0091FC94AD1943BEB525F029 /* Obst_Medio.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Obst_Medio.hpp; path = include/Obst_Medio.hpp; sourceTree = SOURCE_ROOT; };
+		0B0367638F514A3F8C6E2B19 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		0B93606AA36A486892860129 /* DEATH.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = DEATH.png; path = assets/Demonio/DEATH.png; sourceTree = SOURCE_ROOT; };
+		0C5B6024E520472281931459 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		0D33A96C722C415D8D041B8E /* Inimigo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Inimigo.hpp; path = include/Inimigo.hpp; sourceTree = SOURCE_ROOT; };
+		10ADF1E61E1D47788BEC0CCA /* Obst_Medio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Obst_Medio.cpp; path = src/Obst_Medio.cpp; sourceTree = SOURCE_ROOT; };
+		1328E6CA5355472982D9BAED /* Inimigo_Medio.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Inimigo_Medio.hpp; path = include/Inimigo_Medio.hpp; sourceTree = SOURCE_ROOT; };
+		1875B3BBDC634D7EA9AC0CB8 /* Animation.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Animation.cpp; path = src/Animation.cpp; sourceTree = SOURCE_ROOT; };
+		1934FE4BBE8744E5B4BFEB7A /* FLYING.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = FLYING.png; path = assets/Demonio/FLYING.png; sourceTree = SOURCE_ROOT; };
+		197048984C4944A6849C5D1F /* JUMP.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = JUMP.png; path = assets/Knight/JUMP.png; sourceTree = SOURCE_ROOT; };
+		1DAB02E6030D49F2BF81BC7D /* Plataforma.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Plataforma.hpp; path = include/Plataforma.hpp; sourceTree = SOURCE_ROOT; };
+		2E0326184F6E4004BBA62DE2 /* Limites.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Limites.hpp; path = include/Limites.hpp; sourceTree = SOURCE_ROOT; };
+		312EF291D13B4CF390BAACB6 /* DEATH.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = DEATH.png; path = assets/Knight/DEATH.png; sourceTree = SOURCE_ROOT; };
+		386B8994C5B34E4F8791C4B1 /* Jogo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Jogo.hpp; path = include/Jogo.hpp; sourceTree = SOURCE_ROOT; };
+		3A864CF089EC435388809935 /* Plataforma.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Plataforma.cpp; path = src/Plataforma.cpp; sourceTree = SOURCE_ROOT; };
+		45DEB145FA58404B8E4FD85D /* Fase.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Fase.hpp; path = include/Fase.hpp; sourceTree = SOURCE_ROOT; };
+		47B473FDF55F474F936EFDB4 /* ATTACK 2.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 2.png"; path = "assets/Knight/ATTACK 2.png"; sourceTree = SOURCE_ROOT; };
+		51338C5FAF6E48908F392362 /* Jogador.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Jogador.hpp; path = include/Jogador.hpp; sourceTree = SOURCE_ROOT; };
+		514DF319A46A40E89BA69610 /* IDLE.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IDLE.png; path = assets/Knight/IDLE.png; sourceTree = SOURCE_ROOT; };
+		51E1C8590D9145DFAF6E10DB /* Entidade.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Entidade.cpp; path = src/Entidade.cpp; sourceTree = SOURCE_ROOT; };
+		52BDA17CEB3E46AFBED545BB /* WALK.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = WALK.png; path = assets/Knight/WALK.png; sourceTree = SOURCE_ROOT; };
+		58E542AC003149C6BC1AE33B /* GerenciadorColisoes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GerenciadorColisoes.cpp; path = src/GerenciadorColisoes.cpp; sourceTree = SOURCE_ROOT; };
+		5F084226CAB04C4181D73AE7 /* ListaEntidades.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ListaEntidades.hpp; path = include/ListaEntidades.hpp; sourceTree = SOURCE_ROOT; };
+		5F6752DFCA804C7A95189D83 /* Fase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Fase.cpp; path = src/Fase.cpp; sourceTree = SOURCE_ROOT; };
+		619C973BFC6D4B82BF0BE207 /* Inimigo_Medio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Inimigo_Medio.cpp; path = src/Inimigo_Medio.cpp; sourceTree = SOURCE_ROOT; };
+		64DC353B0C764BA7BB1FF957 /* Inimigo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Inimigo.cpp; path = src/Inimigo.cpp; sourceTree = SOURCE_ROOT; };
+		665B8E6A8FC9497B982AD7FC /* Obstaculo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Obstaculo.cpp; path = src/Obstaculo.cpp; sourceTree = SOURCE_ROOT; };
+		7043BCC372324C67966148A3 /* Jogador.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Jogador.cpp; path = src/Jogador.cpp; sourceTree = SOURCE_ROOT; };
+		71226CE450A447A9BC5E5ABE /* Ente.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Ente.hpp; path = include/Ente.hpp; sourceTree = SOURCE_ROOT; };
+		758789C2105B4CC5A3D31881 /* Entidade.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Entidade.hpp; path = include/Entidade.hpp; sourceTree = SOURCE_ROOT; };
+		766158848DDA49A4BF64FEB4 /* VectorTL.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = VectorTL.hpp; path = include/VectorTL.hpp; sourceTree = SOURCE_ROOT; };
+		7C88C7E1FA7449D38E22B922 /* background.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = background.png; path = assets/background.png; sourceTree = SOURCE_ROOT; };
+		818467602FD85C0A00E0BD07 /* FasePrimeira.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FasePrimeira.hpp; sourceTree = "<group>"; };
+		818467612FD85C0A00E0BD07 /* FasePrimeira.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FasePrimeira.cpp; sourceTree = "<group>"; };
+		86BB6E72418643939785F73C /* Jogo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Jogo.cpp; path = src/Jogo.cpp; sourceTree = SOURCE_ROOT; };
+		872217D9366B44358A9EDDE2 /* ATTACK 3.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 3.png"; path = "assets/Knight/ATTACK 3.png"; sourceTree = SOURCE_ROOT; };
+		8CF1B8870B7A4E7FA482823C /* GerenciadorGrafico.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GerenciadorGrafico.cpp; path = src/GerenciadorGrafico.cpp; sourceTree = SOURCE_ROOT; };
+		9754C331591849749C9E9641 /* SingleFrameAnimation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SingleFrameAnimation.hpp; path = include/SingleFrameAnimation.hpp; sourceTree = SOURCE_ROOT; };
+		97E9EDB2AE664C4DB33F45FF /* ListTL.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ListTL.hpp; path = include/ListTL.hpp; sourceTree = SOURCE_ROOT; };
+		9978912E0A2E43459EED970F /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A70801B5671C465B9DA5799A /* HURT.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = HURT.png; path = assets/Demonio/HURT.png; sourceTree = SOURCE_ROOT; };
+		A996F997148841A7B151C9EB /* GerenciadorColisoes.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = GerenciadorColisoes.hpp; path = include/GerenciadorColisoes.hpp; sourceTree = SOURCE_ROOT; };
+		B04D1299E8D24FDB8A32D1D4 /* ListaEntidades.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ListaEntidades.cpp; path = src/ListaEntidades.cpp; sourceTree = SOURCE_ROOT; };
+		B82D3A10471749B995AE5A1C /* GerenciadorGrafico.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = GerenciadorGrafico.hpp; path = include/GerenciadorGrafico.hpp; sourceTree = SOURCE_ROOT; };
+		B85EC7F6AAE342189E089AFC /* Personagem.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Personagem.hpp; path = include/Personagem.hpp; sourceTree = SOURCE_ROOT; };
+		C0699E15DEE946A78F345DEF /* Personagem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Personagem.cpp; path = src/Personagem.cpp; sourceTree = SOURCE_ROOT; };
+		C0F564A0E88A49E6BE53D134 /* main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = main; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6D0ACC9DA364E559238EC9B /* RUN.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = RUN.png; path = assets/Knight/RUN.png; sourceTree = SOURCE_ROOT; };
+		CEC517FDDD0D4183B1CB0D23 /* Obstaculo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Obstaculo.hpp; path = include/Obstaculo.hpp; sourceTree = SOURCE_ROOT; };
+		D100D3C879854D2AAB898061 /* IDLE.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IDLE.png; path = assets/Demonio/IDLE.png; sourceTree = SOURCE_ROOT; };
+		DDF9EBD0EDA84AD6977248B7 /* Animation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Animation.hpp; path = include/Animation.hpp; sourceTree = SOURCE_ROOT; };
+		E6A0D8E7856544E1943632A2 /* SingleFrameAnimation.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SingleFrameAnimation.cpp; path = src/SingleFrameAnimation.cpp; sourceTree = SOURCE_ROOT; };
+		EBF85C0870DF403FA006A943 /* Limites.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Limites.cpp; path = src/Limites.cpp; sourceTree = SOURCE_ROOT; };
+		F0BE7BED8E1844C19F9D19EA /* HURT.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = HURT.png; path = assets/Knight/HURT.png; sourceTree = SOURCE_ROOT; };
+		F6825E420BFE4D35BFBD61DA /* ATTACK.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = ATTACK.png; path = assets/Demonio/ATTACK.png; sourceTree = SOURCE_ROOT; };
+		F959392E0D6A42BAA48128D3 /* ATTACK 1.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 1.png"; path = "assets/Knight/ATTACK 1.png"; sourceTree = SOURCE_ROOT; };
+		FEAEAED702434FFEA1AE4BA8 /* Ente.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Ente.cpp; path = src/Ente.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2ABCA42366334FB68AAC74E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10692380BDB34F6A9754DD3B /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				530396F308154F6895288256 /* CMake Rules */,
+				0C5B6024E520472281931459 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		358D3613950B44E99B4C1FBB /* main */ = {
+			isa = PBXGroup;
+			children = (
+				84CC80D84B7F4D548FB41085 /* Assets */,
+				66E6331D6AD1429E92230B41 /* Headers */,
+				F3471CA3349440509FE945CE /* Sources */,
+				9978912E0A2E43459EED970F /* CMakeLists.txt */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		530396F308154F6895288256 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		55C9703D55A74D7B910B6202 = {
+			isa = PBXGroup;
+			children = (
+				818467602FD85C0A00E0BD07 /* FasePrimeira.hpp */,
+				818467612FD85C0A00E0BD07 /* FasePrimeira.cpp */,
+				10692380BDB34F6A9754DD3B /* ALL_BUILD */,
+				358D3613950B44E99B4C1FBB /* main */,
+				E23D4EE9732445D9A32632E3 /* Products */,
+				69387E588CA74D008BFBAC16 /* Frameworks */,
+				C9FC7B03E27F4A4BAAA43F0A /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		66E6331D6AD1429E92230B41 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9EBD0EDA84AD6977248B7 /* Animation.hpp */,
+				71226CE450A447A9BC5E5ABE /* Ente.hpp */,
+				758789C2105B4CC5A3D31881 /* Entidade.hpp */,
+				45DEB145FA58404B8E4FD85D /* Fase.hpp */,
+				A996F997148841A7B151C9EB /* GerenciadorColisoes.hpp */,
+				B82D3A10471749B995AE5A1C /* GerenciadorGrafico.hpp */,
+				0D33A96C722C415D8D041B8E /* Inimigo.hpp */,
+				1328E6CA5355472982D9BAED /* Inimigo_Medio.hpp */,
+				51338C5FAF6E48908F392362 /* Jogador.hpp */,
+				386B8994C5B34E4F8791C4B1 /* Jogo.hpp */,
+				2E0326184F6E4004BBA62DE2 /* Limites.hpp */,
+				97E9EDB2AE664C4DB33F45FF /* ListTL.hpp */,
+				5F084226CAB04C4181D73AE7 /* ListaEntidades.hpp */,
+				0091FC94AD1943BEB525F029 /* Obst_Medio.hpp */,
+				CEC517FDDD0D4183B1CB0D23 /* Obstaculo.hpp */,
+				B85EC7F6AAE342189E089AFC /* Personagem.hpp */,
+				1DAB02E6030D49F2BF81BC7D /* Plataforma.hpp */,
+				9754C331591849749C9E9641 /* SingleFrameAnimation.hpp */,
+				766158848DDA49A4BF64FEB4 /* VectorTL.hpp */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		69387E588CA74D008BFBAC16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84CC80D84B7F4D548FB41085 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F6825E420BFE4D35BFBD61DA /* ATTACK.png */,
+				0B93606AA36A486892860129 /* DEATH.png */,
+				1934FE4BBE8744E5B4BFEB7A /* FLYING.png */,
+				A70801B5671C465B9DA5799A /* HURT.png */,
+				D100D3C879854D2AAB898061 /* IDLE.png */,
+				F959392E0D6A42BAA48128D3 /* ATTACK 1.png */,
+				47B473FDF55F474F936EFDB4 /* ATTACK 2.png */,
+				872217D9366B44358A9EDDE2 /* ATTACK 3.png */,
+				312EF291D13B4CF390BAACB6 /* DEATH.png */,
+				F0BE7BED8E1844C19F9D19EA /* HURT.png */,
+				514DF319A46A40E89BA69610 /* IDLE.png */,
+				197048984C4944A6849C5D1F /* JUMP.png */,
+				C6D0ACC9DA364E559238EC9B /* RUN.png */,
+				52BDA17CEB3E46AFBED545BB /* WALK.png */,
+				7C88C7E1FA7449D38E22B922 /* background.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		C9FC7B03E27F4A4BAAA43F0A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E23D4EE9732445D9A32632E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0F564A0E88A49E6BE53D134 /* main */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3471CA3349440509FE945CE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1875B3BBDC634D7EA9AC0CB8 /* Animation.cpp */,
+				FEAEAED702434FFEA1AE4BA8 /* Ente.cpp */,
+				51E1C8590D9145DFAF6E10DB /* Entidade.cpp */,
+				5F6752DFCA804C7A95189D83 /* Fase.cpp */,
+				58E542AC003149C6BC1AE33B /* GerenciadorColisoes.cpp */,
+				8CF1B8870B7A4E7FA482823C /* GerenciadorGrafico.cpp */,
+				64DC353B0C764BA7BB1FF957 /* Inimigo.cpp */,
+				619C973BFC6D4B82BF0BE207 /* Inimigo_Medio.cpp */,
+				7043BCC372324C67966148A3 /* Jogador.cpp */,
+				86BB6E72418643939785F73C /* Jogo.cpp */,
+				EBF85C0870DF403FA006A943 /* Limites.cpp */,
+				B04D1299E8D24FDB8A32D1D4 /* ListaEntidades.cpp */,
+				10ADF1E61E1D47788BEC0CCA /* Obst_Medio.cpp */,
+				665B8E6A8FC9497B982AD7FC /* Obstaculo.cpp */,
+				C0699E15DEE946A78F345DEF /* Personagem.cpp */,
+				3A864CF089EC435388809935 /* Plataforma.cpp */,
+				E6A0D8E7856544E1943632A2 /* SingleFrameAnimation.cpp */,
+				0B0367638F514A3F8C6E2B19 /* main.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09180B84A58F0F386124BCEE /* main */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5868635285B47B9AA73D2F2 /* Build configuration list for PBXNativeTarget "main" */;
+			buildPhases = (
+				4C46BF9469EB4CEBA7F3080A /* Sources */,
+				2ABCA42366334FB68AAC74E8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3DB8298C3D44637821FE352 /* PBXTargetDependency */,
+			);
+			name = main;
+			productName = main;
+			productReference = C0F564A0E88A49E6BE53D134 /* main */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A14F337C637445EAA12669C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 2650;
+			};
+			buildConfigurationList = A544D62887DE4D37BB3E425E /* Build configuration list for PBXProject "Jogo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55C9703D55A74D7B910B6202;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4744A32384E4218747EEFD39 /* ALL_BUILD */,
+				09180B84A58F0F386124BCEE /* main */,
+				42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD6E3E9877489E068D5BBBD3 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+				/Users/shiobara/Documents/jogotecprog/CMakeFiles/ALL_BUILD,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  echo Build\\ all\\ projects\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8FED941F7682D2526D3075E /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+				/Users/shiobara/Documents/jogotecprog/CMakeFiles/ZERO_CHECK,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/shiobara/Documents/jogotecprog\n  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C46BF9469EB4CEBA7F3080A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7FF9E5F581547288F46A8E5 /* Animation.cpp in Sources */,
+				7692E65EE69A4EB18926BB40 /* Ente.cpp in Sources */,
+				F4D4333F81794D119E01AA63 /* Entidade.cpp in Sources */,
+				B8D67F223612498A83A2C0E4 /* Fase.cpp in Sources */,
+				E986E5146E244512BAE7D0E8 /* GerenciadorColisoes.cpp in Sources */,
+				3F0AE0CA5D244E5E8A9437D8 /* GerenciadorGrafico.cpp in Sources */,
+				706E9D8274C44CF09E446A0F /* Inimigo.cpp in Sources */,
+				E2BA374B01744599BE270117 /* Inimigo_Medio.cpp in Sources */,
+				4A225DBFEEF24032BAF3BF3B /* Jogador.cpp in Sources */,
+				701E3D40757840BD9172F472 /* Jogo.cpp in Sources */,
+				98AFDF3F9B0844E79A6563EC /* Limites.cpp in Sources */,
+				F4749E5FB11946C896D96453 /* ListaEntidades.cpp in Sources */,
+				718EBC06F5F74B92B381F561 /* Obst_Medio.cpp in Sources */,
+				1ECE2EA116994A0CB51BC7CE /* Obstaculo.cpp in Sources */,
+				C2D36EC0DB4741CEB9DE53D7 /* Personagem.cpp in Sources */,
+				818467622FD85C0A00E0BD07 /* FasePrimeira.cpp in Sources */,
+				56196FC6FD7D4616A3D92C9B /* Plataforma.cpp in Sources */,
+				02A5E9C6F7744351BD7FDDF0 /* SingleFrameAnimation.cpp in Sources */,
+				665327D506E344828A473448 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30A03B65C3CE4BB7BD01262A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */;
+			targetProxy = FF318B95A4BD4769924653F1 /* PBXContainerItemProxy */;
+		};
+		B3DB8298C3D44637821FE352 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */;
+			targetProxy = B903E1C8A06F46C49F502FA5 /* PBXContainerItemProxy */;
+		};
+		EEA6C9813FB943D8837BA6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09180B84A58F0F386124BCEE /* main */;
+			targetProxy = A9A8D399D1694A908061D2D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1960B721753242F79D4D0973 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/shiobara/Documents/jogotecprog/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/opt/homebrew/lib,
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++17' ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-window.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-system.2.6.2.dylib",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include,
+					"$(inherited)",
+				);
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		1F160CDDD49F4A63A8CE7D5C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/shiobara/Documents/jogotecprog/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/opt/homebrew/lib,
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++17'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-window.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-system.2.6.2.dylib",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include,
+					"$(inherited)",
+				);
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		42CA679BB75E4C9B8A1454B9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		486A2747C81F48B584635584 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = Debug;
+		};
+		561F3E4A77984231B87369EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		78C433160DC44CA4B6D81DC4 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/shiobara/Documents/jogotecprog/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/opt/homebrew/lib,
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++17'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-window.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-system.2.6.2.dylib",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include,
+					"$(inherited)",
+				);
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		78DC753C199B42F6A07C7BBB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		95C942A8388A4211908C92CD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		A9589955FE6547D4838CED99 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = RelWithDebInfo;
+		};
+		B520478206A7413BB430FAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = Release;
+		};
+		B63096C8D0DC4BA6BC8B21DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/shiobara/Documents/jogotecprog/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/opt/homebrew/lib,
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++17'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-window.2.6.2.dylib",
+					"/opt/homebrew/lib/libsfml-system.2.6.2.dylib",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include,
+					"$(inherited)",
+				);
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		C9F40A83DDC54EEC826B25AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		D625B7D66FE44E638406FEF3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		E4D2D2F56AF442A1A8A10C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		F11061A2E2B5419782302204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		F1F61C01055F42BAB88CE062 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0997D614365D43AA8A252308 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4D2D2F56AF442A1A8A10C55 /* Debug */,
+				C9F40A83DDC54EEC826B25AE /* Release */,
+				42CA679BB75E4C9B8A1454B9 /* MinSizeRel */,
+				95C942A8388A4211908C92CD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		927A4E634E244A82BD1B6A5A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				561F3E4A77984231B87369EE /* Debug */,
+				F11061A2E2B5419782302204 /* Release */,
+				D625B7D66FE44E638406FEF3 /* MinSizeRel */,
+				78DC753C199B42F6A07C7BBB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A544D62887DE4D37BB3E425E /* Build configuration list for PBXProject "Jogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				486A2747C81F48B584635584 /* Debug */,
+				B520478206A7413BB430FAAA /* Release */,
+				F1F61C01055F42BAB88CE062 /* MinSizeRel */,
+				A9589955FE6547D4838CED99 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D5868635285B47B9AA73D2F2 /* Build configuration list for PBXNativeTarget "main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1960B721753242F79D4D0973 /* Debug */,
+				B63096C8D0DC4BA6BC8B21DC /* Release */,
+				78C433160DC44CA4B6D81DC4 /* MinSizeRel */,
+				1F160CDDD49F4A63A8CE7D5C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A14F337C637445EAA12669C4 /* Project object */;
+}

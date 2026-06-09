@@ -2,7 +2,7 @@
 
 class Demonio : public Inimigo {
     public:
-        Demonio(CoordF position, int hp = 3, float velocidade = 120.0f);
+        Demonio(CoordF position, int hp = 3, float velocidade = 60.0f);
         ~Demonio();
 
         void executar();

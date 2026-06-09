@@ -66,12 +66,14 @@ public:
     }
     
     void percorrer(){
-        Elemento* atual = pPrim;
-        while(atual!= NULL){
-            //caso queira adicionar o metodo de desenhar/criar/executar sera aqui provavelmente
-            atual = atual->getProximo();
+        Elemento* patual = pPrim;
+        while(patual!=NULL){
+            patual->getInfo()->executar();
+            patual= patual->getProximo();
         }
+        
     }
+    
  
     Elemento* getPrim()   { return pPrim; }
     Elemento* getUltimo() { return pUltimo; }

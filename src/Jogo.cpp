@@ -3,7 +3,8 @@
 #include "Inimigo_Facil.hpp"
 #include "Plataforma.hpp"
 #include "GerenciadorColisoes.hpp"
-#include "Obst_Medio.hpp" 
+#include "Obst_Medio.hpp"
+#include "SingleFrameAnimation.hpp"
 #include "Limites.hpp"
 
 using namespace Obstaculos;
@@ -27,11 +28,23 @@ void Jogo::executar() {
     Goblin* inimigo = new Goblin(CoordF(400.0f, 200.0f));
     inimigo->initialize();
  
-    // Plataforma* chao = new Plataforma(CoordF(0.f, 500.f), 800.f, 20.f);
-    Obst_Medio* obs_medio = new Obst_Medio(CoordF(300.f, 450.f), 70.f, 100.f, 0.85f);
+     Plataforma* chao = new Plataforma(CoordF(200.f, 500.f), 800.f, 20.f);
+    
+    Plataforma* plat2 = new Plataforma(CoordF(0.f, 400.f),400.f,20.f);
+    
+    Plataforma* plat3 = new Plataforma(CoordF(260.f,300.f),400.f,20.f);
+    
+    Plataforma* plat4 = new Plataforma(CoordF(0.f,190.f),400.f,20.f);
+    
+    Obst_Medio* obs_medio = new Obst_Medio(CoordF(650.f, 450.f), 70.f, 100.f, 0.85f);
+    
+    Gerenciadores::SingleFrameAnimation* background = new Gerenciadores::SingleFrameAnimation("../assets/background.png",CoordF(0.0f,0.0f),CoordF(800.0f,600.0f),1.0);
  
     pColisM->setJogador(jogador);
-    // pColisM->incluirObstaculo(chao);
+    pColisM->incluirObstaculo(plat3);
+    pColisM->incluirObstaculo(plat2);
+    pColisM->incluirObstaculo(plat4);
+    pColisM->incluirObstaculo(chao);
     pColisM->incluirObstaculo(obs_medio);
     pColisM->setLimite(800.f, 600.f);
     pColisM->incluirInimigo(inimigo);
@@ -86,7 +99,11 @@ void Jogo::executar() {
  
         // Render
         pGerenciadorGrafico->clear();
-        // chao->desenhar();
+        background->render();
+        chao->desenhar();
+        plat2->desenhar();
+        plat3->desenhar();
+        plat4->desenhar();
         obs_medio->desenhar();
         jogador->atualizarAnimacao(animacao, olhandoEsquerda, dt);
         jogador->desenhar();
@@ -98,6 +115,6 @@ void Jogo::executar() {
  
     delete jogador;
     delete inimigo;
-    // delete chao;
+     delete chao;
     delete obs_medio;
 }
