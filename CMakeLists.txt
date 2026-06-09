@@ -30,6 +30,7 @@ source_group("Sources" REGULAR_EXPRESSION "src/.*")
 add_executable(main
     ${INCLUDE_FILES}
     ${ASSET_FILES}
+    
     src/Inimigo_Medio.cpp
     src/Limites.cpp
     src/Obst_Medio.cpp
