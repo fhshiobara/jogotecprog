@@ -1,8 +1,8 @@
-#include "Inimigo_Medio.hpp"
+#include "Demonio.hpp"
 #include <cmath>
 
-Demonio::Demonio(CoordF position, int hp, float velocidade)
-    : Inimigo(position, hp, velocidade) {}
+Demonio::Demonio(CoordF position, int hp, float velocidade, int fome)
+    : Inimigo(position, hp, velocidade), fome(fome) {}
 
 Demonio::~Demonio() {}
 
@@ -15,8 +15,8 @@ void Demonio::perseguir(CoordF posJogador, float dt) {
     float distancia = std::sqrt(dx * dx + dy * dy);
  
     if (distancia > 5.0f) {
-        this->pos.x += (dx / distancia) * velocidade * dt;
-        this->pos.y += (dy / distancia) * velocidade * dt;
+        this->pos.x += (dx / distancia) * velocidade * dt * (fome / 100.0f);
+        this->pos.y += (dy / distancia) * velocidade * dt * (fome / 100.0f);
         olhandoEsquerda = (dx > 0);
     }
 }
@@ -34,8 +34,4 @@ void Demonio::mover() {}
 void Demonio::morrer() {
     vivo = false;
     std::cout << "Demonio morreu!" << std::endl;
-}
-
-void Demonio::gravidade(float dt, float gravidade) {
-    // Demonio voa, então não sofre gravidade.
 }

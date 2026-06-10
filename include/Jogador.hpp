@@ -20,9 +20,7 @@ class Jogador: public Personagem {
         void initialize();
         void mover();
         void pular();
-        
-        void gravidade(float dt, float gravidade);
- 
+         
         void atualizarAnimacao(Animation_ID, bool olhandoEsquerda, float dt);
         void desenhar();
  

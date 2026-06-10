@@ -7,7 +7,8 @@
 #include "Fase.hpp"
 #include "SingleFrameAnimation.hpp"
 #include "Plataforma.hpp"
-#include "Inimigo_Medio.hpp"
+#include "Demonio.hpp"
+#include "Arvore.hpp"
 #define MAX 3
 
 namespace Fases{

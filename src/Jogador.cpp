@@ -26,12 +26,6 @@ void Jogador::pular() {
     }
 }
  
-void Jogador::gravidade(float dt, float gravidade) {
-    vel.y += gravidade * dt;
-    pos.y += vel.y * dt;
-    encostadochao = false;
-}
- 
 void Jogador::atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt) {
     this->dt_local = dt;
     this->sprite.update(id, olhandoEsquerda, this->pos, dt);

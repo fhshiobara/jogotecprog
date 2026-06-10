@@ -6,6 +6,7 @@
  
 class Inimigo : public Personagem {
     protected:
+        
         float dt_local;
  
     public:

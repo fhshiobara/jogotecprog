@@ -38,3 +38,9 @@ void Personagem::tempoImunidade(float dt) {
         imunidade -= dt;
     }
 }
+
+void Personagem::gravidade(float dt, float gravidade) {
+    vel.y += gravidade * dt;
+    pos.y += vel.y * dt;
+    encostadochao = false;
+}

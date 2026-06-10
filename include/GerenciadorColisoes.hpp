@@ -7,7 +7,8 @@
 #include "Limites.hpp"
 #include "Jogador.hpp"
 #include "Inimigo.hpp"
-#include "Inimigo_Facil.hpp"
+#include "Demonio.hpp"
+#include "Arvore.hpp"
 #include "Obstaculo.hpp"
  
 namespace Gerenciadores {

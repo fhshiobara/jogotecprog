@@ -6,7 +6,7 @@
 //
 
 #include "FasePrimeira.hpp"
-
+#include "Obst_Medio.hpp"
 
 namespace Fases{
 

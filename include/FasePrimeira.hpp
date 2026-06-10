@@ -7,11 +7,10 @@
 
 #ifndef FasePrimeira_hpp
 #define FasePrimeira_hpp
-#pragma once
 #include <stdio.h>
 #include "Fase.hpp"
-#include "Inimigo_Medio.hpp"
-#include "Obst_Medio.hpp"
+#include "Demonio.hpp"
+#include "Arvore.hpp"
 
 namespace Fases{
 

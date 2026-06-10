@@ -42,7 +42,7 @@ class Personagem: public Entidades::Entidade {
         void desenhar();
         void atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt);
 
-        virtual void gravidade(float dt, float gravidade) = 0;
+        virtual void gravidade(float dt, float gravidade);
 
         void tomarDano();
         void tempoImunidade(float dt);

@@ -1,8 +1,13 @@
+#ifndef DEMONIO_HPP
+#define DEMONIO_HPP
+
 #include "Inimigo.hpp"
 
 class Demonio : public Inimigo {
+    private:
+        int fome; // Quanto mais fome, mais rapido
     public:
-        Demonio(CoordF position, int hp = 3, float velocidade = 60.0f);
+        Demonio(CoordF position, int hp = 3, float velocidade = 60.0f, int fome = 1);
         ~Demonio();
 
         void executar();
@@ -12,5 +17,6 @@ class Demonio : public Inimigo {
         void initialize();
 
         void perseguir(CoordF posJogador, float dt);
-        void gravidade(float dt, float gravidade);
 };
+
+#endif

@@ -31,8 +31,9 @@ add_executable(main
     ${INCLUDE_FILES}
     ${ASSET_FILES}
 
-    src/Inimigo_Facil.cpp
-    src/Inimigo_Medio.cpp
+    src/Morte.cpp
+    src/Arvore.cpp
+    src/Demonio.cpp
     src/Limites.cpp
     src/Obst_Medio.cpp
     src/GerenciadorColisoes.cpp
