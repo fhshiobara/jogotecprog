@@ -69,7 +69,7 @@ void Jogo::executar() {
                 
                 if(evento.key.code == sf::Keyboard::A){andEsq = true;}
             }
-            if(evento.type == sf::Event::KeyReleased){
+            if(evento.type == sf::Event::KeyReleased) {
                 if(evento.key.code == sf::Keyboard::D){andDir = false;}
                 if(evento.key.code == sf::Keyboard::A){andEsq = false;}
             }
@@ -77,8 +77,7 @@ void Jogo::executar() {
         
         animacao = Animation_ID::idle;
         
-        if(andDir){
-            
+        if(andDir) {
             jogador->moverX(true,dt);
             olhandoEsquerda = false;
             animacao = Animation_ID::walk;

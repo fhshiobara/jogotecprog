@@ -94,7 +94,7 @@ namespace Gerenciadores {
     void GerenciadorColisoes::tratarColisoesObstaculosArvores() {
 
     for (Inimigo* inimigo : ListaInimigos) {
-        Arvore* arvore = dynamic_cast<Arvore*>(inimigo);
+        Arvore* arvore = dynamic_cast<Arvore*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma arvore.
 
         if (arvore == nullptr || !arvore->estaVivo())
             continue;

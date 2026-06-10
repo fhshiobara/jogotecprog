@@ -1,4 +1,6 @@
 #include "Personagem.hpp"
+
+const float Personagem::IFRAMES_TOTAL = 1.0f; // Define duracao da imunidade
  
 Personagem::Personagem(CoordF position, CoordF velocidade, int hp,
                        float velocidadeInicial, float speed, bool olhandoEsquerda,
@@ -16,4 +18,23 @@ void Personagem::atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float 
  
 void Personagem::desenhar() {
   this->sprite.render();
+}
+
+void Personagem::tomarDano() {
+    if (imunidade <= 0.0f) {
+      Hp--;
+      imunidade = IFRAMES_TOTAL;
+
+      std::cout << "Personagem tomou dano! HP restante: " << Hp << std::endl;
+
+      if (Hp <= 0) {
+          morrer();
+      }
+  }
+}
+
+void Personagem::tempoImunidade(float dt) {
+    if (imunidade > 0.0f) {
+        imunidade -= dt;
+    }
 }

@@ -13,6 +13,9 @@ class Personagem: public Entidades::Entidade {
         bool olhandoEsquerda;
         bool encostadochao;
         bool vivo;
+
+        static const float IFRAMES_TOTAL;
+        float imunidade;
         
     public:
         Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, float speed = 1.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true);
@@ -40,6 +43,10 @@ class Personagem: public Entidades::Entidade {
         void atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt);
 
         virtual void gravidade(float dt, float gravidade) = 0;
+
+        void tomarDano();
+        void tempoImunidade(float dt);
+        bool estaImune() { return bool(imunidade > 0.0f); }
 
 };
 
