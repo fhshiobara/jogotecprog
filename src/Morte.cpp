@@ -23,7 +23,7 @@ void Morte::perseguir(CoordF posJogador, float dt) {
 
 void Morte::initialize() {
     this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Morte/IDLE.png", 8);
-    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Morte/FLYING.png", 13);
+    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Morte/FLYING.png", 16);
     // this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Morte/HURT.png", 4);
     // Mudar path caso falha ao encontrar.
 }

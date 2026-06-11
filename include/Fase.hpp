@@ -16,22 +16,23 @@ namespace Fases{
 class Fase:public Ente{
 protected:
     ListaEntidades list_ents;
-    Gerenciadores::GerenciadorColisoes* pGG;
+    Gerenciadores::GerenciadorColisoes* pGC;
+    short int Max_inimArvore;
 public:
     Fase();
     ~Fase();
     
-    virtual void executar() =0;
+    virtual void executar()=0;
 
     
 protected:
-    void criarInimigosFaceis();
+    void criarInimigosArvore();//inimigos faceis
     void criarPlataformas();
-    
+    //funcoes extra vem aqui
     virtual void criarInimigos() =0;
     virtual void criarObstaculos() =0;
     void criarCenario();
-    void criarDemonios();
+    //void criarDemonios();
     
     
     

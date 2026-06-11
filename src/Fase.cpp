@@ -13,14 +13,12 @@
 
 namespace Fases{
 
-Fase::Fase():pGG(Gerenciadores::GerenciadorColisoes::getInstance()){}
+Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimArvore(4){}
 
 
 Fase::~Fase(){}
 
-void Fase::criarInimigosFaceis(){
-    //TODO
-}
+
 
 void Fase::criarPlataformas(){
     
@@ -48,15 +46,15 @@ void Fase::criarCenario(){
     
 }
 
-void Fase::criarDemonios(){  // mudar para inimigos faceis 
+void Fase::criarInimigosArvore(){  // mudar para inimigos faceis
     
-    for(int i=0; i< MAX;i++){ //quantidade padrao é 3
-        Demonio* pInim = NULL;
-        pInim = new Demonio(CoordF(0.0f,0.0f)); //os parametros podem ser mudados aqui para alterar a dificuldade
+    for(int i=0; i<Max_inimArvore;i++){ //quantidade padrao é 3
+        Arvore* pInim = NULL;
+        pInim = new Arvore(CoordF(0.0f,0.0f)); //os parametros podem ser mudados aqui para alterar a dificuldade
         if(pInim !=NULL){
             list_ents.incluir(pInim);
         }
-        else{std::cerr << "ERRO: falha na criacao do inimigo medio" << std::endl;}
+        else{std::cerr << "ERRO: falha na criacao do inimigo Facil" << std::endl;}
     }
     
 

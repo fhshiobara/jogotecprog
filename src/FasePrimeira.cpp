@@ -55,9 +55,8 @@ void FasePrimeira::criar_obst_medio(){
 }
 
 void FasePrimeira::criarInimigos(){
+    criarInimigosArvore();
     criar_inim_medio();
-    
-    
 }
 
 void FasePrimeira::criarObstaculos(){
