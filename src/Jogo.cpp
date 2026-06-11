@@ -10,7 +10,7 @@
 
 using namespace Obstaculos;
  
-Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()) { executar(); }
+Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()),pJ1(NULL),pFase1(NULL) { executar(); }
  
 Jogo::~Jogo() {}
  

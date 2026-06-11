@@ -3,10 +3,13 @@
 
 #include "GerenciadorGrafico.hpp"
 #include "Jogador.hpp"
+#include "FasePrimeira.hpp"
 
 class Jogo{
     private:
         Gerenciadores::GerenciadorGrafico* pGerenciadorGrafico;
+    Jogador* pJ1;
+    Fases::FasePrimeira* pFase1;
     public:
         Jogo();
         ~Jogo();
