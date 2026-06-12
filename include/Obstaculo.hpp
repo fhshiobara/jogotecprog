@@ -2,6 +2,7 @@
 #define OBSTACULO_HPP
 
 #include "Entidade.hpp"
+#include "SingleFrameAnimation.hpp"
 
 class Jogador;
 
@@ -10,6 +11,7 @@ namespace Obstaculos {
     class Obstaculo : public Entidades::Entidade {
         protected:
             bool danoso;
+            Gerenciadores::SingleFrameAnimation* sprite;
 
         public:
             Obstaculo(CoordF position, bool danoso = false);
