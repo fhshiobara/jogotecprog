@@ -8,10 +8,8 @@ namespace Obstaculos {
     {
         hitbox.setSize(sf::Vector2f(largura, altura));
         hitbox.setPosition(sf::Vector2f(position.x, position.y));
-        
-        hitbox.setFillColor(sf::Color(80, 120, 60));  // verde escuro (R, G, B)
-        hitbox.setOutlineColor(sf::Color(40, 80, 20));
-        hitbox.setOutlineThickness(2.f);
+      
+        sprite = new Gerenciadores::SingleFrameAnimation("../assets/Obstaculo/Espinhos.png",CoordF(position.x, position.y),CoordF(largura,altura-20.f),1.0);
     }
  
     Obst_Medio::~Obst_Medio() {}
@@ -39,7 +37,7 @@ bool Obst_Medio::obstruir(CoordF& posJogador, float& velocidadeX,float& velocida
  
     void Obst_Medio::desenhar() {
         if (pGG != NULL)
-            pGG->render(&hitbox);
+            sprite->render();
     }
  
 }
