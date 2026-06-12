@@ -33,6 +33,4 @@ public:
 };
 }
 
-
-
 #endif /* FasePrimeira_hpp */

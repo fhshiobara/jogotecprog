@@ -1,6 +1,8 @@
 #include "GerenciadorColisoes.hpp"
 #include "Limites.hpp"
 #include <iostream>
+#include "Projetil.hpp"
+#include "Morte.hpp"
 
 namespace Gerenciadores {
 
@@ -64,7 +66,7 @@ namespace Gerenciadores {
         pJog->setChao(chao);
     }
 
-    void GerenciadorColisoes::TratarColisoesJogador() {
+    void GerenciadorColisoes::tratarColisoesJogador() {
 
         CoordF posJog = pJog->getPos();
 
@@ -127,12 +129,42 @@ namespace Gerenciadores {
     void GerenciadorColisoes::tratarLimites() {
         limites->aplicarLimites(pJog);
     }
+
+    void GerenciadorColisoes::tratarColisaoProjetil() {
+    if (pJog == NULL) return;
+ 
+    CoordF posJog = pJog->getPos();
+    float  metade = alturaJogador / 2.f;
+ 
+    // Procura bosses (Morte) na lista de inimigos
+    std::vector<Inimigo*>::iterator it;
+    for (it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
+        Morte* boss = dynamic_cast<Morte*>(*it);
+        if (boss == NULL) continue;
+ 
+        Entidades::Projetil* proj = boss->getProjetil();
+        if (proj == NULL || !proj->estaAtivo()) continue;
+ 
+        CoordF posProj = proj->getPos();
+        float dx = posJog.x - posProj.x;
+        float dy = posJog.y - posProj.y;
+ 
+        // Colisão por bounding box (metade do jogador + raio do projétil)
+        if (std::abs(dx) < metade + 8.f && std::abs(dy) < metade + 8.f) {
+            proj->desativar(); // consome o projétil
+            if (!pJog->estaImune())
+                pJog->tomarDano();
+        }
+    }
+}
+
  
     void GerenciadorColisoes::executar(float dt) {
         gravitar(dt);
         tratarColisoesObstaculosArvores();
         tratarColisoesObstaculos();
-        TratarColisoesJogador();
+        tratarColisoesJogador();
+        tratarColisaoProjetil();
         tratarLimites();
     }
 

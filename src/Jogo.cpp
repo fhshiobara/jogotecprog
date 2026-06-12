@@ -123,6 +123,9 @@ void Jogo::executar() {
 
         boss->perseguir(jogador->getPos(), dt);
         boss->atualizarAnimacao(Animation_ID::walk, boss->estaOlhandoEsquerda(), dt);
+        boss->iniciarAtirar(jogador->getPos(), dt);
+        boss->atualizarProjetil(dt);
+        boss->desenharProjetil();
         boss->desenhar();
         
         pGerenciadorGrafico->getWindow()->display();

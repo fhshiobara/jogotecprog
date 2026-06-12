@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VECTORTL_HPP
+#define VECTORTL_HPP
 
 #include <iostream>
 //adaptado de Burda Canal do vídeo 2
@@ -27,3 +28,5 @@ Coord<TL>::Coord(){
     this->x = 0;
     this->y = 0; //valores default
 }
+
+#endif

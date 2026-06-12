@@ -39,8 +39,9 @@ namespace Gerenciadores {
             void incluirObstaculo(Obstaculos::Obstaculo* pObstaculo);
  
             void tratarColisoesObstaculos();
-            void TratarColisoesJogador();
+            void tratarColisoesJogador();
             void tratarColisoesObstaculosArvores();
+            void tratarColisaoProjetil();
             
             void tratarLimites();
  

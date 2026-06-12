@@ -6,7 +6,6 @@
 //
 #ifndef Obst_Medio_hpp
 #define Obst_Medio_hpp
-#pragma once
 #include "Obstaculo.hpp"
  
 namespace Obstaculos {

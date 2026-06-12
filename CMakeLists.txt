@@ -34,6 +34,7 @@ add_executable(main
     ${INCLUDE_FILES}
     ${ASSET_FILES}
 
+    src/Projetil.cpp
     src/Morte.cpp
     src/Arvore.cpp
     src/Demonio.cpp
