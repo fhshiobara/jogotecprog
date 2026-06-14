@@ -160,6 +160,15 @@ namespace Gerenciadores {
 
  
     void GerenciadorColisoes::executar(float dt) {
+        if(pJog == NULL){
+            std::cerr<<"ERRO: faltou o jogador"<<std::endl;
+            return;
+            
+        }
+        if(limites == NULL){
+            std::cerr<<"ERRO: faltou os limites"<<std::endl;
+            return;
+        }
         gravitar(dt);
         tratarColisoesObstaculosArvores();
         tratarColisoesObstaculos();

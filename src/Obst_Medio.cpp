@@ -14,7 +14,7 @@ namespace Obstaculos {
  
     Obst_Medio::~Obst_Medio() {}
  
-    void Obst_Medio::executar() {}
+void Obst_Medio::executar() {this->desenhar();}
  
     void Obst_Medio::salvar() {}
  

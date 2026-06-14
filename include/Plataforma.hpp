@@ -3,6 +3,7 @@
 
 #include "Obstaculo.hpp"
 
+
 class Jogador;
 
 class Plataforma : public Obstaculos::Obstaculo {

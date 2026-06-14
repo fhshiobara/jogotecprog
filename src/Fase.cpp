@@ -13,7 +13,10 @@
 
 namespace Fases{
 
-Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimArvore(4){}
+Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimArvore(4),tam_tela(800,600),num_max_Plataformas(rand()%10){
+    vPlats.clear();
+    if(num_max_Plataformas<6){num_max_Plataformas=6;}//estabelece um valor minimo de plataformas
+}
 
 
 Fase::~Fase(){}
@@ -22,13 +25,18 @@ Fase::~Fase(){}
 
 void Fase::criarPlataformas(){
     
-    for(int i=0;i<3;i++){
+    for(int i=0;i<num_max_Plataformas;i++){
         Plataforma* pPlat = NULL;
-        pPlat = new Plataforma(CoordF(0.0f,0.0f),100.0f,20.0f); // precisamos randomizar isso depois
+        pPlat = new Plataforma(CoordF(rand()%800,rand()%300+150),rand()%100+80,20.0f); // precisamos randomizar isso depois
         
         if(pPlat!=NULL){
             list_ents.incluir(pPlat);
+            vPlats.push_back(pPlat);
+            
+            pGC->incluirObstaculo(pPlat);
+            
             pPlat->desenhar();
+            
             
         }
         else{
@@ -39,11 +47,6 @@ void Fase::criarPlataformas(){
 }
 
 void Fase::criarCenario(){
-    Gerenciadores::SingleFrameAnimation* imagemFundo = NULL;
-    imagemFundo = new Gerenciadores::SingleFrameAnimation("assets/background.png",CoordF(0.0f,0.0f),CoordF(800.0f,600.0f),0.79);
-    
-    imagemFundo->render();
-    
 }
 
 void Fase::criarInimigosArvore(){  // mudar para inimigos faceis
@@ -58,5 +61,11 @@ void Fase::criarInimigosArvore(){  // mudar para inimigos faceis
     }
     
 
+}
+
+void Fase::criarLimites(){
+    pGC->setLimite(tam_tela.x,tam_tela.y);
+    
+    
 }
 }

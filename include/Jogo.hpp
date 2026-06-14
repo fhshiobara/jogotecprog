@@ -8,6 +8,7 @@
 class Jogo{
     private:
         Gerenciadores::GerenciadorGrafico* pGerenciadorGrafico;
+    Gerenciadores::GerenciadorColisoes* pGC;
     Jogador* pJ1;
     Fases::FasePrimeira* pFase1;
     public:

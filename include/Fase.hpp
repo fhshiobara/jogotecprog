@@ -11,6 +11,8 @@
 #include "Ente.hpp"
 #include "ListaEntidades.hpp"
 #include "GerenciadorColisoes.hpp"
+#include <vector>
+#include "Plataforma.hpp"
 
 namespace Fases{
 class Fase:public Ente{
@@ -18,6 +20,10 @@ protected:
     ListaEntidades list_ents;
     Gerenciadores::GerenciadorColisoes* pGC;
     short int Max_inimArvore;
+    CoordF tam_tela;
+    std::vector<Plataforma*> vPlats;
+    int num_max_Plataformas;
+    bool concluida;
 public:
     Fase();
     ~Fase();
@@ -32,6 +38,7 @@ protected:
     virtual void criarInimigos() =0;
     virtual void criarObstaculos() =0;
     void criarCenario();
+    void criarLimites();
     //void criarDemonios();
     
     

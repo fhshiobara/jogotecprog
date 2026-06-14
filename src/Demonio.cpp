@@ -28,7 +28,7 @@ void Demonio::initialize() {
     // Mudar path caso falha ao encontrar.
 }
 
-void Demonio::executar() {}
+void Demonio::executar() { this->desenhar();}
 void Demonio::salvar() {}
 void Demonio::mover() {}
 void Demonio::morrer() {

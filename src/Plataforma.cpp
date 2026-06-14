@@ -3,6 +3,7 @@
 Plataforma::Plataforma(CoordF position, float largura, float altura)
     : Obstaculo(position, false), largura(largura), altura(altura)
 {
+
     hitbox.setSize(sf::Vector2f(largura, altura));
     hitbox.setPosition(sf::Vector2f(position.x, position.y));
     
@@ -15,7 +16,7 @@ Plataforma::Plataforma(CoordF position, float largura, float altura)
 
 Plataforma::~Plataforma() {}
 
-void Plataforma::executar() {}
+void Plataforma::executar() {this->desenhar();}
 void Plataforma::salvar()   {}
 
 bool Plataforma::obstruir(CoordF& pos, float& velocidadeY,float& velocidadeX,

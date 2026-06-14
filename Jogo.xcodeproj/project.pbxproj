@@ -1,0 +1,1091 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FC40ECA559DB4AFBB6DB067D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				F8FED941F7682D2526D3075E /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		4744A32384E4218747EEFD39 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6859F224C8504CE3A3A74C89 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				AD6E3E9877489E068D5BBBD3 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				C9EF99B417D547C4B1B6D4C4 /* PBXTargetDependency */,
+				2458065B9E6E4A8C93C517AA /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		02687D0E6CE142CE95191340 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL.png */ = {isa = PBXBuildFile; fileRef = B6BA0DEB046745AFAFE2938A /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL.png */; };
+		0420DA7DA201413C99DF9091 /* /Users/shiobara/Documents/jogotecprog/include/ListTL.hpp */ = {isa = PBXBuildFile; fileRef = 5DF01E10BBDC432FA5C67A77 /* /Users/shiobara/Documents/jogotecprog/include/ListTL.hpp */; };
+		100BD8B2620E44A7A4342FA6 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL_SPAWN.png */ = {isa = PBXBuildFile; fileRef = 53ACBCEC6D5041488927CE3D /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL_SPAWN.png */; };
+		11758526CF4F4940B4BBAF54 /* /Users/shiobara/Documents/jogotecprog/src/Morte.cpp */ = {isa = PBXBuildFile; fileRef = 0AD5549CE87E4626B7977457 /* /Users/shiobara/Documents/jogotecprog/src/Morte.cpp */; };
+		14540C96D9DF4FA191D6E2E7 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado2.png */ = {isa = PBXBuildFile; fileRef = 5371E43812FC4FFC9A814E77 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado2.png */; };
+		1D177FC10CBD402889E16338 /* /Users/shiobara/Documents/jogotecprog/include/Demonio.hpp */ = {isa = PBXBuildFile; fileRef = D869FA7B2920434FBE8F2599 /* /Users/shiobara/Documents/jogotecprog/include/Demonio.hpp */; };
+		235DBF7A25714BEB9F370986 /* /Users/shiobara/Documents/jogotecprog/src/FasePrimeira.cpp */ = {isa = PBXBuildFile; fileRef = 38792243257B4FB1A6567618 /* /Users/shiobara/Documents/jogotecprog/src/FasePrimeira.cpp */; };
+		316A729E432F40A896DA46DC /* /Users/shiobara/Documents/jogotecprog/src/Jogo.cpp */ = {isa = PBXBuildFile; fileRef = 5466CD9B6E9044C1B3C6B39C /* /Users/shiobara/Documents/jogotecprog/src/Jogo.cpp */; };
+		3170F5C89FDC4599AF313C61 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 3.png */ = {isa = PBXBuildFile; fileRef = 18C20792BFCC4F549CF65841 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 3.png */; };
+		33A0C485B59447E093E99C82 /* /Users/shiobara/Documents/jogotecprog/include/ListaEntidades.hpp */ = {isa = PBXBuildFile; fileRef = CDBBEACF633E4FD6ABE9C9E8 /* /Users/shiobara/Documents/jogotecprog/include/ListaEntidades.hpp */; };
+		35BFA598106D4DFDA56E729A /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/WALK.png */ = {isa = PBXBuildFile; fileRef = 95D1B88FA03D4E8B8C520847 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/WALK.png */; };
+		3841D84FD2F648F48699508F /* /Users/shiobara/Documents/jogotecprog/src/ListaEntidades.cpp */ = {isa = PBXBuildFile; fileRef = A33D106E2FBB46BEA5838033 /* /Users/shiobara/Documents/jogotecprog/src/ListaEntidades.cpp */; };
+		3A8E11FDC21545FFA224ACD3 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/JUMP.png */ = {isa = PBXBuildFile; fileRef = 0F7DA649A1E94E4884228F5B /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/JUMP.png */; };
+		3ED19BB9312940FA8F255342 /* /Users/shiobara/Documents/jogotecprog/include/Entidade.hpp */ = {isa = PBXBuildFile; fileRef = 75F431B2681F4F1EB65A1236 /* /Users/shiobara/Documents/jogotecprog/include/Entidade.hpp */; };
+		3F0431E3F82149D99D291A22 /* /Users/shiobara/Documents/jogotecprog/include/Ente.hpp */ = {isa = PBXBuildFile; fileRef = 28CBB9247A8A498887B3B34E /* /Users/shiobara/Documents/jogotecprog/include/Ente.hpp */; };
+		3FAC9250A8534799B1DD716C /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/IDLE.png */ = {isa = PBXBuildFile; fileRef = 294633FB74ED49579FF709C1 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/IDLE.png */; };
+		4B1AE5DF48564BC8844B0E31 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/death.png */ = {isa = PBXBuildFile; fileRef = 5297FA9646CA4422A5EED3BD /* /Users/shiobara/Documents/jogotecprog/assets/Morte/death.png */; };
+		4FCB5684017F4D39BA0F6BBA /* /Users/shiobara/Documents/jogotecprog/assets/Knight/IDLE.png */ = {isa = PBXBuildFile; fileRef = ED8E8E4A5C4848C0847B1552 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/IDLE.png */; };
+		50C6513C7CCB42F88FE7A84A /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN - cópia.png */ = {isa = PBXBuildFile; fileRef = B5B8A6CD03784E888D20DE8B /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN - cópia.png */; };
+		51C551E90B8B43C7B112A1D7 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/FLYING.png */ = {isa = PBXBuildFile; fileRef = 91D0AD4AB1144BBBBA8F625A /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/FLYING.png */; };
+		54C0050B4B6844F88DE2D2BF /* /Users/shiobara/Documents/jogotecprog/assets/Morte/Iprojetil.png */ = {isa = PBXBuildFile; fileRef = 1CD03749610A48D5AB341489 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/Iprojetil.png */; };
+		5B2245E5D613450DB7F9AA43 /* /Users/shiobara/Documents/jogotecprog/src/SingleFrameAnimation.cpp */ = {isa = PBXBuildFile; fileRef = 22DCE93E42254A03B69B4A0F /* /Users/shiobara/Documents/jogotecprog/src/SingleFrameAnimation.cpp */; };
+		5B4DE071BAC745078837C902 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/ATTACK.png */ = {isa = PBXBuildFile; fileRef = 8D3144B2600E484BA1833D96 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/ATTACK.png */; };
+		5D9DCC503F524DC0B804DD62 /* /Users/shiobara/Documents/jogotecprog/src/main.cpp */ = {isa = PBXBuildFile; fileRef = CDF0C38840BB49F0BB55A938 /* /Users/shiobara/Documents/jogotecprog/src/main.cpp */; };
+		5EEAE89FDD6C43A9AA0DD302 /* /Users/shiobara/Documents/jogotecprog/src/Demonio.cpp */ = {isa = PBXBuildFile; fileRef = 0C78C3AED51949F785503612 /* /Users/shiobara/Documents/jogotecprog/src/Demonio.cpp */; };
+		61E6129B972440DDA7D8AD45 /* /Users/shiobara/Documents/jogotecprog/src/Limites.cpp */ = {isa = PBXBuildFile; fileRef = FBDC82BF464D421F91E96844 /* /Users/shiobara/Documents/jogotecprog/src/Limites.cpp */; };
+		69C3D42F289843B2BB9F8B97 /* /Users/shiobara/Documents/jogotecprog/include/Projetil.hpp */ = {isa = PBXBuildFile; fileRef = F7313F777908436BAF865509 /* /Users/shiobara/Documents/jogotecprog/include/Projetil.hpp */; };
+		6E35D98046164968B78D4E53 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/HURT.png */ = {isa = PBXBuildFile; fileRef = 346DFF48E2364080B1B3C2E5 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/HURT.png */; };
+		75C572257CE24974887D4E4D /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/IDLE.png */ = {isa = PBXBuildFile; fileRef = 3E62E5E15E7B46BBBE661FB4 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/IDLE.png */; };
+		7BFD44E53ABA47F1AE35D739 /* /Users/shiobara/Documents/jogotecprog/src/Inimigo.cpp */ = {isa = PBXBuildFile; fileRef = 71A8BF432DB440078B8C2C4A /* /Users/shiobara/Documents/jogotecprog/src/Inimigo.cpp */; };
+		7CC11F671CD241F1BB53C146 /* /Users/shiobara/Documents/jogotecprog/src/Entidade.cpp */ = {isa = PBXBuildFile; fileRef = A7EF6B2357964F5C8CE78562 /* /Users/shiobara/Documents/jogotecprog/src/Entidade.cpp */; };
+		7D89A40A7F34411E9C6AD0A9 /* /Users/shiobara/Documents/jogotecprog/include/Limites.hpp */ = {isa = PBXBuildFile; fileRef = 7F5738C764C749A893183259 /* /Users/shiobara/Documents/jogotecprog/include/Limites.hpp */; };
+		8075175F0FAC4CAEABDF63B1 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING8.png */ = {isa = PBXBuildFile; fileRef = BD398449E5F249D29D4460BE /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING8.png */; };
+		859D94668F9F460995BF7329 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/summon.png */ = {isa = PBXBuildFile; fileRef = 543C1C8F114044FAB8136399 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/summon.png */; };
+		862524CAEC47476FA3EBCCAB /* /Users/shiobara/Documents/jogotecprog/include/Arvore.hpp */ = {isa = PBXBuildFile; fileRef = 8D674389964E4BE1A8C8908D /* /Users/shiobara/Documents/jogotecprog/include/Arvore.hpp */; };
+		888C0F44FDA443C099116B5B /* /Users/shiobara/Documents/jogotecprog/src/Animation.cpp */ = {isa = PBXBuildFile; fileRef = AD64BDA42F944E6086A23DCB /* /Users/shiobara/Documents/jogotecprog/src/Animation.cpp */; };
+		8BF01BC7872C4F2BA2426CF9 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Individual Spike.png */ = {isa = PBXBuildFile; fileRef = 976F17F38A5E4D8789EC19F7 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Individual Spike.png */; };
+		90DF22416E41487AB1836B8D /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorColisoes.cpp */ = {isa = PBXBuildFile; fileRef = 0DB2439CE0704CE486A1176D /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorColisoes.cpp */; };
+		911C6AD4D0AC4A8390DC8E5B /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/HURT.png */ = {isa = PBXBuildFile; fileRef = FC6013DA39504DAAA1AFE01A /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/HURT.png */; };
+		9202D8C0BB2147F58696033F /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/WALK.png */ = {isa = PBXBuildFile; fileRef = 907C150BB9814C6D8C9031F0 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/WALK.png */; };
+		936177966D704D92AFAB5132 /* /Users/shiobara/Documents/jogotecprog/include/Personagem.hpp */ = {isa = PBXBuildFile; fileRef = 2E2E32ABC8DB45D994CC6DDA /* /Users/shiobara/Documents/jogotecprog/include/Personagem.hpp */; };
+		9B4890D5A3BA407DBA2F2542 /* /Users/shiobara/Documents/jogotecprog/include/Morte.hpp */ = {isa = PBXBuildFile; fileRef = A88162D8653C40508D64824D /* /Users/shiobara/Documents/jogotecprog/include/Morte.hpp */; };
+		A182CFA53E474636BBF3CC52 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/DEATH.png */ = {isa = PBXBuildFile; fileRef = EABA62E9AE484AAE952BCF29 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/DEATH.png */; };
+		A20D78FF7A1549FAB9A68B05 /* /Users/shiobara/Documents/jogotecprog/assets/.DS_Store */ = {isa = PBXBuildFile; fileRef = 385FE544ABD944E3A316F2F0 /* /Users/shiobara/Documents/jogotecprog/assets/.DS_Store */; };
+		A3375D3BC0AC4C6E81117DC5 /* /Users/shiobara/Documents/jogotecprog/include/Jogador.hpp */ = {isa = PBXBuildFile; fileRef = 02A8159AB3F94A6D8357A75B /* /Users/shiobara/Documents/jogotecprog/include/Jogador.hpp */; };
+		A41C394DCDCB4830B46B6602 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/DEATH.png */ = {isa = PBXBuildFile; fileRef = D065D3DCDE334A86A77B33A1 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/DEATH.png */; };
+		A644DDC89A334BA3B8410A26 /* /Users/shiobara/Documents/jogotecprog/src/Fase.cpp */ = {isa = PBXBuildFile; fileRef = C4E5D9F71F314604B966DB61 /* /Users/shiobara/Documents/jogotecprog/src/Fase.cpp */; };
+		A71747AD38524BAFA6450829 /* /Users/shiobara/Documents/jogotecprog/src/Projetil.cpp */ = {isa = PBXBuildFile; fileRef = 19E1BCB2480140DE893B74C8 /* /Users/shiobara/Documents/jogotecprog/src/Projetil.cpp */; };
+		A74CA3CF78354FB2822F8B1E /* /Users/shiobara/Documents/jogotecprog/include/Jogo.hpp */ = {isa = PBXBuildFile; fileRef = 8F58B7FB44D2472C867589F5 /* /Users/shiobara/Documents/jogotecprog/include/Jogo.hpp */; };
+		A9D04BB1996E417EB25140BD /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 1.png */ = {isa = PBXBuildFile; fileRef = 6ADC52E0DC574C57B752A99F /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 1.png */; };
+		AAAD4688510A4C0D949BAB39 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 1.png */ = {isa = PBXBuildFile; fileRef = BEE52275756647398EA8561D /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 1.png */; };
+		AC74431911C2487F9E3E0455 /* /Users/shiobara/Documents/jogotecprog/include/Fase.hpp */ = {isa = PBXBuildFile; fileRef = E1E9DD6A1C9F41F399CBDCEA /* /Users/shiobara/Documents/jogotecprog/include/Fase.hpp */; };
+		B9BC448F497D47FA944CD140 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/IDLE.png */ = {isa = PBXBuildFile; fileRef = CD1FD596D2C04CB79AE0FE17 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/IDLE.png */; };
+		BA96F4429E1A41EEB0C94C7B /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/tronchungo3.png */ = {isa = PBXBuildFile; fileRef = EDFB1792FAC64208B74A822A /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/tronchungo3.png */; };
+		BB3F7E87555849309BD353AE /* /Users/shiobara/Documents/jogotecprog/src/Jogador.cpp */ = {isa = PBXBuildFile; fileRef = 16F52B0800274198A656DD0A /* /Users/shiobara/Documents/jogotecprog/src/Jogador.cpp */; };
+		BBAB6C2733A2455F9AD055AA /* /Users/shiobara/Documents/jogotecprog/assets/Morte/IDLE.png */ = {isa = PBXBuildFile; fileRef = 358897C363784E9D80ABAB7D /* /Users/shiobara/Documents/jogotecprog/assets/Morte/IDLE.png */; };
+		C05493935067489F98147218 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/HURT.png */ = {isa = PBXBuildFile; fileRef = 1CF0BB77A1AE4B858874F2D6 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/HURT.png */; };
+		C06826DF4F0E4B8DB7CEA582 /* /Users/shiobara/Documents/jogotecprog/assets/background.png */ = {isa = PBXBuildFile; fileRef = BF4B7CA34E7641CCB9FE9149 /* /Users/shiobara/Documents/jogotecprog/assets/background.png */; };
+		C2F10255E5A8468CBBAFFC26 /* /Users/shiobara/Documents/jogotecprog/src/Ente.cpp */ = {isa = PBXBuildFile; fileRef = E407215D1BA84DEA86BCF912 /* /Users/shiobara/Documents/jogotecprog/src/Ente.cpp */; };
+		C4796D76D9D540F895AB6EF6 /* /Users/shiobara/Documents/jogotecprog/include/VectorTL.hpp */ = {isa = PBXBuildFile; fileRef = BBC4242A2F7E4ACEACD43FF6 /* /Users/shiobara/Documents/jogotecprog/include/VectorTL.hpp */; };
+		C6D9258E84D54F09985BE00A /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 2.png */ = {isa = PBXBuildFile; fileRef = E6AD7B0262E4459386886270 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 2.png */; };
+		C83D9CB3926344A6A24562E3 /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorGrafico.hpp */ = {isa = PBXBuildFile; fileRef = 3E3AE63F8C7C4597BD25E627 /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorGrafico.hpp */; };
+		CAA764E510234636BCF8C45B /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorColisoes.hpp */ = {isa = PBXBuildFile; fileRef = 8A5C306336E049DE8164F0DA /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorColisoes.hpp */; };
+		CE74F929176A4A5A84BB77A8 /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorGrafico.cpp */ = {isa = PBXBuildFile; fileRef = 2BB56F821074440AB80278C0 /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorGrafico.cpp */; };
+		D16727ACD28A4BF9BDF75B38 /* /Users/shiobara/Documents/jogotecprog/src/Plataforma.cpp */ = {isa = PBXBuildFile; fileRef = B797859B10F64729B74D1CD4 /* /Users/shiobara/Documents/jogotecprog/src/Plataforma.cpp */; };
+		D192862290EF4F2BB757289A /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 2.png */ = {isa = PBXBuildFile; fileRef = 604D0289AFF24AF5B5EE0120 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 2.png */; };
+		D2A279CE0E974344B991D3FD /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING.png */ = {isa = PBXBuildFile; fileRef = E1A0FE46C2FC4600BC13C71B /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING.png */; };
+		D6BB6336F85A4AA0BE62578F /* /Users/shiobara/Documents/jogotecprog/include/Inimigo.hpp */ = {isa = PBXBuildFile; fileRef = B38FF39A1B1A4E098F947302 /* /Users/shiobara/Documents/jogotecprog/include/Inimigo.hpp */; };
+		D8448B7878CA4653B99A610B /* /Users/shiobara/Documents/jogotecprog/src/Obstaculo.cpp */ = {isa = PBXBuildFile; fileRef = 492CB7CCADE2445292C57020 /* /Users/shiobara/Documents/jogotecprog/src/Obstaculo.cpp */; };
+		DE70419414D5484A9EB25629 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN.png */ = {isa = PBXBuildFile; fileRef = 5A749788FFFE4F8D82B340AA /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN.png */; };
+		DEA257DCBFB9484A8B2DA38D /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN - cópia.png */ = {isa = PBXBuildFile; fileRef = 623D5837648C405F8D564495 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN - cópia.png */; };
+		E25E9D08EA354398A4070F1A /* /Users/shiobara/Documents/jogotecprog/assets/Knight/JUMP.png */ = {isa = PBXBuildFile; fileRef = 5D472CA9DFB9465F8483A424 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/JUMP.png */; };
+		E2771076681A4843ACAD9DDE /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 3.png */ = {isa = PBXBuildFile; fileRef = 21C0DE24A8D7402FA24AA608 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 3.png */; };
+		E49332EABD1F4D4FA87D4A50 /* /Users/shiobara/Documents/jogotecprog/include/SingleFrameAnimation.hpp */ = {isa = PBXBuildFile; fileRef = E9853666A63C4726B56B1FD5 /* /Users/shiobara/Documents/jogotecprog/include/SingleFrameAnimation.hpp */; };
+		E5435D1D4BB04238B2DDA6F0 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/WALK.png */ = {isa = PBXBuildFile; fileRef = BF25BF21A4A043188C0EE771 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/WALK.png */; };
+		E62F4ADAA620488D96BEEFE4 /* /Users/shiobara/Documents/jogotecprog/include/Obst_Medio.hpp */ = {isa = PBXBuildFile; fileRef = 8A1FCAE6C1F94C098A5E140F /* /Users/shiobara/Documents/jogotecprog/include/Obst_Medio.hpp */; };
+		EACA933ECE954A83AC13BA6A /* /Users/shiobara/Documents/jogotecprog/include/FasePrimeira.hpp */ = {isa = PBXBuildFile; fileRef = F8D42864476E46C08D7DC2E9 /* /Users/shiobara/Documents/jogotecprog/include/FasePrimeira.hpp */; };
+		EC15C378CB12446EB4AA3855 /* /Users/shiobara/Documents/jogotecprog/include/Animation.hpp */ = {isa = PBXBuildFile; fileRef = 63E23AFA3D93409FAA1A71AB /* /Users/shiobara/Documents/jogotecprog/include/Animation.hpp */; };
+		EDB003664C71451F86B3DC7B /* /Users/shiobara/Documents/jogotecprog/src/Arvore.cpp */ = {isa = PBXBuildFile; fileRef = 62EC3D723AE34B60993D50DC /* /Users/shiobara/Documents/jogotecprog/src/Arvore.cpp */; };
+		EDBCBCBC918541E48FA77C4E /* /Users/shiobara/Documents/jogotecprog/include/Obstaculo.hpp */ = {isa = PBXBuildFile; fileRef = 77B0B141F2464B8BA38445DE /* /Users/shiobara/Documents/jogotecprog/include/Obstaculo.hpp */; };
+		EFCF8D117A1A43CFA4FFE523 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado.png */ = {isa = PBXBuildFile; fileRef = 01C5D354D7F54A3AB846FD41 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado.png */; };
+		F1B237862BFA460F83A1D344 /* /Users/shiobara/Documents/jogotecprog/src/Obst_Medio.cpp */ = {isa = PBXBuildFile; fileRef = 819F4440CB99460BAA1E8C05 /* /Users/shiobara/Documents/jogotecprog/src/Obst_Medio.cpp */; };
+		F617D3AF55044C788920B5EB /* /Users/shiobara/Documents/jogotecprog/src/Personagem.cpp */ = {isa = PBXBuildFile; fileRef = 00C5444C3C27431E95BBC7B2 /* /Users/shiobara/Documents/jogotecprog/src/Personagem.cpp */; };
+		F6CED1DF889744388B91C540 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/HURT.png */ = {isa = PBXBuildFile; fileRef = 43AEC863DD1847B8BA241164 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/HURT.png */; };
+		F7B20182911545ED997BEF59 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Espinhos.png */ = {isa = PBXBuildFile; fileRef = C1B64E3FC41749FDBF082B94 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Espinhos.png */; };
+		FC26D09B675D4393AF3A3F66 /* /Users/shiobara/Documents/jogotecprog/include/Plataforma.hpp */ = {isa = PBXBuildFile; fileRef = D6DA83DD077C4519964898B9 /* /Users/shiobara/Documents/jogotecprog/include/Plataforma.hpp */; };
+		FC47B30C92514FA893B2FA57 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN.png */ = {isa = PBXBuildFile; fileRef = 6C837A64A7D74A7DA97727A2 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN.png */; };
+		FC9922413342426D81288E32 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/DEATH.png */ = {isa = PBXBuildFile; fileRef = 0B72928D0C124861814C36C9 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/DEATH.png */; };
+		FF7D330326404618AFA1ACD2 /* /Users/shiobara/Documents/jogotecprog/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 8ACFC784C9724F64A07E6080 /* /Users/shiobara/Documents/jogotecprog/CMakeLists.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		29858EE7FF7D40C19A1F73FA /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		ACEDD6E435BA464B99B36CC7 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		BD200AFA5FB643818FDF0FC2 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		E72218F6FD2B4AFDB7C9681C /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		3ED6BECB92E84B8C84090F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD4239BB9234156B168F419 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42BC39BDE240DFF12C5A56DE;
+			remoteInfo = ZERO_CHECK;
+		};
+		EA34C5494B244C14947521C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD4239BB9234156B168F419 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42BC39BDE240DFF12C5A56DE;
+			remoteInfo = ZERO_CHECK;
+		};
+		FAA04ED70F764E5791501FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD4239BB9234156B168F419 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09180B84A58F0F386124BCEE;
+			remoteInfo = main;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00C5444C3C27431E95BBC7B2 /* /Users/shiobara/Documents/jogotecprog/src/Personagem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Personagem.cpp; path = src/Personagem.cpp; sourceTree = SOURCE_ROOT; };
+		01C5D354D7F54A3AB846FD41 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = inutilizado.png; path = assets/Morte/inutilizado.png; sourceTree = SOURCE_ROOT; };
+		02A8159AB3F94A6D8357A75B /* /Users/shiobara/Documents/jogotecprog/include/Jogador.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Jogador.hpp; path = include/Jogador.hpp; sourceTree = SOURCE_ROOT; };
+		0AD5549CE87E4626B7977457 /* /Users/shiobara/Documents/jogotecprog/src/Morte.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Morte.cpp; path = src/Morte.cpp; sourceTree = SOURCE_ROOT; };
+		0B72928D0C124861814C36C9 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/DEATH.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = DEATH.png; path = assets/Knight/DEATH.png; sourceTree = SOURCE_ROOT; };
+		0C78C3AED51949F785503612 /* /Users/shiobara/Documents/jogotecprog/src/Demonio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Demonio.cpp; path = src/Demonio.cpp; sourceTree = SOURCE_ROOT; };
+		0DB2439CE0704CE486A1176D /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorColisoes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GerenciadorColisoes.cpp; path = src/GerenciadorColisoes.cpp; sourceTree = SOURCE_ROOT; };
+		0F7DA649A1E94E4884228F5B /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/JUMP.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = JUMP.png; path = assets/Knight2/JUMP.png; sourceTree = SOURCE_ROOT; };
+		16F52B0800274198A656DD0A /* /Users/shiobara/Documents/jogotecprog/src/Jogador.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Jogador.cpp; path = src/Jogador.cpp; sourceTree = SOURCE_ROOT; };
+		18C20792BFCC4F549CF65841 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 3.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 3.png"; path = "assets/Knight2/ATTACK 3.png"; sourceTree = SOURCE_ROOT; };
+		19E1BCB2480140DE893B74C8 /* /Users/shiobara/Documents/jogotecprog/src/Projetil.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Projetil.cpp; path = src/Projetil.cpp; sourceTree = SOURCE_ROOT; };
+		1CD03749610A48D5AB341489 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/Iprojetil.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = Iprojetil.png; path = assets/Morte/Iprojetil.png; sourceTree = SOURCE_ROOT; };
+		1CF0BB77A1AE4B858874F2D6 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/HURT.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = HURT.png; path = assets/Demonio/HURT.png; sourceTree = SOURCE_ROOT; };
+		21C0DE24A8D7402FA24AA608 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 3.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 3.png"; path = "assets/Knight/ATTACK 3.png"; sourceTree = SOURCE_ROOT; };
+		22DCE93E42254A03B69B4A0F /* /Users/shiobara/Documents/jogotecprog/src/SingleFrameAnimation.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SingleFrameAnimation.cpp; path = src/SingleFrameAnimation.cpp; sourceTree = SOURCE_ROOT; };
+		24AFE31615084D31B63E6E5B /* /Users/shiobara/Documents/jogotecprog/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		28CBB9247A8A498887B3B34E /* /Users/shiobara/Documents/jogotecprog/include/Ente.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Ente.hpp; path = include/Ente.hpp; sourceTree = SOURCE_ROOT; };
+		294633FB74ED49579FF709C1 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/IDLE.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IDLE.png; path = assets/Knight2/IDLE.png; sourceTree = SOURCE_ROOT; };
+		2BB56F821074440AB80278C0 /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorGrafico.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GerenciadorGrafico.cpp; path = src/GerenciadorGrafico.cpp; sourceTree = SOURCE_ROOT; };
+		2E2E32ABC8DB45D994CC6DDA /* /Users/shiobara/Documents/jogotecprog/include/Personagem.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Personagem.hpp; path = include/Personagem.hpp; sourceTree = SOURCE_ROOT; };
+		342C3E17DBF545F983AF2BEF /* main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = main; sourceTree = BUILT_PRODUCTS_DIR; };
+		346DFF48E2364080B1B3C2E5 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/HURT.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = HURT.png; path = assets/Knight/HURT.png; sourceTree = SOURCE_ROOT; };
+		358897C363784E9D80ABAB7D /* /Users/shiobara/Documents/jogotecprog/assets/Morte/IDLE.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IDLE.png; path = assets/Morte/IDLE.png; sourceTree = SOURCE_ROOT; };
+		385FE544ABD944E3A316F2F0 /* /Users/shiobara/Documents/jogotecprog/assets/.DS_Store */ = {isa = PBXFileReference; explicitFileType = default; fileEncoding = 4; name = .DS_Store; path = assets/.DS_Store; sourceTree = SOURCE_ROOT; };
+		38792243257B4FB1A6567618 /* /Users/shiobara/Documents/jogotecprog/src/FasePrimeira.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FasePrimeira.cpp; path = src/FasePrimeira.cpp; sourceTree = SOURCE_ROOT; };
+		3E3AE63F8C7C4597BD25E627 /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorGrafico.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = GerenciadorGrafico.hpp; path = include/GerenciadorGrafico.hpp; sourceTree = SOURCE_ROOT; };
+		3E62E5E15E7B46BBBE661FB4 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/IDLE.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IDLE.png; path = assets/Demonio/IDLE.png; sourceTree = SOURCE_ROOT; };
+		43AEC863DD1847B8BA241164 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/HURT.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = HURT.png; path = assets/Arvore/HURT.png; sourceTree = SOURCE_ROOT; };
+		492CB7CCADE2445292C57020 /* /Users/shiobara/Documents/jogotecprog/src/Obstaculo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Obstaculo.cpp; path = src/Obstaculo.cpp; sourceTree = SOURCE_ROOT; };
+		5297FA9646CA4422A5EED3BD /* /Users/shiobara/Documents/jogotecprog/assets/Morte/death.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = death.png; path = assets/Morte/death.png; sourceTree = SOURCE_ROOT; };
+		5371E43812FC4FFC9A814E77 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado2.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = inutilizado2.png; path = assets/Morte/inutilizado2.png; sourceTree = SOURCE_ROOT; };
+		53ACBCEC6D5041488927CE3D /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL_SPAWN.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = PROJETIL_SPAWN.png; path = assets/Morte/PROJETIL_SPAWN.png; sourceTree = SOURCE_ROOT; };
+		543C1C8F114044FAB8136399 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/summon.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = summon.png; path = assets/Morte/summon.png; sourceTree = SOURCE_ROOT; };
+		5466CD9B6E9044C1B3C6B39C /* /Users/shiobara/Documents/jogotecprog/src/Jogo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Jogo.cpp; path = src/Jogo.cpp; sourceTree = SOURCE_ROOT; };
+		5A749788FFFE4F8D82B340AA /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = RUN.png; path = assets/Knight2/RUN.png; sourceTree = SOURCE_ROOT; };
+		5D472CA9DFB9465F8483A424 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/JUMP.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = JUMP.png; path = assets/Knight/JUMP.png; sourceTree = SOURCE_ROOT; };
+		5DF01E10BBDC432FA5C67A77 /* /Users/shiobara/Documents/jogotecprog/include/ListTL.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ListTL.hpp; path = include/ListTL.hpp; sourceTree = SOURCE_ROOT; };
+		604D0289AFF24AF5B5EE0120 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 2.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 2.png"; path = "assets/Knight/ATTACK 2.png"; sourceTree = SOURCE_ROOT; };
+		623D5837648C405F8D564495 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN - cópia.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "RUN - cópia.png"; path = "assets/Knight/RUN - cópia.png"; sourceTree = SOURCE_ROOT; };
+		62EC3D723AE34B60993D50DC /* /Users/shiobara/Documents/jogotecprog/src/Arvore.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Arvore.cpp; path = src/Arvore.cpp; sourceTree = SOURCE_ROOT; };
+		63E23AFA3D93409FAA1A71AB /* /Users/shiobara/Documents/jogotecprog/include/Animation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Animation.hpp; path = include/Animation.hpp; sourceTree = SOURCE_ROOT; };
+		6ADC52E0DC574C57B752A99F /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 1.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 1.png"; path = "assets/Knight2/ATTACK 1.png"; sourceTree = SOURCE_ROOT; };
+		6C837A64A7D74A7DA97727A2 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = RUN.png; path = assets/Knight/RUN.png; sourceTree = SOURCE_ROOT; };
+		71A8BF432DB440078B8C2C4A /* /Users/shiobara/Documents/jogotecprog/src/Inimigo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Inimigo.cpp; path = src/Inimigo.cpp; sourceTree = SOURCE_ROOT; };
+		75F431B2681F4F1EB65A1236 /* /Users/shiobara/Documents/jogotecprog/include/Entidade.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Entidade.hpp; path = include/Entidade.hpp; sourceTree = SOURCE_ROOT; };
+		77B0B141F2464B8BA38445DE /* /Users/shiobara/Documents/jogotecprog/include/Obstaculo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Obstaculo.hpp; path = include/Obstaculo.hpp; sourceTree = SOURCE_ROOT; };
+		7F5738C764C749A893183259 /* /Users/shiobara/Documents/jogotecprog/include/Limites.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Limites.hpp; path = include/Limites.hpp; sourceTree = SOURCE_ROOT; };
+		819F4440CB99460BAA1E8C05 /* /Users/shiobara/Documents/jogotecprog/src/Obst_Medio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Obst_Medio.cpp; path = src/Obst_Medio.cpp; sourceTree = SOURCE_ROOT; };
+		8A1FCAE6C1F94C098A5E140F /* /Users/shiobara/Documents/jogotecprog/include/Obst_Medio.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Obst_Medio.hpp; path = include/Obst_Medio.hpp; sourceTree = SOURCE_ROOT; };
+		8A5C306336E049DE8164F0DA /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorColisoes.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = GerenciadorColisoes.hpp; path = include/GerenciadorColisoes.hpp; sourceTree = SOURCE_ROOT; };
+		8ACFC784C9724F64A07E6080 /* /Users/shiobara/Documents/jogotecprog/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8D3144B2600E484BA1833D96 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/ATTACK.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = ATTACK.png; path = assets/Demonio/ATTACK.png; sourceTree = SOURCE_ROOT; };
+		8D674389964E4BE1A8C8908D /* /Users/shiobara/Documents/jogotecprog/include/Arvore.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Arvore.hpp; path = include/Arvore.hpp; sourceTree = SOURCE_ROOT; };
+		8F58B7FB44D2472C867589F5 /* /Users/shiobara/Documents/jogotecprog/include/Jogo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Jogo.hpp; path = include/Jogo.hpp; sourceTree = SOURCE_ROOT; };
+		907C150BB9814C6D8C9031F0 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/WALK.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = WALK.png; path = assets/Knight2/WALK.png; sourceTree = SOURCE_ROOT; };
+		91D0AD4AB1144BBBBA8F625A /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/FLYING.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = FLYING.png; path = assets/Demonio/FLYING.png; sourceTree = SOURCE_ROOT; };
+		95D1B88FA03D4E8B8C520847 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/WALK.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = WALK.png; path = assets/Arvore/WALK.png; sourceTree = SOURCE_ROOT; };
+		976F17F38A5E4D8789EC19F7 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Individual Spike.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "Individual Spike.png"; path = "assets/Obstaculo/Individual Spike.png"; sourceTree = SOURCE_ROOT; };
+		A33D106E2FBB46BEA5838033 /* /Users/shiobara/Documents/jogotecprog/src/ListaEntidades.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ListaEntidades.cpp; path = src/ListaEntidades.cpp; sourceTree = SOURCE_ROOT; };
+		A7EF6B2357964F5C8CE78562 /* /Users/shiobara/Documents/jogotecprog/src/Entidade.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Entidade.cpp; path = src/Entidade.cpp; sourceTree = SOURCE_ROOT; };
+		A88162D8653C40508D64824D /* /Users/shiobara/Documents/jogotecprog/include/Morte.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Morte.hpp; path = include/Morte.hpp; sourceTree = SOURCE_ROOT; };
+		AD64BDA42F944E6086A23DCB /* /Users/shiobara/Documents/jogotecprog/src/Animation.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Animation.cpp; path = src/Animation.cpp; sourceTree = SOURCE_ROOT; };
+		B38FF39A1B1A4E098F947302 /* /Users/shiobara/Documents/jogotecprog/include/Inimigo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Inimigo.hpp; path = include/Inimigo.hpp; sourceTree = SOURCE_ROOT; };
+		B5B8A6CD03784E888D20DE8B /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN - cópia.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "RUN - cópia.png"; path = "assets/Knight2/RUN - cópia.png"; sourceTree = SOURCE_ROOT; };
+		B6BA0DEB046745AFAFE2938A /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = PROJETIL.png; path = assets/Morte/PROJETIL.png; sourceTree = SOURCE_ROOT; };
+		B797859B10F64729B74D1CD4 /* /Users/shiobara/Documents/jogotecprog/src/Plataforma.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Plataforma.cpp; path = src/Plataforma.cpp; sourceTree = SOURCE_ROOT; };
+		BBC4242A2F7E4ACEACD43FF6 /* /Users/shiobara/Documents/jogotecprog/include/VectorTL.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = VectorTL.hpp; path = include/VectorTL.hpp; sourceTree = SOURCE_ROOT; };
+		BD398449E5F249D29D4460BE /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING8.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = FLYING8.png; path = assets/Morte/FLYING8.png; sourceTree = SOURCE_ROOT; };
+		BEE52275756647398EA8561D /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 1.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 1.png"; path = "assets/Knight/ATTACK 1.png"; sourceTree = SOURCE_ROOT; };
+		BF25BF21A4A043188C0EE771 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/WALK.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = WALK.png; path = assets/Knight/WALK.png; sourceTree = SOURCE_ROOT; };
+		BF4B7CA34E7641CCB9FE9149 /* /Users/shiobara/Documents/jogotecprog/assets/background.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = background.png; path = assets/background.png; sourceTree = SOURCE_ROOT; };
+		C1B64E3FC41749FDBF082B94 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Espinhos.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = Espinhos.png; path = assets/Obstaculo/Espinhos.png; sourceTree = SOURCE_ROOT; };
+		C4E5D9F71F314604B966DB61 /* /Users/shiobara/Documents/jogotecprog/src/Fase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Fase.cpp; path = src/Fase.cpp; sourceTree = SOURCE_ROOT; };
+		CD1FD596D2C04CB79AE0FE17 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/IDLE.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IDLE.png; path = assets/Arvore/IDLE.png; sourceTree = SOURCE_ROOT; };
+		CDBBEACF633E4FD6ABE9C9E8 /* /Users/shiobara/Documents/jogotecprog/include/ListaEntidades.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ListaEntidades.hpp; path = include/ListaEntidades.hpp; sourceTree = SOURCE_ROOT; };
+		CDF0C38840BB49F0BB55A938 /* /Users/shiobara/Documents/jogotecprog/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		D065D3DCDE334A86A77B33A1 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/DEATH.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = DEATH.png; path = assets/Demonio/DEATH.png; sourceTree = SOURCE_ROOT; };
+		D6DA83DD077C4519964898B9 /* /Users/shiobara/Documents/jogotecprog/include/Plataforma.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Plataforma.hpp; path = include/Plataforma.hpp; sourceTree = SOURCE_ROOT; };
+		D869FA7B2920434FBE8F2599 /* /Users/shiobara/Documents/jogotecprog/include/Demonio.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Demonio.hpp; path = include/Demonio.hpp; sourceTree = SOURCE_ROOT; };
+		E1A0FE46C2FC4600BC13C71B /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = FLYING.png; path = assets/Morte/FLYING.png; sourceTree = SOURCE_ROOT; };
+		E1E9DD6A1C9F41F399CBDCEA /* /Users/shiobara/Documents/jogotecprog/include/Fase.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Fase.hpp; path = include/Fase.hpp; sourceTree = SOURCE_ROOT; };
+		E407215D1BA84DEA86BCF912 /* /Users/shiobara/Documents/jogotecprog/src/Ente.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Ente.cpp; path = src/Ente.cpp; sourceTree = SOURCE_ROOT; };
+		E6AD7B0262E4459386886270 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 2.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = "ATTACK 2.png"; path = "assets/Knight2/ATTACK 2.png"; sourceTree = SOURCE_ROOT; };
+		E9853666A63C4726B56B1FD5 /* /Users/shiobara/Documents/jogotecprog/include/SingleFrameAnimation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SingleFrameAnimation.hpp; path = include/SingleFrameAnimation.hpp; sourceTree = SOURCE_ROOT; };
+		EABA62E9AE484AAE952BCF29 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/DEATH.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = DEATH.png; path = assets/Knight2/DEATH.png; sourceTree = SOURCE_ROOT; };
+		ED8E8E4A5C4848C0847B1552 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/IDLE.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = IDLE.png; path = assets/Knight/IDLE.png; sourceTree = SOURCE_ROOT; };
+		EDFB1792FAC64208B74A822A /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/tronchungo3.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = tronchungo3.png; path = assets/Arvore/tronchungo3.png; sourceTree = SOURCE_ROOT; };
+		F7313F777908436BAF865509 /* /Users/shiobara/Documents/jogotecprog/include/Projetil.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Projetil.hpp; path = include/Projetil.hpp; sourceTree = SOURCE_ROOT; };
+		F8D42864476E46C08D7DC2E9 /* /Users/shiobara/Documents/jogotecprog/include/FasePrimeira.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FasePrimeira.hpp; path = include/FasePrimeira.hpp; sourceTree = SOURCE_ROOT; };
+		FBDC82BF464D421F91E96844 /* /Users/shiobara/Documents/jogotecprog/src/Limites.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Limites.cpp; path = src/Limites.cpp; sourceTree = SOURCE_ROOT; };
+		FC6013DA39504DAAA1AFE01A /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/HURT.png */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = image; name = HURT.png; path = assets/Knight2/HURT.png; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF54BDCF81F646ECA4C5EDAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		254E532996BC470BA04D986E /* Obstaculo */ = {
+			isa = PBXGroup;
+			children = (
+				C1B64E3FC41749FDBF082B94 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Espinhos.png */,
+				976F17F38A5E4D8789EC19F7 /* /Users/shiobara/Documents/jogotecprog/assets/Obstaculo/Individual Spike.png */,
+			);
+			name = Obstaculo;
+			sourceTree = "<group>";
+		};
+		2E293C28C0F64E1CA877AAE0 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				CF398BC6752842319A63F992 /* CMake Rules */,
+				24AFE31615084D31B63E6E5B /* /Users/shiobara/Documents/jogotecprog/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		432EF7AE89774DD5838299EB /* Demonio */ = {
+			isa = PBXGroup;
+			children = (
+				8D3144B2600E484BA1833D96 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/ATTACK.png */,
+				D065D3DCDE334A86A77B33A1 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/DEATH.png */,
+				91D0AD4AB1144BBBBA8F625A /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/FLYING.png */,
+				1CF0BB77A1AE4B858874F2D6 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/HURT.png */,
+				3E62E5E15E7B46BBBE661FB4 /* /Users/shiobara/Documents/jogotecprog/assets/Demonio/IDLE.png */,
+			);
+			name = Demonio;
+			sourceTree = "<group>";
+		};
+		4BD6A746767749CBB5BCD890 /* Knight2 */ = {
+			isa = PBXGroup;
+			children = (
+				6ADC52E0DC574C57B752A99F /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 1.png */,
+				E6AD7B0262E4459386886270 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 2.png */,
+				18C20792BFCC4F549CF65841 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/ATTACK 3.png */,
+				EABA62E9AE484AAE952BCF29 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/DEATH.png */,
+				FC6013DA39504DAAA1AFE01A /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/HURT.png */,
+				294633FB74ED49579FF709C1 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/IDLE.png */,
+				0F7DA649A1E94E4884228F5B /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/JUMP.png */,
+				B5B8A6CD03784E888D20DE8B /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN - cópia.png */,
+				5A749788FFFE4F8D82B340AA /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/RUN.png */,
+				907C150BB9814C6D8C9031F0 /* /Users/shiobara/Documents/jogotecprog/assets/Knight2/WALK.png */,
+			);
+			name = Knight2;
+			sourceTree = "<group>";
+		};
+		6F860CD1BEF24DB3AEC683AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70368C4F998446AFB159DD90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		812C07DA6B9F43FDB3D371DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				342C3E17DBF545F983AF2BEF /* main */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		864BB89F3A074E3382A7013E /* main */ = {
+			isa = PBXGroup;
+			children = (
+				F41AB34E823540F289EB433E /* Assets */,
+				DB554C9006A34B1B82F3D12A /* Headers */,
+				986B8438C9AB4F638E8E465C /* Sources */,
+				8ACFC784C9724F64A07E6080 /* /Users/shiobara/Documents/jogotecprog/CMakeLists.txt */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		986B8438C9AB4F638E8E465C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AD64BDA42F944E6086A23DCB /* /Users/shiobara/Documents/jogotecprog/src/Animation.cpp */,
+				62EC3D723AE34B60993D50DC /* /Users/shiobara/Documents/jogotecprog/src/Arvore.cpp */,
+				0C78C3AED51949F785503612 /* /Users/shiobara/Documents/jogotecprog/src/Demonio.cpp */,
+				E407215D1BA84DEA86BCF912 /* /Users/shiobara/Documents/jogotecprog/src/Ente.cpp */,
+				A7EF6B2357964F5C8CE78562 /* /Users/shiobara/Documents/jogotecprog/src/Entidade.cpp */,
+				C4E5D9F71F314604B966DB61 /* /Users/shiobara/Documents/jogotecprog/src/Fase.cpp */,
+				38792243257B4FB1A6567618 /* /Users/shiobara/Documents/jogotecprog/src/FasePrimeira.cpp */,
+				0DB2439CE0704CE486A1176D /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorColisoes.cpp */,
+				2BB56F821074440AB80278C0 /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorGrafico.cpp */,
+				71A8BF432DB440078B8C2C4A /* /Users/shiobara/Documents/jogotecprog/src/Inimigo.cpp */,
+				16F52B0800274198A656DD0A /* /Users/shiobara/Documents/jogotecprog/src/Jogador.cpp */,
+				5466CD9B6E9044C1B3C6B39C /* /Users/shiobara/Documents/jogotecprog/src/Jogo.cpp */,
+				FBDC82BF464D421F91E96844 /* /Users/shiobara/Documents/jogotecprog/src/Limites.cpp */,
+				A33D106E2FBB46BEA5838033 /* /Users/shiobara/Documents/jogotecprog/src/ListaEntidades.cpp */,
+				0AD5549CE87E4626B7977457 /* /Users/shiobara/Documents/jogotecprog/src/Morte.cpp */,
+				819F4440CB99460BAA1E8C05 /* /Users/shiobara/Documents/jogotecprog/src/Obst_Medio.cpp */,
+				492CB7CCADE2445292C57020 /* /Users/shiobara/Documents/jogotecprog/src/Obstaculo.cpp */,
+				00C5444C3C27431E95BBC7B2 /* /Users/shiobara/Documents/jogotecprog/src/Personagem.cpp */,
+				B797859B10F64729B74D1CD4 /* /Users/shiobara/Documents/jogotecprog/src/Plataforma.cpp */,
+				19E1BCB2480140DE893B74C8 /* /Users/shiobara/Documents/jogotecprog/src/Projetil.cpp */,
+				22DCE93E42254A03B69B4A0F /* /Users/shiobara/Documents/jogotecprog/src/SingleFrameAnimation.cpp */,
+				CDF0C38840BB49F0BB55A938 /* /Users/shiobara/Documents/jogotecprog/src/main.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		B2E28D0C9D9C4A5B80C459DF /* Knight */ = {
+			isa = PBXGroup;
+			children = (
+				BEE52275756647398EA8561D /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 1.png */,
+				604D0289AFF24AF5B5EE0120 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 2.png */,
+				21C0DE24A8D7402FA24AA608 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/ATTACK 3.png */,
+				0B72928D0C124861814C36C9 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/DEATH.png */,
+				346DFF48E2364080B1B3C2E5 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/HURT.png */,
+				ED8E8E4A5C4848C0847B1552 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/IDLE.png */,
+				5D472CA9DFB9465F8483A424 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/JUMP.png */,
+				623D5837648C405F8D564495 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN - cópia.png */,
+				6C837A64A7D74A7DA97727A2 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/RUN.png */,
+				BF25BF21A4A043188C0EE771 /* /Users/shiobara/Documents/jogotecprog/assets/Knight/WALK.png */,
+			);
+			name = Knight;
+			sourceTree = "<group>";
+		};
+		CF398BC6752842319A63F992 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		DB554C9006A34B1B82F3D12A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				63E23AFA3D93409FAA1A71AB /* /Users/shiobara/Documents/jogotecprog/include/Animation.hpp */,
+				8D674389964E4BE1A8C8908D /* /Users/shiobara/Documents/jogotecprog/include/Arvore.hpp */,
+				D869FA7B2920434FBE8F2599 /* /Users/shiobara/Documents/jogotecprog/include/Demonio.hpp */,
+				28CBB9247A8A498887B3B34E /* /Users/shiobara/Documents/jogotecprog/include/Ente.hpp */,
+				75F431B2681F4F1EB65A1236 /* /Users/shiobara/Documents/jogotecprog/include/Entidade.hpp */,
+				E1E9DD6A1C9F41F399CBDCEA /* /Users/shiobara/Documents/jogotecprog/include/Fase.hpp */,
+				F8D42864476E46C08D7DC2E9 /* /Users/shiobara/Documents/jogotecprog/include/FasePrimeira.hpp */,
+				8A5C306336E049DE8164F0DA /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorColisoes.hpp */,
+				3E3AE63F8C7C4597BD25E627 /* /Users/shiobara/Documents/jogotecprog/include/GerenciadorGrafico.hpp */,
+				B38FF39A1B1A4E098F947302 /* /Users/shiobara/Documents/jogotecprog/include/Inimigo.hpp */,
+				02A8159AB3F94A6D8357A75B /* /Users/shiobara/Documents/jogotecprog/include/Jogador.hpp */,
+				8F58B7FB44D2472C867589F5 /* /Users/shiobara/Documents/jogotecprog/include/Jogo.hpp */,
+				7F5738C764C749A893183259 /* /Users/shiobara/Documents/jogotecprog/include/Limites.hpp */,
+				5DF01E10BBDC432FA5C67A77 /* /Users/shiobara/Documents/jogotecprog/include/ListTL.hpp */,
+				CDBBEACF633E4FD6ABE9C9E8 /* /Users/shiobara/Documents/jogotecprog/include/ListaEntidades.hpp */,
+				A88162D8653C40508D64824D /* /Users/shiobara/Documents/jogotecprog/include/Morte.hpp */,
+				8A1FCAE6C1F94C098A5E140F /* /Users/shiobara/Documents/jogotecprog/include/Obst_Medio.hpp */,
+				77B0B141F2464B8BA38445DE /* /Users/shiobara/Documents/jogotecprog/include/Obstaculo.hpp */,
+				2E2E32ABC8DB45D994CC6DDA /* /Users/shiobara/Documents/jogotecprog/include/Personagem.hpp */,
+				D6DA83DD077C4519964898B9 /* /Users/shiobara/Documents/jogotecprog/include/Plataforma.hpp */,
+				F7313F777908436BAF865509 /* /Users/shiobara/Documents/jogotecprog/include/Projetil.hpp */,
+				E9853666A63C4726B56B1FD5 /* /Users/shiobara/Documents/jogotecprog/include/SingleFrameAnimation.hpp */,
+				BBC4242A2F7E4ACEACD43FF6 /* /Users/shiobara/Documents/jogotecprog/include/VectorTL.hpp */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		F41AB34E823540F289EB433E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FB5CEC033A6F4D439CC08831 /* Arvore */,
+				432EF7AE89774DD5838299EB /* Demonio */,
+				B2E28D0C9D9C4A5B80C459DF /* Knight */,
+				4BD6A746767749CBB5BCD890 /* Knight2 */,
+				FCEA21AC95EE43E9B1E0BB0C /* Morte */,
+				254E532996BC470BA04D986E /* Obstaculo */,
+				385FE544ABD944E3A316F2F0 /* /Users/shiobara/Documents/jogotecprog/assets/.DS_Store */,
+				BF4B7CA34E7641CCB9FE9149 /* /Users/shiobara/Documents/jogotecprog/assets/background.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		FB5CEC033A6F4D439CC08831 /* Arvore */ = {
+			isa = PBXGroup;
+			children = (
+				43AEC863DD1847B8BA241164 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/HURT.png */,
+				CD1FD596D2C04CB79AE0FE17 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/IDLE.png */,
+				95D1B88FA03D4E8B8C520847 /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/WALK.png */,
+				EDFB1792FAC64208B74A822A /* /Users/shiobara/Documents/jogotecprog/assets/Arvore/tronchungo3.png */,
+			);
+			name = Arvore;
+			sourceTree = "<group>";
+		};
+		FCEA21AC95EE43E9B1E0BB0C /* Morte */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0FE46C2FC4600BC13C71B /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING.png */,
+				BD398449E5F249D29D4460BE /* /Users/shiobara/Documents/jogotecprog/assets/Morte/FLYING8.png */,
+				358897C363784E9D80ABAB7D /* /Users/shiobara/Documents/jogotecprog/assets/Morte/IDLE.png */,
+				1CD03749610A48D5AB341489 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/Iprojetil.png */,
+				B6BA0DEB046745AFAFE2938A /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL.png */,
+				53ACBCEC6D5041488927CE3D /* /Users/shiobara/Documents/jogotecprog/assets/Morte/PROJETIL_SPAWN.png */,
+				5297FA9646CA4422A5EED3BD /* /Users/shiobara/Documents/jogotecprog/assets/Morte/death.png */,
+				01C5D354D7F54A3AB846FD41 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado.png */,
+				5371E43812FC4FFC9A814E77 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/inutilizado2.png */,
+				543C1C8F114044FAB8136399 /* /Users/shiobara/Documents/jogotecprog/assets/Morte/summon.png */,
+			);
+			name = Morte;
+			sourceTree = "<group>";
+		};
+		FF722A7D2DE140E3ABA1A550 = {
+			isa = PBXGroup;
+			children = (
+				2E293C28C0F64E1CA877AAE0 /* ALL_BUILD */,
+				864BB89F3A074E3382A7013E /* main */,
+				812C07DA6B9F43FDB3D371DF /* Products */,
+				6F860CD1BEF24DB3AEC683AA /* Frameworks */,
+				70368C4F998446AFB159DD90 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09180B84A58F0F386124BCEE /* main */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF28C17244E4A558229910C /* Build configuration list for PBXNativeTarget "main" */;
+			buildPhases = (
+				1E5F839CEDDE4D1A839AF6AE /* Sources */,
+				CF54BDCF81F646ECA4C5EDAA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C18155391A14C04B633D457 /* PBXTargetDependency */,
+			);
+			name = main;
+			productName = main;
+			productReference = 342C3E17DBF545F983AF2BEF /* main */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCD4239BB9234156B168F419 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2650;
+			};
+			buildConfigurationList = DC7F975393CD4876BD71EB37 /* Build configuration list for PBXProject "Jogo" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				BD200AFA5FB643818FDF0FC2 /* Debug */,
+				ACEDD6E435BA464B99B36CC7 /* Release */,
+				29858EE7FF7D40C19A1F73FA /* MinSizeRel */,
+				E72218F6FD2B4AFDB7C9681C /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = FF722A7D2DE140E3ABA1A550;
+			projectDirPath = .;
+			projectRoot = "";
+			targets = (
+				4744A32384E4218747EEFD39 /* ALL_BUILD */,
+				09180B84A58F0F386124BCEE /* main */,
+				42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		AD6E3E9877489E068D5BBBD3 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+/Users/shiobara/Documents/jogotecprog/CMakeFiles/ALL_BUILD			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		F8FED941F7682D2526D3075E /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Users/shiobara/Documents/jogotecprog/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/shiobara/Documents/jogotecprog
+  make -f /Users/shiobara/Documents/jogotecprog/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E5F839CEDDE4D1A839AF6AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888C0F44FDA443C099116B5B /* /Users/shiobara/Documents/jogotecprog/src/Animation.cpp */,
+				EDB003664C71451F86B3DC7B /* /Users/shiobara/Documents/jogotecprog/src/Arvore.cpp */,
+				5EEAE89FDD6C43A9AA0DD302 /* /Users/shiobara/Documents/jogotecprog/src/Demonio.cpp */,
+				C2F10255E5A8468CBBAFFC26 /* /Users/shiobara/Documents/jogotecprog/src/Ente.cpp */,
+				7CC11F671CD241F1BB53C146 /* /Users/shiobara/Documents/jogotecprog/src/Entidade.cpp */,
+				A644DDC89A334BA3B8410A26 /* /Users/shiobara/Documents/jogotecprog/src/Fase.cpp */,
+				235DBF7A25714BEB9F370986 /* /Users/shiobara/Documents/jogotecprog/src/FasePrimeira.cpp */,
+				90DF22416E41487AB1836B8D /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorColisoes.cpp */,
+				CE74F929176A4A5A84BB77A8 /* /Users/shiobara/Documents/jogotecprog/src/GerenciadorGrafico.cpp */,
+				7BFD44E53ABA47F1AE35D739 /* /Users/shiobara/Documents/jogotecprog/src/Inimigo.cpp */,
+				BB3F7E87555849309BD353AE /* /Users/shiobara/Documents/jogotecprog/src/Jogador.cpp */,
+				316A729E432F40A896DA46DC /* /Users/shiobara/Documents/jogotecprog/src/Jogo.cpp */,
+				61E6129B972440DDA7D8AD45 /* /Users/shiobara/Documents/jogotecprog/src/Limites.cpp */,
+				3841D84FD2F648F48699508F /* /Users/shiobara/Documents/jogotecprog/src/ListaEntidades.cpp */,
+				11758526CF4F4940B4BBAF54 /* /Users/shiobara/Documents/jogotecprog/src/Morte.cpp */,
+				F1B237862BFA460F83A1D344 /* /Users/shiobara/Documents/jogotecprog/src/Obst_Medio.cpp */,
+				D8448B7878CA4653B99A610B /* /Users/shiobara/Documents/jogotecprog/src/Obstaculo.cpp */,
+				F617D3AF55044C788920B5EB /* /Users/shiobara/Documents/jogotecprog/src/Personagem.cpp */,
+				D16727ACD28A4BF9BDF75B38 /* /Users/shiobara/Documents/jogotecprog/src/Plataforma.cpp */,
+				A71747AD38524BAFA6450829 /* /Users/shiobara/Documents/jogotecprog/src/Projetil.cpp */,
+				5B2245E5D613450DB7F9AA43 /* /Users/shiobara/Documents/jogotecprog/src/SingleFrameAnimation.cpp */,
+				5D9DCC503F524DC0B804DD62 /* /Users/shiobara/Documents/jogotecprog/src/main.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C18155391A14C04B633D457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */;
+			targetProxy = EA34C5494B244C14947521C7 /* PBXContainerItemProxy */;
+		};
+		2458065B9E6E4A8C93C517AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42BC39BDE240DFF12C5A56DE /* ZERO_CHECK */;
+			targetProxy = 3ED6BECB92E84B8C84090F10 /* PBXContainerItemProxy */;
+		};
+		C9EF99B417D547C4B1B6D4C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09180B84A58F0F386124BCEE /* main */;
+			targetProxy = FAA04ED70F764E5791501FFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B8CCD612E83419798BCB954 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = RelWithDebInfo;
+		};
+		2DF4FDDB62A1481B9C45C1E5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = MinSizeRel;
+		};
+		3E65E681DB38428CA235E21E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		49511F38C0AE4A0E91259646 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/shiobara/Documents/jogotecprog/include,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		4D79FDAB22274E628A815D19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		4F95A69918454C74AE52E096 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5B43B1D18A4C443899F9940A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/shiobara/Documents/jogotecprog/include,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5BCB13441E9A441CA0592820 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		735357D94B954AFEA192A847 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/shiobara/Documents/jogotecprog/include,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		7A2E32D03F014DAF9FDAA3A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = Release;
+		};
+		7AE22436B1394A55923A2938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		A7F73FD365EA4523A1C6F6F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SYMROOT = /Users/shiobara/Documents/jogotecprog/build;
+			};
+			name = Debug;
+		};
+		BA5599C7ED714952AC2F2101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/shiobara/Documents/jogotecprog/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/shiobara/Documents/jogotecprog/include,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.2.dylib","/opt/homebrew/lib/libsfml-window.2.6.2.dylib","/opt/homebrew/lib/libsfml-system.2.6.2.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = main;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/shiobara/Documents/jogotecprog/build/main.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		BD9BDDD905964CC786FABA77 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D3D3376E0E8E454D8B2EDF63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		D703380B9B1F4E52817345CF /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6859F224C8504CE3A3A74C89 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D3376E0E8E454D8B2EDF63 /* Debug */,
+				7AE22436B1394A55923A2938 /* Release */,
+				3E65E681DB38428CA235E21E /* MinSizeRel */,
+				BD9BDDD905964CC786FABA77 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DC7F975393CD4876BD71EB37 /* Build configuration list for PBXProject "Jogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F73FD365EA4523A1C6F6F5 /* Debug */,
+				7A2E32D03F014DAF9FDAA3A7 /* Release */,
+				2DF4FDDB62A1481B9C45C1E5 /* MinSizeRel */,
+				1B8CCD612E83419798BCB954 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DFF28C17244E4A558229910C /* Build configuration list for PBXNativeTarget "main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA5599C7ED714952AC2F2101 /* Debug */,
+				49511F38C0AE4A0E91259646 /* Release */,
+				5B43B1D18A4C443899F9940A /* MinSizeRel */,
+				735357D94B954AFEA192A847 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FC40ECA559DB4AFBB6DB067D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D79FDAB22274E628A815D19 /* Debug */,
+				5BCB13441E9A441CA0592820 /* Release */,
+				4F95A69918454C74AE52E096 /* MinSizeRel */,
+				D703380B9B1F4E52817345CF /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCD4239BB9234156B168F419 /* Project object */;
+}

@@ -6,7 +6,7 @@ Arvore::Arvore(CoordF position, int hp, float velocidade, float percepcao)
  
 Arvore::~Arvore() {}
  
-void Arvore::executar() {}
+void Arvore::executar() {this->desenhar();}
 void Arvore::salvar() {}
 void Arvore::mover() {}
  
