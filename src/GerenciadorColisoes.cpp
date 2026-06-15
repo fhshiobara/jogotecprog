@@ -70,6 +70,25 @@ namespace Gerenciadores {
         pJog->setPos(pos);
         pJog->setVel(vel);
         pJog->setChao(chao);
+
+        // Func copiada para jog2
+
+        pos = pJog2->getPos();
+        vel = pJog2->getVel();
+        chao = pJog2->noChao();
+
+        for (iteradorObs = ListaObstaculos.begin(); iteradorObs != ListaObstaculos.end(); ++iteradorObs) {
+
+            bool colidiu = (*iteradorObs)->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
+
+            if (colidiu && (*iteradorObs)->isDanoso())
+                pJog2->morrer();
+
+        }
+
+        pJog2->setPos(pos);
+        pJog2->setVel(vel);
+        pJog2->setChao(chao);
     }
 
     void GerenciadorColisoes::tratarColisoesJogador() {
@@ -96,6 +115,28 @@ namespace Gerenciadores {
 
         if (colidindoX && colidindoY)
             pJog->morrer(); // Aqui, perder vida ao inves de morrer.
+        }
+
+        // Func copiada para jog2
+
+        CoordF posJog2 = pJog2->getPos();
+
+    for (iteradorInimigo = ListaInimigos.begin(); iteradorInimigo != ListaInimigos.end(); ++iteradorInimigo) {
+        Inimigo* inimigoAtual = *iteradorInimigo;
+
+        if (!inimigoAtual->estaVivo()) 
+            continue;
+
+        CoordF posInimigo = inimigoAtual->getPos();
+
+        float distanciaX = posJog.x - posInimigo.x;
+        float distanciaY = posJog.y - posInimigo.y;
+
+        bool colidindoX = std::abs(distanciaX) < metade * 2.f;
+        bool colidindoY = std::abs(distanciaY) < metade * 2.f;
+
+        if (colidindoX && colidindoY)
+            pJog2->morrer(); // Aqui, perder vida ao inves de morrer.
         }
     }
 
@@ -133,7 +174,7 @@ namespace Gerenciadores {
         }
     }
 
-    void GerenciadorColisoes::tratarLimites() {
+    void GerenciadorColisoes::tratarLimites() { //TODO adicionar colisao com jogador 2
         limites->aplicarLimites(pJog);
         limites->aplicarLimites(pJog2);
     }
@@ -148,17 +189,20 @@ namespace Gerenciadores {
     // Procura bosses (Morte) na lista de inimigos
     std::vector<Inimigo*>::iterator it;
     for (it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
+
         Morte* boss = dynamic_cast<Morte*>(*it);
         if (boss == NULL) continue;
  
         Entidades::Projetil* proj = boss->getProjetil();
-        if (proj == NULL || !proj->estaAtivo()) continue;
+        if (proj == NULL || !proj->estaAtivo()) 
+            continue;
  
         CoordF posProj = proj->getPos();
         float dx = posJog.x - posProj.x;
         float dy = posJog.y - posProj.y;
  
         // Colisão por bounding box (metade do jogador + raio do projétil)
+        // Trecho abaixo feito pelo Claude
         if (std::abs(dx) < metade + 8.f && std::abs(dy) < metade + 8.f) {
             proj->desativar(); // consome o projétil
             if (!pJog->estaImune())
