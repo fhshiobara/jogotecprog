@@ -6,7 +6,12 @@
 *.a
 *.so
 *.log
+.DS_Store
+Jogo.xcodeproj/
+Debug/
+Makefile
 .vscode/
 CMakeCache.txt
+cmake_install.cmake
 CMakeFiles/
 /SFML-2.6.1
