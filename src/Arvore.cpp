@@ -34,6 +34,6 @@ void Arvore::perseguir(CoordF posJogador, float dt) {
 }
 
 void Arvore::initialize() {
-    this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Arvore/IDLE.png", 4);
-    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Arvore/WALK.png", 8);
+    this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Bixo/IDLE.png", 5);
+    this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Bixo/WALK.png", 8);
 }

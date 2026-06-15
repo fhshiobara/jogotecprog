@@ -35,10 +35,20 @@ void Jogador::desenhar() {
     this->sprite.render();
 }
   
-void Jogador::initialize() {
-    this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight/IDLE.png",     7);
-    this->sprite.addNewAnimation(Animation_ID::walk,   "../assets/Knight/WALK.png",     8);
-    this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight/ATTACK 1.png", 6);
-    this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight/JUMP.png",     5);
+void Jogador::initialize(bool Jog) {
+    if(Jog == false){
+        this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight/IDLE.png",  7);
+        this->sprite.addNewAnimation(Animation_ID::walk,   "../assets/Knight/WALK.png",  8);
+        this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight/ATTACK 1.png", 6);
+        this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight/JUMP.png", 5);
+    }
+    if(Jog == true){
+        this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight2/IDLE.png", 7);
+        this->sprite.addNewAnimation(Animation_ID::walk,   "../assets/Knight2/WALK.png",  8);
+        this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight2/ATTACK 1.png", 6);
+        this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight2/JUMP.png", 5);
+        
+    }
+    
     // Verificar path se der erro! Deve-se mudar o path em relacao a onde o jogo esta sendo built.
 }

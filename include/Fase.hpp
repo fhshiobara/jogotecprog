@@ -14,6 +14,9 @@
 #include <vector>
 #include "Plataforma.hpp"
 
+
+
+
 namespace Fases{
 class Fase:public Ente{
 protected:

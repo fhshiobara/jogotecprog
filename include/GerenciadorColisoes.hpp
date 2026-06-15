@@ -19,6 +19,7 @@ namespace Gerenciadores {
             std::vector<Inimigo*> ListaInimigos;
             std::list<Obstaculos::Obstaculo*> ListaObstaculos;
             Jogador* pJog;
+            Jogador* pJog2;
             
             Obstaculos::Limites* limites;
  

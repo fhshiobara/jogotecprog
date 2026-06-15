@@ -10,22 +10,26 @@
 
 using namespace Obstaculos;
  
-Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()),pJ1(NULL),pFase1(NULL),pGC(Gerenciadores::GerenciadorColisoes::getInstance()) {
-    srand(time(NULL));
+Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()),pJ1(NULL),pJ2(NULL),pFase1(NULL),pGC(Gerenciadores::GerenciadorColisoes::getInstance()) {
+    srand((unsigned)time(NULL));
     executar(); }
  
 Jogo::~Jogo() {
     delete pFase1;
     delete pJ1;
+    delete pJ2;
     
 }
  
 void Jogo::executar() {
     
     pJ1 = new Jogador(CoordF(200.f,200.f),3,0,200.f);
+    
+    pJ2 = new Jogador(CoordF(240.f,200.f),3,0,200.f);
     std::cout<<"chamando initialize"<<std::endl;
-    pJ1->initialize();
+    pJ1->initialize(true);
+    pJ2->initialize(false);
     std::cout<<"initialize concluido"<<std::endl;
     pFase1 = new Fases::FasePrimeira();
-    pFase1->executar(pJ1);
+    pFase1->executar(pJ1,pJ2);
 }

@@ -10,6 +10,7 @@ class Jogo{
         Gerenciadores::GerenciadorGrafico* pGerenciadorGrafico;
     Gerenciadores::GerenciadorColisoes* pGC;
     Jogador* pJ1;
+    Jogador* pJ2;
     Fases::FasePrimeira* pFase1;
     public:
         Jogo();

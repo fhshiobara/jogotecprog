@@ -17,7 +17,7 @@ class Jogador: public Personagem {
         void executar();
         void salvar();
         void morrer();
-        void initialize();
+        void initialize(bool Jog);
         void mover();
         void pular();
          

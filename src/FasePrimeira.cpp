@@ -43,6 +43,7 @@ void FasePrimeira::criar_inim_Demonio(){
         if(pInim !=NULL){
             list_ents.incluir(pInim);
             pGC->incluirInimigo(pInim);
+            pInim->desenhar();
         }
         else{std::cerr << "ERRO: falha na alocacao do inimigo medio" << std::endl;}
     }
@@ -54,6 +55,7 @@ void FasePrimeira::criar_obst_Espinhos(){
     
     float alt_min = 50;
     float larg_min = 80;
+    float tam_plat = 0;
     int num_obst_medio = rand()%(max_obst_Espinhos + 1);
     
     if(num_obst_medio<3){num_obst_medio = 3;} //numero minimo de obstaculos
@@ -64,7 +66,10 @@ void FasePrimeira::criar_obst_Espinhos(){
         Plataforma* plat = NULL;
         if(plat==NULL){
             plat = vPlats[rand()%vPlats.size()]; // escolhe uma plataforma aleatoria do vector derivado da Fase
-            pObs = new Obstaculos::Obst_Medio(CoordF(plat->getEsquerda()+(rand()%(int)plat->getDireita()-80),plat->getTopo()-40), alt_min + rand()%10, larg_min + rand()%20, 0.85);
+            tam_plat = plat->getDireita() - plat->getEsquerda();
+            tam_plat = tam_plat -rand()%(int)tam_plat;
+            
+            pObs = new Obstaculos::Obst_Medio(CoordF(plat->getDireita()+tam_plat,plat->getTopo()-40), alt_min + rand()%10, larg_min + rand()%20, 0.85);
             
         }
         
@@ -96,8 +101,8 @@ void FasePrimeira::criarObstaculos(){
 }
 void FasePrimeira::executar(){}
 
-void FasePrimeira::executar(Jogador* pJog){
-    if(pGC==NULL || pJog==NULL){
+void FasePrimeira::executar(Jogador* pJ1,Jogador* pJ2){
+    if(pGC==NULL || pJ1==NULL){
         
         std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;
         return;
@@ -107,17 +112,30 @@ void FasePrimeira::executar(Jogador* pJog){
     criarInimigos();
     criarObstaculos();
     
-    pGC->setJogador(pJog);
+    pGC->setJogador(pJ1);
+    if(pJ2){
+        pGC->setJogador(pJ2);
+    }
     
     pGC->setLimite(tam_tela.x,tam_tela.y-10);
-    list_ents.incluir(pJog);
+    //list_ents.incluir(pJ1);
     
     sf::Clock clock;
     //setando o jogador
     bool andDir = false;
     bool andEsq = false;
+    
+    bool andDir2 = false;
+    bool andEsq2 = false;
+    
+    
+    
     bool olhandoEsquerda = false;
+    bool olhandoEsquerda2 = false;
+    
     Animation_ID animacao = Animation_ID::idle;
+    
+    Animation_ID animacao2 = Animation_ID::idle;
     
     pGG = Gerenciadores::GerenciadorGrafico::getInstance();
     
@@ -132,29 +150,65 @@ void FasePrimeira::executar(Jogador* pJog){
             if(evento.type ==sf::Event::KeyPressed){
                 if(evento.key.code == sf::Keyboard::D){andDir=true;}
                 if(evento.key.code == sf::Keyboard::A){andEsq=true;}
-                if(evento.key.code == sf::Keyboard::Space){pJog->pular();}
+                if(evento.key.code == sf::Keyboard::Space){pJ1->pular();}
+                
+                if(pJ2){
+                    if(evento.key.code == sf::Keyboard::Right){andDir2=true;}
+                    if(evento.key.code == sf::Keyboard::Left){andEsq2=true;}
+                    if(evento.key.code == sf::Keyboard::Up){pJ2->pular();}
+                }
+                
+                
             }
             if(evento.type == sf::Event::KeyReleased){
                 
                 if(evento.key.code == sf::Keyboard::D){andDir=false;}
                 if(evento.key.code == sf::Keyboard::A){andEsq=false;}
+                
+                if(pJ2){
+                    if(evento.key.code == sf::Keyboard::Right){andDir2=false;}
+                    if(evento.key.code == sf::Keyboard::Left){andEsq2=false;}
+                    
+                }
             }
             
         }
         animacao = Animation_ID::idle;
+        animacao2 = Animation_ID::idle;
         
         if(andDir){
-            pJog->moverX(true,dt);
+            pJ1->moverX(true,dt);
             olhandoEsquerda = false;
             animacao = Animation_ID::walk;
         }
         if(andEsq){
-            pJog->moverX(false,dt);
+            pJ1->moverX(false,dt);
             olhandoEsquerda = true;
             animacao = Animation_ID::walk;
         }
         
-        if(!pJog->noChao()){animacao = Animation_ID::jump;}
+        if(pJ2){
+            if(andDir2){
+                pJ2->moverX(true,dt);
+                olhandoEsquerda2 = false;
+                animacao2 = Animation_ID::walk;
+            }
+            if(andEsq2){
+                pJ2->moverX(false,dt);
+                olhandoEsquerda2 = true;
+                animacao2 = Animation_ID::walk;
+            }
+            
+            
+        }
+        
+        if(!pJ1->noChao()){animacao = Animation_ID::jump;}
+        
+        if(pJ2){
+            if(!pJ2->noChao()){
+                animacao2 = Animation_ID::jump;
+            }
+        }
         
         pGC->executar(dt);
         
@@ -162,8 +216,12 @@ void FasePrimeira::executar(Jogador* pJog){
         background->render();
         list_ents.percorrer();
         
-        pJog->atualizarAnimacao(animacao, olhandoEsquerda, dt);
-        pJog->desenhar();
+        pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
+        pJ1->desenhar();
+        if(pJ2){
+            pJ2->atualizarAnimacao(animacao2,olhandoEsquerda2,dt);
+            pJ2->desenhar();
+        }
         pGG->getWindow()->display();
         
         

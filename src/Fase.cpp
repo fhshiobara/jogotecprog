@@ -27,9 +27,12 @@ void Fase::criarPlataformas(){
     
     for(int i=0;i<num_max_Plataformas;i++){
         Plataforma* pPlat = NULL;
-        pPlat = new Plataforma(CoordF(rand()%800,rand()%300+150),rand()%100+80,20.0f); // precisamos randomizar isso depois
+        pPlat = new Plataforma(CoordF(rand()%800,rand()%300+150),rand()%100+80,20.0f);
+        
+        
         
         if(pPlat!=NULL){
+                
             list_ents.incluir(pPlat);
             vPlats.push_back(pPlat);
             
@@ -56,6 +59,7 @@ void Fase::criarInimigosArvore(){  // mudar para inimigos faceis
         pInim = new Arvore(CoordF(0.0f,0.0f)); //os parametros podem ser mudados aqui para alterar a dificuldade
         if(pInim !=NULL){
             list_ents.incluir(pInim);
+            pInim->desenhar();
         }
         else{std::cerr << "ERRO: falha na criacao do inimigo Facil" << std::endl;}
     }

@@ -16,12 +16,18 @@ namespace Gerenciadores {
         return instance;
     }
 
-    GerenciadorColisoes::GerenciadorColisoes() : pJog(nullptr) {}
+    GerenciadorColisoes::GerenciadorColisoes() : pJog(NULL) {}
 
     GerenciadorColisoes::~GerenciadorColisoes() {}
 
     void GerenciadorColisoes::setJogador(Jogador* pJogador) {
-        pJog = pJogador;
+        if(pJog){
+            pJog2 = pJogador;
+        }
+        else{
+            pJog = pJogador;
+        }
+        
     }
 
     void GerenciadorColisoes::setLimite(float largura, float altura) {
@@ -119,6 +125,7 @@ namespace Gerenciadores {
         float gravidade = 800.f; // Define gravidade geral
 
         pJog->gravidade(dt, gravidade);
+        pJog2->gravidade(dt,gravidade);
 
         for (Inimigo* inimigo : ListaInimigos) {
         if (inimigo->estaVivo() && dynamic_cast<Arvore*>(inimigo)) // Dynamic_cast feito pelo claude. Somente gravita inimigos ARVORE
@@ -128,13 +135,15 @@ namespace Gerenciadores {
 
     void GerenciadorColisoes::tratarLimites() {
         limites->aplicarLimites(pJog);
+        limites->aplicarLimites(pJog2);
     }
 
     void GerenciadorColisoes::tratarColisaoProjetil() {
     if (pJog == NULL) return;
  
     CoordF posJog = pJog->getPos();
-    float  metade = alturaJogador / 2.f;
+    CoordF posJog2 = pJog2->getPos();
+    float metade = alturaJogador / 2.f;
  
     // Procura bosses (Morte) na lista de inimigos
     std::vector<Inimigo*>::iterator it;

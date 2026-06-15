@@ -28,7 +28,7 @@ protected:
 public:
     FasePrimeira();
     ~FasePrimeira();
-    void executar(Jogador* pJog);
+    void executar(Jogador* pJ1,Jogador* pJ2);
     void executar();
     
     void criarInimigos();
