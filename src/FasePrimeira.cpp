@@ -60,32 +60,31 @@ void FasePrimeira::criar_obst_Espinhos(){
     
     if(num_obst_medio<3){num_obst_medio = 3;} //numero minimo de obstaculos
     
+    int num_obst_criados =0;
     
-    for(int i = 0;i<num_obst_medio;i++){
-        Obstaculos::Obst_Medio* pObs = NULL;
-        Plataforma* plat = NULL;
-        if(plat==NULL){
-            plat = vPlats[rand()%vPlats.size()]; // escolhe uma plataforma aleatoria do vector derivado da Fase
-            tam_plat = plat->getDireita() - plat->getEsquerda();
-            tam_plat = tam_plat -rand()%(int)tam_plat;
-            
-            pObs = new Obstaculos::Obst_Medio(CoordF(plat->getDireita()+tam_plat,plat->getTopo()-40), alt_min + rand()%10, larg_min + rand()%20, 0.85);
-            
-        }
+    while(num_obst_criados<num_obst_medio){
+        int aux = rand()%9;
+        Grid espaco = static_cast<Grid>(aux);
         
-        
-        if(pObs!= NULL){
-            list_ents.incluir(pObs);
-            pGC->incluirObstaculo(pObs);
+        if(mapa.estaOcupado(espaco)){
+            CoordF pos = mapa.getCoord(espaco);
+            pos.y=pos.y- alt_min/2;
+            
+            Obstaculos::Obst_Medio* pEsp = NULL;
+            pEsp = new Obstaculos::Obst_Medio(pos,alt_min, larg_min + rand()%36,1.0);
+            
+            if(pEsp!=NULL){
+                num_obst_criados++;
+                list_ents.incluir(pEsp);
+                pGC->incluirObstaculo(pEsp);
+                
+                
+            }
+            else{
+                std::cerr<<"ERRO: na alocação do espinho"<<std::endl;
+            }
         }
-        else{
-            std::cerr<<"ERRO: falha na alocacao do ponteiro do objeto medio em FASE Primeira"<<std::endl;
-        }
-
     }
-    
-    
-    
     
 }
 
