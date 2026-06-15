@@ -15,7 +15,7 @@ namespace Fases{
 
 Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimArvore(4),tam_tela(800,600),num_max_Plataformas(rand()%10){
     vPlats.clear();
-    if(num_max_Plataformas<6){num_max_Plataformas=6;}//estabelece um valor minimo de plataformas
+    if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
 }
 
 
@@ -25,29 +25,35 @@ Fase::~Fase(){}
 
 void Fase::criarPlataformas(){
     
-    for(int i=0;i<num_max_Plataformas;i++){
-        Plataforma* pPlat = NULL;
-        pPlat = new Plataforma(CoordF(rand()%800,rand()%300+150),rand()%100+80,20.0f);
+    int num_Plataformas =0;
+    int larg_min = 120; //largura minima de uma plataforma
+    int alt_min = 20; //altura
+    while(num_Plataformas<num_max_Plataformas){
+        int aux = rand()%9; // numero precisa ser até 8 no primeiro modelo
+        Grid espaco = static_cast<Grid>(aux);
         
         
-        
-        if(pPlat!=NULL){
-                
-            list_ents.incluir(pPlat);
-            vPlats.push_back(pPlat);
+        if(!mapa.estaOcupado(espaco)){
+            CoordF pos = mapa.getCoord(espaco);
             
-            pGC->incluirObstaculo(pPlat);
+            Plataforma* plat = NULL;
+            plat = new Plataforma(pos,larg_min+rand()%31,alt_min+rand()%11);
             
-            pPlat->desenhar();
-            
-            
+            if(plat!=NULL){
+                num_Plataformas++;
+                mapa.setOcupado(espaco,true);
+                vPlats.push_back(plat);
+                list_ents.incluir(plat);
+                pGC->incluirObstaculo(plat);
+                plat->desenhar();
+            }
+            else{
+                std::cerr<<"Erro: na alocacao da plataforma"<<std::endl;
+            }
         }
-        else{
-            std::cerr << "ERRO: Alocacao falha de plataforma em Fase::criarPlataformas" << std::endl;
-        }
-        
-    }   
+    }
 }
+
 
 void Fase::criarCenario(){
 }

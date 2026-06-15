@@ -33,7 +33,7 @@ private:
         public:
             SingleAnimation(const char* path, const unsigned int imageCount):imageCount(imageCount),currentImage(0),texture(pGraphicM->loadTexture(path)),totalTime(0.0f),rectSize(){
                 if(texture==NULL){
-                    std::cerr << "ERRO:loading texture failed on SingleAnimation::SingleAnimation" <<std::endl;
+                    std::cerr << "ERRO:carregando textura em SingleAnimation::SingleAnimation" <<std::endl;
                     exit(1);
                 }
                 rectSize.width = texture->getSize().x/float(imageCount);
@@ -42,7 +42,7 @@ private:
             
             ~SingleAnimation(){ }
             
-            void update(float dt, bool facingLeft){
+            void update(float dt, bool olhandoesquerda){
                 totalTime+=dt;
                 
                 if(totalTime>=switchTime){
@@ -53,7 +53,7 @@ private:
                 
                 int larguraFrame = texture->getSize().x/imageCount;
                 
-                if(facingLeft){
+                if(olhandoesquerda){
                         rectSize.left = (currentImage + 1) * larguraFrame;
                         rectSize.width = -larguraFrame;
                     }
