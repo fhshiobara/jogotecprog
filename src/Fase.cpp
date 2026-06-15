@@ -44,7 +44,7 @@ void Fase::criarPlataformas(){
                 mapa.setOcupado(espaco,true);
                 vPlats.push_back(plat);
                 list_ents.incluir(plat);
-                pGC->incluirObstaculo(plat);
+                pGC->incluirObstaculo(plat); //acredito que tenha dado certo
                 plat->desenhar();
             }
             else{

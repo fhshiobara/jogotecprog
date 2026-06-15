@@ -38,7 +38,7 @@ public:
         CoordGrid[M1] = CoordF(0.f, 350.f);
         CoordGrid[M2] = CoordF(310.f, 360.f);
         CoordGrid[M3] = CoordF(640.f, 330.f);
-        CoordGrid[B1] = CoordF(35.f, 530.f);
+        CoordGrid[B1] = CoordF(35.f, 450.f);
         CoordGrid[B2] = CoordF(190.f, 500.f);
         CoordGrid[B3] = CoordF(620.f, 470.f);
 
