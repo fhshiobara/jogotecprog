@@ -72,4 +72,18 @@ namespace Gerenciadores{
         texturesMap[path]=newText; // salva no map para uso seguinte
         return newText;
     }
+
+    sf::Font* GerenciadorGrafico::getFont(){
+    if(font == NULL){
+        font = new sf::Font();
+        
+        if(!font->loadFromFile("../assets/Font/FONT.ttf")){
+
+            std::cerr << "ERRO: falha ao carregar assets/fonte.ttf" << std::endl;
+            delete font;
+            font = NULL;
+        }
+        }
+        return font;
+    }
 }

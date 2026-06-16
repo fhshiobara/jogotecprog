@@ -52,7 +52,6 @@ void FasePrimeira::criarInimigosDemonio(){
 }
 
 void FasePrimeira::criarObstaculosEspinhos(){
-    
     float alt_min = 50;
     float larg_min = 80;
     float tam_plat = 0;
@@ -74,13 +73,16 @@ void FasePrimeira::criarObstaculosEspinhos(){
             pEsp = new Obstaculos::Espinhos(pos,alt_min, larg_min + rand()%36,1.0);
             
             if(pEsp!=NULL){
+                if(pEsp != NULL){
                 num_obst_criados++;
+
+                mapa.setOcupado(espaco, false); // Para nao haver espinho nele mesmo
+
                 list_ents.incluir(pEsp);
                 pGC->incluirObstaculo(pEsp);
-                
-                
+                }
             }
-            else{
+            else {
                 std::cerr<<"ERRO: na alocação do espinho"<<std::endl;
             }
         }
@@ -91,7 +93,6 @@ void FasePrimeira::criarObstaculosEspinhos(){
 void FasePrimeira::criarInimigos(){
     criarInimigosBixo();
     criarInimigosDemonio();
-    
 }
 
 void FasePrimeira::criarObstaculos(){
@@ -105,10 +106,12 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;
         return;
     }
+
     criarCenario();
     criarPlataformas();
     criarInimigos();
     criarObstaculos();
+    inserirPlataformasAtrasado();
     
     pGC->setJogador(pJ1);
     if(pJ2){
@@ -205,7 +208,10 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             }
         }
         // Inimigos
-        executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+        if(pJ2 != NULL)
+            executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+        else
+            executarInimigos(vInimigos, pJ1->getPos(), pJ1->getPos(), dt);
 
         pGC->executar(dt);
         pGG->clear();

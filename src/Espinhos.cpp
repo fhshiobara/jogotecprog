@@ -4,7 +4,7 @@
 namespace Obstaculos {
  
     Espinhos::Espinhos(CoordF position, float altura, float largura, float viscosidade)
-        : Obstaculo(position, true), altura(altura), largura(largura), viscosidade(viscosidade)
+        : Obstaculo(position, true), altura(altura), largura(largura)
     {
         hitbox.setSize(sf::Vector2f(largura, altura));
         hitbox.setPosition(sf::Vector2f(position.x, position.y));

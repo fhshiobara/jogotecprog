@@ -1,65 +1,46 @@
 cmake_minimum_required(VERSION 3.16)
-
-project(Jogo)
-
+project(Jogo LANGUAGES CXX)
+ 
 set(CMAKE_CXX_STANDARD 17)
-
-# Organiza os arquivos em pastas (Groups) dentro do Xcode
-set(CMAKE_FOLDER "Jogo")
-
-set(SFML_DIR "SFML-2.6.1/lib/cmake/SFML") # path do SFML (2.6.1)
-
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+set(SFML_DIR "C:/msys64/mingw64/lib/cmake/SFML")
+find_package(SFML 2.6 REQUIRED COMPONENTS graphics window system audio)
+ 
 include_directories(include)
-
-# Copia a pasta de assets para o diretório de build
+ 
 file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
-
-find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
-
-# Mapeia todos os arquivos de cabeçalho da pasta include
-file(GLOB_RECURSE INCLUDE_FILES "include/*.hpp" "include/*.h")
-
-# Mapeia os arquivos de assets para que apareçam no Xcode
-file(GLOB_RECURSE ASSET_FILES "assets/*.*")
-
-# Cria os grupos (pastas virtuais) no Xcode para organizar a lateral
-source_group("Headers" FILES ${INCLUDE_FILES})
-
-# ALTERAÇÃO AQUI: Mapeia a árvore de arquivos respeitando as subpastas
-source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/assets" PREFIX "Assets" FILES ${ASSET_FILES})
-
-source_group("Sources" REGULAR_EXPRESSION "src/.*")
-
-add_executable(main
-    ${INCLUDE_FILES}
-    ${ASSET_FILES}
-
-    src/Projetil.cpp
-    src/Morte.cpp
-    src/Bixo.cpp
-    src/Demonio.cpp
-    src/Limites.cpp
-    src/Espinhos.cpp
-    src/GerenciadorColisoes.cpp
-    src/ListaEntidades.cpp
-    src/Obstaculo.cpp
-    src/Plataforma.cpp
-    src/Inimigo.cpp
+ 
+# Lista explicita de fontes — sem GLOB, para garantir que nada fique de fora
+add_executable(Jogo
     src/main.cpp
     src/Jogo.cpp
-    src/GerenciadorGrafico.cpp
-    src/Personagem.cpp
-    src/Ente.cpp
-    src/Entidade.cpp
-    src/Jogador.cpp
-    src/Animation.cpp
-    src/SingleFrameAnimation.cpp
+    src/Menu.cpp
     src/Fase.cpp
     src/FasePrimeira.cpp
+    src/Ente.cpp
+    src/Entidade.cpp
+    src/Personagem.cpp
+    src/Jogador.cpp
+    src/Inimigo.cpp
+    src/Bixo.cpp
+    src/Demonio.cpp
+    src/Morte.cpp
+    src/Projetil.cpp
+    src/Obstaculo.cpp
+    src/Plataforma.cpp
+    src/Espinhos.cpp
+    src/Limites.cpp
+    src/GerenciadorGrafico.cpp
+    src/GerenciadorColisoes.cpp
+    src/ListaEntidades.cpp
+    src/Animation.cpp
+    src/SingleFrameAnimation.cpp
 )
-
-target_link_libraries(main
+ 
+target_link_libraries(Jogo
     sfml-graphics
     sfml-window
     sfml-system
+    sfml-audio
 )

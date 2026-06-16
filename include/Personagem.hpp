@@ -1,5 +1,5 @@
-#ifndef Personagem_hpp
-#define Personagem_hpp
+#ifndef PERSONAGEM_hpp
+#define PERSONAGEM_hpp
 
 #include "Entidade.hpp"
 

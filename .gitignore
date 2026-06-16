@@ -13,5 +13,6 @@ Makefile
 .vscode/
 CMakeCache.txt
 cmake_install.cmake
+CMakeLists.txt
 CMakeFiles/
 /SFML-2.6.1
