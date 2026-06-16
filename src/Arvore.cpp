@@ -2,11 +2,13 @@
 #include <cmath>
  
 Arvore::Arvore(CoordF position, int hp, float velocidade, float percepcao)
-    : Inimigo(position, hp, velocidade), percepcao(percepcao) {}
+: Inimigo(position, hp, velocidade), percepcao(percepcao) {this->initialize();}
  
 Arvore::~Arvore() {}
  
-void Arvore::executar() {this->desenhar();}
+void Arvore::executar() {
+    this->atualizarAnimacao(Animation_ID::idle,olhandoEsquerda,dt_local);
+    this->desenhar();}
 void Arvore::salvar() {}
 void Arvore::mover() {}
  

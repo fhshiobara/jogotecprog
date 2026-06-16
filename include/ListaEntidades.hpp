@@ -15,6 +15,7 @@ public:
     
     void incluir(Entidades::Entidade* pE);
     void percorrer();
+    void percorrer(float dt);
 };
  
 #endif

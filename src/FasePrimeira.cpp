@@ -20,32 +20,29 @@ void FasePrimeira::criar_inim_Demonio(){
     int num_inim_medio = rand()%(max_inim_Demonio +1);
     
     if(num_inim_medio<3){num_inim_medio =3;} //numero minimo de inimigos
-    if(vPlats.empty()){
-        std::cerr<<"Erro: nenhuma plataforma disponivel"<<std::endl;
-    }
     
-    for(int i = 0;i<num_inim_medio;i++){
-        Demonio* pInim = NULL;
-        
-        Plataforma* plat = NULL;
-        
-        
-        
-        if(plat==NULL){
-            plat = vPlats[rand()%vPlats.size()];
+    int num_demonios_criados = 0;
+    
+    while(num_demonios_criados<num_inim_medio){
+        int aux = rand()%9;
+        Grid espaco = static_cast<Grid>(aux);
+        if(mapa.estaOcupado(espaco)){
+            CoordF pos = mapa.getCoord(espaco);
+            pos.y = pos.y-30;
+            Demonio* pDemo = NULL;
+            pDemo = new Demonio(pos,2,60.f,1.0);
+            
+            if(pDemo!=NULL){
+                num_demonios_criados++;
+                list_ents.incluir(pDemo);
+                pGC->incluirInimigo(pDemo);
+            }
+            
+            else{
+                std::cerr<<"Falha na alocacao do demonio"<<std::endl;
+            }
             
         }
-        else{
-            std::cout<<"Falha em sortear uma plataforma para criacao de Demonio"<<std::endl;
-        }
-        int largura = (int)(plat->getDireita() - plat->getEsquerda()); //define a largura da plataforma sorteada
-        pInim = new Demonio(CoordF(plat->getEsquerda()+ rand()% largura,plat->getTopo()-60),3,60.f,rand()%2);//aleatoriza a fome do demonio para dar variedade //os parametros podem ser mudados aqui para alterar a dificuldade// esse -60 é referente a altura estimada do inimigo
-        if(pInim !=NULL){
-            list_ents.incluir(pInim);
-            pGC->incluirInimigo(pInim);
-            pInim->desenhar();
-        }
-        else{std::cerr << "ERRO: falha na alocacao do inimigo medio" << std::endl;}
     }
     
     
@@ -151,6 +148,7 @@ void FasePrimeira::executar(Jogador* pJ1,Jogador* pJ2){
                 if(evento.key.code == sf::Keyboard::A){andEsq=true;}
                 if(evento.key.code == sf::Keyboard::Space){pJ1->pular();}
                 
+                
                 if(pJ2){
                     if(evento.key.code == sf::Keyboard::Right){andDir2=true;}
                     if(evento.key.code == sf::Keyboard::Left){andEsq2=true;}
@@ -213,7 +211,7 @@ void FasePrimeira::executar(Jogador* pJ1,Jogador* pJ2){
         
         pGG->clear();
         background->render();
-        list_ents.percorrer();
+        list_ents.percorrer(dt);
         
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
         pJ1->desenhar();

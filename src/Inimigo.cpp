@@ -7,8 +7,5 @@ Inimigo::Inimigo(CoordF position, int hp, float velocidadeInicial)
  
 Inimigo::~Inimigo() {}
  
-void Inimigo::executar() {}
-void Inimigo::morrer() {}
-void Inimigo::salvar() {}
-void Inimigo::mover() {}
 
+void Inimigo::setDt(float dt){dt_local = dt;}

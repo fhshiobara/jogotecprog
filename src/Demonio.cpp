@@ -2,7 +2,7 @@
 #include <cmath>
 
 Demonio::Demonio(CoordF position, int hp, float velocidade, int fome)
-    : Inimigo(position, hp, velocidade), fome(fome) {}
+: Inimigo(position, hp, velocidade), fome(fome) {this->initialize();}
 
 Demonio::~Demonio() {}
 
@@ -28,7 +28,10 @@ void Demonio::initialize() {
     // Mudar path caso falha ao encontrar.
 }
 
-void Demonio::executar() { this->desenhar();}
+void Demonio::executar() {
+    this->atualizarAnimacao(Animation_ID::idle, olhandoEsquerda, dt_local);
+    this->desenhar();
+    }
 void Demonio::salvar() {}
 void Demonio::mover() {}
 void Demonio::morrer() {

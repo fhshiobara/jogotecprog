@@ -13,13 +13,15 @@ class Inimigo : public Personagem {
         Inimigo(CoordF position, int hp, float velocidade);
         ~Inimigo();
  
-        void executar();
-        void salvar();
-        void mover();
-        void morrer();
-        void initialize();
+        virtual void executar() override =0;
+        virtual void salvar() override=0;
+        virtual void mover() override=0;
+        virtual void morrer() override=0;
+        virtual void initialize()=0;
         
         bool estaOlhandoEsquerda() const { return olhandoEsquerda; }
+    
+    void setDt(float dt) override;
 
         CoordF getPos() const { return pos; }
 };

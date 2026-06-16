@@ -74,6 +74,15 @@ public:
         
     }
     
+    void percorrer(float dt){
+        Elemento* pAtual = pPrim;
+        while(pAtual!=NULL){
+            pAtual->getInfo()->setDt(dt);
+            pAtual->getInfo()->executar();
+            pAtual = pAtual->getProximo();
+        }
+    }
+    
  
     Elemento* getPrim()   { return pPrim; }
     Elemento* getUltimo() { return pUltimo; }

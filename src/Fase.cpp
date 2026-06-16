@@ -58,19 +58,24 @@ void Fase::criarPlataformas(){
 void Fase::criarCenario(){
 }
 
-void Fase::criarInimigosArvore(){  // mudar para inimigos faceis
-    
-    for(int i=0; i<Max_inimArvore;i++){ //quantidade padrao é 3
-        Arvore* pInim = NULL;
-        pInim = new Arvore(CoordF(0.0f,0.0f)); //os parametros podem ser mudados aqui para alterar a dificuldade
-        if(pInim !=NULL){
-            list_ents.incluir(pInim);
-            pInim->desenhar();
-        }
-        else{std::cerr << "ERRO: falha na criacao do inimigo Facil" << std::endl;}
+void Fase::criarInimigosArvore(){
+    std::vector<Grid> espacosOcupados;
+    for(int i = 0; i < 9; i++){
+        Grid g = static_cast<Grid>(i);
+        if(mapa.estaOcupado(g)) espacosOcupados.push_back(g);
     }
-    
 
+    for(int i = 0; i < Max_inimArvore; i++){
+        Grid espaco = espacosOcupados[rand() % espacosOcupados.size()];
+        CoordF pos = mapa.getCoord(espaco);
+
+        Arvore* pInim = new Arvore(pos);
+        pos.y = pos.y-40;
+        if(pInim != NULL){
+            list_ents.incluir(pInim);
+            pGC->incluirInimigo(pInim);
+        }
+    }
 }
 
 void Fase::criarLimites(){

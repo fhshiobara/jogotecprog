@@ -10,5 +10,9 @@ Ente::Ente(): id(cont_id++), sprite() {
 
 Ente::~Ente() {}
 
+void Ente::desenhar(){
+    sprite.render();
+}
+
 
 

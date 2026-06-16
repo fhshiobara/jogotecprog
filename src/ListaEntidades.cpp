@@ -13,4 +13,8 @@ void ListaEntidades::percorrer(){
     LEs.percorrer();
 }
 
+void ListaEntidades::percorrer(float dt){
+    LEs.percorrer(dt);
+}
+
 
