@@ -177,9 +177,16 @@ namespace Gerenciadores {
         }
     }
 
-    void GerenciadorColisoes::tratarLimites() { //TODO adicionar colisao com jogador 2
+    void GerenciadorColisoes::tratarLimites() {
         limites->aplicarLimites(pJog);
         limites->aplicarLimites(pJog2);
+
+        for (Personagens::Inimigo* inimigo : ListaInimigos) {
+            Personagens::Bixo* bixo = dynamic_cast<Personagens::Bixo*>(inimigo); // Somente para os Bixos
+
+            if (bixo != nullptr && bixo->estaVivo())
+                limites->aplicarLimites(bixo);
+            }
     }
 
     void GerenciadorColisoes::tratarColisaoProjetil() {

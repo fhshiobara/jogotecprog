@@ -37,7 +37,7 @@ namespace Personagens {
     
         float distancia = std::sqrt(dx * dx + dy * dy);
 
-        if (distancia > percepcao) return; // Aqui definimos a dist. para o golbin perseguir
+        if (distancia > percepcao) return; // Aqui definimos a dist. para o Bixo perseguir
     
         // Só se move no eixo X
         if (distancia > 5.0f) {

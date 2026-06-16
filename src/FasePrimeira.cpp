@@ -91,7 +91,6 @@ void FasePrimeira::criarObstaculosEspinhos(){
 void FasePrimeira::criarInimigos(){
     criarInimigosBixo();
     criarInimigosDemonio();
-    
 }
 
 void FasePrimeira::criarObstaculos(){
@@ -105,6 +104,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;
         return;
     }
+    
     criarCenario();
     criarPlataformas();
     criarInimigos();
