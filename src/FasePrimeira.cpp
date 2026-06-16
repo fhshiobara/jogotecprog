@@ -104,7 +104,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;
         return;
     }
-    
+
     criarCenario();
     criarPlataformas();
     criarInimigos();
@@ -205,7 +205,10 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             }
         }
         // Inimigos
-        executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+        if(pJ2 != NULL)
+            executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+        else
+            executarInimigos(vInimigos, pJ1->getPos(), pJ1->getPos(), dt);
 
         pGC->executar(dt);
         pGG->clear();

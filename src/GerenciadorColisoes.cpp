@@ -19,16 +19,16 @@ namespace Gerenciadores {
         return instance;
     }
 
-    GerenciadorColisoes::GerenciadorColisoes() : pJog(NULL) {}
+    GerenciadorColisoes::GerenciadorColisoes() : pJog1(NULL), pJog2(NULL), limites(NULL) {}
 
     GerenciadorColisoes::~GerenciadorColisoes() {}
 
     void GerenciadorColisoes::setJogador(Personagens::Jogador* pJogador) {
-        if(pJog){
+        if(pJog1){
             pJog2 = pJogador;
         }
         else{
-            pJog = pJogador;
+            pJog1 = pJogador;
         }
     }
 
@@ -54,9 +54,9 @@ namespace Gerenciadores {
 
     void GerenciadorColisoes::tratarColisoesObstaculos() {
 
-        CoordF pos = pJog->getPos();
-        CoordF vel = pJog->getVel();
-        bool chao = pJog->noChao();
+        CoordF pos = pJog1->getPos();
+        CoordF vel = pJog1->getVel();
+        bool chao = pJog1->noChao();
 
         std::list<Obstaculos::Obstaculo*>::iterator iteradorObs;
 
@@ -65,15 +65,17 @@ namespace Gerenciadores {
             bool colidiu = (*iteradorObs)->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
 
             if (colidiu && (*iteradorObs)->isDanoso())
-                pJog->morrer();
+                pJog1->morrer();
 
         }
 
-        pJog->setPos(pos);
-        pJog->setVel(vel);
-        pJog->setChao(chao);
+        pJog1->setPos(pos);
+        pJog1->setVel(vel);
+        pJog1->setChao(chao);
 
         // Func copiada para jog2
+        if(pJog2 == NULL)
+            return;
 
         pos = pJog2->getPos();
         vel = pJog2->getVel();
@@ -96,7 +98,7 @@ namespace Gerenciadores {
 
     void GerenciadorColisoes::tratarColisoesJogador() {
 
-        CoordF posJog = pJog->getPos();
+        CoordF posJog = pJog1->getPos();
 
         float metade = alturaJogador / 2.f;
 
@@ -117,10 +119,12 @@ namespace Gerenciadores {
         bool colidindoY = std::abs(distanciaY) < metade * 2.f;
 
         if (colidindoX && colidindoY)
-            pJog->morrer(); // Aqui, perder vida ao inves de morrer.
+            pJog1->morrer(); // Aqui, perder vida ao inves de morrer.
         }
 
         // Func copiada para jog2
+        if(pJog2 == NULL) 
+            return;
 
         CoordF posJog2 = pJog2->getPos();
 
@@ -168,8 +172,9 @@ namespace Gerenciadores {
 
         float gravidade = 800.f; // Define gravidade geral
 
-        pJog->gravidade(dt, gravidade);
-        pJog2->gravidade(dt,gravidade);
+        pJog1->gravidade(dt, gravidade);
+        if(pJog2 != NULL)
+            pJog2->gravidade(dt,gravidade);
 
         for (Inimigo* inimigo : ListaInimigos) {
         if (inimigo->estaVivo() && dynamic_cast<Bixo*>(inimigo)) // Dynamic_cast feito pelo claude. Somente gravita inimigos Bixo
@@ -178,8 +183,9 @@ namespace Gerenciadores {
     }
 
     void GerenciadorColisoes::tratarLimites() {
-        limites->aplicarLimites(pJog);
-        limites->aplicarLimites(pJog2);
+        limites->aplicarLimites(pJog1);
+        if(pJog2 != NULL)
+            limites->aplicarLimites(pJog2);
 
         for (Personagens::Inimigo* inimigo : ListaInimigos) {
             Personagens::Bixo* bixo = dynamic_cast<Personagens::Bixo*>(inimigo); // Somente para os Bixos
@@ -190,40 +196,56 @@ namespace Gerenciadores {
     }
 
     void GerenciadorColisoes::tratarColisaoProjetil() {
-    if (pJog == NULL) return;
- 
-    CoordF posJog = pJog->getPos();
-    CoordF posJog2 = pJog2->getPos();
+    if (pJog1 == NULL) return;
+
     float metade = alturaJogador / 2.f;
- 
+
     // Procura bosses (Morte) na lista de inimigos
+
     std::vector<Inimigo*>::iterator it;
+
     for (it = ListaInimigos.begin(); it != ListaInimigos.end(); it++) {
 
         Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(*it);
         if (boss == NULL) continue;
- 
+
         Entidades::Projetil* proj = boss->getProjetil();
-        if (proj == NULL || !proj->estaAtivo()) 
+
+        if (proj == NULL || !proj->estaAtivo())
             continue;
- 
+
         CoordF posProj = proj->getPos();
-        float dx = posJog.x - posProj.x;
-        float dy = posJog.y - posProj.y;
- 
-        // Colisão por bounding box (metade do jogador + raio do projétil)
-        // Trecho abaixo feito pelo Claude
-        if (std::abs(dx) < metade + 8.f && std::abs(dy) < metade + 8.f) {
-            proj->desativar(); // consome o projétil
-            if (!pJog->estaImune())
-                pJog->tomarDano();
+
+        float dx1 = pJog1->getPos().x - posProj.x;
+        float dy1 = pJog1->getPos().y - posProj.y;
+
+        if (std::abs(dx1) < metade + 8.f && std::abs(dy1) < metade + 8.f) {
+            proj->desativar();
+            if (!pJog1->estaImune())
+                pJog1->tomarDano();
+            continue; // projetil ja foi consumido, prox boss
+        }
+
+
+
+        // Checa colisao com o jogador 2 (se existir)
+
+        if (pJog2 != NULL) {
+            float dx2 = pJog2->getPos().x - posProj.x;
+            float dy2 = pJog2->getPos().y - posProj.y;
+
+            if (std::abs(dx2) < metade + 8.f && std::abs(dy2) < metade + 8.f) {
+                proj->desativar();
+                if (!pJog2->estaImune())
+                    pJog2->tomarDano();
+            }
+
         }
     }
 }
-
  
     void GerenciadorColisoes::executar(float dt) {
-        if(pJog == NULL){
+        if(pJog1 == NULL){
             std::cerr<<"ERRO: faltou o jogador"<<std::endl;
             return;
             
