@@ -32,11 +32,8 @@ namespace Personagens {
 
 
     void Demonio::initialize() {
-
         this->sprite.addNewAnimation(Animation_ID::idle, "assets/Demonio/IDLE.png", 4);
-
         this->sprite.addNewAnimation(Animation_ID::walk, "assets/Demonio/FLYING.png", 4);
-
         this->sprite.addNewAnimation(Animation_ID::hurt, "assets/Demonio/HURT.png", 4);
 
         // Mudar path caso falha ao encontrar.

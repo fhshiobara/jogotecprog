@@ -3,10 +3,10 @@
  
 namespace Personagens {
     
-    Morte::Morte(CoordF position, int hp, float velocidade, int morte)
+    Morte::Morte(CoordF position, int hp, float velocidade)
         : Inimigo(position, hp, velocidade),
         tempoRecarga(2.0f), tempoDeVidaProjetil(0.0f),
-projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->initialize();}
+        projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->initialize();}
     
     Morte::~Morte() {
         delete projetil;
@@ -24,6 +24,8 @@ projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->init
             this->pos.y += (dy / distancia) * velocidade * dt;
             olhandoEsquerda = (dx > 0);
         }
+
+        this->iniciarAtirar(posJogador, dt);
     }
     
     void Morte::iniciarAtirar(CoordF posJogador, float dt) {
@@ -35,7 +37,7 @@ projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->init
             CoordF direcao;
             direcao.x = posJogador.x - this->pos.x;
             direcao.y = posJogador.y - this->pos.y;
-    
+            
             projetil->atirar(this->pos, direcao);
             tempoDeVidaProjetil = 0.f;
         }
@@ -51,18 +53,17 @@ projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->init
     }
     
     void Morte::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Morte/FLYING.png", 5);
+        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Morte/IDLE.png", 8);
     }
     
-void Morte::executar() {
-    this->atualizarAnimacao(Animation_ID::walk,olhandoEsquerda,dt_local);
-    this->desenhar();
-}
-    void Morte::salvar()   {}
-    void Morte::mover()    {}
-    
-    void Morte::morrer() {
-        vivo = false;
-        std::cout << "Morte morreu!" << std::endl;
+    void Morte::executar() {
+        this->atualizarAnimacao(Animation_ID::walk,!olhandoEsquerda,dt_local);
+        this->desenhar();
     }
-}
+        void Morte::salvar()   {}
+        void Morte::mover()    {}
+        void Morte::morrer() {
+            vivo = false;
+            std::cout << "Morte morreu!" << std::endl;
+        }
+    }

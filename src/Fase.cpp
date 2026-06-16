@@ -96,8 +96,10 @@ void Fase::criarLimites(){
 }
 
 void Fase::executarInimigos(std::vector<Personagens::Inimigo*> vInimigos, CoordF posJogador1, CoordF posJogador2, float dt) {
-    for (Personagens::Inimigo* inimigo : vInimigos) {
-        if(inimigo->jogadorProximo(posJogador1, posJogador2))
+    for(Personagens::Inimigo* inimigo : vInimigos) {
+        bool jogadorMaisProx = inimigo->jogadorProximo(posJogador1, posJogador2);
+
+        if(jogadorMaisProx)
             inimigo->perseguir(posJogador2, dt);
         else 
             inimigo->perseguir(posJogador1, dt);

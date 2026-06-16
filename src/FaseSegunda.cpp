@@ -11,7 +11,7 @@ namespace Fases{
 
 
 FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 
 }
 
@@ -20,7 +20,7 @@ FaseSegunda::~FaseSegunda(){
     background = NULL;
 }
 
-void FaseSegunda::CriaMorte(){
+void FaseSegunda::criaMorte(){
     int num_inim_dificil = rand()%(max_Morte +1);
     
     if(num_inim_dificil<3){num_inim_dificil =3;} //numero minimo de inimigos
@@ -32,13 +32,17 @@ void FaseSegunda::CriaMorte(){
         Grid espaco = static_cast<Grid>(aux);
         if(mapa.estaOcupado(espaco)){
             CoordF pos = mapa.getCoord(espaco);
+
             pos.y = pos.y-30;
             Morte* pMorte = NULL;
-            pMorte = new Morte(pos,5,10.f,1);
+            pMorte = new Morte(pos, 5, 10.f);
             
             if(pMorte!=NULL){
                 num_morte_criados++;
                 vInimigos.push_back(pMorte);
+
+                mapa.setOcupado(espaco, false); // Para nao haver mortes nele mesmo
+
                 list_ents.incluir(pMorte);
                 pGC->incluirInimigo(pMorte);
             }
@@ -52,7 +56,7 @@ void FaseSegunda::CriaMorte(){
     
 }
 
-void FaseSegunda::CriaObstDificil(){
+void FaseSegunda::criaObstDificil(){
     int num_Gelo = rand()%(max_obst_Dificil +1);
     
     float larg_min = 100;
@@ -64,14 +68,19 @@ void FaseSegunda::CriaObstDificil(){
     while(num_Gelo_criados<num_Gelo){
         int aux = rand()%9;
         Grid espaco = static_cast<Grid>(aux);
+
         if(mapa.estaOcupado(espaco)){
             CoordF pos = mapa.getCoord(espaco);
             pos.y = pos.y-35;
+
             Obstaculos::Gelo* pGelo = NULL;
             pGelo = new Obstaculos::Gelo(1,pos,larg_min);
             
             if(pGelo!=NULL){
                 num_Gelo_criados++;
+
+                mapa.setOcupado(espaco, false); // Para nao haver gelos nele mesmo
+
                 list_ents.incluir(pGelo);
                 pGC->incluirObstaculo(pGelo);
             }
@@ -86,11 +95,11 @@ void FaseSegunda::CriaObstDificil(){
 
 void FaseSegunda::criarInimigos(){
     this->criarInimigosBixo();
-    this->CriaMorte();
+    this->criaMorte();
 }
 
 void FaseSegunda::criarObstaculos(){
-    this->CriaObstDificil();
+    this->criaObstDificil();
 }
 
 
@@ -213,12 +222,27 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
         else{
             executarInimigos(vInimigos, pJ1->getPos(), pJ1->getPos(), dt);
         }
+
+        for (Personagens::Inimigo* inimigo : vInimigos) {
+        Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
+            if (boss != NULL && boss->estaVivo())
+                boss->atualizarProjetil(dt);
+        } // Trata os projeteis
         
         pGC->executar(dt);
         
         pGG->clear();
         background->render();
         list_ents.percorrer(dt);
+
+        for (Personagens::Inimigo* inimigo : vInimigos) {
+        Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
+            if (boss != NULL && boss->estaVivo())
+                boss->desenharProjetil();
+
+        }
+
+
         
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
         pJ1->desenhar();
@@ -232,14 +256,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
         }
         pGG->getWindow()->display();
         
-        
-        
-        
-        
-        
-        
     }
-    
 }
 
 }//fecha namespace

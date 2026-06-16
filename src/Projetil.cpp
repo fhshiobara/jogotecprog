@@ -26,7 +26,7 @@ namespace Entidades {
         tempoDecorrido = 0.f;
         ativo = true;
  
-        // Normaliza a direção e escala pela rapidez → vetor velocidade
+        // Normaliza a direção e escala pela rapidez
         float mag = std::sqrt(direcao.x * direcao.x + direcao.y * direcao.y);
         if (mag > 0.f) {
             vel.x = (direcao.x / mag) * rapidez;

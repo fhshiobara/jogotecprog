@@ -5,11 +5,9 @@
 //  Created by Edison Shiobara on 16/06/26.
 //
 
-#ifndef FaseSegunda_hpp
-#define FaseSegunda_hpp
+#ifndef FASESEGUNDA_hpp
+#define FASESEGUNDA_hpp
 
-
-#pragma once
 #include "Fase.hpp"
 #include "Morte.hpp"
 #include "Gelo.hpp"
@@ -30,8 +28,8 @@ public:
     
     void executar();
     
-    void CriaMorte();
-    void CriaObstDificil();
+    void criaMorte();
+    void criaObstDificil();
     
     void criarInimigos();
     void criarObstaculos();

@@ -32,7 +32,7 @@ void FasePrimeira::criarInimigosDemonio(){
             CoordF pos = mapa.getCoord(espaco);
             pos.y = pos.y-30;
             Demonio* pDemo = NULL;
-            pDemo = new Demonio(pos,2,60.f,1.0);
+            pDemo = new Demonio(pos, 2, 10.0f, 1 + (rand() % 10));
             
             if(pDemo!=NULL){
                 num_demonios_criados++;
@@ -214,6 +214,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             executarInimigos(vInimigos, pJ1->getPos(), pJ1->getPos(), dt);
 
         pGC->executar(dt);
+
         pGG->clear();
         background->render();
         list_ents.percorrer(dt);
@@ -227,8 +228,5 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         pGG->getWindow()->display();
         
     }
-    
 }
-
-
 }

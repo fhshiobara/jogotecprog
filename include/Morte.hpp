@@ -12,7 +12,7 @@ namespace Personagens {
             float tempoDeVidaProjetil;
             Entidades::Projetil* projetil;  // Um projetil somente. Reutilizada apos expirar
         public:
-            Morte(CoordF position, int hp = 5, float velocidade = 10.0f, int morte = 1);
+            Morte(CoordF position, int hp = 5, float velocidade = 10.0f);
             ~Morte();
     
             void executar();
