@@ -125,8 +125,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
     bool andDir2 = false;
     bool andEsq2 = false;
     
-    
-    
     bool olhandoEsquerda = false;
     bool olhandoEsquerda2 = false;
     
@@ -135,7 +133,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
     Animation_ID animacao2 = Animation_ID::idle;
     
     pGG = Gerenciadores::GerenciadorGrafico::getInstance();
-    
+
     while(pGG->windowopen()){
         
         float dt = clock.restart().asSeconds();
@@ -195,9 +193,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                 pJ2->moverX(false,dt);
                 olhandoEsquerda2 = true;
                 animacao2 = Animation_ID::walk;
-            }
-            
-            
+            }    
         }
         
         if(!pJ1->noChao()){animacao = Animation_ID::jump;}
@@ -207,9 +203,9 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                 animacao2 = Animation_ID::jump;
             }
         }
-        
+        std::cout << "Execuatndo" << std::endl;
         pGC->executar(dt);
-        
+        std::cout << "Execuatndo2" << std::endl;
         pGG->clear();
         background->render();
         list_ents.percorrer(dt);

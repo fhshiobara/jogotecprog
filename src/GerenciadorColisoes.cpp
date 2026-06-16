@@ -91,6 +91,7 @@ namespace Gerenciadores {
         pJog2->setPos(pos);
         pJog2->setVel(vel);
         pJog2->setChao(chao);
+
     }
 
     void GerenciadorColisoes::tratarColisoesJogador() {
@@ -102,7 +103,7 @@ namespace Gerenciadores {
         std::vector<Inimigo*>::iterator iteradorInimigo;
 
     for (iteradorInimigo = ListaInimigos.begin(); iteradorInimigo != ListaInimigos.end(); ++iteradorInimigo) {
-        Inimigo* inimigoAtual = *iteradorInimigo;
+        Personagens::Inimigo* inimigoAtual = *iteradorInimigo;
 
         if (!inimigoAtual->estaVivo()) 
             continue;
@@ -124,7 +125,7 @@ namespace Gerenciadores {
         CoordF posJog2 = pJog2->getPos();
 
     for (iteradorInimigo = ListaInimigos.begin(); iteradorInimigo != ListaInimigos.end(); ++iteradorInimigo) {
-        Inimigo* inimigoAtual = *iteradorInimigo;
+        Personagens::Inimigo* inimigoAtual = *iteradorInimigo;
 
         if (!inimigoAtual->estaVivo()) 
             continue;
@@ -139,13 +140,13 @@ namespace Gerenciadores {
 
         if (colidindoX && colidindoY)
             pJog2->morrer(); // Aqui, perder vida ao inves de morrer.
-        }
+        }   
     }
 
     void GerenciadorColisoes::tratarColisoesObstaculosBixos() {
 
-    for (Inimigo* inimigo : ListaInimigos) {
-        Bixo* bixo = dynamic_cast<Bixo*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma Bixo.
+    for (Personagens::Inimigo* inimigo : ListaInimigos) {
+        Personagens::Bixo* bixo = dynamic_cast<Personagens::Bixo*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma Bixo.
 
         if (bixo == nullptr || !bixo->estaVivo())
             continue;
@@ -228,7 +229,7 @@ namespace Gerenciadores {
         tratarColisoesObstaculosBixos();
         tratarColisoesObstaculos();
         tratarColisoesJogador();
-        tratarColisaoProjetil();
+        // tratarColisaoProjetil();
         tratarLimites();
     }
 
