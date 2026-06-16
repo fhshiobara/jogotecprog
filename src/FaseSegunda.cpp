@@ -11,7 +11,7 @@ namespace Fases{
 
 
 FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("../assets/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 
 }
 
@@ -38,6 +38,7 @@ void FaseSegunda::CriaMorte(){
             
             if(pMorte!=NULL){
                 num_morte_criados++;
+                vInimigos.push_back(pMorte);
                 list_ents.incluir(pMorte);
                 pGC->incluirInimigo(pMorte);
             }
@@ -54,7 +55,7 @@ void FaseSegunda::CriaMorte(){
 void FaseSegunda::CriaObstDificil(){
     int num_Gelo = rand()%(max_obst_Dificil +1);
     
-    float larg_min = 40;
+    float larg_min = 100;
     
     if(num_Gelo<3){num_Gelo =3;} //numero minimo de inimigos
     
@@ -65,7 +66,7 @@ void FaseSegunda::CriaObstDificil(){
         Grid espaco = static_cast<Grid>(aux);
         if(mapa.estaOcupado(espaco)){
             CoordF pos = mapa.getCoord(espaco);
-            pos.y = pos.y-30;
+            pos.y = pos.y-35;
             Obstaculos::Gelo* pGelo = NULL;
             pGelo = new Obstaculos::Gelo(1,pos,larg_min);
             
@@ -89,7 +90,6 @@ void FaseSegunda::criarInimigos(){
 }
 
 void FaseSegunda::criarObstaculos(){
-    this->criarPlataformas();
     this->CriaObstDificil();
 }
 
@@ -107,6 +107,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
     criarPlataformas();
     criarInimigos();
     criarObstaculos();
+    inserirPlataformasAtrasado();
     
     pGC->setJogador(pJ1);
     if(pJ2){
@@ -205,6 +206,12 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
             if(!pJ2->noChao()){
                 animacao2 = Animation_ID::jump;
             }
+        }
+        if(pJ2 != NULL){
+            executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+        }
+        else{
+            executarInimigos(vInimigos, pJ1->getPos(), pJ1->getPos(), dt);
         }
         
         pGC->executar(dt);

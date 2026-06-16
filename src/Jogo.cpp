@@ -53,6 +53,8 @@ void Jogo::executar() {
     }
     
     else if (fase == 2) {
+        pFase2 = new Fases::FaseSegunda();
+        pFase2->executar(pJ1,pJ2);
         std::cout << "Fase 2 rodando" << std::endl;
     }
 }

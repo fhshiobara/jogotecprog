@@ -6,7 +6,7 @@ namespace Personagens {
     Morte::Morte(CoordF position, int hp, float velocidade, int morte)
         : Inimigo(position, hp, velocidade),
         tempoRecarga(2.0f), tempoDeVidaProjetil(0.0f),
-        projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {}
+projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->initialize();}
     
     Morte::~Morte() {
         delete projetil;
@@ -51,10 +51,13 @@ namespace Personagens {
     }
     
     void Morte::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::walk, "assets/Morte/FLYING.png", 5);
+        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Morte/FLYING.png", 5);
     }
     
-    void Morte::executar() {}
+void Morte::executar() {
+    this->atualizarAnimacao(Animation_ID::walk,olhandoEsquerda,dt_local);
+    this->desenhar();
+}
     void Morte::salvar()   {}
     void Morte::mover()    {}
     
