@@ -74,11 +74,14 @@ void FasePrimeira::criarObstaculosEspinhos(){
             pEsp = new Obstaculos::Espinhos(pos,alt_min, larg_min + rand()%36,1.0);
             
             if(pEsp!=NULL){
+                if(pEsp != NULL){
                 num_obst_criados++;
+
+                mapa.setOcupado(espaco, false); // Para nao haver espinho nele mesmo
+
                 list_ents.incluir(pEsp);
                 pGC->incluirObstaculo(pEsp);
-                
-                
+                }
             }
             else{
                 std::cerr<<"ERRO: na alocação do espinho"<<std::endl;
