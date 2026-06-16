@@ -36,6 +36,7 @@ void FasePrimeira::criarInimigosDemonio(){
             
             if(pDemo!=NULL){
                 num_demonios_criados++;
+                vInimigos.push_back(pDemo);
                 list_ents.incluir(pDemo);
                 pGC->incluirInimigo(pDemo);
             }
@@ -203,9 +204,10 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                 animacao2 = Animation_ID::jump;
             }
         }
-        std::cout << "Execuatndo" << std::endl;
+        // Inimigos
+        executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+
         pGC->executar(dt);
-        std::cout << "Execuatndo2" << std::endl;
         pGG->clear();
         background->render();
         list_ents.percorrer(dt);
@@ -217,12 +219,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             pJ2->desenhar();
         }
         pGG->getWindow()->display();
-        
-        
-        
-        
-        
-        
         
     }
     

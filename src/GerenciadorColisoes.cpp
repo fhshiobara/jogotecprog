@@ -191,10 +191,10 @@ namespace Gerenciadores {
  
     // Procura bosses (Morte) na lista de inimigos
     std::vector<Inimigo*>::iterator it;
-    for (it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
+    for (it = ListaInimigos.begin(); it != ListaInimigos.end(); it++) {
 
-        Morte* boss = dynamic_cast<Morte*>(*it);
-        if (!boss->estaVivo()) continue;
+        Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(*it);
+        if (boss == NULL) continue;
  
         Entidades::Projetil* proj = boss->getProjetil();
         if (proj == NULL || !proj->estaAtivo()) 
@@ -229,7 +229,7 @@ namespace Gerenciadores {
         tratarColisoesObstaculosBixos();
         tratarColisoesObstaculos();
         tratarColisoesJogador();
-        // tratarColisaoProjetil();
+        tratarColisaoProjetil();
         tratarLimites();
     }
 

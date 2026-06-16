@@ -85,6 +85,7 @@ protected:
     short int Max_inimBixo;
     CoordF tam_tela;
     std::vector<Plataforma*> vPlats;
+    std::vector<Personagens::Inimigo*> vInimigos;
     int num_max_Plataformas;
     bool concluida;
     Map mapa;
@@ -104,6 +105,7 @@ protected:
     void criarCenario();
     void criarLimites();
     //void criarDemonios();
+    void executarInimigos(std::vector<Personagens::Inimigo*> listInim, CoordF posJogador1, CoordF posJogador2, float dt);
     
 };
 }

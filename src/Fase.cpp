@@ -5,6 +5,7 @@
 //  Created by Edison Shiobara on 08/06/26.
 //
 #include "Fase.hpp"
+#include "ListaEntidades.hpp"
 #include "SingleFrameAnimation.hpp"
 #include "Plataforma.hpp"
 #include "Demonio.hpp"
@@ -17,13 +18,11 @@ namespace Fases{
 
 Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10){
     vPlats.clear();
+    vInimigos.clear();
     if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
 }
 
-
 Fase::~Fase(){}
-
-
 
 void Fase::criarPlataformas(){
     
@@ -74,6 +73,7 @@ void Fase::criarInimigosBixo(){
         Bixo* pInim = new Personagens::Bixo(pos);
         pos.y = pos.y-40;
         if(pInim != NULL){
+            vInimigos.push_back(pInim);
             list_ents.incluir(pInim);
             pGC->incluirInimigo(pInim);
         }
@@ -82,5 +82,14 @@ void Fase::criarInimigosBixo(){
 
 void Fase::criarLimites(){
     pGC->setLimite(tam_tela.x,tam_tela.y);
+}
+
+void Fase::executarInimigos(std::vector<Personagens::Inimigo*> vInimigos, CoordF posJogador1, CoordF posJogador2, float dt) {
+    for (Personagens::Inimigo* inimigo : vInimigos) {
+        if(inimigo->jogadorProximo(posJogador1, posJogador2))
+            inimigo->perseguir(posJogador2, dt);
+        else 
+            inimigo->perseguir(posJogador1, dt);
+    }
 }
 }

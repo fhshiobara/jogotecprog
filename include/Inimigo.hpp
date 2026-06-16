@@ -20,6 +20,7 @@ namespace Personagens {
             virtual void mover() override=0;
             virtual void morrer() override=0;
             virtual void initialize()=0;
+            virtual void perseguir(CoordF posJogador, float dt)=0;
             
             bool estaOlhandoEsquerda() const { return olhandoEsquerda; }
             void setDt(float dt) override;
