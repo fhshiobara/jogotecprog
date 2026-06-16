@@ -4,6 +4,7 @@
 #include "GerenciadorGrafico.hpp"
 #include "Jogador.hpp"
 #include "FasePrimeira.hpp"
+#include "FaseSegunda.hpp"
 
 class Jogo{
     private:
@@ -12,6 +13,7 @@ class Jogo{
         Personagens::Jogador* pJ1;
         Personagens::Jogador* pJ2;
         Fases::FasePrimeira* pFase1;
+        Fases::FaseSegunda* pFase2;
     public:
         Jogo();
         ~Jogo();

@@ -26,15 +26,15 @@ public:
     FaseSegunda();
     ~FaseSegunda();
     
-    void executar(Jogador* pJ1, Jogador* pJ2);
+    void executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2);
     
     void executar();
     
     void CriaMorte();
     void CriaObstDificil();
     
-    void CriarInimigos();
-    void CriarObstaculos();
+    void criarInimigos();
+    void criarObstaculos();
     
     
 };

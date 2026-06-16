@@ -83,10 +83,21 @@ void FaseSegunda::CriaObstDificil(){
     }
 }
 
+void FaseSegunda::criarInimigos(){
+    this->criarInimigosBixo();
+    this->CriaMorte();
+}
+
+void FaseSegunda::criarObstaculos(){
+    this->criarPlataformas();
+    this->CriaObstDificil();
+}
+
+
 void FaseSegunda::executar(){ }
 
 
-void FaseSegunda::executar(Jogador* pJ1, Jogador* pJ2){
+void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
     if(pGC==NULL || pJ1==NULL){
         
         std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;

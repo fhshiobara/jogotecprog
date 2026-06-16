@@ -56,8 +56,7 @@ void Fase::criarPlataformas(){
 }
 
 
-void Fase::criarCenario(){
-}
+void Fase::criarCenario(){}
 
 void Fase::criarInimigosBixo(){
     std::vector<Grid> espacosOcupados;
