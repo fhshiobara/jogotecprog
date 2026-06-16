@@ -42,6 +42,8 @@ namespace Gerenciadores{
             sf::RenderWindow* getWindow();
             
             sf::Texture* loadTexture(const char* path);
+
+            sf::Font* getFont();
             
     };
 

@@ -4,14 +4,19 @@
 #include "GerenciadorGrafico.hpp"
 #include "Jogador.hpp"
 #include "FasePrimeira.hpp"
+#include "Menu.hpp"
 
 class Jogo{
     private:
         Gerenciadores::GerenciadorGrafico* pGerenciadorGrafico;
         Gerenciadores::GerenciadorColisoes* pGC;
+
         Personagens::Jogador* pJ1;
         Personagens::Jogador* pJ2;
+
         Fases::FasePrimeira* pFase1;
+        
+        Menu* pMenu;
     public:
         Jogo();
         ~Jogo();

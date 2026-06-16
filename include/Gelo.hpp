@@ -5,10 +5,8 @@
 //  Created by Edison Shiobara on 16/06/26.
 //
 
-#ifndef Gelo_hpp
-#define Gelo_hpp
-
-#pragma once
+#ifndef GELO_hpp
+#define GELO_hpp
 
 #include "Fase.hpp"
 

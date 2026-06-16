@@ -1,4 +1,5 @@
 #include "Jogo.hpp"
+#include "Menu.hpp"
 #include "Demonio.hpp"
 #include "Bixo.hpp"
 #include "Morte.hpp"
@@ -19,18 +20,38 @@ Jogo::~Jogo() {
     delete pFase1;
     delete pJ1;
     delete pJ2;
-    
+    delete pMenu;
 }
  
 void Jogo::executar() {
-    
+
+    pMenu = new Menu(this);
+    pMenu->executar();
+
+    // Se fechou a janela ou escolheu Sair, nao inicia a fase
+    if (!pGerenciadorGrafico->windowopen())
+        return;
+
+    int fase = pMenu->getFase();
+
+    if(fase == 0)
+        return;
+
     pJ1 = new Personagens::Jogador(CoordF(200.f,200.f),3,0,200.f);
-    
-    pJ2 = new Personagens::Jogador(CoordF(240.f,200.f),3,0,200.f);
-    std::cout<<"chamando initialize"<<std::endl;
     pJ1->initialize(true);
-    pJ2->initialize(false);
-    std::cout<<"initialize concluido"<<std::endl;
-    pFase1 = new Fases::FasePrimeira();
-    pFase1->executar(pJ1,pJ2);
+
+    pJ2 = NULL;
+    if (pMenu->getMultiplayer()) {
+        pJ2 = new Personagens::Jogador(CoordF(240.f,200.f),3,0,200.f);
+        pJ2->initialize(false);
+    }
+
+    if(fase == 1) {
+        pFase1 = new Fases::FasePrimeira();
+        pFase1->executar(pJ1, pJ2);
+    }
+    
+    else if (fase == 2) {
+        std::cout << "Fase 2 rodando" << std::endl;
+    }
 }
