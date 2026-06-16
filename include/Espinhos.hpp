@@ -13,7 +13,6 @@ namespace Obstaculos {
     private:
         float largura;
         float altura;
-        float viscosidade;
  
     public:
         Espinhos(CoordF position, float altura, float largura, float viscosidade);

@@ -106,6 +106,7 @@ protected:
     void criarLimites();
     //void criarDemonios();
     void executarInimigos(std::vector<Personagens::Inimigo*> listInim, CoordF posJogador1, CoordF posJogador2, float dt);
+    void inserirPlataformasAtrasado(); // Func auxiliar
     
 };
 }

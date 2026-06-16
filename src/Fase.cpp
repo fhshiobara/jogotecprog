@@ -44,7 +44,6 @@ void Fase::criarPlataformas(){
                 num_Plataformas++;
                 mapa.setOcupado(espaco,true);
                 vPlats.push_back(plat);
-                list_ents.incluir(plat);
                 pGC->incluirObstaculo(plat); //acredito que tenha dado certo
                 plat->desenhar();
             }
@@ -54,6 +53,19 @@ void Fase::criarPlataformas(){
         }
     }
 }
+
+void Fase::inserirPlataformasAtrasado()
+{
+    for(Plataforma* plat : vPlats)
+    {
+        list_ents.incluir(plat);
+    }
+} 
+
+/* Func serve para criar Listas e depois inserir em Ents_List. 
+Como a ordem de Ent_list define quem desenha quando, isso nos permite 
+desenhar as plataformas depois dos espinhos, mesmo com elas ja estando instanciadas.
+Deixa o jogo mais bonito, sem espinhos flutuantes */
 
 
 void Fase::criarCenario(){

@@ -52,7 +52,6 @@ void FasePrimeira::criarInimigosDemonio(){
 }
 
 void FasePrimeira::criarObstaculosEspinhos(){
-    
     float alt_min = 50;
     float larg_min = 80;
     float tam_plat = 0;
@@ -83,7 +82,7 @@ void FasePrimeira::criarObstaculosEspinhos(){
                 pGC->incluirObstaculo(pEsp);
                 }
             }
-            else{
+            else {
                 std::cerr<<"ERRO: na alocação do espinho"<<std::endl;
             }
         }
@@ -112,6 +111,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
     criarPlataformas();
     criarInimigos();
     criarObstaculos();
+    inserirPlataformasAtrasado();
     
     pGC->setJogador(pJ1);
     if(pJ2){
