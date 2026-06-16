@@ -6,17 +6,19 @@
 //
 
 #include "FasePrimeira.hpp"
-#include "Obst_Medio.hpp"
+#include "Espinhos.hpp"
+
+using namespace Personagens;
 
 namespace Fases{
 
 FasePrimeira::FasePrimeira():Fase(),max_inim_Demonio(4),max_obst_Espinhos(4),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("../assets/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new Gerenciadores::SingleFrameAnimation("assets/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 }
 
 FasePrimeira::~FasePrimeira(){}
 
-void FasePrimeira::criar_inim_Demonio(){
+void FasePrimeira::criarInimigosDemonio(){
     int num_inim_medio = rand()%(max_inim_Demonio +1);
     
     if(num_inim_medio<3){num_inim_medio =3;} //numero minimo de inimigos
@@ -48,7 +50,7 @@ void FasePrimeira::criar_inim_Demonio(){
     
 }
 
-void FasePrimeira::criar_obst_Espinhos(){
+void FasePrimeira::criarObstaculosEspinhos(){
     
     float alt_min = 50;
     float larg_min = 80;
@@ -67,8 +69,8 @@ void FasePrimeira::criar_obst_Espinhos(){
             CoordF pos = mapa.getCoord(espaco);
             pos.y=pos.y- alt_min/2;
             
-            Obstaculos::Obst_Medio* pEsp = NULL;
-            pEsp = new Obstaculos::Obst_Medio(pos,alt_min, larg_min + rand()%36,1.0);
+            Obstaculos::Espinhos* pEsp = NULL;
+            pEsp = new Obstaculos::Espinhos(pos,alt_min, larg_min + rand()%36,1.0);
             
             if(pEsp!=NULL){
                 num_obst_criados++;
@@ -86,18 +88,17 @@ void FasePrimeira::criar_obst_Espinhos(){
 }
 
 void FasePrimeira::criarInimigos(){
-    criarInimigosArvore();
-    criar_inim_Demonio();
-    
+    criarInimigosBixo();
+    criarInimigosDemonio();
     
 }
 
 void FasePrimeira::criarObstaculos(){
-    criar_obst_Espinhos();
+    criarObstaculosEspinhos();
 }
 void FasePrimeira::executar(){}
 
-void FasePrimeira::executar(Jogador* pJ1,Jogador* pJ2){
+void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
     if(pGC==NULL || pJ1==NULL){
         
         std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;

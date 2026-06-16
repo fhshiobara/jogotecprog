@@ -8,18 +8,21 @@
 #include "Jogador.hpp"
 #include "Inimigo.hpp"
 #include "Demonio.hpp"
-#include "Arvore.hpp"
+#include "Bixo.hpp"
 #include "Obstaculo.hpp"
  
+using namespace Personagens;
+using namespace Obstaculos;
+
 namespace Gerenciadores {
  
     class GerenciadorColisoes {
         private:
  
-            std::vector<Inimigo*> ListaInimigos;
+            std::vector<Personagens::Inimigo*> ListaInimigos;
             std::list<Obstaculos::Obstaculo*> ListaObstaculos;
-            Jogador* pJog;
-            Jogador* pJog2;
+            Personagens::Jogador* pJog;
+            Personagens::Jogador* pJog2;
             
             Obstaculos::Limites* limites;
  
@@ -33,15 +36,15 @@ namespace Gerenciadores {
  
             static GerenciadorColisoes* getInstance();
  
-            void setJogador(Jogador* pJogador);
+            void setJogador(Personagens::Jogador* pJogador);
             void setLimite(float largura, float altura);
  
-            void incluirInimigo(Inimigo* pInimigo);
+            void incluirInimigo(Personagens::Inimigo* pInimigo);
             void incluirObstaculo(Obstaculos::Obstaculo* pObstaculo);
  
             void tratarColisoesObstaculos();
             void tratarColisoesJogador();
-            void tratarColisoesObstaculosArvores();
+            void tratarColisoesObstaculosBixos();
             void tratarColisaoProjetil();
             
             void tratarLimites();

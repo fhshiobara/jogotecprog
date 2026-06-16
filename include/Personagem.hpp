@@ -3,51 +3,54 @@
 
 #include "Entidade.hpp"
 
-class Personagem: public Entidades::Entidade {
-    protected:
-        int Hp;
+namespace Personagens {
 
-        float velocidade; // Velocidade atual
-        float speed; // Velocidade "max"
+    class Personagem: public Entidades::Entidade {
+        protected:
+            int Hp;
 
-        bool olhandoEsquerda;
-        bool encostadochao;
-        bool vivo;
+            float velocidade; // Velocidade atual
+            float speed; // Velocidade "max"
 
-        static const float IFRAMES_TOTAL;
-        float imunidade;
-        
-    public:
-        Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, float speed = 1.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true);
-        ~Personagem();
+            bool olhandoEsquerda;
+            bool encostadochao;
+            bool vivo;
 
-        void salvarDataBuffer(); // TODO
+            static const float IFRAMES_TOTAL;
+            float imunidade;
+            
+        public:
+            Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, float speed = 1.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true);
+            ~Personagem();
 
-        bool estaVivo() const { return vivo; }
+            void salvarDataBuffer(); // TODO
 
-        CoordF getPos() const { return pos; }
-        void setPos(const CoordF& newPos) { pos = newPos; }
- 
-        CoordF getVel() const { return vel; }
-        void setVel(const CoordF& v) { vel = v; }
- 
-        bool noChao() const { return encostadochao; }
-        void setChao(bool val) { encostadochao = val; }
+            bool estaVivo() const { return vivo; }
 
-        virtual void executar() = 0;
-        virtual void salvar() = 0;
-        virtual void mover() = 0;
-        virtual void morrer() = 0;
+            CoordF getPos() const { return pos; }
+            void setPos(const CoordF& newPos) { pos = newPos; }
+    
+            CoordF getVel() const { return vel; }
+            void setVel(const CoordF& v) { vel = v; }
+    
+            bool noChao() const { return encostadochao; }
+            void setChao(bool val) { encostadochao = val; }
 
-        void desenhar();
-        void atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt);
+            virtual void executar() = 0;
+            virtual void salvar() = 0;
+            virtual void mover() = 0;
+            virtual void morrer() = 0;
 
-        virtual void gravidade(float dt, float gravidade);
+            void desenhar();
+            void atualizarAnimacao(Animation_ID id, bool olhandoEsquerda, float dt);
 
-        void tomarDano();
-        void tempoImunidade(float dt);
-        bool estaImune() { return bool(imunidade > 0.0f); }
+            virtual void gravidade(float dt, float gravidade);
 
-};
+            void tomarDano();
+            void tempoImunidade(float dt);
+            bool estaImune() { return bool(imunidade > 0.0f); }
+
+    };
+}
 
 #endif

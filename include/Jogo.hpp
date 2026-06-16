@@ -8,10 +8,10 @@
 class Jogo{
     private:
         Gerenciadores::GerenciadorGrafico* pGerenciadorGrafico;
-    Gerenciadores::GerenciadorColisoes* pGC;
-    Jogador* pJ1;
-    Jogador* pJ2;
-    Fases::FasePrimeira* pFase1;
+        Gerenciadores::GerenciadorColisoes* pGC;
+        Personagens::Jogador* pJ1;
+        Personagens::Jogador* pJ2;
+        Fases::FasePrimeira* pFase1;
     public:
         Jogo();
         ~Jogo();

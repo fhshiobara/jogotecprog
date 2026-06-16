@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include "Fase.hpp"
 #include "Demonio.hpp"
-#include "Arvore.hpp"
+#include "Bixo.hpp"
 #include "SingleFrameAnimation.hpp"
 
 namespace Fases{
@@ -22,13 +22,13 @@ private:
     Gerenciadores::SingleFrameAnimation* background;
     
 protected:
-    void criar_inim_Demonio();
-    void criar_obst_Espinhos();
+    void criarInimigosDemonio();
+    void criarObstaculosEspinhos();
     
 public:
     FasePrimeira();
     ~FasePrimeira();
-    void executar(Jogador* pJ1,Jogador* pJ2);
+    void executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2);
     void executar();
     
     void criarInimigos();

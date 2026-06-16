@@ -1,24 +1,24 @@
-#include "Obst_Medio.hpp"
+#include "Espinhos.hpp"
 #include <cmath>
  
 namespace Obstaculos {
  
-    Obst_Medio::Obst_Medio(CoordF position, float altura, float largura, float viscosidade)
+    Espinhos::Espinhos(CoordF position, float altura, float largura, float viscosidade)
         : Obstaculo(position, true), altura(altura), largura(largura), viscosidade(viscosidade)
     {
         hitbox.setSize(sf::Vector2f(largura, altura));
         hitbox.setPosition(sf::Vector2f(position.x, position.y));
       
-        sprite = new Gerenciadores::SingleFrameAnimation("../assets/Obstaculo/Espinhos.png",CoordF(position.x, position.y),CoordF(largura,altura-20.f),1.0);
+        sprite = new Gerenciadores::SingleFrameAnimation("assets/Obstaculo/Espinhos.png",CoordF(position.x, position.y),CoordF(largura,altura-20.f),1.0);
     }
  
-    Obst_Medio::~Obst_Medio() {}
+    Espinhos::~Espinhos() {}
  
-void Obst_Medio::executar() {this->desenhar();}
+void Espinhos::executar() {this->desenhar();}
  
-    void Obst_Medio::salvar() {}
+    void Espinhos::salvar() {}
  
-bool Obst_Medio::obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY,
+bool Espinhos::obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY,
                                bool& noChao, float alturaJogador) const
     {
         float metLargObj = largura / 2.f;
@@ -35,7 +35,7 @@ bool Obst_Medio::obstruir(CoordF& posJogador, float& velocidadeX,float& velocida
         return false;
     }
  
-    void Obst_Medio::desenhar() {
+    void Espinhos::desenhar() {
         if (pGG != NULL)
             sprite->render();
     }

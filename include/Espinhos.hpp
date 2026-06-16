@@ -1,23 +1,23 @@
 //
-//  Obst_Medio.hpp
+//  Espinhos.hpp
 //  main
 //
 //  Created by Edison Shiobara on 06/06/26.
 //
-#ifndef Obst_Medio_hpp
-#define Obst_Medio_hpp
+#ifndef Espinhos_hpp
+#define Espinhos_hpp
 #include "Obstaculo.hpp"
  
 namespace Obstaculos {
-    class Obst_Medio : public Obstaculo {
+    class Espinhos : public Obstaculo {
     private:
         float largura;
         float altura;
         float viscosidade;
  
     public:
-        Obst_Medio(CoordF position, float altura, float largura, float viscosidade);
-        ~Obst_Medio();
+        Espinhos(CoordF position, float altura, float largura, float viscosidade);
+        ~Espinhos();
         void executar();
         void salvar();
         bool obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY, bool& noChao, float alturaJogador) const;
@@ -25,4 +25,4 @@ namespace Obstaculos {
     };
 }
  
-#endif /* Obst_Medio_hpp */
+#endif /* Espinhos_hpp */

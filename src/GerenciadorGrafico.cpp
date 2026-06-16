@@ -71,9 +71,5 @@ namespace Gerenciadores{
         }
         texturesMap[path]=newText; // salva no map para uso seguinte
         return newText;
-            
-            
-
-        
     }
 }

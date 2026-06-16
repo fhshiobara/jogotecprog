@@ -3,20 +3,22 @@
 
 #include "Inimigo.hpp"
 
-class Demonio : public Inimigo {
-    private:
-        int fome; // Quanto mais fome, mais rapido
-    public:
-        Demonio(CoordF position, int hp = 3, float velocidade = 60.0f, int fome = 1);
-        ~Demonio();
+namespace Personagens {
 
-        void executar();
-        void salvar();
-        void mover();
-        void morrer();
-        void initialize();
+    class   Demonio : public Personagens::Inimigo {
+        private:
+            int fome; // Quanto mais fome, mais rapido
+        public:
+            Demonio(CoordF position, int hp = 3, float velocidade = 60.0f, int fome = 1);
+            ~Demonio();
 
-        void perseguir(CoordF posJogador, float dt);
-};
+            void executar();
+            void salvar();
+            void mover();
+            void morrer();
+            void initialize();
 
+            void perseguir(CoordF posJogador, float dt);
+    };
+}
 #endif

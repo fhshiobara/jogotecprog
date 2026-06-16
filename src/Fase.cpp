@@ -8,12 +8,14 @@
 #include "SingleFrameAnimation.hpp"
 #include "Plataforma.hpp"
 #include "Demonio.hpp"
-#include "Arvore.hpp"
+#include "Bixo.hpp"
 #define MAX 3
+
+using namespace Personagens;
 
 namespace Fases{
 
-Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimArvore(4),tam_tela(800,600),num_max_Plataformas(rand()%10){
+Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10){
     vPlats.clear();
     if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
 }
@@ -58,18 +60,18 @@ void Fase::criarPlataformas(){
 void Fase::criarCenario(){
 }
 
-void Fase::criarInimigosArvore(){
+void Fase::criarInimigosBixo(){
     std::vector<Grid> espacosOcupados;
     for(int i = 0; i < 9; i++){
         Grid g = static_cast<Grid>(i);
         if(mapa.estaOcupado(g)) espacosOcupados.push_back(g);
     }
 
-    for(int i = 0; i < Max_inimArvore; i++){
+    for(int i = 0; i < Max_inimBixo; i++){
         Grid espaco = espacosOcupados[rand() % espacosOcupados.size()];
         CoordF pos = mapa.getCoord(espaco);
 
-        Arvore* pInim = new Arvore(pos);
+        Bixo* pInim = new Personagens::Bixo(pos);
         pos.y = pos.y-40;
         if(pInim != NULL){
             list_ents.incluir(pInim);
@@ -80,7 +82,5 @@ void Fase::criarInimigosArvore(){
 
 void Fase::criarLimites(){
     pGC->setLimite(tam_tela.x,tam_tela.y);
-    
-    
 }
 }

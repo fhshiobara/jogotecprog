@@ -1,8 +1,11 @@
 #include "GerenciadorColisoes.hpp"
 #include "Limites.hpp"
-#include <iostream>
+#include "Bixo.hpp"
 #include "Projetil.hpp"
 #include "Morte.hpp"
+#include <iostream>
+
+using namespace Personagens;
 
 namespace Gerenciadores {
 
@@ -20,14 +23,13 @@ namespace Gerenciadores {
 
     GerenciadorColisoes::~GerenciadorColisoes() {}
 
-    void GerenciadorColisoes::setJogador(Jogador* pJogador) {
+    void GerenciadorColisoes::setJogador(Personagens::Jogador* pJogador) {
         if(pJog){
             pJog2 = pJogador;
         }
         else{
             pJog = pJogador;
         }
-        
     }
 
     void GerenciadorColisoes::setLimite(float largura, float altura) {
@@ -36,7 +38,7 @@ namespace Gerenciadores {
     }
 
 
-    void GerenciadorColisoes::incluirInimigo(Inimigo* pInimigo) {
+    void GerenciadorColisoes::incluirInimigo(Personagens::Inimigo* pInimigo) {
         if (pInimigo != NULL)
             ListaInimigos.push_back(pInimigo);
         else
@@ -140,24 +142,24 @@ namespace Gerenciadores {
         }
     }
 
-    void GerenciadorColisoes::tratarColisoesObstaculosArvores() {
+    void GerenciadorColisoes::tratarColisoesObstaculosBixos() {
 
     for (Inimigo* inimigo : ListaInimigos) {
-        Arvore* arvore = dynamic_cast<Arvore*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma arvore.
+        Bixo* bixo = dynamic_cast<Bixo*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma Bixo.
 
-        if (arvore == nullptr || !arvore->estaVivo())
+        if (bixo == nullptr || !bixo->estaVivo())
             continue;
 
-        CoordF pos = arvore->getPos();
-        CoordF vel = arvore->getVel();
-        bool chao  = arvore->noChao();
+        CoordF pos = bixo->getPos();
+        CoordF vel = bixo->getVel();
+        bool chao  = bixo->noChao();
 
         for (Obstaculos::Obstaculo* obs : ListaObstaculos)
             obs->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
 
-        arvore->setPos(pos);
-        arvore->setVel(vel);
-        arvore->setChao(chao);
+        bixo->setPos(pos);
+        bixo->setVel(vel);
+        bixo->setChao(chao);
     }
     }
 
@@ -169,7 +171,7 @@ namespace Gerenciadores {
         pJog2->gravidade(dt,gravidade);
 
         for (Inimigo* inimigo : ListaInimigos) {
-        if (inimigo->estaVivo() && dynamic_cast<Arvore*>(inimigo)) // Dynamic_cast feito pelo claude. Somente gravita inimigos ARVORE
+        if (inimigo->estaVivo() && dynamic_cast<Bixo*>(inimigo)) // Dynamic_cast feito pelo claude. Somente gravita inimigos Bixo
             inimigo->gravidade(dt, gravidade);
         }
     }
@@ -191,7 +193,7 @@ namespace Gerenciadores {
     for (it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
 
         Morte* boss = dynamic_cast<Morte*>(*it);
-        if (boss == NULL) continue;
+        if (!boss->estaVivo()) continue;
  
         Entidades::Projetil* proj = boss->getProjetil();
         if (proj == NULL || !proj->estaAtivo()) 
@@ -223,7 +225,7 @@ namespace Gerenciadores {
             return;
         }
         gravitar(dt);
-        tratarColisoesObstaculosArvores();
+        tratarColisoesObstaculosBixos();
         tratarColisoesObstaculos();
         tratarColisoesJogador();
         tratarColisaoProjetil();

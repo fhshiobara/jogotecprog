@@ -1,5 +1,7 @@
 #include "Limites.hpp"
- 
+
+using namespace Personagens;
+
 namespace Obstaculos {
  
     Limites::Limites(float larguraTela, float alturaTela, float alturaJogador)
@@ -12,7 +14,7 @@ namespace Obstaculos {
         alturaTela = altura;
     }
  
-    void Limites::aplicarLimites(Jogador* pJog) const {
+    void Limites::aplicarLimites(Personagens::Jogador* pJog) const {
         if (pJog == NULL) return;
  
         CoordF pos = pJog->getPos();

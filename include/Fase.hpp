@@ -82,7 +82,7 @@ class Fase:public Ente{
 protected:
     ListaEntidades list_ents;
     Gerenciadores::GerenciadorColisoes* pGC;
-    short int Max_inimArvore;
+    short int Max_inimBixo;
     CoordF tam_tela;
     std::vector<Plataforma*> vPlats;
     int num_max_Plataformas;
@@ -96,7 +96,7 @@ public:
 
     
 protected:
-    void criarInimigosArvore();//inimigos faceis
+    void criarInimigosBixo();//inimigos faceis
     void criarPlataformas();
     //funcoes extra vem aqui
     virtual void criarInimigos() =0;
@@ -104,8 +104,6 @@ protected:
     void criarCenario();
     void criarLimites();
     //void criarDemonios();
-    
-    
     
 };
 }

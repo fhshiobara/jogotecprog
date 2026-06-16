@@ -36,10 +36,10 @@ add_executable(main
 
     src/Projetil.cpp
     src/Morte.cpp
-    src/Arvore.cpp
+    src/Bixo.cpp
     src/Demonio.cpp
     src/Limites.cpp
-    src/Obst_Medio.cpp
+    src/Espinhos.cpp
     src/GerenciadorColisoes.cpp
     src/ListaEntidades.cpp
     src/Obstaculo.cpp
