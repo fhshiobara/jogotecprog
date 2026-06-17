@@ -1,12 +1,12 @@
 #include "Personagem.hpp"
 
 namespace Personagens {
-  const float Personagem::IFRAMES_TOTAL = 1.0f; // Define duracao da imunidade
+  const float Personagem::IMUN_FRAMES_TOTAL = 1.0f; // Define duracao da imunidade
   
   Personagem::Personagem(CoordF position, CoordF velocidade, int hp,
                         float velocidadeInicial, float speed, bool olhandoEsquerda,
                         bool encostadochao, bool vivo)
-      : Entidade(position, velocidade), Hp(hp), velocidade(velocidadeInicial), speed(speed),
+      : Entidade(position, velocidade), hp(hp), velocidade(velocidadeInicial), speed(speed),
         olhandoEsquerda(olhandoEsquerda), encostadochao(encostadochao), vivo(vivo) {}
   
   Personagem::~Personagem() {}
@@ -21,14 +21,22 @@ namespace Personagens {
     this->sprite.render();
   }
 
+  Personagem& Personagem::operator--() {
+    hp--;
+
+    return *this;
+  }
+
+
+
   void Personagem::tomarDano() {
       if (imunidade <= 0.0f) {
-        Hp--;
-        imunidade = IFRAMES_TOTAL;
+        --(*this);
+        imunidade = IMUN_FRAMES_TOTAL;
 
-        std::cout << "Personagem tomou dano! HP restante: " << Hp << std::endl;
+        std::cout << "Personagem " << this << " tomou dano! HP restante: " << hp << std::endl;
 
-        if (Hp <= 0) {
+        if (hp <= 0) {
             morrer();
         }
     }

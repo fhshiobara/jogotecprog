@@ -201,12 +201,18 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         }
         
         if(!pJ1->noChao()){animacao = Animation_ID::jump;}
-        
+        pJ1->atualizarGolpe(dt);
+        if(pJ1->getAtacando()){animacao = Animation_ID::attack;}
+
         if(pJ2){
             if(!pJ2->noChao()){
                 animacao2 = Animation_ID::jump;
+                
             }
+            pJ2->atualizarGolpe(dt);
+            if(pJ2->getAtacando()){animacao2 = Animation_ID::attack;}
         }
+
         // Inimigos
         if(pJ2 != NULL)
             executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);

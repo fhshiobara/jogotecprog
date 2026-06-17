@@ -52,6 +52,9 @@ namespace Gerenciadores {
  
             void executar(float dt);
             void gravitar(float dt);
+            
+            void tratarAtaqueJogadores();
+            void atualizarImunidades(float dt);
     };
  
     #define pColisM Gerenciadores::GerenciadorColisoes::getInstance()

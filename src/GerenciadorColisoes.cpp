@@ -226,8 +226,6 @@ namespace Gerenciadores {
             continue; // projetil ja foi consumido, prox boss
         }
 
-
-
         // Checa colisao com o jogador 2 (se existir)
 
         if (pJog2 != NULL) {
@@ -242,23 +240,75 @@ namespace Gerenciadores {
 
         }
     }
-}
+    }
+
+    void GerenciadorColisoes::atualizarImunidades(float dt) {
+        pJog1->tempoImunidade(dt);
+
+        if (pJog2 != NULL)
+            pJog2->tempoImunidade(dt);
+
+        for (Inimigo* inimigo : ListaInimigos)
+            if (inimigo->estaVivo())
+                inimigo->tempoImunidade(dt);
+    }
+
+    void GerenciadorColisoes::tratarAtaqueJogadores() {
+        float alcance = alturaJogador + 2.0f;  // alcance do golpe (corpo-a-corpo), funciona em raio
+       
+        std::vector<Inimigo*>::iterator it;
+        for (it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
+
+            Personagens::Inimigo* inimigo = *it;
+            if (!inimigo->estaVivo()) continue;
+
+            CoordF posIni = inimigo->getPos();
+            // Ataque do jogador 1
+            if (pJog1 != NULL && pJog1->getAtacando()) {
+                CoordF posJog = pJog1->getPos();
+
+                if (std::abs(posJog.x - posIni.x) < alcance &&
+                    std::abs(posJog.y - posIni.y) < alcance) {
+                    /// Adaptado da Func. de colisao do projetil
+                
+                    if (!inimigo->estaImune())
+                        inimigo->tomarDano();
+                }
+            }
+            // Ataque do jogador 2, equivalente ao codigo acima
+
+            if (pJog2 != NULL && pJog2->getAtacando()) {
+                CoordF posJog2 = pJog2->getPos();
+
+                if (std::abs(posJog2.x - posIni.x) < alcance &&
+                    std::abs(posJog2.y - posIni.y) < alcance) {
+                    if (!inimigo->estaImune())
+                        inimigo->tomarDano();
+                }
+
+            }
+
+        }
+
+    }
  
     void GerenciadorColisoes::executar(float dt) {
         if(pJog1 == NULL){
             std::cerr<<"ERRO: faltou o jogador"<<std::endl;
             return;
-            
         }
         if(limites == NULL){
             std::cerr<<"ERRO: faltou os limites"<<std::endl;
             return;
         }
         gravitar(dt);
+        atualizarImunidades(dt);
+        
         tratarColisoesObstaculosBixos();
         tratarColisoesObstaculos();
         tratarColisoesJogador();
         tratarColisaoProjetil();
+        tratarAtaqueJogadores();
         tratarLimites();
     }
 

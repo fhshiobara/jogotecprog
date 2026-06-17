@@ -7,7 +7,7 @@ namespace Personagens {
 
     class Personagem: public Entidades::Entidade {
         protected:
-            int Hp;
+            int hp;
 
             float velocidade; // Velocidade atual
             float speed; // Velocidade "max"
@@ -16,7 +16,7 @@ namespace Personagens {
             bool encostadochao;
             bool vivo;
 
-            static const float IFRAMES_TOTAL;
+            static const float IMUN_FRAMES_TOTAL;
             float imunidade;
             
         public:
@@ -46,10 +46,10 @@ namespace Personagens {
 
             virtual void gravidade(float dt, float gravidade);
 
+            Personagem& operator--(); // decrementa vida em 1
             void tomarDano();
             void tempoImunidade(float dt);
             bool estaImune() { return bool(imunidade > 0.0f); }
-
     };
 }
 

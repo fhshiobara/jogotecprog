@@ -1,6 +1,8 @@
 #include "Jogador.hpp"
 
 namespace Personagens {
+     const float Jogador::DURACAO_ATAQUE = 0.3f; // 0.3s... Alterar aqui a duracao do ataque
+
     Jogador::Jogador(CoordF position, int hp, int pontos, float speed)
         : Personagem(position, CoordF(0.f, 0.f), hp, 0.f, speed, false, true, true),
         pontos(pontos), dt_local(0.0f) {}
@@ -41,15 +43,31 @@ namespace Personagens {
             this->sprite.addNewAnimation(Animation_ID::walk,   "assets/Knight/WALK.png",  8);
             this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight/ATTACK 1.png", 6);
             this->sprite.addNewAnimation(Animation_ID::jump,   "assets/Knight/JUMP.png", 5);
+            this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight/ATTACK 3.png", 6);
         }
         if(Jog == true){
             this->sprite.addNewAnimation(Animation_ID::idle,   "assets/Knight2/IDLE.png", 7);
             this->sprite.addNewAnimation(Animation_ID::walk,   "assets/Knight2/WALK.png",  8);
             this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight2/ATTACK 1.png", 6);
             this->sprite.addNewAnimation(Animation_ID::jump,   "assets/Knight2/JUMP.png", 5);
-            
+            this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight2/ATTACK 3.png", 6);
         }
         
         // Verificar path se der erro! Deve-se mudar o path em relacao a onde o jogo esta sendo built.
+    }
+
+    void Jogador::golpear() {
+        if(!atacando) {
+            atacando = true;
+            tempoAtaqueAtual = DURACAO_ATAQUE;
+        }
+    }
+
+    void Jogador::atualizarGolpe(float dt) {
+        if(!atacando) return;
+
+        tempoAtaqueAtual -= dt;
+        if(tempoAtaqueAtual <= 0.0f)
+            atacando = false;
     }
 }

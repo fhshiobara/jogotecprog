@@ -1,8 +1,5 @@
 #include "Demonio.hpp"
-
 #include <cmath>
-
-
 
 namespace Personagens {
 
@@ -17,7 +14,7 @@ namespace Personagens {
         this->dt_local = dt;
         float dx = posJogador.x - this->pos.x;
         float dy = posJogador.y - this->pos.y;
-        float distancia = std::sqrt(dx * dx + dy * dy);
+        float distancia = sqrt(dx * dx + dy * dy);
 
     
 

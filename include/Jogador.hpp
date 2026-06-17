@@ -11,6 +11,10 @@ namespace Personagens {
         protected:
             int pontos;
             float dt_local;
+
+            bool atacando;
+            float tempoAtaqueAtual;
+            static const float DURACAO_ATAQUE;
     
         public:
             Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);
@@ -27,6 +31,10 @@ namespace Personagens {
             void desenhar();
     
             void moverX(bool direcao, float dt);
+
+            void golpear();
+            void atualizarGolpe(float dt); // Cuida do tempo do golpe
+            bool getAtacando() { return atacando; }
     };
 }
  
