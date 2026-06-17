@@ -12,6 +12,7 @@ namespace Gerenciadores {
     GerenciadorColisoes* GerenciadorColisoes::instance = NULL;
     
     const float GerenciadorColisoes::alturaJogador = 64.f; // Mudar para um get-set
+    const float GerenciadorColisoes::alturaBixo = 50.f; 
 
     GerenciadorColisoes* GerenciadorColisoes::getInstance() {
         if (instance == NULL)
@@ -65,7 +66,7 @@ namespace Gerenciadores {
             bool colidiu = (*iteradorObs)->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
 
             if (colidiu && (*iteradorObs)->isDanoso())
-                pJog1->morrer();
+                pJog1->tomarDano();
 
         }
 
@@ -86,7 +87,7 @@ namespace Gerenciadores {
             bool colidiu = (*iteradorObs)->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
 
             if (colidiu && (*iteradorObs)->isDanoso())
-                pJog2->morrer();
+                pJog2->tomarDano();
 
         }
 
@@ -115,11 +116,11 @@ namespace Gerenciadores {
         float distanciaX = posJog.x - posInimigo.x;
         float distanciaY = posJog.y - posInimigo.y;
 
-        bool colidindoX = std::abs(distanciaX) < metade * 2.f;
-        bool colidindoY = std::abs(distanciaY) < metade * 2.f;
+        bool colidindoX = std::abs(distanciaX) < metade * 1.f;
+        bool colidindoY = std::abs(distanciaY) < metade * 1.f; // mudar os fatores para regular hitbox com jogador
 
         if (colidindoX && colidindoY)
-            pJog1->morrer(); // Aqui, perder vida ao inves de morrer.
+            pJog1->tomarDano(); // Aqui, perder vida ao inves de morrer.
         }
 
         // Func copiada para jog2
@@ -136,14 +137,14 @@ namespace Gerenciadores {
 
         CoordF posInimigo = inimigoAtual->getPos();
 
-        float distanciaX = posJog.x - posInimigo.x;
-        float distanciaY = posJog.y - posInimigo.y;
+        float distanciaX = posJog2.x - posInimigo.x;
+        float distanciaY = posJog2.y - posInimigo.y;
 
         bool colidindoX = std::abs(distanciaX) < metade * 2.f;
         bool colidindoY = std::abs(distanciaY) < metade * 2.f;
 
         if (colidindoX && colidindoY)
-            pJog2->morrer(); // Aqui, perder vida ao inves de morrer.
+            pJog2->tomarDano(); // Aqui, perder vida ao inves de morrer.
         }   
     }
 
@@ -157,10 +158,10 @@ namespace Gerenciadores {
 
         CoordF pos = bixo->getPos();
         CoordF vel = bixo->getVel();
-        bool chao  = bixo->noChao();
+        bool chao = bixo->noChao();
 
         for (Obstaculos::Obstaculo* obs : ListaObstaculos)
-            obs->obstruir(pos, vel.y, vel.x, chao, alturaJogador);
+            obs->obstruir(pos, vel.y, vel.x, chao, alturaBixo);
 
         bixo->setPos(pos);
         bixo->setVel(vel);

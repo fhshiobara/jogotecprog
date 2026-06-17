@@ -53,7 +53,7 @@ namespace Personagens {
     }
     
     void Morte::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Morte/IDLE.png", 8);
+        this->sprite.addNewAnimation(Animation_ID::walk, "assets/Morte/IDLE.png", 8);
     }
     
     void Morte::executar() {

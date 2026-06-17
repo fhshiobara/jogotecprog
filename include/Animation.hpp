@@ -82,6 +82,7 @@ private:
             void addNewAnimation(Animation_ID id, const char* path, unsigned int imageCount);
             void update(Animation_ID id, bool facingLeft, CoordF position,float dt);
             void render();
+            // sf::FloatRect getBounds() const { return body.getGlobalBounds(); }
 };
 
 

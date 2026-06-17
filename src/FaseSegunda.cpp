@@ -9,8 +9,8 @@
 
 namespace Fases{
 
-    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL){
-        background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL) {
+        background = new Gerenciadores::SingleFrameAnimation("assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 
     }
 
@@ -241,7 +241,7 @@ namespace Fases{
             } // mesma coisa, porem desenha
 
 
-            
+            std::cout << "cheguei em flag!" << std::endl;
             pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
             pJ1->desenhar();
             if(pJ2){
@@ -249,11 +249,10 @@ namespace Fases{
                 pJ2->desenhar();
             }
             
-            if(concluida){
-                return;
-            }
-            pGG->getWindow()->display();
-            
+            // if(concluida){
+            //     return;
+            // }
+            pGG->getWindow()->display();   
         }
     }
-}//fecha namespace
+}

@@ -28,6 +28,7 @@ namespace Gerenciadores {
             Obstaculos::Limites* limites;
  
             static const float alturaJogador; // Mudar
+            static const float alturaBixo;
  
             static GerenciadorColisoes* instance;
             GerenciadorColisoes();

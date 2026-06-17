@@ -13,6 +13,8 @@ class Coord{
         Coord();
         ~Coord(){ }
         
+        TL getX() const { return x; }
+        TL getY() const { return y; } // Para fins de debug
 
 };
 

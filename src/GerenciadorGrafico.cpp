@@ -77,7 +77,7 @@ namespace Gerenciadores{
     if(font == NULL){
         font = new sf::Font();
         
-        if(!font->loadFromFile("../assets/Font/FONT.ttf")){
+        if(!font->loadFromFile("assets/Font/FONT.ttf")){
 
             std::cerr << "ERRO: falha ao carregar assets/fonte.ttf" << std::endl;
             delete font;

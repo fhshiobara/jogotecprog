@@ -73,10 +73,6 @@ public:
     }
 };
     
-    
-
-
-
 namespace Fases{
 class Fase:public Ente{
 protected:

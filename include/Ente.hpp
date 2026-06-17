@@ -24,6 +24,7 @@ class Ente {
         virtual void executar() = 0;
         void desenhar();
         int getId() const { return id; }
+        // void desenharHitbox(); 
 
 };
 

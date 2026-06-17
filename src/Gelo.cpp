@@ -10,7 +10,7 @@
 namespace Obstaculos{
 
 Gelo::Gelo(int temp, CoordF pos,float larg): Obstaculo(pos,false), temperatura(temp),largura(larg){
-    sprite = new Gerenciadores::SingleFrameAnimation("../assets/Obstaculo/Gelo.png", pos, CoordF(largura,30), 2.0);
+    sprite = new Gerenciadores::SingleFrameAnimation("assets/Obstaculo/Gelo.png", pos, CoordF(largura,30), 2.0);
     
 }
 

@@ -64,4 +64,4 @@ void Animation::update(Animation_ID id, bool facingLeft, CoordF position, float 
 
 void Animation::render() {
     pGraphicM->render(&body);
-}
+}  

@@ -8,12 +8,36 @@
 #include "FasePrimeira.hpp"
 #include "Espinhos.hpp"
 
+static void desenharAreaColisao(
+    sf::RenderWindow* window,
+    CoordF pos,
+    float alcance)
+{
+    sf::RectangleShape debug;
+
+    debug.setSize(sf::Vector2f(
+        alcance * 2.f,
+        alcance * 2.f
+    ));
+
+    debug.setPosition(
+        pos.x - alcance,
+        pos.y - alcance
+    );
+
+    debug.setFillColor(sf::Color::Transparent);
+    debug.setOutlineThickness(2.f);
+    debug.setOutlineColor(sf::Color::Red);
+
+    window->draw(debug);
+} // Func helper para debug das colisoes. Feita pelo ChatGPT
+
 using namespace Personagens;
 
 namespace Fases{
 
 FasePrimeira::FasePrimeira():Fase(),max_inim_Demonio(4),max_obst_Espinhos(4),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("assets/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new Gerenciadores::SingleFrameAnimation("assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 }
 
 FasePrimeira::~FasePrimeira(){}
@@ -37,6 +61,7 @@ void FasePrimeira::criarInimigosDemonio(){
             if(pDemo!=NULL){
                 num_demonios_criados++;
                 vInimigos.push_back(pDemo);
+
                 list_ents.incluir(pDemo);
                 pGC->incluirInimigo(pDemo);
             }
@@ -227,10 +252,12 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
         pJ1->desenhar();
+        desenharAreaColisao(pGG->getWindow(), pJ1->getPos(), 32.f);
+
         if(pJ2){
-            pJ2->atualizarAnimacao(animacao2,olhandoEsquerda2,dt);
             pJ2->desenhar();
         }
+
         pGG->getWindow()->display();
         
     }
