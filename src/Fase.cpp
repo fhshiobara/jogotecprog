@@ -12,30 +12,6 @@
 #include "Bixo.hpp"
 #define MAX 3
 
-static void desenharAreaColisao(
-    sf::RenderWindow* window,
-    CoordF pos,
-    float alcance)
-{
-    sf::RectangleShape debug;
-
-    debug.setSize(sf::Vector2f(
-        alcance * 2.f,
-        alcance * 2.f
-    ));
-
-    debug.setPosition(
-        pos.x - alcance,
-        pos.y - alcance
-    );
-
-    debug.setFillColor(sf::Color::Transparent);
-    debug.setOutlineThickness(2.f);
-    debug.setOutlineColor(sf::Color::Red);
-
-    window->draw(debug);
-} // Func helper para debug das colisoes. Feita pelo ChatGPT
-
 using namespace Personagens;
 
 namespace Fases{

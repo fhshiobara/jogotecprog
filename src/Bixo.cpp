@@ -4,19 +4,27 @@
 namespace Personagens {
  
     Bixo::Bixo(CoordF position, int hp, float velocidade, float percepcao)
-    : Inimigo(position, hp, velocidade), percepcao(percepcao) {this->initialize();}
+    : Inimigo(position, hp, velocidade), percepcao(percepcao)
+    {this->initialize();}
     
     Bixo::~Bixo() {}
     
-    // void Bixo::executar(CoordF posJogador1, CoordF posJogador2, float dt) {
-    //     this->atualizarAnimacao(Animation_ID::idle,olhandoEsquerda,dt_local);
-    //     bool jogadorMaisProx = this->jogadorProximo(posJogador1, posJogador2);
-    //     if(jogadorMaisProx) // False = jog1, True = jog2
-    //         this->perseguir(posJogador2, dt);
-    //     else    
-    //         this->perseguir(posJogador1, dt);
-    //     this->desenhar();
-    // }
+    void Bixo::executar() {
+
+        this->atualizarAnimacao(Animation_ID::idle,olhandoEsquerda,dt_local);
+
+        bool jogadorMaisProx = this->jogadorProximo();
+
+        if(jogadorMaisProx) {// False = jog1, True = jog2
+            this->perseguir(pJogador2->getPos(), dt_local);
+            
+            }
+        else {
+            this->perseguir(pJogador1->getPos(), dt_local);
+            
+        }
+        this->desenhar();
+    }
 
     void Bixo::executar() {
         this->atualizarAnimacao(Animation_ID::idle, olhandoEsquerda, dt_local);
@@ -30,6 +38,7 @@ namespace Personagens {
     }
     
     void Bixo::perseguir(CoordF posJogador, float dt) {
+
         this->dt_local = dt;
     
         float dx = posJogador.x - this->pos.x;

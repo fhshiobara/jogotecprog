@@ -8,7 +8,6 @@
 #ifndef SingleFrameAnimation_hpp
 #define SingleFrameAnimation_hpp
 
-#pragma once
 #include <stdio.h>
 #include <SFML/Graphics.hpp>
 #include "VectorTL.hpp"
