@@ -61,7 +61,7 @@ public:
     }
     
     bool estaOcupado(Grid espaco){
-        return CoordUsado[espaco];
+        //std::map<Grid,bool>::iterator it = CoordUsado[espaco];
     }
     CoordF getCoord(Grid espaco){
         return CoordGrid[espaco];
