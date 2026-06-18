@@ -10,7 +10,7 @@ namespace Gerenciadores{
     class GerenciadorGrafico{
         private:
             sf::RenderWindow* window;
-
+        
             sf::View view;
             std::map<const char*,sf::Texture*> texturesMap;
 

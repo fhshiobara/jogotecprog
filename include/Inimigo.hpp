@@ -10,9 +10,12 @@ namespace Personagens {
     class Inimigo : public Personagem {
         protected:
             float dt_local;
-    
+
+            Jogador* pJogador1;
+            Jogador* pJogador2;
+
         public:
-            Inimigo(CoordF position, int hp, float velocidade);
+            Inimigo(CoordF position, int hp, float velocidade, Jogador* pJogador1 = NULL, Jogador* pJogador2 = NULL);
             ~Inimigo();
 
             virtual void executar() override=0;
@@ -20,6 +23,7 @@ namespace Personagens {
             virtual void mover() override=0;
             virtual void morrer() override=0;
             virtual void initialize()=0;
+            virtual void perseguir()=0;
             virtual void perseguir(CoordF posJogador, float dt)=0;
             virtual void danificar(Jogador* pJog)=0;
             
@@ -27,7 +31,7 @@ namespace Personagens {
             void setDt(float dt) override;
 
             CoordF getPos() const { return pos; }
-            bool jogadorProximo(CoordF posPlayer1, CoordF posPlayer2);
+            bool jogadorProximo();
     };
 }
  

@@ -4,8 +4,8 @@
 namespace Personagens {
 
     Demonio::Demonio(CoordF position, int hp, float velocidade, int fome)
-
-    : Inimigo(position, hp, velocidade), fome(fome) {this->initialize();}
+    : Inimigo(position, hp, velocidade), fome(fome)
+    {this->initialize();}
 
     Demonio::~Demonio() {}
 
