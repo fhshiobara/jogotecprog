@@ -3,8 +3,11 @@
 #include <iostream>
  
 Menu::Menu(Jogo* pJogo)
-    : pJogo(pJogo), selecionada(0), multiplayer(false), ativo(true), fase(0)
+    : pJogo(pJogo), selecionada(0), multiplayer(false), ativo(true), fase(0),cavEsq(NULL),cavDir(NULL),fundo(NULL)
 {
+    //cavEsq = new Gerenciadores::SingleFrameAnimation("../assets/Background/cavaleiro_esquerda.png", CoordF(0.f,250.f), CoordF(280.f,300.f), 1.0);
+    //cavDir = new Gerenciadores::SingleFrameAnimation("../assets/Background/cavaleiro_direita.png", CoordF(560.f,250.f), CoordF(280.f,300.f), 1.0);
+    fundo = new Gerenciadores::SingleFrameAnimation("../assets/Background/plano_de_fundo.png", CoordF(0.f,0.f), CoordF(800.f,600.f), 1.0);
     opcao.push_back("Iniciar Fase 1");
     opcao.push_back("Iniciar Fase 2");
     opcao.push_back("Ver Ranking");
@@ -14,14 +17,21 @@ Menu::Menu(Jogo* pJogo)
     montarTextos();
 }
  
-Menu::~Menu() {}
+Menu::~Menu() {/*
+    delete cavEsq;
+    cavEsq = NULL;
+    delete cavDir;
+    cavDir = NULL;*/
+    delete fundo;
+    fundo = (NULL);
+}
  
 void Menu::montarTextos() {
     sf::Font* fonte = pGG->getFont();
     if (fonte == NULL) return;
  
     titulo.setFont(*fonte);
-    titulo.setString("Dungeon");
+    titulo.setString("Dungeon++");
     titulo.setCharacterSize(48);
     titulo.setFillColor(sf::Color::White);
     titulo.setPosition(sf::Vector2f(280.f, 60.f));
@@ -34,7 +44,7 @@ void Menu::montarTextos() {
         t.setCharacterSize(32);
         t.setPosition(sf::Vector2f(300.f, 200.f + i * 60.f));
         textosOpcoes.push_back(t);
-    } 
+    }
 }
  
 void Menu::executar() {
@@ -48,7 +58,10 @@ void Menu::executar() {
         }
 
         pGG->clear();
-        desenhar();
+        fundo->render();
+        desenhar();/*
+        cavEsq->render();
+        cavDir->render();*/
         pGG->getWindow()->display();
     }
 }

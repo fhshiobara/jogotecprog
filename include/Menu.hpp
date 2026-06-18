@@ -2,6 +2,7 @@
 #define MENU_HPP
  
 #include "Ente.hpp"
+#include "SingleFrameAnimation.hpp"
 
 class Jogo;
  
@@ -19,6 +20,12 @@ class Menu : public Ente {
  
         sf::Text titulo;
         std::vector<sf::Text> textosOpcoes;
+    Gerenciadores::SingleFrameAnimation* cavEsq;
+    Gerenciadores::SingleFrameAnimation* cavDir;
+    Gerenciadores::SingleFrameAnimation* fundo;
+    
+    
+        
  
     public:
         Menu(Jogo* pJogo);
