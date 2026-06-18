@@ -5,7 +5,7 @@ namespace Personagens {
 
     Jogador::Jogador(CoordF position, int hp, int pontos, float speed)
         : Personagem(position, CoordF(0.f, 0.f), hp, 0.f, speed, false, true, true),
-        pontos(pontos), dt_local(0.0f) {}
+        pontos(pontos), dt_local(0.0f),Invulneravel(false),tempoInvulneravel(0.5) {}
     
     Jogador::~Jogador() {}
     
@@ -39,18 +39,20 @@ namespace Personagens {
     
     void Jogador::initialize(bool Jog) {
         if(Jog == false){
-            this->sprite.addNewAnimation(Animation_ID::idle,   "assets/Knight/IDLE.png",  7);
-            this->sprite.addNewAnimation(Animation_ID::walk,   "assets/Knight/WALK.png",  8);
-            this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight/ATTACK 1.png", 6);
-            this->sprite.addNewAnimation(Animation_ID::jump,   "assets/Knight/JUMP.png", 5);
-            this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight/ATTACK 3.png", 6);
+            this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight/IDLE.png",  7);
+            this->sprite.addNewAnimation(Animation_ID::walk,   "../assets/Knight/WALK.png",  8);
+            this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight/ATTACK 1.png", 6);
+            this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight/JUMP.png", 5);
+            this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight/ATTACK 3.png", 6);
+            this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Knight/HURT.png", 4);
         }
         if(Jog == true){
-            this->sprite.addNewAnimation(Animation_ID::idle,   "assets/Knight2/IDLE.png", 7);
-            this->sprite.addNewAnimation(Animation_ID::walk,   "assets/Knight2/WALK.png",  8);
-            this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight2/ATTACK 1.png", 6);
-            this->sprite.addNewAnimation(Animation_ID::jump,   "assets/Knight2/JUMP.png", 5);
-            this->sprite.addNewAnimation(Animation_ID::attack, "assets/Knight2/ATTACK 3.png", 6);
+            this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight2/IDLE.png", 7);
+            this->sprite.addNewAnimation(Animation_ID::walk,   "../assets/Knight2/WALK.png",  8);
+            this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight2/ATTACK 1.png", 6);
+            this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight2/JUMP.png", 5);
+            this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight2/ATTACK 3.png", 6);
+            this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Knight2/HURT.png", 4);
         }
         
         // Verificar path se der erro! Deve-se mudar o path em relacao a onde o jogo esta sendo built.
@@ -70,4 +72,26 @@ namespace Personagens {
         if(tempoAtaqueAtual <= 0.0f)
             atacando = false;
     }
+//funcoes suporte para o meu danificar
+bool Jogador::getInvulneravel(){
+    return Invulneravel;
+}
+
+void Jogador::setInvulneravel(bool inv){
+    Invulneravel = inv;
+}
+
+void Jogador::tempoImunidade(float dt){
+    if(Invulneravel){
+        tempoInvulneravel = tempoInvulneravel-dt; // cronometro
+        if(tempoInvulneravel<=0.f){
+            this->setInvulneravel(false);
+        }
+    }
+}
+
+void Jogador::setInvulnerabilidade( float tmp){
+    this->setInvulneravel(true);
+    tempoInvulneravel = tmp;
+}
 }

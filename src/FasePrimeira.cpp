@@ -37,7 +37,7 @@ using namespace Personagens;
 namespace Fases{
 
 FasePrimeira::FasePrimeira():Fase(),max_inim_Demonio(4),max_obst_Espinhos(4),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 }
 
 FasePrimeira::~FasePrimeira(){}
@@ -45,7 +45,7 @@ FasePrimeira::~FasePrimeira(){}
 void FasePrimeira::criarInimigosDemonio(){
     int num_inim_medio = rand()%(max_inim_Demonio +1);
     
-    if(num_inim_medio<3){num_inim_medio =3;} //numero minimo de inimigos
+    if(num_inim_medio<10){num_inim_medio =1;} //numero minimo de inimigos
     
     int num_demonios_criados = 0;
     
@@ -250,11 +250,16 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         background->render();
         list_ents.percorrer(dt);
         
+        if(pJ1->getInvulneravel()){
+            animacao = Animation_ID::hurt;
+        }
+        
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
         pJ1->desenhar();
-        desenharAreaColisao(pGG->getWindow(), pJ1->getPos(), 32.f);
+        //desenharAreaColisao(pGG->getWindow(), pJ1->getPos(), 32.f);
 
         if(pJ2){
+            pJ2->atualizarAnimacao(animacao2,olhandoEsquerda2,dt);
             pJ2->desenhar();
         }
 

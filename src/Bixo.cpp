@@ -48,7 +48,10 @@ namespace Personagens {
     }
 
     void Bixo::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::idle, "assets/Bixo/ATTACK.png", 8);
-        this->sprite.addNewAnimation(Animation_ID::walk, "assets/Bixo/WALK.png", 8);
+        this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Bixo/ATTACK.png", 8);
+        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Bixo/WALK.png", 8);
     }
-}
+    void Bixo::danificar(Jogador* pJog){}
+}//fim do namespace
+
+

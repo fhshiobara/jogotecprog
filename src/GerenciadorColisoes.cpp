@@ -119,8 +119,10 @@ namespace Gerenciadores {
         bool colidindoX = std::abs(distanciaX) < metade * 1.f;
         bool colidindoY = std::abs(distanciaY) < metade * 1.f; // mudar os fatores para regular hitbox com jogador
 
-        if (colidindoX && colidindoY)
+        if (colidindoX && colidindoY){
+            inimigoAtual->danificar(pJog1);
             pJog1->tomarDano(); // Aqui, perder vida ao inves de morrer.
+            }
         }
 
         // Func copiada para jog2
@@ -277,6 +279,7 @@ namespace Gerenciadores {
                 }
             }
             // Ataque do jogador 2, equivalente ao codigo acima
+            
 
             if (pJog2 != NULL && pJog2->getAtacando()) {
                 CoordF posJog2 = pJog2->getPos();

@@ -29,9 +29,9 @@ namespace Personagens {
 
 
     void Demonio::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::idle, "assets/Demonio/IDLE.png", 4);
-        this->sprite.addNewAnimation(Animation_ID::walk, "assets/Demonio/FLYING.png", 4);
-        this->sprite.addNewAnimation(Animation_ID::hurt, "assets/Demonio/HURT.png", 4);
+        this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Demonio/IDLE.png", 4);
+        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Demonio/FLYING.png", 4);
+        this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Demonio/HURT.png", 4);
 
         // Mudar path caso falha ao encontrar.
 
@@ -50,6 +50,30 @@ namespace Personagens {
         vivo = false;
         std::cout << "Demonio morreu!" << std::endl;
 
+    }
+
+    void Demonio::danificar(Jogador* pJog){
+        //essa funcao so sera chamada caso haja o contato entre o jogador e o inimigo, entao vou abstrair essa parte de verificacao
+        if(pJog!=NULL){
+            if(!pJog->getInvulneravel()){
+                pJog->setInvulnerabilidade(0.9); // depois de levar o dano fica imune
+                
+                if(olhandoEsquerda){
+                    pJog->setPos(CoordF(pJog->getPos().x+60,pJog->getPos().y-30)); // pulinho para tras
+                }
+                else{
+                    pJog->setPos(CoordF(pJog->getPos().x-60,pJog->getPos().y-30)); // pulinho para frente
+                    
+                    
+                }
+                //pJog->setInvulneravel(true); // depois de levar o dano fica imune
+            }
+            
+            
+        }else{
+            std::cerr<<"ERRO:ponteiro nulo em danificar de demonio"<<std::endl;
+        }
+    
     }
 
 }

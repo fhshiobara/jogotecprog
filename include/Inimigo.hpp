@@ -3,6 +3,7 @@
  
 #include "Personagem.hpp"
 #include "Animation.hpp"
+#include "Jogador.hpp"
 
 namespace Personagens {
     
@@ -20,6 +21,7 @@ namespace Personagens {
             virtual void morrer() override=0;
             virtual void initialize()=0;
             virtual void perseguir(CoordF posJogador, float dt)=0;
+            virtual void danificar(Jogador* pJog)=0;
             
             bool estaOlhandoEsquerda() const { return olhandoEsquerda; }
             void setDt(float dt) override;

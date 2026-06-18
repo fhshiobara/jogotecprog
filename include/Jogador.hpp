@@ -15,6 +15,9 @@ namespace Personagens {
             bool atacando;
             float tempoAtaqueAtual;
             static const float DURACAO_ATAQUE;
+        
+        float tempoInvulneravel;
+        bool Invulneravel;
     
         public:
             Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);
@@ -35,6 +38,14 @@ namespace Personagens {
             void golpear();
             void atualizarGolpe(float dt); // Cuida do tempo do golpe
             bool getAtacando() { return atacando; }
+        
+        bool getInvulneravel();
+        void setInvulneravel(bool inv);
+        
+        void tempoImunidade(float dt);
+        void setInvulnerabilidade(float tmp);
+        bool getOlhandoEsquerda(){return olhandoEsquerda;}
+        
     };
 }
  
