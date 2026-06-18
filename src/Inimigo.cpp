@@ -4,15 +4,17 @@
 namespace Personagens {
   Inimigo::Inimigo(CoordF position, int hp, float velocidadeInicial, Jogador* pJogador1, Jogador* pJogador2)
       : Personagem(position, CoordF(0.f, 0.f), hp, velocidadeInicial, 
-      false, true, true), dt_local(0.0f), pJogador1(pJogador1), pJogador2(pJogador2) {}
+      false, true, true), dt_local(0.0f) {}
   
   Inimigo::~Inimigo() {}
 
-  bool Inimigo::jogadorProximo() {
-    if(pJogador2 == NULL) return false;
+  bool Inimigo::jogadorProximo(Jogador* pJ1, Jogador* pJ2) {
+    if(pJ2 == NULL) return false;
+
+
       CoordF posInimigo = this->getPos();
-      CoordF posPlayer1 = pJogador1->getPos();
-      CoordF posPlayer2 = pJogador2->getPos();
+      CoordF posPlayer1 = pJ1->getPos();
+      CoordF posPlayer2 = pJ2->getPos();
 
       float dist1 =
           (posInimigo.x - posPlayer1.x) * (posInimigo.x - posPlayer1.x) +

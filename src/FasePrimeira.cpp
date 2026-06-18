@@ -37,7 +37,7 @@ using namespace Personagens;
 namespace Fases{
 
 FasePrimeira::FasePrimeira():Fase(),max_inim_Demonio(4),max_obst_Espinhos(4),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new Gerenciadores::SingleFrameAnimation("assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 }
 
 FasePrimeira::~FasePrimeira(){}
@@ -240,9 +240,9 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
 
         // Inimigos
         if(pJ2 != NULL)
-            executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+            executarInimigos(vInimigos, pJ1, pJ2, dt);
         else
-            executarInimigos(vInimigos, pJ1->getPos(), pJ1->getPos(), dt);
+            executarInimigos(vInimigos, pJ1, pJ1, dt);
 
         pGC->executar(dt);
 

@@ -11,8 +11,8 @@ namespace Personagens {
         protected:
             float dt_local;
 
-            Jogador* pJogador1;
-            Jogador* pJogador2;
+            // Jogador* pJogador1;
+            // Jogador* pJogador2;
 
         public:
             Inimigo(CoordF position, int hp, float velocidade, Jogador* pJogador1 = NULL, Jogador* pJogador2 = NULL);
@@ -31,7 +31,7 @@ namespace Personagens {
             void setDt(float dt) override;
 
             CoordF getPos() const { return pos; }
-            bool jogadorProximo();
+            bool jogadorProximo(Jogador* pJ1, Jogador* pJ2);
     };
 }
  

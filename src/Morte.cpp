@@ -60,10 +60,12 @@ namespace Personagens {
         this->atualizarAnimacao(Animation_ID::walk,!olhandoEsquerda,dt_local);
         this->desenhar();
     }
-        void Morte::salvar()   {}
-        void Morte::mover()    {}
-        void Morte::morrer() {
-            vivo = false;
-            std::cout << "Morte morreu!" << std::endl;
-        }
+    
+    void Morte::salvar()   {}
+    void Morte::mover()    {}
+    void Morte::morrer() {
+        vivo = false;
+        std::cout << "Morte morreu!" << std::endl;
     }
+    void Morte::danificar(Jogador* pJog) {}
+}
