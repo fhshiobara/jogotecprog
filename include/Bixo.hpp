@@ -19,7 +19,7 @@ namespace Personagens {
             void mover();
             void morrer();
             void initialize();
-        void danificar(Jogador* pJog);
+            void danificar(Jogador* pJog);
     
             void perseguir(CoordF posJogador, float dt);
     };

@@ -10,6 +10,7 @@ namespace Personagens {
 
   bool Inimigo::jogadorProximo() {
     if(pJogador2 == NULL) return false;
+
       CoordF posInimigo = this->getPos();
       CoordF posPlayer1 = pJogador1->getPos();
       CoordF posPlayer2 = pJogador2->getPos();

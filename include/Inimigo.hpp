@@ -23,7 +23,6 @@ namespace Personagens {
             virtual void mover() override=0;
             virtual void morrer() override=0;
             virtual void initialize()=0;
-            virtual void perseguir()=0;
             virtual void perseguir(CoordF posJogador, float dt)=0;
             virtual void danificar(Jogador* pJog)=0;
             

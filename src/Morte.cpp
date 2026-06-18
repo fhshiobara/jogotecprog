@@ -66,4 +66,5 @@ namespace Personagens {
             vivo = false;
             std::cout << "Morte morreu!" << std::endl;
         }
+        void Morte::danificar(Jogador* pJog) {}
     }

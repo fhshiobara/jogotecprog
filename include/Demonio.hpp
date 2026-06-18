@@ -5,7 +5,7 @@
 
 namespace Personagens {
 
-    class   Demonio : public Personagens::Inimigo {
+    class Demonio : public Personagens::Inimigo {
         private:
             int fome; // Quanto mais fome, mais rapido
         public:
