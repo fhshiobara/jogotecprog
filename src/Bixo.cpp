@@ -14,7 +14,7 @@ namespace Personagens {
         this->atualizarAnimacao(Animation_ID::idle,olhandoEsquerda,dt_local);
 
         bool jogadorMaisProx = this->jogadorProximo();
-
+/*
         if(jogadorMaisProx) {// False = jog1, True = jog2
             this->perseguir(pJogador2->getPos(), dt_local);
             
@@ -22,14 +22,10 @@ namespace Personagens {
         else {
             this->perseguir(pJogador1->getPos(), dt_local);
             
-        }
+        }*/
         this->desenhar();
     }
 
-    void Bixo::executar() {
-        this->atualizarAnimacao(Animation_ID::idle, olhandoEsquerda, dt_local);
-        this->desenhar();
-    }
     void Bixo::salvar() {}
     void Bixo::mover() {}
     void Bixo::morrer() {
@@ -60,7 +56,12 @@ namespace Personagens {
         this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Bixo/ATTACK.png", 8);
         this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Bixo/WALK.png", 8);
     }
-    void Bixo::danificar(Jogador* pJog){}
+    void Bixo::danificar(Jogador* pJog){
+        if(pJog!=NULL){//mesmo caso do demonio, essa funcao so é chamada se o contato já ocorreu,
+            pJog->setInvulnerabilidade(0.9); // impede que entre em um loop infinito
+            pJog->setDesaceleracao(1.8);
+        }
+    }
 }//fim do namespace
 
 

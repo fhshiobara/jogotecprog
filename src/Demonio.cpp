@@ -56,7 +56,7 @@ namespace Personagens {
         //essa funcao so sera chamada caso haja o contato entre o jogador e o inimigo, entao vou abstrair essa parte de verificacao
         if(pJog!=NULL){
             if(!pJog->getInvulneravel()){
-                pJog->setInvulnerabilidade(0.9); // depois de levar o dano fica imune
+                pJog->setInvulnerabilidade(0.9); //o dano é causado em outra funcao, entao posso setar como imune logo que entrou nesse if para evitar que o jogador saia voando
                 
                 if(olhandoEsquerda){
                     pJog->setPos(CoordF(pJog->getPos().x+60,pJog->getPos().y-30)); // pulinho para tras

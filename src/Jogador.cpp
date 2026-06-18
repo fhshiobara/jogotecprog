@@ -5,7 +5,7 @@ namespace Personagens {
 
     Jogador::Jogador(CoordF position, int hp, int pontos, float speed)
         : Personagem(position, CoordF(0.f, 0.f), hp, 0.f, speed, false, true, true),
-        pontos(pontos), dt_local(0.0f),Invulneravel(false),tempoInvulneravel(0.5) {}
+        pontos(pontos), dt_local(0.0f),Invulneravel(false),tempoInvulneravel(0.5),Devagar(false), tempoDevagar(1.0) {}
     
     Jogador::~Jogador() {}
     
@@ -15,6 +15,13 @@ namespace Personagens {
     void Jogador::morrer()   { std::cout << "Jogador morreu!" << std::endl; }
     
     void Jogador::moverX(bool direcao, float dt) {
+        if(Devagar){
+            if (direcao)
+                pos.x += speed * dt/2;
+            else
+                pos.x -= speed * dt/2;
+            
+        }
         if (direcao)
             pos.x += speed * dt;
         else
@@ -77,8 +84,16 @@ bool Jogador::getInvulneravel(){
     return Invulneravel;
 }
 
+bool Jogador::getDevagar(){
+    return Devagar;
+}
+
 void Jogador::setInvulneravel(bool inv){
     Invulneravel = inv;
+}
+
+void Jogador::setDevagar(bool dev){
+    Devagar = dev;
 }
 
 void Jogador::tempoImunidade(float dt){
@@ -90,8 +105,22 @@ void Jogador::tempoImunidade(float dt){
     }
 }
 
+void Jogador:: tempoDesacelerado(float dt){
+    if(Devagar){
+        tempoDevagar = tempoDevagar-dt;
+        if(tempoDevagar<=0.f){
+            this->setDevagar(false);
+        }
+    }
+}
+
 void Jogador::setInvulnerabilidade( float tmp){
     this->setInvulneravel(true);
     tempoInvulneravel = tmp;
+}
+
+void Jogador::setDesaceleracao(float tmp){
+    this->setDevagar(true);
+    tempoDevagar=tmp;
 }
 }

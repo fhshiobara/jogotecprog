@@ -18,6 +18,8 @@ namespace Personagens {
         
         float tempoInvulneravel;
         bool Invulneravel;
+        float tempoDevagar;
+        bool Devagar;
     
         public:
             Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);
@@ -38,12 +40,19 @@ namespace Personagens {
             void golpear();
             void atualizarGolpe(float dt); // Cuida do tempo do golpe
             bool getAtacando() { return atacando; }
-        
+        //funcoes para o danificar do demonio
         bool getInvulneravel();
         void setInvulneravel(bool inv);
-        
         void tempoImunidade(float dt);
         void setInvulnerabilidade(float tmp);
+        //funcoes para o danificar do bixo
+        
+        //estou aplicando os danificar de maneira analoga, um empurra e o outro vai desacelerar, porem os elementos necessarios para aplicacao acabam sendo iguais
+        bool getDevagar();
+        void setDevagar(bool dev);
+        void tempoDesacelerado(float dt);
+        void setDesaceleracao(float tmp);
+        
         bool getOlhandoEsquerda(){return olhandoEsquerda;}
         
     };

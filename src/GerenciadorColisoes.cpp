@@ -247,9 +247,12 @@ namespace Gerenciadores {
 
     void GerenciadorColisoes::atualizarImunidades(float dt) {
         pJog1->tempoImunidade(dt);
+        pJog2->tempoDesacelerado(dt);
 
-        if (pJog2 != NULL)
+        if (pJog2 != NULL){
             pJog2->tempoImunidade(dt);
+            pJog2->tempoDesacelerado(dt);
+        }
 
         for (Inimigo* inimigo : ListaInimigos)
             if (inimigo->estaVivo())
