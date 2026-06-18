@@ -81,9 +81,16 @@ void Fase::criarInimigosBixo(){
         Grid espaco = espacosOcupados[rand() % espacosOcupados.size()];
         CoordF pos = mapa.getCoord(espaco);
 
+        Bixo* pInim = new Personagens::Bixo(pos);
         pos.y = pos.y-40;
-        
-        mapa.setOcupado(espaco, false);
+        if(pInim != NULL){
+            vInimigos.push_back(pInim);
+
+            mapa.setOcupado(espaco, false);
+
+            list_ents.incluir(pInim);
+            pGC->incluirInimigo(pInim);
+        }
     }
 }
 
@@ -91,10 +98,14 @@ void Fase::criarLimites(){
     pGC->setLimite(tam_tela.x,tam_tela.y);
 }
 
-void Fase::executarInimigos(std::vector<Personagens::Inimigo*> vInimigos, CoordF posJogador1, CoordF posJogador2, float dt) {
+void Fase::executarInimigos(std::vector<Personagens::Inimigo*> vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt) {
+
     for(Personagens::Inimigo* inimigo : vInimigos) {
 
-        bool jogadorMaisProx = inimigo->jogadorProximo();
+        CoordF posJogador1 = pJ1->getPos();
+        CoordF posJogador2 = pJ2->getPos();
+
+        bool jogadorMaisProx = inimigo->jogadorProximo(pJ1, pJ2);
 
         if(jogadorMaisProx)
             inimigo->perseguir(posJogador2, dt);

@@ -40,7 +40,6 @@ namespace Fases{
                     num_morte_criados++;
                     vInimigos.push_back(pMorte);
 
-                    mapa.setOcupado(espaco, false); // Para nao haver mortes nele mesmo
 
                     list_ents.incluir(pMorte);
                     pGC->incluirInimigo(pMorte);
@@ -216,10 +215,10 @@ namespace Fases{
                 }
             }
             if(pJ2 != NULL){
-                executarInimigos(vInimigos, pJ1->getPos(), pJ2->getPos(), dt);
+                executarInimigos(vInimigos, pJ1, pJ2, dt);
             }
             else{
-                executarInimigos(vInimigos, pJ1->getPos(), pJ1->getPos(), dt);
+                executarInimigos(vInimigos, pJ1, pJ1, dt);
             }
 
             for (Personagens::Inimigo* inimigo : vInimigos) {
