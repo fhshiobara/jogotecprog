@@ -37,7 +37,7 @@ using namespace Personagens;
 namespace Fases{
 
 FasePrimeira::FasePrimeira():Fase(),max_inim_Demonio(4),max_obst_Espinhos(4),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 }
 
 FasePrimeira::~FasePrimeira(){}
@@ -252,6 +252,9 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         
         if(pJ1->getInvulneravel()){
             animacao = Animation_ID::hurt;
+        }
+        if(pJ2!=NULL&&pJ2->getInvulneravel()){
+            animacao2 = Animation_ID::hurt;
         }
         
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);

@@ -47,30 +47,30 @@ public:
         CoordUsado[B1] = false; CoordUsado[B2] = false; CoordUsado[B3] = false;
     }
 
-    void CoordUsada(CoordF coord) {
-        std::map<Grid, CoordF>::iterator it = CoordGrid.begin();
-
-        while (it != CoordGrid.end() && (coord.x != it->second.x || coord.y != it->second.y)) {
-            it++;
+    void coordUsada(CoordF coord) {
+            for (auto& par : CoordGrid) {
+                if (par.second.x == coord.x && par.second.y == coord.y) {
+                    CoordUsado[par.first] = true;
+                    return; // achou, pode sair
+                }
+            }
+            //se chegar aqui, a coordenada não existe no grid
         }
 
-        if (it != CoordGrid.end()) {
-            //se entrou aqui é porque achou a coordenada
-            CoordUsado[it->first] = true;
+    
+        bool estaOcupado(Grid espaco) {
+            return CoordUsado[espaco];
         }
-    }
-    
-    bool estaOcupado(Grid espaco){
-        //std::map<Grid,bool>::iterator it = CoordUsado[espaco];
-    }
-    CoordF getCoord(Grid espaco){
-        return CoordGrid[espaco];
-    }
-    
-    
-    void setOcupado(Grid espaco, bool ocupado){
-        CoordUsado[espaco] = ocupado; //permite configurar um slot diretamente
-    }
+
+
+        CoordF getCoord(Grid espaco) {
+            return CoordGrid[espaco];
+        }
+
+        //controle manual, aceita true ou false
+        void setOcupado(Grid espaco, bool ocupado) {
+            CoordUsado[espaco] = ocupado;
+        }
 };
     
 namespace Fases{

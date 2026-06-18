@@ -145,9 +145,11 @@ namespace Gerenciadores {
         bool colidindoX = std::abs(distanciaX) < metade * 2.f;
         bool colidindoY = std::abs(distanciaY) < metade * 2.f;
 
-        if (colidindoX && colidindoY)
+        if (colidindoX && colidindoY){
+            inimigoAtual->danificar(pJog2);
             pJog2->tomarDano(); // Aqui, perder vida ao inves de morrer.
-        }   
+        }
+        }
     }
 
     void GerenciadorColisoes::tratarColisoesObstaculosBixos() {
@@ -247,7 +249,7 @@ namespace Gerenciadores {
 
     void GerenciadorColisoes::atualizarImunidades(float dt) {
         pJog1->tempoImunidade(dt);
-        pJog2->tempoDesacelerado(dt);
+        pJog1->tempoDesacelerado(dt);
 
         if (pJog2 != NULL){
             pJog2->tempoImunidade(dt);

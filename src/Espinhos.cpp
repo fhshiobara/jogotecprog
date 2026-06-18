@@ -9,7 +9,7 @@ namespace Obstaculos {
         hitbox.setSize(sf::Vector2f(largura, altura));
         hitbox.setPosition(sf::Vector2f(position.x, position.y));
       
-        sprite = new Gerenciadores::SingleFrameAnimation("assets/Obstaculo/Espinhos.png",CoordF(position.x, position.y),CoordF(largura,altura-20.f),1.0);
+        sprite = new Gerenciadores::SingleFrameAnimation("../assets/Obstaculo/Espinhos.png",CoordF(position.x, position.y),CoordF(largura,altura-20.f),1.0);
     }
  
     Espinhos::~Espinhos() {}
@@ -18,7 +18,7 @@ void Espinhos::executar() {this->desenhar();}
  
     void Espinhos::salvar() {}
  
-bool Espinhos::obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY,
+bool Espinhos::obstruir(CoordF& posJogador, float& velocidadeY,float& velocidadeX,
                                bool& noChao, float alturaJogador) const
     {
         float metLargObj = largura / 2.f;
