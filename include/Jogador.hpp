@@ -36,7 +36,7 @@ namespace Personagens {
             void desenhar();
     
             void moverX(bool direcao, float dt);
-
+        
             void golpear();
             void atualizarGolpe(float dt); // Cuida do tempo do golpe
             
@@ -44,21 +44,20 @@ namespace Personagens {
         void setAtacando(bool atk){atacando = atk;}
         //fim da funcao
             bool getAtacando() { return atacando; }
-        //funcoes para o danificar do demonio
-        bool getInvulneravel();
-        void setInvulneravel(bool inv);
-        void tempoImunidade(float dt);
-        void setInvulnerabilidade(float tmp);
-        //funcoes para o danificar do bixo
-        
-        //estou aplicando os danificar de maneira analoga, um empurra e o outro vai desacelerar, porem os elementos necessarios para aplicacao acabam sendo iguais
-        bool getDevagar();
-        void setDevagar(bool dev);
-        void tempoDesacelerado(float dt);
-        void setDesaceleracao(float tmp);
-        
-        bool getOlhandoEsquerda(){return olhandoEsquerda;}
-        
+            //funcoes para o danificar do demonio
+            bool getInvulneravel();
+            void setInvulneravel(bool inv);
+            void tempoImunidade(float dt);
+            void setInvulnerabilidade(float tmp);
+            //funcoes para o danificar do bixo
+            
+            //estou aplicando os danificar de maneira analoga, um empurra e o outro vai desacelerar, porem os elementos necessarios para aplicacao acabam sendo iguais
+            bool getDevagar();
+            void setDevagar(bool dev);
+            void tempoDesacelerado(float dt);
+            void setDesaceleracao(float tmp);
+            
+            bool getOlhandoEsquerda(){return olhandoEsquerda;}
     };
 }
  

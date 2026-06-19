@@ -11,8 +11,9 @@ class Menu : public Ente {
         Jogo* pJogo;
 
         std::vector<std::string> opcao;
-        int selecionada; // 0 - x, dependendo qual opcao foi selecionada.
-        // Aqui utilizei a ideia de Sonar Systems em seu video sobre a classe Menu
+        int selecionada; 
+        /* 0 - x, dependendo qual opcao foi selecionada.
+        Aqui utilizei a ideia de Sonar Systems em seu video sobre a classe Menu */
 
         bool multiplayer;   
         bool ativo;            

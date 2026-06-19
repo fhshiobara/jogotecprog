@@ -15,23 +15,21 @@ namespace Personagens {
         float dx = posJogador.x - this->pos.x;
         float dy = posJogador.y - this->pos.y;
         float distancia = sqrt(dx * dx + dy * dy);
-
     
+        vel.x = (dx / distancia) * velocidade * fome;
+        vel.y = (dy / distancia) * velocidade * fome;
 
-        if (distancia > 5.0f) {
-            this->pos.x += (dx / distancia) * velocidade * dt * fome;
-            this->pos.y += (dy / distancia) * velocidade * dt * fome;
-            olhandoEsquerda = (dx > 0);
-        }
+        olhandoEsquerda = (dx > 0);
+        
 
     }
 
 
 
     void Demonio::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::idle, "assets/Demonio/IDLE.png", 4);
-        this->sprite.addNewAnimation(Animation_ID::walk, "assets/Demonio/FLYING.png", 4);
-        this->sprite.addNewAnimation(Animation_ID::hurt, "assets/Demonio/HURT.png", 4);
+        this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Demonio/IDLE.png", 4);
+        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Demonio/FLYING.png", 4);
+        this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Demonio/HURT.png", 4);
 
         // Mudar path caso falha ao encontrar.
 
@@ -49,8 +47,15 @@ namespace Personagens {
     void Demonio::morrer() {
         vivo = false;
         std::cout << "Demonio morreu!" << std::endl;
+    }
+
+    void Demonio::gravidade(float dt, float gravidade) {
+        vel.y += gravidade * dt;
+        pos.x += vel.x * dt;
+        pos.y += vel.y * dt;
 
     }
+
 
     void Demonio::danificar(Jogador* pJog){
         //essa funcao so sera chamada caso haja o contato entre o jogador e o inimigo, entao vou abstrair essa parte de verificacao

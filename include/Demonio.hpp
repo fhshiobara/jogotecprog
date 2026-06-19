@@ -18,8 +18,9 @@ namespace Personagens {
             void morrer();
             void initialize();
             void danificar(Jogador* pJog);
-            
 
+            void gravidade(float dt, float gravidade);
+            
             void perseguir(CoordF posJogador, float dt);
     };
 }

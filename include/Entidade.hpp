@@ -21,7 +21,7 @@ namespace Entidades {
             virtual void executar() = 0;
             virtual void salvar() = 0;
         
-        virtual void setDt(float dt){}
+            virtual void setDt(float dt){}
 
     };
 

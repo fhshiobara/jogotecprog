@@ -40,15 +40,16 @@ namespace Personagens {
     }
   }
 
+  void Personagem::gravidade(float dt, float gravidade) {
+    vel.y += gravidade * dt;
+    pos.y += vel.y * dt;
+    encostadochao = false;
+  }
+
   void Personagem::tempoImunidade(float dt) {
       if (imunidade > 0.0f) {
           imunidade -= dt;
       }
   }
 
-  void Personagem::gravidade(float dt, float gravidade) {
-      vel.y += gravidade * dt;
-      pos.y += vel.y * dt;
-      encostadochao = false;
-  }
 }

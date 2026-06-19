@@ -21,13 +21,14 @@ namespace Personagens {
             void morrer();
             void initialize();
         
-        void danificar(Jogador* pJog);
+            void danificar(Jogador* pJog);
     
             void perseguir(CoordF posJogador, float dt);
             void iniciarAtirar(CoordF posJogador, float dt);
             void atualizarProjetil(float dt);
             void desenharProjetil();
-
+            void gravidade(float dt, float gravidade);
+            
             Entidades::Projetil* getProjetil() { return projetil; }
     };
 }

@@ -62,7 +62,6 @@ void Jogador::moverX(bool direcao, float dt) {
             this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight2/ATTACK 3.png", 6);
             this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Knight2/HURT.png", 4);
         }
-        
         // Verificar path se der erro! Deve-se mudar o path em relacao a onde o jogo esta sendo built.
     }
 
@@ -80,48 +79,49 @@ void Jogador::moverX(bool direcao, float dt) {
         if(tempoAtaqueAtual <= 0.0f)
             atacando = false;
     }
-//funcoes suporte para o meu danificar
-bool Jogador::getInvulneravel(){
-    return Invulneravel;
-}
 
-bool Jogador::getDevagar(){
-    return Devagar;
-}
+    //funcoes suporte para o meu danificar
+    bool Jogador::getInvulneravel(){
+        return Invulneravel;
+    }
 
-void Jogador::setInvulneravel(bool inv){
-    Invulneravel = inv;
-}
+    bool Jogador::getDevagar(){
+        return Devagar;
+    }
 
-void Jogador::setDevagar(bool dev){
-    Devagar = dev;
-}
+    void Jogador::setInvulneravel(bool inv){
+        Invulneravel = inv;
+    }
 
-void Jogador::tempoImunidade(float dt){
-    if(Invulneravel){
-        tempoInvulneravel = tempoInvulneravel-dt; // cronometro
-        if(tempoInvulneravel<=0.f){
-            this->setInvulneravel(false);
+    void Jogador::setDevagar(bool dev){
+        Devagar = dev;
+    }
+
+    void Jogador::tempoImunidade(float dt){
+        if(Invulneravel){
+            tempoInvulneravel = tempoInvulneravel-dt; // cronometro
+            if(tempoInvulneravel<=0.f){
+                this->setInvulneravel(false);
+            }
         }
     }
-}
 
-void Jogador:: tempoDesacelerado(float dt){
-    if(Devagar){
-        tempoDevagar = tempoDevagar-dt;
-        if(tempoDevagar<=0.f){
-            this->setDevagar(false);
+    void Jogador::tempoDesacelerado(float dt){
+        if(Devagar){
+            tempoDevagar = tempoDevagar-dt;
+            if(tempoDevagar<=0.f){
+                this->setDevagar(false);
+            }
         }
     }
-}
 
-void Jogador::setInvulnerabilidade( float tmp){
-    this->setInvulneravel(true);
-    tempoInvulneravel = tmp;
-}
+    void Jogador::setInvulnerabilidade( float tmp){
+        this->setInvulneravel(true);
+        tempoInvulneravel = tmp;
+    }
 
-void Jogador::setDesaceleracao(float tmp){
-    this->setDevagar(true);
-    tempoDevagar=tmp;
-}
+    void Jogador::setDesaceleracao(float tmp){
+        this->setDevagar(true);
+        tempoDevagar = tmp;
+    }
 }

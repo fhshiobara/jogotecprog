@@ -34,6 +34,7 @@ void Fase::criarPlataformas(){
     int num_Plataformas =0;
     int larg_min = 120; //largura minima de uma plataforma
     int alt_min = 20; //altura
+
     while(num_Plataformas<num_max_Plataformas){
         int aux = rand()%9; // numero precisa ser até 8 no primeiro modelo
         Grid espaco = static_cast<Grid>(aux);
@@ -47,7 +48,9 @@ void Fase::criarPlataformas(){
             
             if(plat!=NULL){
                 num_Plataformas++;
+                
                 mapa.setOcupado(espaco,true);
+                
                 vPlats.push_back(plat);
                 pGC->incluirObstaculo(plat); //acredito que tenha dado certo
                 plat->desenhar();
@@ -120,17 +123,28 @@ void Fase::checarInimigos(){
 
 void Fase::executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt) {
 
-    for(Personagens::Inimigo* inimigo : vInimigos) {
+    if(pJ2 == NULL) {
+        CoordF posJogador1 = pJ1->getPos();
+
+        for(Personagens::Inimigo* inimigo : vInimigos) {
+            inimigo->perseguir(posJogador1, dt);
+        }
+        return;
+        
+    } else {
 
         CoordF posJogador1 = pJ1->getPos();
         CoordF posJogador2 = pJ2->getPos();
 
-        bool jogadorMaisProx = inimigo->jogadorProximo(pJ1, pJ2);
+        for(Personagens::Inimigo* inimigo : vInimigos) {
 
-        if(jogadorMaisProx)
-            inimigo->perseguir(posJogador2, dt);
-        else 
-            inimigo->perseguir(posJogador1, dt);
+            bool jogadorMaisProx = inimigo->jogadorProximo(pJ1, pJ2);
+
+            if(jogadorMaisProx)
+                inimigo->perseguir(posJogador2, dt);
+            else 
+                inimigo->perseguir(posJogador1, dt);
+            }
+        }
     }
-}
 }

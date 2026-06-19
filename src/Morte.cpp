@@ -14,20 +14,54 @@ namespace Personagens {
     
     void Morte::perseguir(CoordF posJogador, float dt) {
         this->dt_local = dt;
-    
+
         float dx = posJogador.x - this->pos.x;
         float dy = posJogador.y - this->pos.y;
         float distancia = std::sqrt(dx * dx + dy * dy);
-    
-        if (distancia > 5.0f) {
-            this->pos.x += (dx / distancia) * velocidade * dt;
-            this->pos.y += (dy / distancia) * velocidade * dt;
-            olhandoEsquerda = (dx > 0);
+
+        float distanciaSegura = 200.f; 
+        float margem = 30.f; //deadzone, sem isso o morte fica tremendo
+
+
+
+        if (distancia > 1.0f) {
+            float dirX = dx / distancia;
+            float dirY = dy / distancia;
+
+            if (distancia > distanciaSegura + margem) {
+
+                vel.x = dirX * velocidade;
+                vel.y = dirY * velocidade;
+                olhandoEsquerda = (dx > 0);
+
+            } else if (distancia < distanciaSegura - margem) {
+                // perto demais: recua 
+                vel.x = -dirX * velocidade;
+                vel.y = -dirY * velocidade;
+                olhandoEsquerda = (dx > 0);
+
+            } else {
+                // na distancia ideal: fica parado atirando
+                vel.x = 0.f;
+                vel.y = 0.f;
+            }
         }
 
         this->iniciarAtirar(posJogador, dt);
+
     }
-    
+
+
+
+    void Morte::gravidade(float dt, float gravidade) {
+        gravidade = gravidade / 4; // Flutua, grav mais fraca
+
+        vel.y += gravidade * dt;
+
+        pos.x += vel.x * dt;
+        pos.y += vel.y * dt;
+    }
+
     void Morte::iniciarAtirar(CoordF posJogador, float dt) {
         if (projetil->estaAtivo()) return;
     
@@ -53,7 +87,7 @@ namespace Personagens {
     }
     
     void Morte::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::walk, "assets/Morte/IDLE.png", 8);
+        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Morte/IDLE.png", 8);
     }
     
     void Morte::executar() {
