@@ -187,7 +187,6 @@ namespace Gerenciadores {
             pJog2->gravidade(dt,gravidade);
 
         for (Inimigo* inimigo : ListaInimigos) {
-        if (inimigo->estaVivo() && dynamic_cast<Bixo*>(inimigo)) // Dynamic_cast feito pelo claude. Somente gravita inimigos Bixo
             inimigo->gravidade(dt, gravidade);
         }
     }
@@ -198,10 +197,8 @@ namespace Gerenciadores {
             limites->aplicarLimites(pJog2);
 
         for (Personagens::Inimigo* inimigo : ListaInimigos) {
-            Personagens::Bixo* bixo = dynamic_cast<Personagens::Bixo*>(inimigo); // Somente para os Bixos
-
-            if (bixo != nullptr && bixo->estaVivo())
-                limites->aplicarLimites(bixo);
+            if (inimigo != nullptr && inimigo->estaVivo())
+                limites->aplicarLimites(inimigo);
             }
     }
 

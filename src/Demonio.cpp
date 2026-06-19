@@ -20,8 +20,6 @@ namespace Personagens {
         vel.y = (dy / distancia) * velocidade * fome;
 
         olhandoEsquerda = (dx > 0);
-        
-
     }
 
 
