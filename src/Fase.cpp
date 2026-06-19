@@ -103,7 +103,7 @@ void Fase::criarInimigosBixo(){
 }
 
 void Fase::criarLimites(){
-    pGC->setLimite(tam_tela.x,tam_tela.y);
+    pGC->setLimite(tam_tela);
 }
 
 void Fase::checarInimigos(){

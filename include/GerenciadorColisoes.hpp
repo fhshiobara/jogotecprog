@@ -24,12 +24,10 @@ namespace Gerenciadores {
             Personagens::Jogador* pJog1;
             Personagens::Jogador* pJog2;
             
-            CoordF tamTela;   // tamanho da tela, substitui limites
+            CoordF limites;   // substitui classe Limites
 
             static const float alturaJogador; // Mudar
             static const float alturaBixo;
-
-            void aplicarLimites(Personagens::Personagem* pPersonagem); // logica antes em Limites
  
             static GerenciadorColisoes* instance;
             GerenciadorColisoes();
@@ -38,9 +36,11 @@ namespace Gerenciadores {
             ~GerenciadorColisoes();
 
             static GerenciadorColisoes* getInstance();
+
+            void aplicarLimites(Personagens::Personagem* pPersonagem); // logica antes em Limites
  
             void setJogador(Personagens::Jogador* pJogador);
-            void setLimite(float largura, float altura);
+            void setLimite(CoordF tam_tela);
  
             void incluirInimigo(Personagens::Inimigo* pInimigo);
             void incluirObstaculo(Obstaculos::Obstaculo* pObstaculo);

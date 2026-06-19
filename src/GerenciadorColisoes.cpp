@@ -19,7 +19,7 @@ namespace Gerenciadores {
         return instance;
     }
 
-    GerenciadorColisoes::GerenciadorColisoes() : pJog1(NULL), pJog2(NULL), tamTela(800.f, 600.f) {}
+    GerenciadorColisoes::GerenciadorColisoes() : pJog1(NULL), pJog2(NULL), limites(800.f, 600.f) {}
 
     GerenciadorColisoes::~GerenciadorColisoes() {}
 
@@ -32,8 +32,8 @@ namespace Gerenciadores {
         }
     }
 
-    void GerenciadorColisoes::setLimite(float largura, float altura) {
-        tamTela = CoordF(largura, altura);
+    void GerenciadorColisoes::setLimite(CoordF tam_tela) {
+        limites = tam_tela;
     }
 
     void GerenciadorColisoes::aplicarLimites(Personagens::Personagem* pPersonagem) {
@@ -51,8 +51,8 @@ namespace Gerenciadores {
         }
 
         // direita
-        if (pos.x + metade > tamTela.x) {
-            pos.x = tamTela.x - metade;
+        if (pos.x + metade > limites.x) {
+            pos.x = limites.x - metade;
             vel.x = 0.f;
         }
         // superior
@@ -61,8 +61,8 @@ namespace Gerenciadores {
             vel.y = 0.f;
         }
         // inferior
-        if (pos.y + metade > tamTela.y) {
-            pos.y = tamTela.y - metade;
+        if (pos.y + metade > limites.y) {
+            pos.y = limites.y - metade;
             vel.y = 0.f;
             pPersonagem->setChao(true);
         }

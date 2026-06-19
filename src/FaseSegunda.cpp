@@ -121,7 +121,9 @@ namespace Fases{
             pGC->setJogador(pJ2);
         }
         
-        pGC->setLimite(tam_tela.x,tam_tela.y-10);
+        CoordF tam_tela_compensada = tam_tela;
+        tam_tela_compensada.y -= 8.0f; // Deixa a colisao mais bonita com os limites
+        pGC->setLimite(tam_tela_compensada);
         //list_ents.incluir(pJ1);
         
         sf::Clock clock;
