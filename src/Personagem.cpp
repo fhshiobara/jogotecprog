@@ -21,17 +21,15 @@ namespace Personagens {
     this->sprite.render();
   }
 
-  Personagem& Personagem::operator--() {
+ void Personagem::operator--() {
     hp--;
-
-    return *this;
   }
 
 
 
   void Personagem::tomarDano() {
       if (imunidade <= 0.0f) {
-        --(*this);
+          this->operator--();
         imunidade = IMUN_FRAMES_TOTAL;
 
         std::cout << "Personagem " << this << " tomou dano! HP restante: " << hp << std::endl;

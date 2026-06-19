@@ -39,6 +39,10 @@ namespace Personagens {
 
             void golpear();
             void atualizarGolpe(float dt); // Cuida do tempo do golpe
+            
+            //funcao para teste
+        void setAtacando(bool atk){atacando = atk;}
+        //fim da funcao
             bool getAtacando() { return atacando; }
         //funcoes para o danificar do demonio
         bool getInvulneravel();

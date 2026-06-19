@@ -46,7 +46,7 @@ namespace Personagens {
 
             virtual void gravidade(float dt, float gravidade);
 
-            Personagem& operator--(); // decrementa vida em 1
+            void operator--(); // decrementa vida em 1
             void tomarDano();
             void tempoImunidade(float dt);
             bool estaImune() { return bool(imunidade > 0.0f); }

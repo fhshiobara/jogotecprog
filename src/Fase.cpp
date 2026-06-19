@@ -22,7 +22,12 @@ Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo
     if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
 }
 
-Fase::~Fase(){}
+Fase::~Fase(){
+    for(int i = 0; i < vPlats.size(); i++) {
+            delete vPlats[i];
+        }
+        vPlats.clear();
+}
 
 void Fase::criarPlataformas(){
     
@@ -98,7 +103,22 @@ void Fase::criarLimites(){
     pGC->setLimite(tam_tela.x,tam_tela.y);
 }
 
-void Fase::executarInimigos(std::vector<Personagens::Inimigo*> vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt) {
+void Fase::checarInimigos(){
+    std::vector<Personagens::Inimigo*>::iterator it = vInimigos.begin();
+    while(it != vInimigos.end()){
+            if((*it)->estaVivo()){//ignora
+                it++;
+            } else {//nao vivo
+                //(*it)->setPos(CoordF(1000.f,1000.f));   se eu deletar o ponteiro do inimigo, acho que ja é o suficiente
+                delete *it;
+                it = vInimigos.erase(it);
+                list_ents.remover((*it));
+                
+            }
+        }
+    }
+
+void Fase::executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt) {
 
     for(Personagens::Inimigo* inimigo : vInimigos) {
 

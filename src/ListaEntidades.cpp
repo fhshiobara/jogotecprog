@@ -17,4 +17,8 @@ void ListaEntidades::percorrer(float dt){
     LEs.percorrer(dt);
 }
 
+void ListaEntidades::remover(Entidades::Entidade* pE){
+    LEs.remover(pE);
+}
+
 

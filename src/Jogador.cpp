@@ -5,7 +5,7 @@ namespace Personagens {
 
     Jogador::Jogador(CoordF position, int hp, int pontos, float speed)
         : Personagem(position, CoordF(0.f, 0.f), hp, 0.f, speed, false, true, true),
-        pontos(pontos), dt_local(0.0f),Invulneravel(false),tempoInvulneravel(0.5),Devagar(false), tempoDevagar(1.0) {}
+        pontos(pontos), dt_local(0.0f),Invulneravel(false),tempoInvulneravel(0.5),Devagar(false), tempoDevagar(1.0),atacando(false) {}
     
     Jogador::~Jogador() {}
     

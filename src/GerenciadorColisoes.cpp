@@ -120,10 +120,15 @@ namespace Gerenciadores {
         bool colidindoY = std::abs(distanciaY) < metade * 1.f; // mudar os fatores para regular hitbox com jogador
 
         if (colidindoX && colidindoY){
-            inimigoAtual->danificar(pJog1);
-            pJog1->tomarDano(); // Aqui, perder vida ao inves de morrer.
+            if(pJog1->getAtacando()){
+                inimigoAtual->tomarDano();
+            }
+            else{
+                inimigoAtual->danificar(pJog1);
+                pJog1->tomarDano(); // Aqui, perder vida ao inves de morrer.
             }
         }
+    }
 
         // Func copiada para jog2
         if(pJog2 == NULL) 
@@ -226,7 +231,8 @@ namespace Gerenciadores {
 
         if (std::abs(dx1) < metade + 8.f && std::abs(dy1) < metade + 8.f) {
             proj->desativar();
-            if (!pJog1->estaImune())
+            //if (!pJog1->estaImune())
+                pJog1->setInvulnerabilidade(0.9);
                 pJog1->tomarDano();
             continue; // projetil ja foi consumido, prox boss
         }
@@ -239,7 +245,8 @@ namespace Gerenciadores {
 
             if (std::abs(dx2) < metade + 8.f && std::abs(dy2) < metade + 8.f) {
                 proj->desativar();
-                if (!pJog2->estaImune())
+                //if (!pJog2->estaImune())
+                    pJog2->setInvulnerabilidade(0.9);
                     pJog2->tomarDano();
             }
 

@@ -125,6 +125,7 @@ void FasePrimeira::criarObstaculos(){
 }
 void FasePrimeira::executar(){}
 
+
 void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
     if(pGC==NULL || pJ1==NULL){
         
@@ -175,12 +176,20 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                 if(evento.key.code == sf::Keyboard::D){andDir=true;}
                 if(evento.key.code == sf::Keyboard::A){andEsq=true;}
                 if(evento.key.code == sf::Keyboard::Space){pJ1->pular();}
+                if(evento.key.code==sf::Keyboard::O){
+                    pJ1->setAtacando(true);
+                    std::cout<<"iniciando o ataque"<<std::endl;
+                }
                 
                 
                 if(pJ2){
                     if(evento.key.code == sf::Keyboard::Right){andDir2=true;}
                     if(evento.key.code == sf::Keyboard::Left){andEsq2=true;}
                     if(evento.key.code == sf::Keyboard::Up){pJ2->pular();}
+                    if(evento.key.code==sf::Keyboard::O){
+                        pJ2->setAtacando(true);
+                        
+                    }
                 }
                 
                 
@@ -189,10 +198,15 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                 
                 if(evento.key.code == sf::Keyboard::D){andDir=false;}
                 if(evento.key.code == sf::Keyboard::A){andEsq=false;}
+                if(evento.key.code==sf::Keyboard::O){
+                    pJ1->setAtacando(false);
+                    std::cout<<"cancelando o ataque"<<std::endl;
+                }
                 
                 if(pJ2){
                     if(evento.key.code == sf::Keyboard::Right){andDir2=false;}
                     if(evento.key.code == sf::Keyboard::Left){andEsq2=false;}
+                    if(evento.key.code==sf::Keyboard::O){pJ2->setAtacando(false);}
                     
                 }
             }
@@ -249,6 +263,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         pGG->clear();
         background->render();
         list_ents.percorrer(dt);
+        this->checarInimigos();
         
         if(pJ1->getInvulneravel()){
             animacao = Animation_ID::hurt;

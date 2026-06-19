@@ -10,7 +10,7 @@
 namespace Fases{
 
     FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL) {
-        background = new Gerenciadores::SingleFrameAnimation("assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+        background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 
     }
 
@@ -239,7 +239,12 @@ namespace Fases{
                     boss->desenharProjetil();
             } // mesma coisa, porem desenha
 
-
+            if(pJ1->getInvulneravel()){
+                animacao = Animation_ID::hurt;
+            }
+            if(pJ2!=NULL && pJ2->getInvulneravel()){
+                animacao2 = Animation_ID::hurt;
+            }
             std::cout << "cheguei em flag!" << std::endl;
             pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
             pJ1->desenhar();

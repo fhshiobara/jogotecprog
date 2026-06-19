@@ -101,7 +101,8 @@ protected:
     void criarCenario();
     void criarLimites();
     //void criarDemonios();
-    void executarInimigos(std::vector<Personagens::Inimigo*> vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt);
+    void checarInimigos();
+    void executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt);
     void inserirPlataformasAtrasado(); // Func auxiliar
     
 };

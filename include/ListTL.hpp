@@ -83,6 +83,39 @@ public:
         }
     }
     
+    void remover(TL *p) {
+            if (p == NULL || pPrim == NULL) return; //lista vazia ou ponteiro nulo
+
+            Elemento* atual = pPrim;
+            Elemento* anterior = NULL;
+
+            
+            while (atual != NULL && atual->getInfo() != p) {
+                anterior = atual;
+                atual = atual->getProximo();
+            }
+
+            if (atual == NULL) return;
+
+            
+            if (atual == pPrim) {
+                pPrim = pPrim->getProximo();
+                if (pPrim == NULL) {
+                    pUltimo = NULL;
+                }
+            }
+    
+            else {
+                anterior->setProx(atual->getProximo());
+                if (atual == pUltimo) {
+                    pUltimo = anterior;
+                }
+            }
+
+
+            delete atual;
+        }
+    
  
     Elemento* getPrim()   { return pPrim; }
     Elemento* getUltimo() { return pUltimo; }
