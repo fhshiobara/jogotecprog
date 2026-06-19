@@ -4,7 +4,6 @@
 #include <vector>
 #include <list>
 #include <cmath>
-#include "Limites.hpp"
 #include "Jogador.hpp"
 #include "Inimigo.hpp"
 #include "Demonio.hpp"
@@ -25,17 +24,19 @@ namespace Gerenciadores {
             Personagens::Jogador* pJog1;
             Personagens::Jogador* pJog2;
             
-            Obstaculos::Limites* limites;
- 
+            CoordF tamTela;   // tamanho da tela, substitui limites
+
             static const float alturaJogador; // Mudar
             static const float alturaBixo;
+
+            void aplicarLimites(Personagens::Personagem* pPersonagem); // logica antes em Limites
  
             static GerenciadorColisoes* instance;
             GerenciadorColisoes();
  
         public:
             ~GerenciadorColisoes();
- 
+
             static GerenciadorColisoes* getInstance();
  
             void setJogador(Personagens::Jogador* pJogador);

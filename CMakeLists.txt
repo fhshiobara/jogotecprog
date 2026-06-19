@@ -40,7 +40,6 @@ add_executable(Jogo
     src/Obstaculo.cpp
     src/Plataforma.cpp
     src/Espinhos.cpp
-    src/Limites.cpp
     src/GerenciadorGrafico.cpp
     src/GerenciadorColisoes.cpp
     src/ListaEntidades.cpp

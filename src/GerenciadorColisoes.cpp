@@ -1,5 +1,4 @@
 #include "GerenciadorColisoes.hpp"
-#include "Limites.hpp"
 #include "Bixo.hpp"
 #include "Projetil.hpp"
 #include "Morte.hpp"
@@ -20,7 +19,7 @@ namespace Gerenciadores {
         return instance;
     }
 
-    GerenciadorColisoes::GerenciadorColisoes() : pJog1(NULL), pJog2(NULL), limites(NULL) {}
+    GerenciadorColisoes::GerenciadorColisoes() : pJog1(NULL), pJog2(NULL), tamTela(800.f, 600.f) {}
 
     GerenciadorColisoes::~GerenciadorColisoes() {}
 
@@ -34,9 +33,43 @@ namespace Gerenciadores {
     }
 
     void GerenciadorColisoes::setLimite(float largura, float altura) {
-        Obstaculos::Limites* limiteMapa = new Obstaculos::Limites(largura, altura);
-        limites = limiteMapa;
+        tamTela = CoordF(largura, altura);
     }
+
+    void GerenciadorColisoes::aplicarLimites(Personagens::Personagem* pPersonagem) {
+        if (pPersonagem == NULL) return;
+
+        CoordF pos = pPersonagem->getPos();
+        CoordF vel = pPersonagem->getVel();
+
+        float metade = alturaJogador / 2.f;
+
+        // Borda esquerda
+        if (pos.x - metade < 0.f) {
+            pos.x = metade;
+            vel.x = 0.f;
+        }
+
+        // direita
+        if (pos.x + metade > tamTela.x) {
+            pos.x = tamTela.x - metade;
+            vel.x = 0.f;
+        }
+        // superior
+        if (pos.y - metade < 0.f) {
+            pos.y = metade;
+            vel.y = 0.f;
+        }
+        // inferior
+        if (pos.y + metade > tamTela.y) {
+            pos.y = tamTela.y - metade;
+            vel.y = 0.f;
+            pPersonagem->setChao(true);
+        }
+        pPersonagem->setPos(pos);
+        pPersonagem->setVel(vel);
+    }
+
 
 
     void GerenciadorColisoes::incluirInimigo(Personagens::Inimigo* pInimigo) {
@@ -192,63 +225,63 @@ namespace Gerenciadores {
     }
 
     void GerenciadorColisoes::tratarLimites() {
-        limites->aplicarLimites(pJog1);
+        aplicarLimites(pJog1);
         if(pJog2 != NULL)
-            limites->aplicarLimites(pJog2);
+            aplicarLimites(pJog2);
 
         for (Personagens::Inimigo* inimigo : ListaInimigos) {
             if (inimigo != nullptr && inimigo->estaVivo())
-                limites->aplicarLimites(inimigo);
+                aplicarLimites(inimigo);
             }
     }
 
     void GerenciadorColisoes::tratarColisaoProjetil() {
-    if (pJog1 == NULL) return;
+        if (pJog1 == NULL) return;
 
-    float metade = alturaJogador / 2.f;
+        float metade = alturaJogador / 2.f;
 
-    // Procura bosses (Morte) na lista de inimigos
+        // Procura bosses (Morte) na lista de inimigos
 
-    std::vector<Inimigo*>::iterator it;
+        std::vector<Inimigo*>::iterator it;
 
-    for (it = ListaInimigos.begin(); it != ListaInimigos.end(); it++) {
+        for (it = ListaInimigos.begin(); it != ListaInimigos.end(); it++) {
 
-        Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(*it);
-        if (boss == NULL) continue;
+            Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(*it);
+            if (boss == NULL) continue;
 
-        Entidades::Projetil* proj = boss->getProjetil();
+            Entidades::Projetil* proj = boss->getProjetil();
 
-        if (proj == NULL || !proj->estaAtivo())
-            continue;
+            if (proj == NULL || !proj->estaAtivo())
+                continue;
 
-        CoordF posProj = proj->getPos();
+            CoordF posProj = proj->getPos();
 
-        float dx1 = pJog1->getPos().x - posProj.x;
-        float dy1 = pJog1->getPos().y - posProj.y;
+            float dx1 = pJog1->getPos().x - posProj.x;
+            float dy1 = pJog1->getPos().y - posProj.y;
 
-        if (std::abs(dx1) < metade + 8.f && std::abs(dy1) < metade + 8.f) {
-            proj->desativar();
-            //if (!pJog1->estaImune())
-                pJog1->setInvulnerabilidade(0.9);
-                pJog1->tomarDano();
-            continue; // projetil ja foi consumido, prox boss
-        }
-
-        // Checa colisao com o jogador 2 (se existir)
-
-        if (pJog2 != NULL) {
-            float dx2 = pJog2->getPos().x - posProj.x;
-            float dy2 = pJog2->getPos().y - posProj.y;
-
-            if (std::abs(dx2) < metade + 8.f && std::abs(dy2) < metade + 8.f) {
+            if (std::abs(dx1) < metade + 8.f && std::abs(dy1) < metade + 8.f) {
                 proj->desativar();
-                //if (!pJog2->estaImune())
-                    pJog2->setInvulnerabilidade(0.9);
-                    pJog2->tomarDano();
+                //if (!pJog1->estaImune())
+                    pJog1->setInvulnerabilidade(0.9);
+                    pJog1->tomarDano();
+                continue; // projetil ja foi consumido, prox boss
             }
 
+            // Checa colisao com o jogador 2 (se existir)
+
+            if (pJog2 != NULL) {
+                float dx2 = pJog2->getPos().x - posProj.x;
+                float dy2 = pJog2->getPos().y - posProj.y;
+
+                if (std::abs(dx2) < metade + 8.f && std::abs(dy2) < metade + 8.f) {
+                    proj->desativar();
+                    //if (!pJog2->estaImune())
+                        pJog2->setInvulnerabilidade(0.9);
+                        pJog2->tomarDano();
+                }
+
+            }
         }
-    }
     }
 
     void GerenciadorColisoes::atualizarImunidades(float dt) {
@@ -308,10 +341,6 @@ namespace Gerenciadores {
     void GerenciadorColisoes::executar(float dt) {
         if(pJog1 == NULL){
             std::cerr<<"ERRO: faltou o jogador"<<std::endl;
-            return;
-        }
-        if(limites == NULL){
-            std::cerr<<"ERRO: faltou os limites"<<std::endl;
             return;
         }
         gravitar(dt);

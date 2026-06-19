@@ -73,39 +73,39 @@ public:
         }
 };
     
-namespace Fases{
-class Fase:public Ente{
-protected:
-    ListaEntidades list_ents;
-    Gerenciadores::GerenciadorColisoes* pGC;
-    short int Max_inimBixo;
-    CoordF tam_tela;
-    std::vector<Plataforma*> vPlats;
-    std::vector<Personagens::Inimigo*> vInimigos;
-    int num_max_Plataformas;
-    bool concluida;
-    Map mapa;
-public:
-    Fase();
-    ~Fase();
-    
-    virtual void executar()=0;
+namespace Fases {
+    class Fase: public Ente {
+        protected:
+            ListaEntidades list_ents;
+            Gerenciadores::GerenciadorColisoes* pGC;
+            short int Max_inimBixo;
+            CoordF tam_tela;
+            std::vector<Plataforma*> vPlats;
+            std::vector<Personagens::Inimigo*> vInimigos;
+            int num_max_Plataformas;
+            bool concluida;
+            Map mapa;
+        public:
+            Fase();
+            ~Fase();
+            
+            virtual void executar()=0;
 
-    
-protected:
-    void criarInimigosBixo();//inimigos faceis
-    void criarPlataformas();
-    //funcoes extra vem aqui
-    virtual void criarInimigos() =0;
-    virtual void criarObstaculos() =0;
-    void criarCenario();
-    void criarLimites();
-    //void criarDemonios();
-    void checarInimigos();
-    void executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt);
-    void inserirPlataformasAtrasado(); // Func auxiliar
-    
-};
+            
+        protected:
+            void criarInimigosBixo();//inimigos faceis
+            void criarPlataformas();
+            //funcoes extra vem aqui
+            virtual void criarInimigos() =0;
+            virtual void criarObstaculos() =0;
+            void criarCenario();
+            void criarLimites();
+            //void criarDemonios();
+            void checarInimigos();
+            void executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt);
+            void inserirPlataformasAtrasado(); // Func auxiliar
+            
+        };
 }
 
 

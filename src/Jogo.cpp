@@ -7,7 +7,6 @@
 #include "GerenciadorColisoes.hpp"
 #include "Espinhos.hpp"
 #include "SingleFrameAnimation.hpp"
-#include "Limites.hpp"
 
 using namespace Obstaculos;
 using namespace Personagens;
