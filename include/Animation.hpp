@@ -17,7 +17,8 @@ enum Animation_ID{
     idle = 1,
     attack = 2,
     hurt = 3,
-    jump = 4
+    jump = 4,
+    death = 5
 };
 
 class Animation{

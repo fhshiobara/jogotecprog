@@ -12,7 +12,13 @@ namespace Personagens {
     void Jogador::executar() {}
     void Jogador::mover()    {}
     void Jogador::salvar()   {}
-    void Jogador::morrer()   { std::cout << "Jogador morreu!" << std::endl; }
+    void Jogador::morrer()   {//se chegou nessa funcao é porque o hp dele ja esta menor ou igual a zero
+        std::cout << "Jogador morreu!" << std::endl;//vou deixar o comentario por ora
+        this->setMorto(true);
+        
+        
+    
+    }
     
 void Jogador::moverX(bool direcao, float dt) {
     if(Devagar){
@@ -53,6 +59,7 @@ void Jogador::moverX(bool direcao, float dt) {
             this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight/JUMP.png", 5);
             this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight/ATTACK 3.png", 6);
             this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Knight/HURT.png", 4);
+            this->sprite.addNewAnimation(Animation_ID::death,"../assets/Knight/DEATH.png",12);
         }
         if(Jog == true){
             this->sprite.addNewAnimation(Animation_ID::idle,   "../assets/Knight2/IDLE.png", 7);
@@ -61,6 +68,7 @@ void Jogador::moverX(bool direcao, float dt) {
             this->sprite.addNewAnimation(Animation_ID::jump,   "../assets/Knight2/JUMP.png", 5);
             this->sprite.addNewAnimation(Animation_ID::attack, "../assets/Knight2/ATTACK 3.png", 6);
             this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Knight2/HURT.png", 4);
+            this->sprite.addNewAnimation(Animation_ID::death,"../assets/Knight2/DEATH.png",12);
         }
         // Verificar path se der erro! Deve-se mudar o path em relacao a onde o jogo esta sendo built.
     }

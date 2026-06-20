@@ -28,11 +28,11 @@ namespace Personagens {
 
 
   void Personagem::tomarDano() {
-      if (imunidade <= 0.0f) {
+      if (!this->estaImune()) {
           this->operator--();
-        imunidade = IMUN_FRAMES_TOTAL;
+        
 
-        std::cout << "Personagem " << this << " tomou dano! HP restante: " << hp << std::endl;
+        std::cout << "Personagem: " << this << " tomou dano! HP restante: " << hp << std::endl;
 
         if (hp <= 0) {
             morrer();

@@ -260,6 +260,16 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         pGG->clear();
         background->render();
         list_ents.percorrer(dt);
+        
+        if(pJ1->getMorto()){
+            animacao = Animation_ID::death;
+        }
+        
+        if(pJ2!=NULL){
+            if(pJ2->getMorto()){
+                animacao2 = Animation_ID::death;
+            }
+        }
         this->checarInimigos();
         if(this->getConcluida()){
             pGC->removerObstaculos();

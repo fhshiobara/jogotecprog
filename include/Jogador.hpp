@@ -23,6 +23,8 @@ namespace Personagens {
             float tempoDevagar;
             bool Devagar;
         
+            bool morto;
+        
         public:
             Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);
             ~Jogador();
@@ -57,6 +59,9 @@ namespace Personagens {
             void setDevagar(bool dev);
             void tempoDesacelerado(float dt);
             void setDesaceleracao(float tmp);
+        
+        void setMorto(bool mort){morto=mort;}
+        bool getMorto(){return morto;}
             
             bool getOlhandoEsquerda(){return olhandoEsquerda;}
     };
