@@ -32,10 +32,13 @@ namespace Fases{
  
 FasePrimeira::FasePrimeira():Fase(),max_inim_Demonio(4),max_obst_Espinhos(4),background(NULL){
     background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
-    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    
 }
  
-FasePrimeira::~FasePrimeira(){}
+FasePrimeira::~FasePrimeira(){
+    delete background;
+    background = NULL;
+}
  
 void FasePrimeira::criarInimigosDemonio(){
     int num_inim_medio = rand()%(max_inim_Demonio +1);
@@ -130,12 +133,15 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         return;
 
     }
+    
 
     criarCenario();
     criarPlataformas();
     criarInimigos();
     criarObstaculos();
     inserirPlataformasAtrasado();
+    
+    pGC->removerJogadores();
  
     pGC->setJogador(pJ1);
     if(pJ2){
@@ -255,6 +261,10 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         background->render();
         list_ents.percorrer(dt);
         this->checarInimigos();
+        if(this->getConcluida()){
+            pGC->removerObstaculos();
+            return; //vai fazer o execuat parar, eu acho
+        }
 
         animacao = decidirAnimacao(pJ1, andando1);
 

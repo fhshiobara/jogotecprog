@@ -49,11 +49,24 @@ void Jogo::executar() {
     if(fase == 1) {
         pFase1 = new Fases::FasePrimeira();
         pFase1->executar(pJ1, pJ2);
+        if(pFase1->getConcluida()){
+            pFase2 = new Fases::FaseSegunda();
+            pFase2->executar(pJ1,pJ2);
+            if(pFase2->getConcluida()){
+                return;
+            }
+            
+            
+        }
     }
     
     else if (fase == 2) {
         pFase2 = new Fases::FaseSegunda();
         pFase2->executar(pJ1,pJ2);
         std::cout << "Fase 2 rodando" << std::endl;
+        
+        if(pFase2->getConcluida()){
+            return;
+        }
     }
 }

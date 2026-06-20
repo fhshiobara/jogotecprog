@@ -40,11 +40,13 @@ namespace Gerenciadores {
             void aplicarLimites(Personagens::Personagem* pPersonagem); // logica antes em Limites
  
             void setJogador(Personagens::Jogador* pJogador);
+            void removerJogadores();
             void setLimite(CoordF tam_tela);
  
             void incluirInimigo(Personagens::Inimigo* pInimigo);
             void removerInimigo(Personagens::Inimigo* pInimigo);
             void incluirObstaculo(Obstaculos::Obstaculo* pObstaculo);
+            void removerObstaculos();
  
             void tratarColisoesObstaculos();
             void tratarColisoesJogador();

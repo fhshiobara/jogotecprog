@@ -119,6 +119,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
     criarObstaculos();
     inserirPlataformasAtrasado();
  
+    pGC->removerJogadores(); // para crrigir o problema de ponteiros duplicados, d
     pGC->setJogador(pJ1);
     if(pJ2){
         pGC->setJogador(pJ2);
@@ -249,6 +250,9 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
         executarInimigos(vInimigos, pJ1, pJ2, dt);
 
         this->checarInimigos();
+        if(this->getConcluida()){
+            return;
+        }
 
         // Decide a animacao por prioridade (hurt > attack > jump > walk > idle)
         animacao = decidirAnimacao(pJ1, andando1);

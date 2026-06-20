@@ -2,7 +2,7 @@
 
 ListaEntidades:: ListaEntidades(){}
 
-ListaEntidades:: ~ListaEntidades(){}
+ListaEntidades:: ~ListaEntidades(){LEs.limpar();}
 
 void ListaEntidades::incluir(Entidades::Entidade* pE){
     

@@ -31,6 +31,10 @@ namespace Gerenciadores {
             pJog1 = pJogador;
         }
     }
+void GerenciadorColisoes::removerJogadores(){
+    pJog1 = NULL;
+    pJog2 = NULL;
+}
 
     void GerenciadorColisoes::setLimite(CoordF tam_tela) {
         limites = tam_tela;
@@ -98,6 +102,17 @@ namespace Gerenciadores {
         else
             std::cerr << this << " Obstaculo invalido" << std::endl;
     }
+
+    void GerenciadorColisoes::removerObstaculos() {
+        std::list<Obstaculos::Obstaculo*>::iterator it = ListaObstaculos.begin();
+        /*
+        while (it != ListaObstaculos.end()) {
+            delete (*it);
+            it = ListaObstaculos.erase(it);
+        }*/
+        ListaObstaculos.clear();
+    }
+
 
     void GerenciadorColisoes::tratarColisoesObstaculos() {
 

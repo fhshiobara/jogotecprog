@@ -104,7 +104,15 @@ namespace Fases {
             void checarInimigos();
             void executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt);
             void inserirPlataformasAtrasado(); // Func auxiliar
+        
+        void limparListas();
+        
+        
             Animation_ID decidirAnimacao(Personagens::Jogador* pJog, bool andando); // Func auxiliar
+        
+        public:
+        void setConcluida(bool conc);
+        bool getConcluida();
             
             
         };

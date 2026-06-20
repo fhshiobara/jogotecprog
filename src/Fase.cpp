@@ -16,7 +16,7 @@ using namespace Personagens;
 
 namespace Fases{
 
-Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10){
+Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10),concluida(false){
     vPlats.clear();
     vInimigos.clear();
     if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
@@ -132,8 +132,26 @@ void Fase::checarInimigos(){
                  
                 delete morto; 
             }
+        if(vInimigos.empty()){
+            std::cout<<"Vetor de inimigos esta vazio, settando fase como concluida"<<std::endl;
+            setConcluida(true);
         }
+        }
+    
     }
+
+void Fase::setConcluida(bool conc){
+    concluida = conc;
+}
+
+bool Fase::getConcluida(){
+    return concluida;
+}
+
+void Fase::limparListas(){
+    
+    
+}
 
 void Fase::executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt) {
 
