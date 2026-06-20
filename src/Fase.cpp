@@ -115,16 +115,22 @@ void Fase::criarLimites(){
 }
 
 void Fase::checarInimigos(){
+
     std::vector<Personagens::Inimigo*>::iterator it = vInimigos.begin();
+
     while(it != vInimigos.end()){
             if((*it)->estaVivo()){//ignora
+                // std::cout << "Inimigo HP/Vivo: " <<  << std::endl;
                 it++;
+                
             } else { //nao vivo
                 Personagens::Inimigo* morto = *it;
+
+                pGC->removerInimigo(morto);
                 list_ents.remover(morto);    
-                it = vInimigos.erase(it);    
-                delete morto;
-                
+                it = vInimigos.erase(it);   
+                 
+                delete morto; 
             }
         }
     }
@@ -134,9 +140,9 @@ void Fase::executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Perso
     if(pJ2 == NULL) {
         CoordF posJogador1 = pJ1->getPos();
 
-        for(Personagens::Inimigo* inimigo : vInimigos) {
-            inimigo->perseguir(posJogador1, dt);
-        }
+    for(Personagens::Inimigo* inimigo : vInimigos) {
+        inimigo->perseguir(posJogador1, dt);
+    }
         return;
         
     } else {

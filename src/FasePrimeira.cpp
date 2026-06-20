@@ -245,13 +245,11 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             }
 
         }
-        // Atualiza o tempo do golpe antes de decidir a animacao
-        pJ1->atualizarGolpe(dt);
-        if(pJ2) pJ2->atualizarGolpe(dt);
 
-        executarInimigos(vInimigos, pJ1, pJ2, dt);
+        executarInimigos(vInimigos, pJ1, pJ2, dt); // se pJ2 == NULL, func ja resolve internamente
 
         pGC->executar(dt);
+        
 
         pGG->clear();
         background->render();

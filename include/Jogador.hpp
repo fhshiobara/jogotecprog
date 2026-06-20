@@ -5,8 +5,9 @@
 #include "Animation.hpp"
 
 namespace Personagens {
-    class Inimigo;
     
+    class Inimigo;
+
     class Jogador: public Personagem {
     
         protected:

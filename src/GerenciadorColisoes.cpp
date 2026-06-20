@@ -79,6 +79,19 @@ namespace Gerenciadores {
             std::cerr << this << " Inimigo invalido" << std::endl;
     }
 
+    void GerenciadorColisoes::removerInimigo(Personagens::Inimigo* pInimigo) {
+        if (pInimigo == NULL) {
+            std::cerr << this << " Inimigo invalido" << std::endl;
+            return;
+        }
+        for (std::vector<Inimigo*>::iterator it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
+            if (*it == pInimigo) {
+                ListaInimigos.erase(it);
+                return;
+            }
+        }
+    }
+
     void GerenciadorColisoes::incluirObstaculo(Obstaculos::Obstaculo* pObstaculo) {
         if (pObstaculo != NULL)
             ListaObstaculos.push_back(pObstaculo);

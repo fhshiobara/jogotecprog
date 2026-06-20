@@ -43,6 +43,7 @@ namespace Gerenciadores {
             void setLimite(CoordF tam_tela);
  
             void incluirInimigo(Personagens::Inimigo* pInimigo);
+            void removerInimigo(Personagens::Inimigo* pInimigo);
             void incluirObstaculo(Obstaculos::Obstaculo* pObstaculo);
  
             void tratarColisoesObstaculos();

@@ -227,9 +227,6 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
             }
 
         }
-        // Atualiza o tempo do golpe antes de decidir a animacao
-        pJ1->atualizarGolpe(dt);
-        if(pJ2) pJ2->atualizarGolpe(dt);
 
         for (Personagens::Inimigo* inimigo : vInimigos) {
             Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
