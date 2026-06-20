@@ -24,6 +24,7 @@ static void desenharAreaColisao(
  
     window->draw(debug);
 } // Func helper para debug das colisoes. Feita pelo ChatGPT
+
  
 using namespace Personagens;
  
@@ -39,7 +40,7 @@ FasePrimeira::~FasePrimeira(){}
 void FasePrimeira::criarInimigosDemonio(){
     int num_inim_medio = rand()%(max_inim_Demonio +1);
  
-    if(num_inim_medio<10){num_inim_medio =1;} //numero minimo de inimigos
+    if(num_inim_medio<10){num_inim_medio=1;} //numero minimo de inimigos
  
     int num_demonios_criados = 0;
  
@@ -96,7 +97,7 @@ void FasePrimeira::criarObstaculosEspinhos(){
                 if(pEsp != NULL){
                 num_obst_criados++;
  
-                // mapa.setOcupado(espaco, false); // Para nao haver espinho nele mesmo
+                mapa.setOcupado(espaco, false); // Para nao haver espinho nele mesmo
  
                 list_ents.incluir(pEsp);
                 pGC->incluirObstaculo(pEsp);
@@ -118,15 +119,18 @@ void FasePrimeira::criarInimigos(){
 void FasePrimeira::criarObstaculos(){
     criarObstaculosEspinhos();
 }
+ 
 void FasePrimeira::executar(){}
  
 void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
+
     if(pGC==NULL || pJ1==NULL){
- 
+
         std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;
         return;
+
     }
- 
+
     criarCenario();
     criarPlataformas();
     criarInimigos();
@@ -137,45 +141,47 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
     if(pJ2){
         pGC->setJogador(pJ2);
     }
+
     CoordF tam_tela_compensada = tam_tela;
     tam_tela_compensada.y -= 8.0f; // Deixa a colisao mais bonita com os limites
     pGC->setLimite(tam_tela_compensada);
+
     //list_ents.incluir(pJ1);
- 
+
     sf::Clock clock;
     //setando o jogador
+
     bool andDir = false;
     bool andEsq = false;
- 
     bool andDir2 = false;
     bool andEsq2 = false;
- 
+
     bool olhandoEsquerda = false;
     bool olhandoEsquerda2 = false;
- 
+
     Animation_ID animacao = Animation_ID::idle;
- 
     Animation_ID animacao2 = Animation_ID::idle;
- 
+
     pGG = Gerenciadores::GerenciadorGrafico::getInstance();
- 
+
     while(pGG->windowopen()){
- 
+
         float dt = clock.restart().asSeconds();
- 
+
         sf::Event evento;
+
         while(pGG->getWindow()->pollEvent(evento)){
+
             if(evento.type==sf::Event::Closed){pGG->closeWindow();}
- 
+
             if(evento.type ==sf::Event::KeyPressed){
                 if(evento.key.code == sf::Keyboard::D){andDir=true;}
                 if(evento.key.code == sf::Keyboard::A){andEsq=true;}
                 if(evento.key.code == sf::Keyboard::Space){pJ1->pular();}
-                if(evento.key.code==sf::Keyboard::O){
+                if(evento.key.code==sf::Keyboard::E){
                     pJ1->setAtacando(true);
-                    std::cout<<"iniciando o ataque"<<std::endl;
+                    std::cout<<"iniciando o ataque P1"<<std::endl;
                 }
-                
                 
                 if(pJ2){
                     if(evento.key.code == sf::Keyboard::Right){andDir2=true;}
@@ -183,72 +189,66 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                     if(evento.key.code == sf::Keyboard::Up){pJ2->pular();}
                     if(evento.key.code==sf::Keyboard::O){
                         pJ2->setAtacando(true);
-                        
+                        std::cout<<"iniciando o ataque P2"<<std::endl;
                     }
                 }
- 
- 
-            }
+            } // E -> ataque player 1, O -> ataque player 2
+
             if(evento.type == sf::Event::KeyReleased){
- 
                 if(evento.key.code == sf::Keyboard::D){andDir=false;}
                 if(evento.key.code == sf::Keyboard::A){andEsq=false;}
-                if(evento.key.code==sf::Keyboard::O){
+                if(evento.key.code==sf::Keyboard::E){
                     pJ1->setAtacando(false);
-                    std::cout<<"cancelando o ataque"<<std::endl;
+                    std::cout<<"cancelando o ataque P1"<<std::endl;
                 }
-                
+
                 if(pJ2){
                     if(evento.key.code == sf::Keyboard::Right){andDir2=false;}
                     if(evento.key.code == sf::Keyboard::Left){andEsq2=false;}
-                    if(evento.key.code==sf::Keyboard::O){pJ2->setAtacando(false);}
-                    
+                    if(evento.key.code==sf::Keyboard::O){
+                        pJ2->setAtacando(false);
+                        std::cout<<"cancelando o ataque P2"<<std::endl;
+                    }
                 }
             }
- 
         }
         animacao = Animation_ID::idle;
         animacao2 = Animation_ID::idle;
- 
+
+        bool andando1 = false;
+        bool andando2 = false;
+
         if(andDir){
             pJ1->moverX(true,dt);
             olhandoEsquerda = false;
-            animacao = Animation_ID::walk;
+            andando1 = true;
         }
+
         if(andEsq){
             pJ1->moverX(false,dt);
             olhandoEsquerda = true;
-            animacao = Animation_ID::walk;
+            andando1 = true;
         }
- 
+
         if(pJ2){
+
             if(andDir2){
                 pJ2->moverX(true,dt);
                 olhandoEsquerda2 = false;
-                animacao2 = Animation_ID::walk;
+                andando2 = true;
             }
+
             if(andEsq2){
                 pJ2->moverX(false,dt);
                 olhandoEsquerda2 = true;
-                animacao2 = Animation_ID::walk;
+                andando2 = true;
             }
+
         }
- 
-        if(!pJ1->noChao()){animacao = Animation_ID::jump;}
- 
-        if(pJ1->getAtacando()){animacao = Animation_ID::attack;}
- 
+        // Atualiza o tempo do golpe antes de decidir a animacao
         pJ1->atualizarGolpe(dt);
- 
-        if(pJ2){
-            if(!pJ2->noChao()){
-                animacao2 = Animation_ID::jump;
- 
-            }
-            pJ2->atualizarGolpe(dt);
-            if(pJ2->getAtacando()){animacao2 = Animation_ID::attack;}
-        }
- 
+        if(pJ2) pJ2->atualizarGolpe(dt);
+
         executarInimigos(vInimigos, pJ1, pJ2, dt);
 
         pGC->executar(dt);
@@ -257,25 +257,22 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         background->render();
         list_ents.percorrer(dt);
         this->checarInimigos();
-        
-        if(pJ1->getInvulneravel()){
-            animacao = Animation_ID::hurt;
-        }
-        if(pJ2!=NULL&&pJ2->getInvulneravel()){
-            animacao2 = Animation_ID::hurt;
-        }
-        
+
+        animacao = decidirAnimacao(pJ1, andando1);
+
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
         pJ1->desenhar();
         //desenharAreaColisao(pGG->getWindow(), pJ1->getPos(), 32.f);
- 
+
         if(pJ2){
+            animacao2 = decidirAnimacao(pJ2, andando2);
             pJ2->atualizarAnimacao(animacao2, olhandoEsquerda2, dt);
             pJ2->desenhar();
         }
- 
+
         pGG->getWindow()->display();
- 
+
     }
 }
 }
+

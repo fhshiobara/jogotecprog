@@ -5,7 +5,8 @@
 #include "Animation.hpp"
 
 namespace Personagens {
- 
+    class Inimigo;
+    
     class Jogador: public Personagem {
     
         protected:
@@ -16,11 +17,11 @@ namespace Personagens {
             float tempoAtaqueAtual;
             static const float DURACAO_ATAQUE;
         
-        float tempoInvulneravel;
-        bool Invulneravel;
-        float tempoDevagar;
-        bool Devagar;
-    
+            float tempoInvulneravel;
+            bool Invulneravel;
+            float tempoDevagar;
+            bool Devagar;
+        
         public:
             Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);
             ~Jogador();
@@ -40,9 +41,8 @@ namespace Personagens {
             void golpear();
             void atualizarGolpe(float dt); // Cuida do tempo do golpe
             
-            //funcao para teste
-        void setAtacando(bool atk){atacando = atk;}
-        //fim da funcao
+            void danificar(Inimigo* pInimigo);
+            void setAtacando(bool atk){atacando = atk;}
             bool getAtacando() { return atacando; }
             //funcoes para o danificar do demonio
             bool getInvulneravel();

@@ -104,161 +104,171 @@ namespace Fases{
     void FaseSegunda::executar(){ }
 
 
-    void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
-        if(pGC==NULL || pJ1==NULL){
-            
-            std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;
-            return;
+void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
+
+    if(pGC==NULL || pJ1==NULL){
+
+        std::cerr<<"ERRO: pGC nao foi inicializado"<<std::endl;
+        return;
+
+    }
+
+    criarCenario();
+    criarPlataformas();
+    criarInimigos();
+    criarObstaculos();
+    inserirPlataformasAtrasado();
+ 
+    pGC->setJogador(pJ1);
+    if(pJ2){
+        pGC->setJogador(pJ2);
+    }
+
+    CoordF tam_tela_compensada = tam_tela;
+    tam_tela_compensada.y -= 8.0f; // Deixa a colisao mais bonita com os limites
+    pGC->setLimite(tam_tela_compensada);
+
+    //list_ents.incluir(pJ1);
+
+    sf::Clock clock;
+    //setando o jogador
+
+    bool andDir = false;
+    bool andEsq = false;
+    bool andDir2 = false;
+    bool andEsq2 = false;
+
+    bool olhandoEsquerda = false;
+    bool olhandoEsquerda2 = false;
+
+    Animation_ID animacao = Animation_ID::idle;
+    Animation_ID animacao2 = Animation_ID::idle;
+
+    pGG = Gerenciadores::GerenciadorGrafico::getInstance();
+
+    while(pGG->windowopen()){
+
+        float dt = clock.restart().asSeconds();
+
+        sf::Event evento;
+
+        while(pGG->getWindow()->pollEvent(evento)){
+
+            if(evento.type==sf::Event::Closed){pGG->closeWindow();}
+
+            if(evento.type ==sf::Event::KeyPressed){
+                if(evento.key.code == sf::Keyboard::D){andDir=true;}
+                if(evento.key.code == sf::Keyboard::A){andEsq=true;}
+                if(evento.key.code == sf::Keyboard::Space){pJ1->pular();}
+                if(evento.key.code==sf::Keyboard::E){
+                    pJ1->setAtacando(true);
+                    std::cout<<"iniciando o ataque P1"<<std::endl;
+                }
+                
+                if(pJ2){
+                    if(evento.key.code == sf::Keyboard::Right){andDir2=true;}
+                    if(evento.key.code == sf::Keyboard::Left){andEsq2=true;}
+                    if(evento.key.code == sf::Keyboard::Up){pJ2->pular();}
+                    if(evento.key.code==sf::Keyboard::O){
+                        pJ2->setAtacando(true);
+                        std::cout<<"iniciando o ataque P2"<<std::endl;
+                    }
+                }
+            } // E -> ataque player 1, O -> ataque player 2
+
+            if(evento.type == sf::Event::KeyReleased){
+                if(evento.key.code == sf::Keyboard::D){andDir=false;}
+                if(evento.key.code == sf::Keyboard::A){andEsq=false;}
+                if(evento.key.code==sf::Keyboard::E){
+                    pJ1->setAtacando(false);
+                    std::cout<<"cancelando o ataque P1"<<std::endl;
+                }
+
+                if(pJ2){
+                    if(evento.key.code == sf::Keyboard::Right){andDir2=false;}
+                    if(evento.key.code == sf::Keyboard::Left){andEsq2=false;}
+                    if(evento.key.code==sf::Keyboard::O){
+                        pJ2->setAtacando(false);
+                        std::cout<<"cancelando o ataque P2"<<std::endl;
+                    }
+                }
+            }
         }
-        criarCenario();
-        criarPlataformas();
-        criarInimigos();
-        criarObstaculos();
-        inserirPlataformasAtrasado();
-        
-        pGC->setJogador(pJ1);
+        animacao = Animation_ID::idle;
+        animacao2 = Animation_ID::idle;
+
+        bool andando1 = false;
+        bool andando2 = false;
+
+        if(andDir){
+            pJ1->moverX(true,dt);
+            olhandoEsquerda = false;
+            andando1 = true;
+        }
+
+        if(andEsq){
+            pJ1->moverX(false,dt);
+            olhandoEsquerda = true;
+            andando1 = true;
+        }
+
         if(pJ2){
-            pGC->setJogador(pJ2);
-        }
-        
-        CoordF tam_tela_compensada = tam_tela;
-        tam_tela_compensada.y -= 8.0f; // Deixa a colisao mais bonita com os limites
-        pGC->setLimite(tam_tela_compensada);
-        //list_ents.incluir(pJ1);
-        
-        sf::Clock clock;
-        //setando o jogador
-        bool andDir = false;
-        bool andEsq = false;
-        
-        bool andDir2 = false;
-        bool andEsq2 = false;
-        
-        
-        
-        bool olhandoEsquerda = false;
-        bool olhandoEsquerda2 = false;
-        
-        Animation_ID animacao = Animation_ID::idle;
-        
-        Animation_ID animacao2 = Animation_ID::idle;
-        
-        pGG = Gerenciadores::GerenciadorGrafico::getInstance();
-        
-        while(pGG->windowopen()){
-            
-            float dt = clock.restart().asSeconds();
-            
-            sf::Event evento;
-            while(pGG->getWindow()->pollEvent(evento)){
-                if(evento.type==sf::Event::Closed){pGG->closeWindow();}
-                
-                if(evento.type ==sf::Event::KeyPressed){
-                    if(evento.key.code == sf::Keyboard::D){andDir=true;}
-                    if(evento.key.code == sf::Keyboard::A){andEsq=true;}
-                    if(evento.key.code == sf::Keyboard::Space){pJ1->pular();}
-                    
-                    
-                    if(pJ2){
-                        if(evento.key.code == sf::Keyboard::Right){andDir2=true;}
-                        if(evento.key.code == sf::Keyboard::Left){andEsq2=true;}
-                        if(evento.key.code == sf::Keyboard::Up){pJ2->pular();}
-                    }
-                    
-                    
-                }
-                if(evento.type == sf::Event::KeyReleased){
-                    
-                    if(evento.key.code == sf::Keyboard::D){andDir=false;}
-                    if(evento.key.code == sf::Keyboard::A){andEsq=false;}
-                    
-                    if(pJ2){
-                        if(evento.key.code == sf::Keyboard::Right){andDir2=false;}
-                        if(evento.key.code == sf::Keyboard::Left){andEsq2=false;}
-                        
-                    }
-                }
-                
-            }
-            animacao = Animation_ID::idle;
-            animacao2 = Animation_ID::idle;
-            
-            if(andDir){
-                pJ1->moverX(true,dt);
-                olhandoEsquerda = false;
-                animacao = Animation_ID::walk;
-            }
-            if(andEsq){
-                pJ1->moverX(false,dt);
-                olhandoEsquerda = true;
-                animacao = Animation_ID::walk;
-            }
-            
-            if(pJ2){
-                if(andDir2){
-                    pJ2->moverX(true,dt);
-                    olhandoEsquerda2 = false;
-                    animacao2 = Animation_ID::walk;
-                }
-                if(andEsq2){
-                    pJ2->moverX(false,dt);
-                    olhandoEsquerda2 = true;
-                    animacao2 = Animation_ID::walk;
-                }
-                
-                
-            }
-            
-            if(!pJ1->noChao()){animacao = Animation_ID::jump;}
-            
-            if(pJ2){
-                if(!pJ2->noChao()){
-                    animacao2 = Animation_ID::jump;
-                }
-            }
-            if(pJ2 != NULL){
-                executarInimigos(vInimigos, pJ1, pJ2, dt);
-            }
-            else{
-                executarInimigos(vInimigos, pJ1, pJ1, dt);
+
+            if(andDir2){
+                pJ2->moverX(true,dt);
+                olhandoEsquerda2 = false;
+                andando2 = true;
             }
 
-            for (Personagens::Inimigo* inimigo : vInimigos) {
+            if(andEsq2){
+                pJ2->moverX(false,dt);
+                olhandoEsquerda2 = true;
+                andando2 = true;
+            }
+
+        }
+        // Atualiza o tempo do golpe antes de decidir a animacao
+        pJ1->atualizarGolpe(dt);
+        if(pJ2) pJ2->atualizarGolpe(dt);
+
+        for (Personagens::Inimigo* inimigo : vInimigos) {
             Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
                 if (boss != NULL && boss->estaVivo())
                     boss->atualizarProjetil(dt);
             } // Trata os projeteis
-            
-            pGC->executar(dt);
-            
-            pGG->clear();
-            background->render();
-            list_ents.percorrer(dt);
 
-            for (Personagens::Inimigo* inimigo : vInimigos) {
+        pGC->executar(dt);
+        
+        pGG->clear();
+        background->render();
+        list_ents.percorrer(dt);
+
+        for (Personagens::Inimigo* inimigo : vInimigos) {
             Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
                 if (boss != NULL && boss->estaVivo())
                     boss->desenharProjetil();
             } // mesma coisa, porem desenha
 
-            if(pJ1->getInvulneravel()){
-                animacao = Animation_ID::hurt;
-            }
-            if(pJ2!=NULL && pJ2->getInvulneravel()){
-                animacao2 = Animation_ID::hurt;
-            }
-            std::cout << "cheguei em flag!" << std::endl;
-            pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
-            pJ1->desenhar();
-            if(pJ2){
-                pJ2->atualizarAnimacao(animacao2,olhandoEsquerda2,dt);
-                pJ2->desenhar();
-            }
-            
-            // if(concluida){
-            //     return;
-            // }
-            pGG->getWindow()->display();   
+        executarInimigos(vInimigos, pJ1, pJ2, dt);
+
+        this->checarInimigos();
+
+        // Decide a animacao por prioridade (hurt > attack > jump > walk > idle)
+        animacao = decidirAnimacao(pJ1, andando1);
+
+        pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
+        pJ1->desenhar();
+        //desenharAreaColisao(pGG->getWindow(), pJ1->getPos(), 32.f);
+
+        if(pJ2){
+            animacao2 = decidirAnimacao(pJ2, andando2);
+            pJ2->atualizarAnimacao(animacao2, olhandoEsquerda2, dt);
+            pJ2->desenhar();
         }
+
+        pGG->getWindow()->display();
+
     }
 }
+}
+

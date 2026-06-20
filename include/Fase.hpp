@@ -90,9 +90,9 @@ namespace Fases {
             ~Fase();
             
             virtual void executar()=0;
-
             
         protected:
+        
             void criarInimigosBixo();//inimigos faceis
             void criarPlataformas();
             //funcoes extra vem aqui
@@ -104,6 +104,8 @@ namespace Fases {
             void checarInimigos();
             void executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt);
             void inserirPlataformasAtrasado(); // Func auxiliar
+            Animation_ID decidirAnimacao(Personagens::Jogador* pJog, bool andando); // Func auxiliar
+            
             
         };
 }

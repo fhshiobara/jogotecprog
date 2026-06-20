@@ -70,11 +70,19 @@ void Fase::inserirPlataformasAtrasado()
     }
 } 
 
-/* Func serve para criar Listas e depois inserir em Ents_List. 
+/* Func acima serve para criar Listas e depois inserir em Ents_List. 
 Como a ordem de Ent_list define quem desenha quando, isso nos permite 
 desenhar as plataformas depois dos espinhos, mesmo com elas ja estando instanciadas.
 Deixa o jogo mais bonito, sem espinhos flutuantes */
 
+Animation_ID Fase::decidirAnimacao(Personagens::Jogador* pJog, bool andando) {
+    if (pJog->getInvulneravel())  return Animation_ID::hurt;
+    if (pJog->getAtacando())      return Animation_ID::attack;
+    if (!pJog->noChao())          return Animation_ID::jump;
+    if (andando)                  return Animation_ID::walk;
+    return Animation_ID::idle;
+}
+// Func acima define a prioridade das animacoes, assim ela nao sao sobreescritas no loop principal
 
 void Fase::criarCenario(){}
 
@@ -111,11 +119,11 @@ void Fase::checarInimigos(){
     while(it != vInimigos.end()){
             if((*it)->estaVivo()){//ignora
                 it++;
-            } else {//nao vivo
-                //(*it)->setPos(CoordF(1000.f,1000.f));   se eu deletar o ponteiro do inimigo, acho que ja é o suficiente
-                delete *it;
-                it = vInimigos.erase(it);
-                list_ents.remover((*it));
+            } else { //nao vivo
+                Personagens::Inimigo* morto = *it;
+                list_ents.remover(morto);    
+                it = vInimigos.erase(it);    
+                delete morto;
                 
             }
         }
