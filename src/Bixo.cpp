@@ -3,8 +3,8 @@
 
 namespace Personagens {
  
-    Bixo::Bixo(CoordF position, int hp, float velocidade, float percepcao)
-    : Inimigo(position, hp, velocidade), percepcao(percepcao)
+    Bixo::Bixo(CoordF position, int hp, float velocidade, float percepcao, int valorPontos)
+    : Inimigo(position, hp, velocidade, valorPontos), percepcao(percepcao)
     {this->initialize();}
     
     Bixo::~Bixo() {}
@@ -45,6 +45,7 @@ namespace Personagens {
         this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Bixo/ATTACK.png", 8);
         this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Bixo/WALK.png", 8);
     }
+    
     void Bixo::danificar(Jogador* pJog){
         if(pJog!=NULL){//mesmo caso do demonio, essa funcao so é chamada se o contato já ocorreu,
             pJog->setInvulnerabilidade(0.9); // impede que entre em um loop infinito

@@ -13,19 +13,19 @@
 #include "VectorTL.hpp"
 #include "GerenciadorGrafico.hpp"
 
-namespace Gerenciadores{
-    class SingleFrameAnimation{
-        private:
-            sf::Texture* texture;
-            sf::RectangleShape corpo;
-        public:
-            SingleFrameAnimation(const char* path,CoordF position,CoordF size, float scale);
-            ~SingleFrameAnimation();
+
+class SingleFrameAnimation {
+    private:
+        sf::Texture* texture;
+        sf::RectangleShape corpo;
+    public:
+        SingleFrameAnimation(const char* path,CoordF position,CoordF size, float scale);
+        ~SingleFrameAnimation();
             
-            void update(CoordF position);
-            void render();
-        };
-}
+        void update(CoordF position);
+        void render();
+};
+ 
 
 
 

@@ -18,8 +18,8 @@ private:
     const int max_Morte;
     const int max_obst_Dificil;
     
-    Gerenciadores::SingleFrameAnimation* background;
-    Gerenciadores::SingleFrameAnimation* telaVitoria;
+    SingleFrameAnimation* background;
+    SingleFrameAnimation* telaVitoria;
     
 public:
     FaseSegunda();

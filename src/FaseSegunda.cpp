@@ -10,8 +10,8 @@
 namespace Fases{
 
     FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL),telaVitoria(NULL)  {
-        background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
-        telaVitoria = new Gerenciadores::SingleFrameAnimation("../assets/Background/telaGanhou.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+        background = new SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+        telaVitoria = new SingleFrameAnimation("../assets/Background/telaGanhou.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 
     }
 
@@ -137,7 +137,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
     criarObstaculos();
     inserirPlataformasAtrasado();
  
-    pGC->removerJogadores(); // para crrigir o problema de ponteiros duplicados, d
+    pGC->removerJogadores(); // para crrigir o problema de ponteiros duplicados
     pGC->setJogador(pJ1);
     if(pJ2){
         pGC->setJogador(pJ2);
@@ -250,7 +250,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
 
         for (Personagens::Inimigo* inimigo : vInimigos) {
             Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
-                if (boss != NULL && boss->estaVivo())
+                if (boss != NULL && boss->getVivo())
                     boss->atualizarProjetil(dt);
             } // Trata os projeteis
 
@@ -262,7 +262,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
 
         for (Personagens::Inimigo* inimigo : vInimigos) {
             Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
-                if (boss != NULL && boss->estaVivo())
+                if (boss != NULL && boss->getVivo())
                     boss->desenharProjetil();
             } // mesma coisa, porem desenha
 
@@ -270,27 +270,37 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
 
         this->checarInimigos();
         jogoEncerrado(pJ1,pJ2);//funcao da vitoria
+        this->checarInimigos(pJ1, pJ2);
+
+        jogoEncerrado();//funcao da vitoria
         
         //bloco da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
-        if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar
-            if(pJ1->getMorto() && pJ2->getMorto()){
-                pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
-                pJ2->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+        if (pJ2 != NULL) { // modo 2 jogadores
+            bool vivo1 = pJ1->getVivo();
+            bool vivo2 = pJ2->getVivo();
+
+            // ambos morreram
+            if (!vivo1 && !vivo2) {
+                pJ1->setPos(CoordF(1000.f, 1000.f));
+                pJ2->setPos(CoordF(1000.f, 1000.f));
+
                 pGC->removerJogadores();
                 telaDerrota->render();
-                
-                
             }
-            
-        }else if(pJ1->getMorto()){//so 1 jogador
-            pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
-            pGC->removerJogadores();
-            
-            telaDerrota->render();
-        }
-        
 
-        // Decide a animacao por prioridade (hurt > attack > jump > walk > idle)
+            // apenas J1 morreu
+            else if (!vivo1) {
+                pJ1->setPos(CoordF(1000.f, 1000.f));
+                pJ1 = pJ2;
+                pJ2 = NULL;
+            }
+
+            // apenas J2 morreu
+            else if (!vivo2) {
+                pJ2->setPos(CoordF(1000.f, 1000.f));
+                pJ2 = NULL;
+            }
+        }
         animacao = decidirAnimacao(pJ1, andando1);
 
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
@@ -302,6 +312,8 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
             pJ2->atualizarAnimacao(animacao2, olhandoEsquerda2, dt);
             pJ2->desenhar();
         }
+        
+        desenharPontos();
 
         pGG->getWindow()->display();
 

@@ -9,7 +9,7 @@ namespace Obstaculos {
         hitbox.setSize(sf::Vector2f(largura, altura));
         hitbox.setPosition(sf::Vector2f(position.x, position.y));
       
-        sprite = new Gerenciadores::SingleFrameAnimation("../assets/Obstaculo/Espinhos.png",CoordF(position.x, position.y),CoordF(largura,altura-20.f),1.0);
+        sprite = new SingleFrameAnimation("../assets/Obstaculo/Espinhos.png",CoordF(position.x, position.y),CoordF(largura,altura-20.f),1.0);
     }
  
     Espinhos::~Espinhos() {}

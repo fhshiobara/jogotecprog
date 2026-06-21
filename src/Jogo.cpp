@@ -53,9 +53,9 @@ void Jogo::executar() {
         pFase1->executar(pJ1, pJ2);
         if(pFase1->getConcluida()){
             pFase2 = new Fases::FaseSegunda();
+            pFase2->somarPontos(pFase1->getPontosTotais());
+            pFase2->atualizarTextoPontos();
             pFase2->executar(pJ1,pJ2);
-            
-            
         }
     }
     

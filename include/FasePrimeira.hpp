@@ -19,7 +19,7 @@ class FasePrimeira:public Fase{
 private:
     const int max_inim_Demonio;
     const int max_obst_Espinhos;
-    Gerenciadores::SingleFrameAnimation* background;
+    SingleFrameAnimation* background;
     
 protected:
     void criarInimigosDemonio();

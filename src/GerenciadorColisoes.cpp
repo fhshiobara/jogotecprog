@@ -35,10 +35,10 @@ namespace Gerenciadores {
             pJog1 = pJogador;
         }
     }
-void GerenciadorColisoes::removerJogadores(){
-    pJog1 = NULL;
-    pJog2 = NULL;
-}
+    void GerenciadorColisoes::removerJogadores(){
+        pJog1 = NULL;
+        pJog2 = NULL;
+    }
 
     void GerenciadorColisoes::setLimite(CoordF tam_tela) {
         limites = tam_tela;
@@ -173,7 +173,7 @@ void GerenciadorColisoes::removerJogadores(){
     for (iteradorInimigo = ListaInimigos.begin(); iteradorInimigo != ListaInimigos.end(); ++iteradorInimigo) {
         Personagens::Inimigo* inimigoAtual = *iteradorInimigo;
 
-        if (!inimigoAtual->estaVivo()) 
+        if (!inimigoAtual->getVivo()) 
             continue;
 
         CoordF posInimigo = inimigoAtual->getPos();
@@ -204,7 +204,7 @@ void GerenciadorColisoes::removerJogadores(){
     for (iteradorInimigo = ListaInimigos.begin(); iteradorInimigo != ListaInimigos.end(); ++iteradorInimigo) {
         Personagens::Inimigo* inimigoAtual = *iteradorInimigo;
 
-        if (!inimigoAtual->estaVivo()) 
+        if (!inimigoAtual->getVivo()) 
             continue;
 
         CoordF posInimigo = inimigoAtual->getPos();
@@ -227,7 +227,7 @@ void GerenciadorColisoes::removerJogadores(){
     for (Personagens::Inimigo* inimigo : ListaInimigos) {
         Personagens::Bixo* bixo = dynamic_cast<Personagens::Bixo*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma Bixo.
 
-        if (bixo == nullptr || !bixo->estaVivo())
+        if (bixo == nullptr || !bixo->getVivo())
             continue;
 
         CoordF pos = bixo->getPos();
@@ -262,7 +262,7 @@ void GerenciadorColisoes::removerJogadores(){
             aplicarLimites(pJog2);
 
         for (Personagens::Inimigo* inimigo : ListaInimigos) {
-            if (inimigo != nullptr && inimigo->estaVivo())
+            if (inimigo != nullptr && inimigo->getVivo())
                 aplicarLimites(inimigo);
             }
     }
@@ -329,7 +329,7 @@ void GerenciadorColisoes::removerJogadores(){
         }
 
         for (Inimigo* inimigo : ListaInimigos)
-            if (inimigo->estaVivo())
+            if (inimigo->getVivo())
                 inimigo->tempoImunidade(dt);
     }
 
@@ -340,7 +340,7 @@ void GerenciadorColisoes::removerJogadores(){
         for (it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
 
             Personagens::Inimigo* inimigo = *it;
-            if (!inimigo->estaVivo()) continue;
+            if (!inimigo->getVivo()) continue;
 
             CoordF posIni = inimigo->getPos();
             // Ataque do jogador 1
@@ -356,7 +356,6 @@ void GerenciadorColisoes::removerJogadores(){
                 }
             }
             // Ataque do jogador 2, equivalente ao codigo acima
-            
 
             if (pJog2 != NULL && pJog2->getAtacando()) {
                 CoordF posJog2 = pJog2->getPos();

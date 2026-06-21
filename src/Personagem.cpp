@@ -5,9 +5,9 @@ namespace Personagens {
   
   Personagem::Personagem(CoordF position, CoordF velocidade, int hp,
                         float velocidadeInicial, float speed, bool olhandoEsquerda,
-                        bool encostadochao, bool vivo)
+                        bool encostadochao, bool vivo, float imunidade)
       : Entidade(position, velocidade), hp(hp), velocidade(velocidadeInicial), speed(speed),
-        olhandoEsquerda(olhandoEsquerda), encostadochao(encostadochao), vivo(vivo) {}
+        olhandoEsquerda(olhandoEsquerda), encostadochao(encostadochao), vivo(vivo), imunidade(imunidade) {}
   
   Personagem::~Personagem() {}
   
