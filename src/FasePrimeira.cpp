@@ -43,7 +43,7 @@ FasePrimeira::~FasePrimeira(){
 void FasePrimeira::criarInimigosDemonio(){
     int num_inim_medio = rand()%(max_inim_Demonio +1);
  
-    if(num_inim_medio<10){num_inim_medio=1;} //numero minimo de inimigos
+    if(num_inim_medio<3){num_inim_medio=3;} //numero minimo de inimigos
  
     int num_demonios_criados = 0;
  
