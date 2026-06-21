@@ -262,12 +262,12 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         background->render();
         list_ents.percorrer(dt);
         
-        if(!pJ1->getVivo()){
+        if(!pJ1->setVivo()){
             animacao = Animation_ID::death;
         }
         
         if(pJ2!=NULL){
-            if(!pJ2->getVivo()){
+            if(!pJ2->setVivo()){
                 animacao2 = Animation_ID::death;
             }
         }
@@ -280,13 +280,13 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         }
 
         if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar
-            if(!pJ1->getVivo() && !pJ2->getVivo()){
+            if(!pJ1->setVivo() && !pJ2->setVivo()){
                 pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
                 pJ2->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
                 pGC->removerJogadores();
                 telaDerrota->render();
             }
-        } else if(!pJ1->getVivo()) { //so 1 jogador
+        } else if(!pJ1->setVivo()) { //so 1 jogador
             std::cout << "flag" << std::endl;
             pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
             pGC->removerJogadores();

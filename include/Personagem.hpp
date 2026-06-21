@@ -20,12 +20,12 @@ namespace Personagens {
             float imunidade;
             
         public:
-            Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, float speed = 1.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true);
+            Personagem(CoordF position, CoordF velocidade, int hp = 1, float velocidadeInicial = 0.0f, float speed = 1.0f, bool olhandoEsquerda = false, bool encostadochao = true, bool vivo = true, float imunidade = 0);
             ~Personagem();
 
             void salvarDataBuffer(); // TODO
 
-            bool estaVivo() const { return vivo; }
+            bool setVivo() const { return vivo; }
 
             CoordF getPos() const { return pos; }
             void setPos(const CoordF& newPos) { pos = newPos; }

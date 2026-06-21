@@ -132,7 +132,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
     criarObstaculos();
     inserirPlataformasAtrasado();
  
-    pGC->removerJogadores(); // para crrigir o problema de ponteiros duplicados, d
+    pGC->removerJogadores(); // para crrigir o problema de ponteiros duplicados
     pGC->setJogador(pJ1);
     if(pJ2){
         pGC->setJogador(pJ2);
@@ -246,7 +246,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
 
         for (Personagens::Inimigo* inimigo : vInimigos) {
             Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
-                if (boss != NULL && boss->estaVivo())
+                if (boss != NULL && boss->setVivo())
                     boss->atualizarProjetil(dt);
             } // Trata os projeteis
 
@@ -258,34 +258,32 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
 
         for (Personagens::Inimigo* inimigo : vInimigos) {
             Personagens::Morte* boss = dynamic_cast<Personagens::Morte*>(inimigo);
-                if (boss != NULL && boss->estaVivo())
+                if (boss != NULL && boss->setVivo())
                     boss->desenharProjetil();
             } // mesma coisa, porem desenha
 
         executarInimigos(vInimigos, pJ1, pJ2, dt);
 
         this->checarInimigos(pJ1, pJ2);
+
         jogoEncerrado();//funcao da vitoria
         
         //bloco da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
         if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar
-            if(!pJ1->getVivo() && !pJ2->getVivo()){
+            if(!pJ1->setVivo() && !pJ2->setVivo()){
                 pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
                 pJ2->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
                 pGC->removerJogadores();
                 telaDerrota->render();
-                
             }
             
-        }else if(!pJ1->getVivo()){//so 1 jogador
+        }else if(!pJ1->setVivo()){//so 1 jogador
             pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
             pGC->removerJogadores();
             
             telaDerrota->render();
         }
-        
 
-        // Decide a animacao por prioridade (hurt > attack > jump > walk > idle)
         animacao = decidirAnimacao(pJ1, andando1);
 
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
@@ -297,8 +295,9 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
             pJ2->atualizarAnimacao(animacao2, olhandoEsquerda2, dt);
             pJ2->desenhar();
         }
-
+        
         desenharPontos();
+
         pGG->getWindow()->display();
 
     }
