@@ -3,8 +3,8 @@
 
 namespace Personagens {
  
-    Bixo::Bixo(CoordF position, int hp, float velocidade, float percepcao)
-    : Inimigo(position, hp, velocidade), percepcao(percepcao)
+    Bixo::Bixo(CoordF position, int hp, float velocidade, float percepcao, int valorPontos)
+    : Inimigo(position, hp, velocidade, valorPontos), percepcao(percepcao)
     {this->initialize();}
     
     Bixo::~Bixo() {}

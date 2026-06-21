@@ -3,8 +3,8 @@
 
 namespace Personagens {
 
-    Demonio::Demonio(CoordF position, int hp, float velocidade, int fome)
-    : Inimigo(position, hp, velocidade), fome(fome)
+    Demonio::Demonio(CoordF position, int hp, float velocidade, int fome, int valorPontos)
+    : Inimigo(position, hp, velocidade, valorPontos), fome(fome)
     {this->initialize();}
 
     Demonio::~Demonio() {}
@@ -28,7 +28,6 @@ namespace Personagens {
         this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Demonio/IDLE.png", 4);
         this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Demonio/FLYING.png", 4);
         this->sprite.addNewAnimation(Animation_ID::hurt, "../assets/Demonio/HURT.png", 4);
-
         // Mudar path caso falha ao encontrar.
 
     }
@@ -53,7 +52,6 @@ namespace Personagens {
         pos.y += vel.y * dt;
 
     }
-
 
     void Demonio::danificar(Jogador* pJog){
         //essa funcao so sera chamada caso haja o contato entre o jogador e o inimigo, entao vou abstrair essa parte de verificacao

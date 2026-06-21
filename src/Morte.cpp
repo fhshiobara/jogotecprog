@@ -3,8 +3,8 @@
  
 namespace Personagens {
     
-    Morte::Morte(CoordF position, int hp, float velocidade)
-        : Inimigo(position, hp, velocidade),
+    Morte::Morte(CoordF position, int hp, float velocidade, int valorPontos)
+        : Inimigo(position, hp, velocidade, valorPontos),
         tempoRecarga(2.0f), tempoDeVidaProjetil(0.0f),
         projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->initialize();}
     
@@ -76,7 +76,6 @@ namespace Personagens {
             tempoDeVidaProjetil = 0.f;
         }
     }
-
     
     void Morte::atualizarProjetil(float dt) {
         projetil->mover(dt);
@@ -101,5 +100,6 @@ namespace Personagens {
         vivo = false;
         std::cout << "Morte morreu!" << std::endl;
     }
+
     void Morte::danificar(Jogador* pJog) {}
 }

@@ -349,7 +349,6 @@ void GerenciadorColisoes::removerJogadores(){
                 }
             }
             // Ataque do jogador 2, equivalente ao codigo acima
-            
 
             if (pJog2 != NULL && pJog2->getAtacando()) {
                 CoordF posJog2 = pJog2->getPos();

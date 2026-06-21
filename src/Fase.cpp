@@ -32,8 +32,6 @@ Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo
         pontosTexto.setString("Pontos: 0");
 
     }
-
-
 }
 
 Fase::~Fase(){
@@ -130,7 +128,7 @@ void Fase::criarLimites(){
     pGC->setLimite(tam_tela);
 }
 
-void Fase::checarInimigos(){
+void Fase::checarInimigos(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
 
     std::vector<Personagens::Inimigo*>::iterator it = vInimigos.begin();
 
@@ -141,6 +139,15 @@ void Fase::checarInimigos(){
                 
             } else { //nao vivo
                 Personagens::Inimigo* morto = *it;
+
+                Personagens::Jogador* pontuador = pJ1;
+
+                if (pJ2 != NULL && morto->jogadorProximo(pJ1, pJ2))
+                    pontuador = pJ2;
+                morto->concederPontos(pontuador);
+
+                somarPontos(morto->getValorPontos()); // mantem o placar total da fase
+                atualizarTextoPontos();
 
                 pGC->removerInimigo(morto);
                 list_ents.remover(morto);    
@@ -164,7 +171,13 @@ bool Fase::getConcluida(){
     return concluida;
 }
 
+void Fase::atualizarTextoPontos(){
+    pontosTexto.setString("Pontos: " + std::to_string(pontosTotais)); // Preciso transformar em String para o sf::Font funcionar
+}
 
+void Fase::desenharPontos(){
+    pGG->render(&pontosTexto);
+}
 
 void Fase::executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt) {
 

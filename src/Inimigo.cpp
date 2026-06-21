@@ -2,9 +2,9 @@
 #include <cmath>
  
 namespace Personagens {
-  Inimigo::Inimigo(CoordF position, int hp, float velocidadeInicial, Jogador* pJogador1, Jogador* pJogador2)
+  Inimigo::Inimigo(CoordF position, int hp, float velocidadeInicial, int valorPontos)
       : Personagem(position, CoordF(0.f, 0.f), hp, velocidadeInicial, 
-      false, true, true), dt_local(0.0f) {}
+      false, true, true), dt_local(0.0f), valorPontos(valorPontos) {}
   
   Inimigo::~Inimigo() {}
 
@@ -28,4 +28,5 @@ namespace Personagens {
   } // Ideia sem utilizar  sqrt() provem do StackOverflow
 
   void Inimigo::setDt(float dt){dt_local = dt;}
+
 }

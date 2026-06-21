@@ -14,10 +14,7 @@ namespace Personagens {
     void Jogador::salvar()   {}
     void Jogador::morrer()   {//se chegou nessa funcao é porque o hp dele ja esta menor ou igual a zero
         std::cout << "Jogador morreu!" << std::endl;//vou deixar o comentario por ora
-        this->setMorto(true);
-        
-        
-    
+        this->setVivo(false);
     }
     
 void Jogador::moverX(bool direcao, float dt) {

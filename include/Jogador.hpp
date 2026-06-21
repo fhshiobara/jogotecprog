@@ -21,10 +21,7 @@ namespace Personagens {
             float tempoInvulneravel;
             bool Invulneravel;
             float tempoDevagar;
-            bool Devagar;
-        
-            bool morto;
-        
+            bool Devagar;        
         public:
             Jogador(CoordF position, int hp = 3, int pontos = 0, float speed = 1.0f);
             ~Jogador();
@@ -43,6 +40,7 @@ namespace Personagens {
         
             void golpear();
             void atualizarGolpe(float dt); // Cuida do tempo do golpe
+            void pontuar(int pontosAdiquiridos) { pontos += pontosAdiquiridos; }
             
             void danificar(Inimigo* pInimigo);
             void setAtacando(bool atk){atacando = atk;}
@@ -60,8 +58,8 @@ namespace Personagens {
             void tempoDesacelerado(float dt);
             void setDesaceleracao(float tmp);
         
-        void setMorto(bool mort){morto=mort;}
-        bool getMorto(){return morto;}
+            void setVivo(bool v){ vivo = v; }
+            bool getVivo(){ return vivo; }
             
             bool getOlhandoEsquerda(){return olhandoEsquerda;}
     };
