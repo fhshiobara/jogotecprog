@@ -3,6 +3,7 @@
  
 #include "Ente.hpp"
 #include "SingleFrameAnimation.hpp"
+#include "Ranking.hpp"
 
 class Jogo;
  
@@ -39,7 +40,10 @@ class Menu : public Ente {
         bool getMultiplayer() const { return multiplayer; }
         int getFase() const { return fase; }
 
-        void fechar() { ativo = false; }
+        std::string pedirNome(const std::string& titulo); // captura nomes dos jogadores
+        void mostrarRanking(Ranking& ranking); 
+
+        void fechar() { ativo = false; }    
 };
  
 #endif

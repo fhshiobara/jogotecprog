@@ -11,7 +11,9 @@
 using namespace Obstaculos;
 using namespace Personagens;
  
-Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()),pJ1(NULL),pJ2(NULL),pFase1(NULL),pFase2(NULL),pGC(Gerenciadores::GerenciadorColisoes::getInstance()){
+Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()),pJ1(NULL),pJ2(NULL),pFase1(NULL),pFase2(NULL),
+pGC(Gerenciadores::GerenciadorColisoes::getInstance()),
+ranking("../ranking.txt"),nomeJ1("JogadorDeconhecido1"),nomeJ2("JogadorDeconhecido2"){
     srand((unsigned)time(NULL));
     
     executar(); }
@@ -48,16 +50,40 @@ void Jogo::executar() {
         pJ2->initialize(false);
     }
 
-    if(fase == 1) {
+        if(fase == 1) {
+        // Pede o(s) nome(s) antes de comecar a fase 1
+        nomeJ1 = pMenu->pedirNome("Jogador 1, digite seu nome:");
+        if (!pGerenciadorGrafico->windowopen()) return; // fechou na tela de nome
+
+        if (pJ2 != NULL) {
+            nomeJ2 = pMenu->pedirNome("Jogador 2, digite seu nome:");
+            if (!pGerenciadorGrafico->windowopen()) return;
+        }
+
         pFase1 = new Fases::FasePrimeira();
         pFase1->executar(pJ1, pJ2);
+        
         if(pFase1->getConcluida()){
             pFase2 = new Fases::FaseSegunda();
-            pFase2->somarPontos(pFase1->getPontosTotais());
+            pFase2->somarPontos(pFase1->getPontosTotais()); 
             pFase2->atualizarTextoPontos();
+
             pFase2->executar(pJ1,pJ2);
+
+            if(pFase2->getConcluida()){
+                int pontosFinais = pFase2->getPontosTotais(); 
+
+                std::string nomeJogadores = nomeJ1;
+                if (pJ2 != NULL)
+                    nomeJogadores = nomeJ1 + "_&_" + nomeJ2;
+
+                ranking.registrar(nomeJogadores, pontosFinais);
+            }
         }
     }
+
+
+    
     
     else if (fase == 2) {
         pFase2 = new Fases::FaseSegunda();

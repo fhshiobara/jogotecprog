@@ -94,6 +94,34 @@ namespace Fases{
         }
     }
 
+    void FaseSegunda::jogoEncerrado(){
+        
+        pGC->removerJogadores();
+
+        while(pGG->windowopen()){
+            sf::Event evento;
+            while(pGG->getWindow()->pollEvent(evento)){
+
+                if(evento.type == sf::Event::Closed){
+                    pGG->closeWindow();
+                    return;
+                }
+
+                if(evento.type == sf::Event::KeyPressed &&
+                  (evento.key.code == sf::Keyboard::Return || evento.key.code == sf::Keyboard::Escape)){
+                    return;
+                }
+
+            }
+
+            pGG->clear();
+            telaVitoria->render();
+            pGG->getWindow()->display();
+        }
+    }
+
+
+
     void FaseSegunda::criarInimigos(){
         this->criarInimigosBixo();
         this->criaMorte();
@@ -103,23 +131,7 @@ namespace Fases{
         this->criaObstDificil();
     }
 
-    void FaseSegunda::jogoEncerrado(Personagens::Jogador* pJ1,Personagens::Jogador* pJ2){
-        if(this->getConcluida()){
-            pJ1->setPos(CoordF(1000.f,1000.f));
-            if(pJ2!=NULL){
-                pJ2->setPos(CoordF(1000.f,1000.f));
-            }
-            
-            pGC->removerJogadores();
-            telaVitoria->render();
-            
-            
-        }
-        
-    }
-
-
-    void FaseSegunda::executar(){ }
+void FaseSegunda::executar(){ }
 
 
 void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
@@ -272,9 +284,12 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
         jogoEncerrado(pJ1,pJ2);//funcao da vitoria
         this->checarInimigos(pJ1, pJ2);
 
-        
-        
-        //bloco de funcoes da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
+        if(this->getConcluida()){
+            jogoEncerrado(); 
+            return; // encerra a fase 2 neste return!
+        }
+
+        //bloco da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
         if (pJ2 != NULL) { // modo 2 jogadores
             bool vivo1 = pJ1->getVivo();
             bool vivo2 = pJ2->getVivo();

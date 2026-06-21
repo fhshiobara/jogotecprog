@@ -1,5 +1,6 @@
 #include "Menu.hpp"
 #include "Jogo.hpp"
+#include "Ranking.hpp"
 #include <iostream>
  
 Menu::Menu(Jogo* pJogo)
@@ -95,6 +96,7 @@ void Menu::processarEvento(const sf::Event& evento) {
                 break; 
             case 2:
                 std::cout << "Mostrando Ranking" << std::endl;
+                mostrarRanking(pJogo->getRanking());
                 break;
             case 3:
                 multiplayer = !multiplayer;
@@ -125,4 +127,117 @@ void Menu::desenhar() {
         pGG->render(&textosOpcoes[i]);
     }
 }
+
+std::string Menu::pedirNome(const std::string& titulo) {
+    sf::Font* fonte = pGG->getFont();
+    std::string nome = "";
+ 
+    sf::Text textoTitulo;
+    sf::Text textoNome;
+    if (fonte != NULL) {
+        textoTitulo.setFont(*fonte);
+        textoTitulo.setString(titulo);
+        textoTitulo.setCharacterSize(36);
+        textoTitulo.setFillColor(sf::Color::White);
+        textoTitulo.setPosition(sf::Vector2f(150.f, 200.f));
+ 
+        textoNome.setFont(*fonte);
+        textoNome.setCharacterSize(40);
+        textoNome.setFillColor(sf::Color::Yellow);
+        textoNome.setPosition(sf::Vector2f(150.f, 280.f));
+    }
+ 
+    while (pGG->windowopen()) {
+        sf::Event evento;
+
+        while (pGG->getWindow()->pollEvent(evento)) {
+            if (evento.type == sf::Event::Closed) {
+                pGG->closeWindow();
+                return nome;
+            }
+ 
+            if (evento.type == sf::Event::TextEntered) {
+                if (evento.text.unicode == 8) {            // Backspace
+                    if (!nome.empty()) nome.pop_back();
+                }
+                else if (evento.text.unicode == 13) {       // Enter
+                    if (nome.empty()) nome = "JogadorDesconhecido";
+                    return nome;
+                }
+                else if (evento.text.unicode >= 32 && evento.text.unicode < 127) {
+                    if (nome.size() < 12)                    // limite de tamanho
+                        nome += static_cast<char>(evento.text.unicode);
+                }
+            }
+        }
+ 
+        textoNome.setString(nome + "_");
+ 
+        pGG->clear();
+        pGG->render(&textoTitulo);
+        pGG->render(&textoNome);
+        pGG->getWindow()->display();
+    }
+ 
+    return nome;
+}
+ 
+// Mostra o ranking ordenado ate o jogador sair (Esc).
+void Menu::mostrarRanking(Ranking& ranking) {
+
+    sf::Font* fonte = pGG->getFont();
+    ranking.ler();
+ 
+    sf::Text textoTitulo;
+    if (fonte != NULL) {
+        textoTitulo.setFont(*fonte);
+        textoTitulo.setString("RANKING (Esc para voltar)");
+        textoTitulo.setCharacterSize(32);
+        textoTitulo.setFillColor(sf::Color::White);
+        textoTitulo.setPosition(sf::Vector2f(120.f, 40.f));
+    }
+ 
+    std::vector<sf::Text> linhas;
+    const std::vector<Pontuacao>& ents = ranking.getTabela();
+
+    for (int i = 0; i < ents.size() && i < 10; ++i) { // 10 linhas de ranking limite. i < ents.size() foi adicionado pelo claude para arrumar bug.
+
+        sf::Text linha; 
+
+        if (fonte != NULL) {
+            linha.setFont(*fonte);
+            linha.setString(std::to_string(i + 1) + ". " 
+                                    + ents[i].nomeJogador + " - " 
+                                    + std::to_string(ents[i].pontosFinais)); // Feito pelo Claude. Deixa o placar mais organizado
+            linha.setCharacterSize(26);
+            linha.setFillColor(sf::Color::White);
+            linha.setPosition(sf::Vector2f(150.f, 120.f + i * 40.f));
+        }
+
+        linhas.push_back(linha);
+    }
+ 
+    while (pGG->windowopen()) {
+        sf::Event evento;
+        while (pGG->getWindow()->pollEvent(evento)) {
+            if (evento.type == sf::Event::Closed) {
+                pGG->closeWindow();
+                return;
+            }
+            if (evento.type == sf::Event::KeyPressed &&
+               (evento.key.code == sf::Keyboard::Return || evento.key.code == sf::Keyboard::Escape)) {
+                return;
+            }
+        }
+ 
+        pGG->clear();
+
+        pGG->render(&textoTitulo);
+        for (int i = 0; i < linhas.size(); ++i)
+            pGG->render(&linhas[i]);
+
+        pGG->getWindow()->display();
+    }
+}
+
  

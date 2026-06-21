@@ -35,6 +35,7 @@ namespace Gerenciadores {
             pJog1 = pJogador;
         }
     }
+    
     void GerenciadorColisoes::removerJogadores(){
         pJog1 = NULL;
         pJog2 = NULL;

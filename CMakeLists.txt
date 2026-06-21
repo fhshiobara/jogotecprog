@@ -24,6 +24,7 @@ file(GLOB_RECURSE ASSET_FILES CONFIGURE_DEPENDS
 
 add_executable(Jogo
     src/main.cpp
+    src/Ranking.cpp
     src/Jogo.cpp
     src/Menu.cpp
     src/Fase.cpp
