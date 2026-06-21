@@ -8,7 +8,7 @@
 #include "SingleFrameAnimation.hpp"
 //classe inspirada nos videos do Burda canal episodio 7
 
-namespace Gerenciadores{
+
 SingleFrameAnimation::SingleFrameAnimation(const char* path, CoordF position, CoordF size, float scale):texture(NULL),corpo(sf::Vector2f(size.x,size.y)){
     
     texture=Gerenciadores::GerenciadorGrafico::getInstance()->loadTexture(path);
@@ -26,6 +26,6 @@ SingleFrameAnimation::SingleFrameAnimation(const char* path, CoordF position, Co
     void SingleFrameAnimation::render(){
         Gerenciadores::GerenciadorGrafico::getInstance()->render(&corpo);
     }
-}
+
 
 

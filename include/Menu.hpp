@@ -21,9 +21,9 @@ class Menu : public Ente {
  
         sf::Text titulo;
         std::vector<sf::Text> textosOpcoes;
-        Gerenciadores::SingleFrameAnimation* cavEsq;
-        Gerenciadores::SingleFrameAnimation* cavDir;
-        Gerenciadores::SingleFrameAnimation* fundo;
+        SingleFrameAnimation* cavEsq;
+        SingleFrameAnimation* cavDir;
+        SingleFrameAnimation* fundo;
     
     public:
         Menu(Jogo* pJogo);

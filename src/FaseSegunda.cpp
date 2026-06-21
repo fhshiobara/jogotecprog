@@ -10,8 +10,8 @@
 namespace Fases{
 
     FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL),telaVitoria(NULL)  {
-        background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
-        telaVitoria = new Gerenciadores::SingleFrameAnimation("../assets/Background/telaGanhou.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+        background = new SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+        telaVitoria = new SingleFrameAnimation("../assets/Background/telaGanhou.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 
     }
 

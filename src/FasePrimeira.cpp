@@ -31,7 +31,7 @@ using namespace Personagens;
 namespace Fases{
  
 FasePrimeira::FasePrimeira():Fase(),max_inim_Demonio(4),max_obst_Espinhos(4),background(NULL){
-    background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    background = new SingleFrameAnimation("../assets/Background/background.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
     
 }
  
@@ -285,7 +285,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
 
         // ambos morreram
         if (!vivo1 && !vivo2) {
-
             pJ1->setPos(CoordF(1000.f, 1000.f));
             pJ2->setPos(CoordF(1000.f, 1000.f));
 
@@ -296,7 +295,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         // apenas J1 morreu
         else if (!vivo1) {
             pJ1->setPos(CoordF(1000.f, 1000.f));
-
             // transforma em jogo de 1 jogador
             pJ1 = pJ2;
             pJ2 = NULL;

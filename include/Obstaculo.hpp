@@ -11,7 +11,7 @@ namespace Obstaculos {
     class Obstaculo : public Entidades::Entidade {
         protected:
             bool danoso;
-            Gerenciadores::SingleFrameAnimation* sprite;
+            SingleFrameAnimation* sprite;
 
         public:
             Obstaculo(CoordF position, bool danoso = false);

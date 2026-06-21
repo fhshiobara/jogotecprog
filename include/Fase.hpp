@@ -89,7 +89,7 @@ namespace Fases {
             int pontosTotais;
             sf::Text pontosTexto;
         
-            Gerenciadores::SingleFrameAnimation* telaDerrota;
+            SingleFrameAnimation* telaDerrota;
 
         public:
             Fase();
@@ -121,7 +121,6 @@ namespace Fases {
             void somarPontos(int pontos) { pontosTotais += pontos; }
             int getPontosTotais() { return pontosTotais; }
             void atualizarTextoPontos(); 
-            
             
         };
 }

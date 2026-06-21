@@ -5,9 +5,9 @@
 Menu::Menu(Jogo* pJogo)
     : pJogo(pJogo), selecionada(0), multiplayer(false), ativo(true), fase(0),cavEsq(NULL),cavDir(NULL),fundo(NULL)
 {
-    cavEsq = new Gerenciadores::SingleFrameAnimation("../assets/Background/cavaleiro_esquerda.png", CoordF(0.f,250.f), CoordF(280.f,300.f), 1.0);
-    cavDir = new Gerenciadores::SingleFrameAnimation("../assets/Background/cavaleiro_direita.png", CoordF(560.f,250.f), CoordF(280.f,300.f), 1.0);
-    fundo = new Gerenciadores::SingleFrameAnimation("../assets/Background/plano_de_fundo.png", CoordF(0.f,0.f), CoordF(800.f,600.f), 1.0);
+    cavEsq = new SingleFrameAnimation("../assets/Background/cavaleiro_esquerda.png", CoordF(0.f,250.f), CoordF(280.f,300.f), 1.0);
+    cavDir = new SingleFrameAnimation("../assets/Background/cavaleiro_direita.png", CoordF(560.f,250.f), CoordF(280.f,300.f), 1.0);
+    fundo = new SingleFrameAnimation("../assets/Background/plano_de_fundo.png", CoordF(0.f,0.f), CoordF(800.f,600.f), 1.0);
     opcao.push_back("Iniciar Fase 1");
     opcao.push_back("Iniciar Fase 2");
     opcao.push_back("Ver Ranking");

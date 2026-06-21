@@ -31,10 +31,10 @@ namespace Gerenciadores {
             pJog1 = pJogador;
         }
     }
-void GerenciadorColisoes::removerJogadores(){
-    pJog1 = NULL;
-    pJog2 = NULL;
-}
+    void GerenciadorColisoes::removerJogadores(){
+        pJog1 = NULL;
+        pJog2 = NULL;
+    }
 
     void GerenciadorColisoes::setLimite(CoordF tam_tela) {
         limites = tam_tela;
