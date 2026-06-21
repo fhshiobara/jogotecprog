@@ -25,11 +25,11 @@ Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo
 
     if(fonte != NULL){
 
-        textoPontos.setFont(*fonte);
-        textoPontos.setCharacterSize(24);
-        textoPontos.setFillColor(sf::Color::White);
-        textoPontos.setPosition(sf::Vector2f(10.f, 10.f)); // canto superior esquerdo
-        textoPontos.setString("Pontos: 0");
+        pontosTexto.setFont(*fonte);
+        pontosTexto.setCharacterSize(24);
+        pontosTexto.setFillColor(sf::Color::White);
+        pontosTexto.setPosition(sf::Vector2f(10.f, 10.f)); // canto superior esquerdo
+        pontosTexto.setString("Pontos: 0");
 
     }
 

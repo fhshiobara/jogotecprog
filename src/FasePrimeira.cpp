@@ -134,7 +134,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
 
     }
     
-
     criarCenario();
     criarPlataformas();
     criarInimigos();
@@ -144,6 +143,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
     pGC->removerJogadores();
  
     pGC->setJogador(pJ1);
+
     if(pJ2){
         pGC->setJogador(pJ2);
     }
@@ -188,7 +188,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                     pJ1->setAtacando(true);
                     std::cout<<"iniciando o ataque P1"<<std::endl;
                 }
-                
+                std::cout << "Flag" << std::endl;
                 if(pJ2){
                     if(evento.key.code == sf::Keyboard::Right){andDir2=true;}
                     if(evento.key.code == sf::Keyboard::Left){andEsq2=true;}
@@ -270,10 +270,12 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                 animacao2 = Animation_ID::death;
             }
         }
+
         this->checarInimigos();
+
         if(this->getConcluida()){
             pGC->removerObstaculos();
-            return; //vai fazer o execuat parar, eu acho
+            return; // vai fazer o execuat parar, eu acho
         }
         
         if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar
@@ -286,7 +288,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
                 
             }
             
-        }else if(pJ1->getMorto()){//so 1 jogador
+        } else if(pJ1->getMorto()) {//so 1 jogador
             pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
             pGC->removerJogadores();
             
