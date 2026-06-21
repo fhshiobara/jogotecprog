@@ -11,8 +11,9 @@
 using namespace Obstaculos;
 using namespace Personagens;
  
-Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()),pJ1(NULL),pJ2(NULL),pFase1(NULL),pFase2(NULL),pGC(Gerenciadores::GerenciadorColisoes::getInstance()) {
+Jogo::Jogo() : pGerenciadorGrafico(Gerenciadores::GerenciadorGrafico::getInstance()),pJ1(NULL),pJ2(NULL),pFase1(NULL),pFase2(NULL),pGC(Gerenciadores::GerenciadorColisoes::getInstance()){
     srand((unsigned)time(NULL));
+    
     executar(); }
  
 Jogo::~Jogo() {
@@ -21,6 +22,7 @@ Jogo::~Jogo() {
     delete pJ1;
     delete pJ2;
     delete pMenu;
+    
 }
  
 void Jogo::executar() {
@@ -52,9 +54,6 @@ void Jogo::executar() {
         if(pFase1->getConcluida()){
             pFase2 = new Fases::FaseSegunda();
             pFase2->executar(pJ1,pJ2);
-            if(pFase2->getConcluida()){
-                return;
-            }
             
             
         }

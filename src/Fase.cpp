@@ -16,10 +16,12 @@ using namespace Personagens;
 
 namespace Fases{
 
-Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10),concluida(false){
+Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10),concluida(false),telaDerrota(NULL){
     vPlats.clear();
     vInimigos.clear();
     if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
+    
+    telaDerrota = new Gerenciadores::SingleFrameAnimation("../assets/Background/TelaDerrota.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 }
 
 Fase::~Fase(){
@@ -27,6 +29,8 @@ Fase::~Fase(){
             delete vPlats[i];
         }
         vPlats.clear();
+    delete telaDerrota;
+    telaDerrota = NULL;
 }
 
 void Fase::criarPlataformas(){
@@ -148,10 +152,7 @@ bool Fase::getConcluida(){
     return concluida;
 }
 
-void Fase::limparListas(){
-    
-    
-}
+
 
 void Fase::executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt) {
 

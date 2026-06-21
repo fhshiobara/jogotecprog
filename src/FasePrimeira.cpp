@@ -275,6 +275,23 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             pGC->removerObstaculos();
             return; //vai fazer o execuat parar, eu acho
         }
+        
+        if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar
+            if(pJ1->getMorto() && pJ2->getMorto()){
+                pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+                pJ2->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+                pGC->removerJogadores();
+                telaDerrota->render();
+                
+                
+            }
+            
+        }else if(pJ1->getMorto()){//so 1 jogador
+            pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+            pGC->removerJogadores();
+            
+            telaDerrota->render();
+        }
 
         animacao = decidirAnimacao(pJ1, andando1);
 

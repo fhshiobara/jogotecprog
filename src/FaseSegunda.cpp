@@ -9,14 +9,17 @@
 
 namespace Fases{
 
-    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL) {
+    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL),telaVitoria(NULL)  {
         background = new Gerenciadores::SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+        telaVitoria = new Gerenciadores::SingleFrameAnimation("../assets/Background/telaGanhou.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 
     }
 
     FaseSegunda::~FaseSegunda(){
         delete background;
         background = NULL;
+        delete telaVitoria;
+        telaVitoria = NULL;
     }
 
     void FaseSegunda::criaMorte(){
@@ -100,6 +103,16 @@ namespace Fases{
         this->criaObstDificil();
     }
 
+    void FaseSegunda::jogoEncerrado(){
+        if(this->getConcluida()){
+            pGC->removerJogadores();
+            telaVitoria->render();
+            
+            
+        }
+        
+    }
+
 
     void FaseSegunda::executar(){ }
 
@@ -175,6 +188,8 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
                         std::cout<<"iniciando o ataque P2"<<std::endl;
                     }
                 }
+                
+                if(evento.key.code == sf::Keyboard::Escape){pGG->closeWindow();}
             } // E -> ataque player 1, O -> ataque player 2
 
             if(evento.type == sf::Event::KeyReleased){
@@ -250,9 +265,26 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
         executarInimigos(vInimigos, pJ1, pJ2, dt);
 
         this->checarInimigos();
-        if(this->getConcluida()){
-            return;
+        jogoEncerrado();//funcao da vitoria
+        
+        //bloco da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
+        if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar
+            if(pJ1->getMorto() && pJ2->getMorto()){
+                pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+                pJ2->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+                pGC->removerJogadores();
+                telaDerrota->render();
+                
+                
+            }
+            
+        }else if(pJ1->getMorto()){//so 1 jogador
+            pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+            pGC->removerJogadores();
+            
+            telaDerrota->render();
         }
+        
 
         // Decide a animacao por prioridade (hurt > attack > jump > walk > idle)
         animacao = decidirAnimacao(pJ1, andando1);

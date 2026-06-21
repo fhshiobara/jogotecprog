@@ -6,14 +6,17 @@
 #include "FasePrimeira.hpp"
 #include "FaseSegunda.hpp"
 #include "Menu.hpp"
+#include "SingleFrameAnimation.hpp"
 
 class Jogo{
     private:
         Gerenciadores::GerenciadorGrafico* pGerenciadorGrafico;
         Gerenciadores::GerenciadorColisoes* pGC;
+        
 
         Personagens::Jogador* pJ1;
         Personagens::Jogador* pJ2;
+        
 
         Fases::FasePrimeira* pFase1;
         Fases::FaseSegunda* pFase2;

@@ -19,6 +19,7 @@ private:
     const int max_obst_Dificil;
     
     Gerenciadores::SingleFrameAnimation* background;
+    Gerenciadores::SingleFrameAnimation* telaVitoria;
     
 public:
     FaseSegunda();
@@ -33,6 +34,8 @@ public:
     
     void criarInimigos();
     void criarObstaculos();
+    
+    void jogoEncerrado();
     
     
 };
