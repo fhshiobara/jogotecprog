@@ -85,8 +85,12 @@ namespace Fases {
             int num_max_Plataformas;
             bool concluida;
             Map mapa;
+
+            int pontosTotais;
+            sf::Text pontosTexto;
         
-        Gerenciadores::SingleFrameAnimation* telaDerrota;
+            Gerenciadores::SingleFrameAnimation* telaDerrota;
+            
         public:
             Fase();
             ~Fase();
@@ -107,16 +111,12 @@ namespace Fases {
             void executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Personagens::Jogador* pJ1, Personagens::Jogador* pJ2, float dt);
             void inserirPlataformasAtrasado(); // Func auxiliar
         
-           
-        
-        
-        
-        
             Animation_ID decidirAnimacao(Personagens::Jogador* pJog, bool andando); // Func auxiliar
         
         public:
-        void setConcluida(bool conc);
-        bool getConcluida();
+            void setConcluida(bool conc);
+            bool getConcluida();
+            int getPontosTotais() { return pontosTotais; }
             
             
         };

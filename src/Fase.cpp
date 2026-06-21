@@ -16,12 +16,24 @@ using namespace Personagens;
 
 namespace Fases{
 
-Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10),concluida(false),telaDerrota(NULL){
+Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10),concluida(false), pontosTotais(0) {
     vPlats.clear();
     vInimigos.clear();
     if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
-    
-    telaDerrota = new Gerenciadores::SingleFrameAnimation("../assets/Background/TelaDerrota.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+
+        sf::Font* fonte = pGG->getFont();
+
+    if(fonte != NULL){
+
+        textoPontos.setFont(*fonte);
+        textoPontos.setCharacterSize(24);
+        textoPontos.setFillColor(sf::Color::White);
+        textoPontos.setPosition(sf::Vector2f(10.f, 10.f)); // canto superior esquerdo
+        textoPontos.setString("Pontos: 0");
+
+    }
+
+
 }
 
 Fase::~Fase(){
