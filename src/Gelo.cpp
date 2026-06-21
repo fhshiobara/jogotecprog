@@ -42,12 +42,11 @@ bool Gelo::obstruir(CoordF& posJogador, float& velocidadeX, float& velocidadeY,
 
     if (colisaoX && colisaoY) {
         // tremida lateral aleatória
-        float tremida = (rand() % 5) - 2.f; // -2, -1, 0, 1 ou 2 pixels
-        posJogador.x += tremida;
+        float tremida = (rand() % 5) - 2.f; //-2,-1,0,1,2 pixels
+        posJogador.x += tremida*temperatura;
 
-        // empurra levemente pra baixo — ativa a queda
-        velocidadeX = 80.f; // valor fixo, sem depender de temperatura
-        //noChao = false;
+        velocidadeX = 80.f/temperatura;
+        noChao = false;  //faz o boneco ter animacao de escorregar
         return true;
     }
 

@@ -18,6 +18,8 @@ namespace Personagens {
             void morrer();
             void initialize();
             void danificar(Jogador* pJog);
+        
+            void operator++();
 
             void gravidade(float dt, float gravidade);
             

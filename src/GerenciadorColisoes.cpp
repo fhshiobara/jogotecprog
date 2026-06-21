@@ -19,7 +19,11 @@ namespace Gerenciadores {
         return instance;
     }
 
-    GerenciadorColisoes::GerenciadorColisoes() : pJog1(NULL), pJog2(NULL), limites(800.f, 600.f) {}
+    GerenciadorColisoes::GerenciadorColisoes() : pJog1(NULL), pJog2(NULL), limites(800.f, 600.f) {
+        ListaInimigos.clear();
+        ListaObstaculos.clear();
+        ListaProjetil.clear();
+    }
 
     GerenciadorColisoes::~GerenciadorColisoes() {}
 
@@ -278,6 +282,7 @@ void GerenciadorColisoes::removerJogadores(){
             if (boss == NULL) continue;
 
             Entidades::Projetil* proj = boss->getProjetil();
+            ListaProjetil.insert(proj);
 
             if (proj == NULL || !proj->estaAtivo())
                 continue;
@@ -289,6 +294,7 @@ void GerenciadorColisoes::removerJogadores(){
 
             if (std::abs(dx1) < metade + 8.f && std::abs(dy1) < metade + 8.f) {
                 proj->desativar();
+                ListaProjetil.erase(proj);
                 //if (!pJog1->estaImune())
                     pJog1->setInvulnerabilidade(0.9);
                     pJog1->tomarDano();
@@ -303,6 +309,7 @@ void GerenciadorColisoes::removerJogadores(){
 
                 if (std::abs(dx2) < metade + 8.f && std::abs(dy2) < metade + 8.f) {
                     proj->desativar();
+                    ListaProjetil.erase(proj);
                     //if (!pJog2->estaImune())
                         pJog2->setInvulnerabilidade(0.9);
                         pJog2->tomarDano();

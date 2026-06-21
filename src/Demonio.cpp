@@ -53,6 +53,9 @@ namespace Personagens {
         pos.y += vel.y * dt;
 
     }
+    void Demonio::operator++(){
+        fome++;
+    }
 
 
     void Demonio::danificar(Jogador* pJog){
@@ -63,13 +66,14 @@ namespace Personagens {
                 
                 if(olhandoEsquerda){
                     pJog->setPos(CoordF(pJog->getPos().x+60,pJog->getPos().y-30)); // pulinho para tras
+                    this->operator++();
                 }
                 else{
                     pJog->setPos(CoordF(pJog->getPos().x-60,pJog->getPos().y-30)); // pulinho para frente
+                    this->operator++();
                     
                     
                 }
-                //pJog->setInvulneravel(true); // depois de levar o dano fica imune
             }
             
             

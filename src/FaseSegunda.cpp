@@ -147,7 +147,6 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
     tam_tela_compensada.y -= 8.0f; // Deixa a colisao mais bonita com os limites
     pGC->setLimite(tam_tela_compensada);
 
-    //list_ents.incluir(pJ1);
 
     sf::Clock clock;
     //setando o jogador

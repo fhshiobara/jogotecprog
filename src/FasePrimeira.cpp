@@ -52,16 +52,19 @@ void FasePrimeira::criarInimigosDemonio(){
         Grid espaco = static_cast<Grid>(aux);
         if(mapa.estaOcupado(espaco)){
             CoordF pos = mapa.getCoord(espaco);
-            pos.y = pos.y-30;
-            Demonio* pDemo = NULL;
-            pDemo = new Demonio(pos, 2, 10.0f, 1 + (rand() % 10));
+            if(!mapa.estaOcupadoSpawn(espaco)){
+                pos.y = pos.y-30;
+                Demonio* pDemo = NULL;
+                pDemo = new Demonio(pos, 2, 10.0f, 1 + (rand() % 10));
  
-            if(pDemo!=NULL){
-                num_demonios_criados++;
-                vInimigos.push_back(pDemo);
- 
-                list_ents.incluir(pDemo);
-                pGC->incluirInimigo(pDemo);
+                if(pDemo!=NULL){
+                    num_demonios_criados++;
+                    vInimigos.push_back(pDemo);
+                    mapa.setOcupadoSpawn(espaco,true);
+                    
+                    list_ents.incluir(pDemo);
+                    pGC->incluirInimigo(pDemo);
+                }
             }
  
             else{
@@ -152,7 +155,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
     tam_tela_compensada.y -= 8.0f; // Deixa a colisao mais bonita com os limites
     pGC->setLimite(tam_tela_compensada);
 
-    //list_ents.incluir(pJ1);
 
     sf::Clock clock;
     //setando o jogador

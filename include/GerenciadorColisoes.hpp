@@ -3,12 +3,14 @@
  
 #include <vector>
 #include <list>
+#include <set>
 #include <cmath>
 #include "Jogador.hpp"
 #include "Inimigo.hpp"
 #include "Demonio.hpp"
 #include "Bixo.hpp"
 #include "Obstaculo.hpp"
+#include "Projetil.hpp"
  
 using namespace Personagens;
 using namespace Obstaculos;
@@ -20,6 +22,7 @@ namespace Gerenciadores {
  
             std::vector<Personagens::Inimigo*> ListaInimigos;
             std::list<Obstaculos::Obstaculo*> ListaObstaculos;
+            std::set<Entidades::Projetil*> ListaProjetil;
             
             Personagens::Jogador* pJog1;
             Personagens::Jogador* pJog2;

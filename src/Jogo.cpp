@@ -39,12 +39,12 @@ void Jogo::executar() {
     if(fase == 0)
         return;
 
-    pJ1 = new Personagens::Jogador(CoordF(200.f,200.f),300,0,200.f);
+    pJ1 = new Personagens::Jogador(CoordF(200.f,200.f),200,0,200.f);
     pJ1->initialize(true);
 
     pJ2 = NULL;
     if (pMenu->getMultiplayer()) {
-        pJ2 = new Personagens::Jogador(CoordF(240.f,200.f),3,0,200.f);
+        pJ2 = new Personagens::Jogador(CoordF(240.f,200.f),200,0,200.f);
         pJ2->initialize(false);
     }
 

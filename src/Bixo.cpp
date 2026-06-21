@@ -9,22 +9,6 @@ namespace Personagens {
     
     Bixo::~Bixo() {}
     
-    // void Bixo::executar() {
-
-    //     this->atualizarAnimacao(Animation_ID::idle,olhandoEsquerda,dt_local);
-
-    //     bool jogadorMaisProx = this->jogadorProximo();
-
-    //     if(jogadorMaisProx) { // False = jog1, True = jog2
-    //         this->perseguir(pJogador2->getPos(), dt_local);
-            
-    //         }
-    //     else {
-    //         this->perseguir(pJogador1->getPos(), dt_local);
-            
-    //     }
-    //     this->desenhar();
-    // }
     
     void Bixo::executar() {
         this->atualizarAnimacao(Animation_ID::idle, olhandoEsquerda, dt_local);

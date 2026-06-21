@@ -29,10 +29,11 @@ class Map{
 private:
     std::map<Grid,CoordF> CoordGrid;
     std::map<Grid,bool> CoordUsado;
+    std::map<Grid,bool> CoordUsadoSpawn;
     
 public:
     Map() {
-        CoordGrid[T1] = CoordF(0.f, 120.f);
+        CoordGrid[T1] = CoordF(0.f, 150.f);
         CoordGrid[T2] = CoordF(270.f, 160.f);
         CoordGrid[T3] = CoordF(570.f, 180.f);
         CoordGrid[M1] = CoordF(0.f, 350.f);
@@ -45,6 +46,10 @@ public:
         CoordUsado[T1] = false; CoordUsado[T2] = false; CoordUsado[T3] = false;
         CoordUsado[M1] = false; CoordUsado[M2] = false; CoordUsado[M3] = false;
         CoordUsado[B1] = false; CoordUsado[B2] = false; CoordUsado[B3] = false;
+        
+        CoordUsadoSpawn[T1] = false; CoordUsadoSpawn[T2] = false; CoordUsadoSpawn[T3] = false;
+        CoordUsadoSpawn[M1] = false; CoordUsadoSpawn[M2] = false; CoordUsadoSpawn[M3] = false;
+        CoordUsadoSpawn[B1] = false; CoordUsadoSpawn[B2] = false; CoordUsadoSpawn[B3] = false;
     }
 
     void coordUsada(CoordF coord) {
@@ -71,6 +76,14 @@ public:
         void setOcupado(Grid espaco, bool ocupado) {
             CoordUsado[espaco] = ocupado;
         }
+    
+    bool estaOcupadoSpawn(Grid espaco){
+        return CoordUsadoSpawn[espaco];
+    }
+    
+    void setOcupadoSpawn(Grid espaco, bool ocupado){
+        CoordUsadoSpawn[espaco] = ocupado;
+    }
 };
     
 namespace Fases {

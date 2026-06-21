@@ -100,16 +100,24 @@ void Fase::criarInimigosBixo(){
     for(int i = 0; i < Max_inimBixo; i++){
         Grid espaco = espacosOcupados[rand() % espacosOcupados.size()];
         CoordF pos = mapa.getCoord(espaco);
-
-        Bixo* pInim = new Personagens::Bixo(pos);
-        pos.y = pos.y-40;
-        if(pInim != NULL){
-            vInimigos.push_back(pInim);
-
-            mapa.setOcupado(espaco, false);
-
-            list_ents.incluir(pInim);
-            pGC->incluirInimigo(pInim);
+        
+        if(!mapa.estaOcupadoSpawn(espaco)){
+            
+            
+            
+            Bixo* pInim = new Personagens::Bixo(pos);
+            pos.y = pos.y-40;
+            if(pInim != NULL){
+                vInimigos.push_back(pInim);
+                
+                mapa.setOcupado(espaco, false);
+                mapa.setOcupadoSpawn(espaco,true);
+                
+                list_ents.incluir(pInim);
+                pGC->incluirInimigo(pInim);
+            }
+        }else{
+            i--;
         }
     }
 }
