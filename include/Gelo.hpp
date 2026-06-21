@@ -23,24 +23,12 @@ private:
 public:
     Gelo(int temp, CoordF pos,float larg);
     ~Gelo();
-
     
     bool obstruir(CoordF& posJogador, float& velocidadeX,float& velocidadeY,bool& noChao, float alturaJogador) const;
-    
     void executar();
-    
     void salvar();
-    
     void desenhar();
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 };
 }
 
