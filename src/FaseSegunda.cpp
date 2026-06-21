@@ -268,13 +268,13 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
 
         executarInimigos(vInimigos, pJ1, pJ2, dt);
 
-        this->checarInimigos();
+        
         jogoEncerrado(pJ1,pJ2);//funcao da vitoria
         this->checarInimigos(pJ1, pJ2);
 
-        jogoEncerrado();//funcao da vitoria
         
-        //bloco da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
+        
+        //bloco de funcoes da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
         if (pJ2 != NULL) { // modo 2 jogadores
             bool vivo1 = pJ1->getVivo();
             bool vivo2 = pJ2->getVivo();
