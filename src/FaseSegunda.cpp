@@ -103,8 +103,13 @@ namespace Fases{
         this->criaObstDificil();
     }
 
-    void FaseSegunda::jogoEncerrado(){
+    void FaseSegunda::jogoEncerrado(Personagens::Jogador* pJ1,Personagens::Jogador* pJ2){
         if(this->getConcluida()){
+            pJ1->setPos(CoordF(1000.f,1000.f));
+            if(pJ2!=NULL){
+                pJ2->setPos(CoordF(1000.f,1000.f));
+            }
+            
             pGC->removerJogadores();
             telaVitoria->render();
             
@@ -265,7 +270,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
         executarInimigos(vInimigos, pJ1, pJ2, dt);
 
         this->checarInimigos();
-        jogoEncerrado();//funcao da vitoria
+        jogoEncerrado(pJ1,pJ2);//funcao da vitoria
         
         //bloco da derrota vai ficar aqui embaixo, era para ser uma funcao da fase, afinal aplico nas duas, mas como fase nao tem ponteiros para jogador por natureza, vou deixar ela aqui mesmo;
         if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar

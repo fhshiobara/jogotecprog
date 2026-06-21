@@ -35,7 +35,7 @@ public:
     void criarInimigos();
     void criarObstaculos();
     
-    void jogoEncerrado();
+    void jogoEncerrado(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2);
     
     
 };
