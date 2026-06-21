@@ -133,7 +133,7 @@ void Fase::checarInimigos(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2){
     std::vector<Personagens::Inimigo*>::iterator it = vInimigos.begin();
 
     while(it != vInimigos.end()){
-            if((*it)->setVivo()){//ignora
+            if((*it)->getVivo()){//ignora
                 // std::cout << "Inimigo HP/Vivo: " <<  << std::endl;
                 it++;
                 

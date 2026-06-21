@@ -169,7 +169,7 @@ void GerenciadorColisoes::removerJogadores(){
     for (iteradorInimigo = ListaInimigos.begin(); iteradorInimigo != ListaInimigos.end(); ++iteradorInimigo) {
         Personagens::Inimigo* inimigoAtual = *iteradorInimigo;
 
-        if (!inimigoAtual->setVivo()) 
+        if (!inimigoAtual->getVivo()) 
             continue;
 
         CoordF posInimigo = inimigoAtual->getPos();
@@ -200,7 +200,7 @@ void GerenciadorColisoes::removerJogadores(){
     for (iteradorInimigo = ListaInimigos.begin(); iteradorInimigo != ListaInimigos.end(); ++iteradorInimigo) {
         Personagens::Inimigo* inimigoAtual = *iteradorInimigo;
 
-        if (!inimigoAtual->setVivo()) 
+        if (!inimigoAtual->getVivo()) 
             continue;
 
         CoordF posInimigo = inimigoAtual->getPos();
@@ -223,7 +223,7 @@ void GerenciadorColisoes::removerJogadores(){
     for (Personagens::Inimigo* inimigo : ListaInimigos) {
         Personagens::Bixo* bixo = dynamic_cast<Personagens::Bixo*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma Bixo.
 
-        if (bixo == nullptr || !bixo->setVivo())
+        if (bixo == nullptr || !bixo->getVivo())
             continue;
 
         CoordF pos = bixo->getPos();
@@ -258,7 +258,7 @@ void GerenciadorColisoes::removerJogadores(){
             aplicarLimites(pJog2);
 
         for (Personagens::Inimigo* inimigo : ListaInimigos) {
-            if (inimigo != nullptr && inimigo->setVivo())
+            if (inimigo != nullptr && inimigo->getVivo())
                 aplicarLimites(inimigo);
             }
     }
@@ -322,7 +322,7 @@ void GerenciadorColisoes::removerJogadores(){
         }
 
         for (Inimigo* inimigo : ListaInimigos)
-            if (inimigo->setVivo())
+            if (inimigo->getVivo())
                 inimigo->tempoImunidade(dt);
     }
 
@@ -333,7 +333,7 @@ void GerenciadorColisoes::removerJogadores(){
         for (it = ListaInimigos.begin(); it != ListaInimigos.end(); ++it) {
 
             Personagens::Inimigo* inimigo = *it;
-            if (!inimigo->setVivo()) continue;
+            if (!inimigo->getVivo()) continue;
 
             CoordF posIni = inimigo->getPos();
             // Ataque do jogador 1

@@ -58,8 +58,8 @@ namespace Personagens {
             void tempoDesacelerado(float dt);
             void setDesaceleracao(float tmp);
         
-            void setVivo(bool v){ vivo = v; }
-            bool setVivo(){ return vivo; }
+            void getVivo(bool v){ vivo = v; }
+            bool getVivo(){ return vivo; }
             
             bool getOlhandoEsquerda(){return olhandoEsquerda;}
     };

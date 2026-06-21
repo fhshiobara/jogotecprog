@@ -114,13 +114,13 @@ namespace Fases {
             Animation_ID decidirAnimacao(Personagens::Jogador* pJog, bool andando); // Func auxiliar
 
             void desenharPontos(); 
-            void atualizarTextoPontos(); 
         
         public:
             void setConcluida(bool conc);
             bool getConcluida();
             void somarPontos(int pontos) { pontosTotais += pontos; }
             int getPontosTotais() { return pontosTotais; }
+            void atualizarTextoPontos(); 
             
             
         };

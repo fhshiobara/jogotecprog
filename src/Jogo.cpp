@@ -44,7 +44,7 @@ void Jogo::executar() {
 
     pJ2 = NULL;
     if (pMenu->getMultiplayer()) {
-        pJ2 = new Personagens::Jogador(CoordF(240.f,200.f),3,0,200.f);
+        pJ2 = new Personagens::Jogador(CoordF(240.f,200.f),300,0,200.f);
         pJ2->initialize(false);
     }
 
@@ -54,9 +54,8 @@ void Jogo::executar() {
         if(pFase1->getConcluida()){
             pFase2 = new Fases::FaseSegunda();
             pFase2->somarPontos(pFase1->getPontosTotais());
+            pFase2->atualizarTextoPontos();
             pFase2->executar(pJ1,pJ2);
-            
-            
         }
     }
     

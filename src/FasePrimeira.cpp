@@ -262,12 +262,12 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         background->render();
         list_ents.percorrer(dt);
         
-        if(!pJ1->setVivo()){
+        if(!pJ1->getVivo()){
             animacao = Animation_ID::death;
         }
         
         if(pJ2!=NULL){
-            if(!pJ2->setVivo()){
+            if(!pJ2->getVivo()){
                 animacao2 = Animation_ID::death;
             }
         }
@@ -279,20 +279,44 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             return; // vai fazer o execuat parar, eu acho
         }
 
-        if(pJ2!=NULL){//se há jogador2, ambos precisam morrer para acabar
-            if(!pJ1->setVivo() && !pJ2->setVivo()){
-                pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
-                pJ2->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
-                pGC->removerJogadores();
-                telaDerrota->render();
-            }
-        } else if(!pJ1->setVivo()) { //so 1 jogador
-            std::cout << "flag" << std::endl;
-            pJ1->setPos(CoordF(1000.f,1000.f)); //joga o jogador para fora da tela
+    if (pJ2 != NULL) { // modo 2 jogadores
+        bool vivo1 = pJ1->getVivo();
+        bool vivo2 = pJ2->getVivo();
+
+        // ambos morreram
+        if (!vivo1 && !vivo2) {
+
+            pJ1->setPos(CoordF(1000.f, 1000.f));
+            pJ2->setPos(CoordF(1000.f, 1000.f));
+
             pGC->removerJogadores();
-            
             telaDerrota->render();
         }
+
+        // apenas J1 morreu
+        else if (!vivo1) {
+            pJ1->setPos(CoordF(1000.f, 1000.f));
+
+            // transforma em jogo de 1 jogador
+            pJ1 = pJ2;
+            pJ2 = NULL;
+        }
+
+        // apenas J2 morreu
+        else if (!vivo2) {
+            pJ2->setPos(CoordF(1000.f, 1000.f));
+            // transforma em jogo de 1 jogador
+            pJ2 = NULL;
+        }
+    }
+    else { // já está em modo 1 jogador
+        if (!pJ1->getVivo()) {
+            pJ1->setPos(CoordF(1000.f, 1000.f));
+
+            pGC->removerJogadores();
+            telaDerrota->render();
+        }
+    }
 
         animacao = decidirAnimacao(pJ1, andando1);
 

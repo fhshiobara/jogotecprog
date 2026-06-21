@@ -25,7 +25,7 @@ namespace Personagens {
 
             void salvarDataBuffer(); // TODO
 
-            bool setVivo() const { return vivo; }
+            bool getVivo() const { return vivo; }
 
             CoordF getPos() const { return pos; }
             void setPos(const CoordF& newPos) { pos = newPos; }
