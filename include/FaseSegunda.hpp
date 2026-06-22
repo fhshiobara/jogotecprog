@@ -19,6 +19,11 @@ private:
     const int max_obst_Dificil;
     
     SingleFrameAnimation* background;
+
+protected:
+
+    void criarInimigoMorte();
+    void criarObstaculoGelo();
     
 public:
     FaseSegunda();
@@ -26,9 +31,6 @@ public:
     
     void executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2);
     void executar();
-    
-    void criaMorte();
-    void criaObstDificil();
     
     void criarInimigos();
     void criarObstaculos();

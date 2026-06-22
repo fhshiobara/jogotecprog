@@ -20,7 +20,7 @@ namespace Fases{
         telaVitoria = NULL;
     }
 
-    void FaseSegunda::criaMorte(){
+    void FaseSegunda::criarInimigoMorte(){
         int num_inim_dificil = rand()%(max_Morte +1);
         
         if(num_inim_dificil<3){num_inim_dificil =3;} //numero minimo de inimigos
@@ -56,7 +56,7 @@ namespace Fases{
         
     }
 
-    void FaseSegunda::criaObstDificil(){
+    void FaseSegunda::criarObstaculoGelo(){
         int num_Gelo = rand()%(max_obst_Dificil +1);
         
         float larg_min = 100;
@@ -95,11 +95,11 @@ namespace Fases{
 
     void FaseSegunda::criarInimigos(){
         this->criarInimigosBicho();
-        this->criaMorte();
+        this->criarInimigoMorte();
     }
 
     void FaseSegunda::criarObstaculos(){
-        this->criaObstDificil();
+        this->criarObstaculoGelo();
     }
 
 void FaseSegunda::executar(){ }
