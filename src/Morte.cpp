@@ -99,5 +99,16 @@ namespace Personagens {
         std::cout << "Morte morreu!" << std::endl;
     }
 
-    void Morte::danificar(Jogador* pJog) {}
+    void Morte::danificar(Jogador* pJog) {
+        if (pJog == NULL) return;
+        if (projetil->estaAtivo()) return; // ja tem um projetil voando: respeita a recarga
+ 
+        // Atira na direcao do jogador que encostou
+        CoordF direcao;
+        direcao.x = pJog->getPos().x - this->pos.x;
+        direcao.y = pJog->getPos().y - this->pos.y;
+ 
+        projetil->atirar(this->pos, direcao);
+    }
+
 }
