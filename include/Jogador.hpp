@@ -50,7 +50,7 @@ namespace Personagens {
             void setInvulneravel(bool inv);
             void tempoImunidade(float dt);
             void setInvulnerabilidade(float tmp);
-            //funcoes para o danificar do bixo
+            //funcoes para o danificar do Bicho
             
             //estou aplicando os danificar de maneira analoga, um empurra e o outro vai desacelerar, porem os elementos necessarios para aplicacao acabam sendo iguais
             bool getDevagar();

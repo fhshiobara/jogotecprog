@@ -8,7 +8,7 @@
 #include "Jogador.hpp"
 #include "Inimigo.hpp"
 #include "Demonio.hpp"
-#include "Bixo.hpp"
+#include "Bicho.hpp"
 #include "Obstaculo.hpp"
 #include "Projetil.hpp"
  
@@ -30,7 +30,7 @@ namespace Gerenciadores {
             CoordF limites;   // substitui classe Limites
 
             static const float alturaJogador; // Mudar
-            static const float alturaBixo;
+            static const float alturaBicho;
  
             static GerenciadorColisoes* instance;
             GerenciadorColisoes();
@@ -53,7 +53,7 @@ namespace Gerenciadores {
  
             void tratarColisoesObstaculos();
             void tratarColisoesJogador();
-            void tratarColisoesObstaculosBixos();
+            void tratarColisoesObstaculosBichos();
             void tratarColisaoProjetil();
             void tratarAtaqueJogadores();
             

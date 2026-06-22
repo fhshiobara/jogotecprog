@@ -1,5 +1,5 @@
 #include "GerenciadorColisoes.hpp"
-#include "Bixo.hpp"
+#include "Bicho.hpp"
 #include "Projetil.hpp"
 #include "Morte.hpp"
 #include <iostream>
@@ -11,7 +11,7 @@ namespace Gerenciadores {
     GerenciadorColisoes* GerenciadorColisoes::instance = NULL;
     
     const float GerenciadorColisoes::alturaJogador = 64.f; // Mudar para um get-set
-    const float GerenciadorColisoes::alturaBixo = 50.f; 
+    const float GerenciadorColisoes::alturaBicho = 50.f; 
 
     GerenciadorColisoes* GerenciadorColisoes::getInstance() {
         if (instance == NULL)
@@ -222,24 +222,24 @@ namespace Gerenciadores {
         }
     }
 
-    void GerenciadorColisoes::tratarColisoesObstaculosBixos() {
+    void GerenciadorColisoes::tratarColisoesObstaculosBichos() {
 
     for (Personagens::Inimigo* inimigo : ListaInimigos) {
-        Personagens::Bixo* bixo = dynamic_cast<Personagens::Bixo*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma Bixo.
+        Personagens::Bicho* Bicho = dynamic_cast<Personagens::Bicho*>(inimigo); // Dynamic cast da certeza de que o inimigo e uma Bicho.
 
-        if (bixo == nullptr || !bixo->getVivo())
+        if (Bicho == nullptr || !Bicho->getVivo())
             continue;
 
-        CoordF pos = bixo->getPos();
-        CoordF vel = bixo->getVel();
-        bool chao = bixo->noChao();
+        CoordF pos = Bicho->getPos();
+        CoordF vel = Bicho->getVel();
+        bool chao = Bicho->noChao();
 
         for (Obstaculos::Obstaculo* obs : ListaObstaculos)
-            obs->obstruir(pos, vel.y, vel.x, chao, alturaBixo);
+            obs->obstruir(pos, vel.y, vel.x, chao, alturaBicho);
 
-        bixo->setPos(pos);
-        bixo->setVel(vel);
-        bixo->setChao(chao);
+        Bicho->setPos(pos);
+        Bicho->setVel(vel);
+        Bicho->setChao(chao);
     }
     }
 
@@ -380,7 +380,7 @@ namespace Gerenciadores {
         gravitar(dt);
         atualizarImunidades(dt);
         
-        tratarColisoesObstaculosBixos();
+        tratarColisoesObstaculosBichos();
         tratarColisoesObstaculos();
         tratarColisoesJogador();
         tratarColisaoProjetil();

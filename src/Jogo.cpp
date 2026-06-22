@@ -1,7 +1,7 @@
 #include "Jogo.hpp"
 #include "Menu.hpp"
 #include "Demonio.hpp"
-#include "Bixo.hpp"
+#include "Bicho.hpp"
 #include "Morte.hpp"
 #include "Plataforma.hpp"
 #include "GerenciadorColisoes.hpp"

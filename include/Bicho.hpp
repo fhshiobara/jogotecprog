@@ -1,5 +1,5 @@
-#ifndef BIXO_HPP
-#define BIXO_HPP
+#ifndef Bicho_HPP
+#define Bicho_HPP
  
 #include "Inimigo.hpp"
 #include "Obstaculo.hpp"
@@ -7,12 +7,12 @@
 
 namespace Personagens {
  
-    class Bixo : public Personagens::Inimigo {
+    class Bicho : public Personagens::Inimigo {
         private:
             float percepcao;
         public:
-            Bixo(CoordF position, int hp = 20, float velocidade = 120.0f, float percepcao = 150.0f, int valorPontos = 100);
-            ~Bixo();
+            Bicho(CoordF position, int hp = 20, float velocidade = 120.0f, float percepcao = 150.0f, int valorPontos = 100);
+            ~Bicho();
     
             void executar();
             void salvar();

@@ -34,7 +34,7 @@ add_executable(Jogo
     src/Personagem.cpp
     src/Jogador.cpp
     src/Inimigo.cpp
-    src/Bixo.cpp
+    src/Bicho.cpp
     src/Demonio.cpp
     src/Morte.cpp
     src/Projetil.cpp

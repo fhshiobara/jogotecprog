@@ -1,28 +1,28 @@
-#include "Bixo.hpp"
+#include "Bicho.hpp"
 #include <cmath>
 
 namespace Personagens {
  
-    Bixo::Bixo(CoordF position, int hp, float velocidade, float percepcao, int valorPontos)
+    Bicho::Bicho(CoordF position, int hp, float velocidade, float percepcao, int valorPontos)
     : Inimigo(position, hp, velocidade, valorPontos), percepcao(percepcao)
     {this->initialize();}
     
-    Bixo::~Bixo() {}
+    Bicho::~Bicho() {}
     
     
-    void Bixo::executar() {
+    void Bicho::executar() {
         this->atualizarAnimacao(Animation_ID::idle, olhandoEsquerda, dt_local);
         this->desenhar();
     }
 
-    void Bixo::salvar() {}
-    void Bixo::mover() {}
-    void Bixo::morrer() {
+    void Bicho::salvar() {}
+    void Bicho::mover() {}
+    void Bicho::morrer() {
         vivo = false;
-        std::cout << "Bixo morreu!" << std::endl;
+        std::cout << "Bicho morreu!" << std::endl;
     }
     
-    void Bixo::perseguir(CoordF posJogador, float dt) {
+    void Bicho::perseguir(CoordF posJogador, float dt) {
 
         this->dt_local = dt;
     
@@ -31,7 +31,7 @@ namespace Personagens {
     
         float distancia = std::sqrt(dx * dx + dy * dy);
 
-        if (distancia > percepcao) return; // Aqui definimos a dist. para o Bixo perseguir
+        if (distancia > percepcao) return; // Aqui definimos a dist. para o Bicho perseguir
     
         // Só se move no eixo X
         if (distancia > 5.0f) {
@@ -41,12 +41,12 @@ namespace Personagens {
         }
     }
 
-    void Bixo::initialize() {
-        this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Bixo/ATTACK.png", 8);
-        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Bixo/WALK.png", 8);
+    void Bicho::initialize() {
+        this->sprite.addNewAnimation(Animation_ID::idle, "../assets/Bicho/ATTACK.png", 8);
+        this->sprite.addNewAnimation(Animation_ID::walk, "../assets/Bicho/WALK.png", 8);
     }
-    
-    void Bixo::danificar(Jogador* pJog){
+
+    void Bicho::danificar(Jogador* pJog){
         if(pJog!=NULL){//mesmo caso do demonio, essa funcao so é chamada se o contato já ocorreu,
             pJog->setInvulnerabilidade(0.9); // impede que entre em um loop infinito
             pJog->setDesaceleracao(1.8);

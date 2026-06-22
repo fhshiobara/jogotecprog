@@ -118,7 +118,7 @@ void FasePrimeira::criarObstaculosEspinhos(){
 }
  
 void FasePrimeira::criarInimigos(){
-    criarInimigosBixo();
+    criarInimigosBicho();
     criarInimigosDemonio();
 }
  

@@ -9,14 +9,14 @@
 #include "SingleFrameAnimation.hpp"
 #include "Plataforma.hpp"
 #include "Demonio.hpp"
-#include "Bixo.hpp"
+#include "Bicho.hpp"
 #define MAX 3
 
 using namespace Personagens;
 
 namespace Fases{
 
-Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo(4),tam_tela(800,600),num_max_Plataformas(rand()%10),concluida(false), pontosTotais(0) {
+Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBicho(4),tam_tela(800,600),num_max_Plataformas(rand()%10),concluida(false), pontosTotais(0) {
     vPlats.clear();
     vInimigos.clear();
     if(num_max_Plataformas<8){num_max_Plataformas=8;}//estabelece um valor minimo de plataformas
@@ -103,14 +103,14 @@ Animation_ID Fase::decidirAnimacao(Personagens::Jogador* pJog, bool andando) {
 
 void Fase::criarCenario(){}
 
-void Fase::criarInimigosBixo(){
+void Fase::criarInimigosBicho(){
     std::vector<Grid> espacosOcupados;
     for(int i = 0; i < 9; i++){
         Grid g = static_cast<Grid>(i);
         if(mapa.estaOcupado(g)) espacosOcupados.push_back(g);
     }
 
-    for(int i = 0; i < Max_inimBixo; i++){
+    for(int i = 0; i < Max_inimBicho; i++){
         Grid espaco = espacosOcupados[rand() % espacosOcupados.size()];
         CoordF pos = mapa.getCoord(espaco);
         
@@ -118,7 +118,7 @@ void Fase::criarInimigosBixo(){
             
             
             
-            Bixo* pInim = new Personagens::Bixo(pos);
+            Bicho* pInim = new Personagens::Bicho(pos);
             pos.y = pos.y-40;
             if(pInim != NULL){
                 vInimigos.push_back(pInim);

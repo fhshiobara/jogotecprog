@@ -91,7 +91,7 @@ namespace Fases {
         protected:
             ListaEntidades list_ents;
             Gerenciadores::GerenciadorColisoes* pGC;
-            short int Max_inimBixo;
+            short int Max_inimBicho;
             CoordF tam_tela;
             std::vector<Plataforma*> vPlats;
             std::vector<Personagens::Inimigo*> vInimigos;
@@ -113,7 +113,7 @@ namespace Fases {
             
         protected:
         
-            void criarInimigosBixo();//inimigos faceis
+            void criarInimigosBicho();//inimigos faceis
             void criarPlataformas();
             //funcoes extra vem aqui
             virtual void criarInimigos() =0;

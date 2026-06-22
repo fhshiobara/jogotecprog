@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include "Fase.hpp"
 #include "Demonio.hpp"
-#include "Bixo.hpp"
+#include "Bicho.hpp"
 #include "SingleFrameAnimation.hpp"
 
 namespace Fases{

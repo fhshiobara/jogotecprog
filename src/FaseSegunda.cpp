@@ -94,7 +94,7 @@ namespace Fases{
     }
 
     void FaseSegunda::criarInimigos(){
-        this->criarInimigosBixo();
+        this->criarInimigosBicho();
         this->criaMorte();
     }
 
