@@ -28,6 +28,7 @@ namespace Entidades {
  
         // Normaliza a direção e escala pela rapidez
         float mag = std::sqrt(direcao.x * direcao.x + direcao.y * direcao.y);
+        
         if (mag > 0.f) {
             vel.x = (direcao.x / mag) * rapidez;
             vel.y = (direcao.y / mag) * rapidez;

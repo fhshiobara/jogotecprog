@@ -47,11 +47,11 @@ namespace Personagens {
     }
 
     void Demonio::gravidade(float dt, float gravidade) {
-        vel.y += gravidade * dt;
+        vel.y += gravidade * dt * 2;
         pos.x += vel.x * dt;
         pos.y += vel.y * dt;
-
     }
+
     void Demonio::operator++(){
         fome++;
     }
