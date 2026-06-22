@@ -20,9 +20,9 @@ namespace Personagens {
 void Jogador::moverX(bool direcao, float dt) {
     if(Devagar){
         if (direcao)
-            pos.x += speed * dt/1.3;
+            pos.x += speed * dt / 3;
         else
-            pos.x -= speed * dt/1.3;
+            pos.x -= speed * dt / 3;
         
     }else{
         if (direcao)
