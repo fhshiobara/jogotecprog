@@ -9,3 +9,9 @@ IDE utilizado foi o Visual Studio Code, CMAKE para compilar a biblioteca.
 
 Muito cuidado com os Paths! Deve rodar de primeira, contudo, caso não compile, muito provável
 incompatibilidade com os paths locais (provavelmente não acontecerá, mas bom ressaltar)
+
+Obrigado!
+
+Nicolas Lisboa Lemke
+Felipe Hideki Shiobara
+S71 - Tec. Prog. - Eng. Comp.
