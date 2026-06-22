@@ -26,6 +26,7 @@ namespace Personagens {
             void salvarDataBuffer(); // TODO
 
             bool getVivo() const { return vivo; }
+            void setVivo(bool v) { vivo = v; }
 
             CoordF getPos() const { return pos; }
             void setPos(const CoordF& newPos) { pos = newPos; }
@@ -35,6 +36,8 @@ namespace Personagens {
     
             bool noChao() const { return encostadochao; }
             void setChao(bool val) { encostadochao = val; }
+
+            float getImunFrames() { return IMUN_FRAMES_TOTAL; }
 
             virtual void executar() = 0;
             virtual void salvar() = 0;

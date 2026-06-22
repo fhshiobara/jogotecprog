@@ -57,11 +57,9 @@ namespace Personagens {
             void setDevagar(bool dev);
             void tempoDesacelerado(float dt);
             void setDesaceleracao(float tmp);
-        
-            void getVivo(bool v){ vivo = v; }
-            bool getVivo(){ return vivo; }
             
             bool getOlhandoEsquerda(){return olhandoEsquerda;}
+            void tomarDanoMassivo(int dano);
     };
 }
  

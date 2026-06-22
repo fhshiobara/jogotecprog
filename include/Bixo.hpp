@@ -11,7 +11,7 @@ namespace Personagens {
         private:
             float percepcao;
         public:
-            Bixo(CoordF position, int hp = 1, float velocidade = 120.0f, float percepcao = 150.0f, int valorPontos = 100);
+            Bixo(CoordF position, int hp = 20, float velocidade = 120.0f, float percepcao = 150.0f, int valorPontos = 100);
             ~Bixo();
     
             void executar();

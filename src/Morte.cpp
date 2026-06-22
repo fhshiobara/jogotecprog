@@ -3,9 +3,9 @@
  
 namespace Personagens {
     
-    Morte::Morte(CoordF position, int hp, float velocidade, int valorPontos)
+    Morte::Morte(CoordF position, int hp, float velocidade, int vontadeDeMatar, int valorPontos)
         : Inimigo(position, hp, velocidade, valorPontos),
-        tempoRecarga(2.0f), tempoDeVidaProjetil(0.0f),
+        tempoRecarga(2.0f), tempoDeVidaProjetil(0.0f), vontadeDeMatar(vontadeDeMatar),
         projetil(new Entidades::Projetil(position, CoordF(0.f, 0.f), 250.f)) {this->initialize();}
     
     Morte::~Morte() {
@@ -50,8 +50,6 @@ namespace Personagens {
         this->iniciarAtirar(posJogador, dt);
 
     }
-
-
 
     void Morte::gravidade(float dt, float gravidade) {
         gravidade = gravidade / 4; // Flutua, grav mais fraca

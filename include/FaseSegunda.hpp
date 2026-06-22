@@ -19,14 +19,12 @@ private:
     const int max_obst_Dificil;
     
     SingleFrameAnimation* background;
-    SingleFrameAnimation* telaVitoria;
     
 public:
     FaseSegunda();
     ~FaseSegunda();
     
     void executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2);
-    
     void executar();
     
     void criaMorte();
@@ -34,11 +32,6 @@ public:
     
     void criarInimigos();
     void criarObstaculos();
-    
-    void jogoEncerrado();
-    void jogoEncerrado(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2);
-    
-    
 };
 }
 

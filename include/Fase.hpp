@@ -77,13 +77,13 @@ public:
             CoordUsado[espaco] = ocupado;
         }
     
-    bool estaOcupadoSpawn(Grid espaco){
-        return CoordUsadoSpawn[espaco];
-    }
-    
-    void setOcupadoSpawn(Grid espaco, bool ocupado){
-        CoordUsadoSpawn[espaco] = ocupado;
-    }
+        bool estaOcupadoSpawn(Grid espaco){
+            return CoordUsadoSpawn[espaco];
+        }
+        
+        void setOcupadoSpawn(Grid espaco, bool ocupado){
+            CoordUsadoSpawn[espaco] = ocupado;
+        }
 };
     
 namespace Fases {
@@ -103,6 +103,7 @@ namespace Fases {
             sf::Text pontosTexto;
         
             SingleFrameAnimation* telaDerrota;
+            SingleFrameAnimation* telaVitoria;
 
         public:
             Fase();
@@ -127,6 +128,9 @@ namespace Fases {
             Animation_ID decidirAnimacao(Personagens::Jogador* pJog, bool andando); // Func auxiliar
 
             void desenharPontos(); 
+
+            void jogoEncerrado();
+            void jogoEncerradoDerrota();
         
         public:
             void setConcluida(bool conc);

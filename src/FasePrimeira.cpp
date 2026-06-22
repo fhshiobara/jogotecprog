@@ -55,7 +55,7 @@ void FasePrimeira::criarInimigosDemonio(){
             if(!mapa.estaOcupadoSpawn(espaco)){
                 pos.y = pos.y-30;
                 Demonio* pDemo = NULL;
-                pDemo = new Demonio(pos, 2, 10.0f, 1 + (rand() % 10));
+                pDemo = new Demonio(pos, 30, 10.0f, 1 + (rand() % 10));
  
                 if(pDemo!=NULL){
                     num_demonios_criados++;
@@ -154,7 +154,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
     CoordF tam_tela_compensada = tam_tela;
     tam_tela_compensada.y -= 8.0f; // Deixa a colisao mais bonita com os limites
     pGC->setLimite(tam_tela_compensada);
-
 
     sf::Clock clock;
     //setando o jogador
@@ -290,8 +289,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
             pJ1->setPos(CoordF(1000.f, 1000.f));
             pJ2->setPos(CoordF(1000.f, 1000.f));
 
-            pGC->removerJogadores();
-            telaDerrota->render();
+            jogoEncerradoDerrota();
         }
 
         // apenas J1 morreu
@@ -313,8 +311,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         if (!pJ1->getVivo()) {
             pJ1->setPos(CoordF(1000.f, 1000.f));
 
-            pGC->removerJogadores();
-            telaDerrota->render();
+            jogoEncerradoDerrota();
         }
     }
 

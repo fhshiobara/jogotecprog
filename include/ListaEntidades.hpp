@@ -4,7 +4,7 @@
 #include "ListTL.hpp"
 #include "Entidade.hpp"
 
-class ListaEntidades{
+class ListaEntidades {
     
 private:
     Lista <Entidades::Entidade> LEs;

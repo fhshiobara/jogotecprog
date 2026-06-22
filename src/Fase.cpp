@@ -32,6 +32,9 @@ Fase::Fase():pGC(Gerenciadores::GerenciadorColisoes::getInstance()),Max_inimBixo
         pontosTexto.setString("Pontos: 0");
 
     }
+
+    telaVitoria = new SingleFrameAnimation("../assets/Background/telaGanhou.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
+    telaDerrota = new SingleFrameAnimation("../assets/Background/telaDerrota.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
 }
 
 Fase::~Fase(){
@@ -211,6 +214,60 @@ void Fase::executarInimigos(std::vector<Personagens::Inimigo*> &vInimigos, Perso
             else 
                 inimigo->perseguir(posJogador1, dt);
             }
+        }
+    }
+
+    void Fase::jogoEncerrado(){
+        
+        pGC->removerJogadores();
+
+        while(pGG->windowopen()){
+
+            sf::Event evento;
+            while(pGG->getWindow()->pollEvent(evento)){
+
+                if(evento.type == sf::Event::Closed){
+                    pGG->closeWindow();
+                    return;
+                }
+
+                if(evento.type == sf::Event::KeyPressed &&
+                  (evento.key.code == sf::Keyboard::Escape)){
+                    return;
+                }
+
+            }
+
+            pGG->clear();
+            telaVitoria->render();
+            pGG->getWindow()->display();
+        }
+    }
+
+    void Fase::jogoEncerradoDerrota(){
+        
+        pGC->removerJogadores();
+
+        while(pGG->windowopen()){
+
+            sf::Event evento;
+            while(pGG->getWindow()->pollEvent(evento)){
+
+                if(evento.type == sf::Event::Closed){
+                    pGG->closeWindow();
+                    return;
+                }
+
+                if(evento.type == sf::Event::KeyPressed &&
+                  (evento.key.code == sf::Keyboard::Escape)){
+                    return;
+                }
+
+            }
+
+            pGG->clear();
+            telaDerrota->render();
+            pGG->getWindow()->display();
         }
     }
 }

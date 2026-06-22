@@ -9,7 +9,7 @@ namespace Personagens {
         private:
             int fome; // Quanto mais fome, mais rapido
         public:
-            Demonio(CoordF position, int hp = 3, float velocidade = 60.0f, int fome = 1, int valorPontos = 300);
+            Demonio(CoordF position, int hp = 300, float velocidade = 60.0f, int fome = 1, int valorPontos = 300);
             ~Demonio();
 
             void executar();

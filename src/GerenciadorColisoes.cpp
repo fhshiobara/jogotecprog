@@ -297,8 +297,8 @@ namespace Gerenciadores {
                 proj->desativar();
                 ListaProjetil.erase(proj);
                 //if (!pJog1->estaImune())
-                    pJog1->setInvulnerabilidade(0.9);
-                    pJog1->tomarDano();
+                    pJog1->setInvulnerabilidade(pJog1->getImunFrames());
+                    pJog1->tomarDanoMassivo(boss->getVontadeDeMatar());
                 continue; // projetil ja foi consumido, prox boss
             }
 
@@ -312,7 +312,7 @@ namespace Gerenciadores {
                     proj->desativar();
                     ListaProjetil.erase(proj);
                     //if (!pJog2->estaImune())
-                        pJog2->setInvulnerabilidade(0.9);
+                        pJog2->setInvulnerabilidade(pJog2->getImunFrames());
                         pJog2->tomarDano();
                 }
 

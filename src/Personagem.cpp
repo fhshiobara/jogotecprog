@@ -31,7 +31,6 @@ namespace Personagens {
       if (!this->estaImune()) {
           this->operator--();
         
-
         std::cout << "Personagem: " << this << " tomou dano! HP restante: " << hp << std::endl;
 
         if (hp <= 0) {

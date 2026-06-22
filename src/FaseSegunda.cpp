@@ -9,10 +9,8 @@
 
 namespace Fases{
 
-    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL),telaVitoria(NULL)  {
+    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL)  {
         background = new SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
-        telaVitoria = new SingleFrameAnimation("../assets/Background/telaGanhou.png",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
-
     }
 
     FaseSegunda::~FaseSegunda(){
@@ -37,12 +35,13 @@ namespace Fases{
 
                 pos.y = pos.y-30;
                 Morte* pMorte = NULL;
-                pMorte = new Morte(pos, 5, 10.f);
+                pMorte = new Morte(pos, 50, 10.f + (float)(rand() % 10));
                 
                 if(pMorte!=NULL){
                     num_morte_criados++;
                     vInimigos.push_back(pMorte);
 
+                    mapa.setOcupadoSpawn(espaco, false);
 
                     list_ents.incluir(pMorte);
                     pGC->incluirInimigo(pMorte);
@@ -94,34 +93,6 @@ namespace Fases{
         }
     }
 
-    void FaseSegunda::jogoEncerrado(){
-        
-        pGC->removerJogadores();
-
-        while(pGG->windowopen()){
-            sf::Event evento;
-            while(pGG->getWindow()->pollEvent(evento)){
-
-                if(evento.type == sf::Event::Closed){
-                    pGG->closeWindow();
-                    return;
-                }
-
-                if(evento.type == sf::Event::KeyPressed &&
-                  (evento.key.code == sf::Keyboard::Return || evento.key.code == sf::Keyboard::Escape)){
-                    return;
-                }
-
-            }
-
-            pGG->clear();
-            telaVitoria->render();
-            pGG->getWindow()->display();
-        }
-    }
-
-
-
     void FaseSegunda::criarInimigos(){
         this->criarInimigosBixo();
         this->criaMorte();
@@ -150,7 +121,9 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
     inserirPlataformasAtrasado();
  
     pGC->removerJogadores(); // para crrigir o problema de ponteiros duplicados
+
     pGC->setJogador(pJ1);
+
     if(pJ2){
         pGC->setJogador(pJ2);
     }
@@ -280,8 +253,6 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
 
         executarInimigos(vInimigos, pJ1, pJ2, dt);
 
-        
-        jogoEncerrado(pJ1,pJ2);//funcao da vitoria
         this->checarInimigos(pJ1, pJ2);
 
         if(this->getConcluida()){
@@ -299,8 +270,7 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
                 pJ1->setPos(CoordF(1000.f, 1000.f));
                 pJ2->setPos(CoordF(1000.f, 1000.f));
 
-                pGC->removerJogadores();
-                telaDerrota->render();
+                jogoEncerradoDerrota();
             }
 
             // apenas J1 morreu
@@ -316,6 +286,14 @@ void FaseSegunda::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2)
                 pJ2 = NULL;
             }
         }
+        else { // já está em modo 1 jogador
+            if (!pJ1->getVivo()) {
+                pJ1->setPos(CoordF(1000.f, 1000.f));
+
+                jogoEncerradoDerrota();
+            }
+        }
+        
         animacao = decidirAnimacao(pJ1, andando1);
 
         pJ1->atualizarAnimacao(animacao, olhandoEsquerda, dt);
