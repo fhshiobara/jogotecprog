@@ -118,7 +118,6 @@ namespace Gerenciadores {
         ListaObstaculos.clear();
     }
 
-
     void GerenciadorColisoes::tratarColisoesObstaculos() {
 
         CoordF pos = pJog1->getPos();

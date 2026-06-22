@@ -9,7 +9,7 @@
 
 namespace Fases{
 
-    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(5),background(NULL)  {
+    FaseSegunda::FaseSegunda():max_Morte(4),max_obst_Dificil(4),background(NULL)  {
         background = new SingleFrameAnimation("../assets/Background/background2.jpg",CoordF(0.f,0.f),CoordF(800.f,600.f),1.0);
     }
 
@@ -41,7 +41,7 @@ namespace Fases{
                     num_morte_criados++;
                     vInimigos.push_back(pMorte);
 
-                    mapa.setOcupadoSpawn(espaco, false);
+                    // mapa.setOcupadoSpawn(espaco, false);
 
                     list_ents.incluir(pMorte);
                     pGC->incluirInimigo(pMorte);

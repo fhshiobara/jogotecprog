@@ -31,7 +31,6 @@ public:
     void executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2);
     void executar();
     
-    
     void criarInimigos();
     void criarObstaculos();
 };

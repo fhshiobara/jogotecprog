@@ -10,8 +10,8 @@
 class Ente {
     protected:
         int id;
-        static int cont_id;
 
+        static int cont_id;
         static Gerenciadores::GerenciadorGrafico *pGG;
 
         sf::RectangleShape hitbox;

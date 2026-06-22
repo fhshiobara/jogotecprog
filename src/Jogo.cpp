@@ -64,7 +64,7 @@ void Jogo::executar() {
         pFase1->executar(pJ1, pJ2);
         
         if(pFase1->getConcluida()){
-            
+
             pFase2 = new Fases::FaseSegunda();
             pFase2->somarPontos(pFase1->getPontosTotais()); 
             pFase2->atualizarTextoPontos();
@@ -84,10 +84,10 @@ void Jogo::executar() {
     }
 
 
-    
-    
     else if (fase == 2) {
         pFase2 = new Fases::FaseSegunda();
+        pFase2->atualizarTextoPontos();
+
         pFase2->executar(pJ1,pJ2);
         std::cout << "Fase 2 rodando" << std::endl;
         

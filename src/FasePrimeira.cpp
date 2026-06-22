@@ -258,7 +258,6 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         
         pGC->executar(dt);
         
-
         pGG->clear();
         background->render();
         list_ents.percorrer(dt);
@@ -277,7 +276,7 @@ void FasePrimeira::executar(Personagens::Jogador* pJ1, Personagens::Jogador* pJ2
         
         if(this->getConcluida()){
             pGC->removerObstaculos();
-            return; // vai fazer o execuat parar, eu acho
+            return; // vai fazer o executar parar, eu acho
         }
 
     if (pJ2 != NULL) { // modo 2 jogadores
